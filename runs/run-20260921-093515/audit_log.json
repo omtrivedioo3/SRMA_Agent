@@ -1,0 +1,168 @@
+[
+  {
+    "source": "pubmed",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi",
+    "params": {
+      "db": "pubmed",
+      "term": "(\"hematologic malignancies\"[tiab] OR \"blood cancers\"[tiab] OR lymphoma[tiab] OR leukemia[tiab] OR \"multiple myeloma\"[tiab] OR \"Hematologic Neoplasms\"[MeSH Terms] OR \"Lymphoma\"[MeSH Terms] OR \"Leukemia\"[MeSH Terms] OR \"Multiple Myeloma\"[MeSH Terms]) AND (\"CAR-T cell therapy\"[tiab] OR \"bispecific T-cell engagers\"[tiab] OR CAR-T[tiab] OR CTLs[tiab] OR \"CAR-T Cell Therapy\"[MeSH Terms] OR \"Bispecific T-Cell Engagers\"[MeSH Terms])",
+      "retmax": 100,
+      "retmode": "json",
+      "sort": "relevance",
+      "tool": "SRMA-Agent",
+      "email": ""
+    },
+    "timestamp_utc": "2026-09-21T09:38:45.168783+00:00",
+    "status_code": 200,
+    "n_results": 10591,
+    "duration_ms": 778,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "((TITLE_ABS:\"hematologic malignancies\" OR TITLE_ABS:\"blood cancers\" OR TITLE_ABS:lymphoma OR TITLE_ABS:leukemia OR TITLE_ABS:\"multiple myeloma\" OR MESH:\"Hematologic Neoplasms\" OR MESH:\"Lymphoma\" OR MESH:\"Leukemia\" OR MESH:\"Multiple Myeloma\") AND (TITLE_ABS:\"CAR-T cell therapy\" OR TITLE_ABS:\"bispecific T-cell engagers\" OR TITLE_ABS:CAR-T OR TITLE_ABS:CTLs OR MESH:\"CAR-T Cell Therapy\" OR MESH:\"Bispecific T-Cell Engagers\")) AND (SRC:PPR)",
+      "format": "json",
+      "resultType": "core",
+      "pageSize": 100,
+      "cursorMark": "*"
+    },
+    "timestamp_utc": "2026-09-21T09:38:45.493085+00:00",
+    "status_code": 200,
+    "n_results": 8,
+    "duration_ms": 1106,
+    "error": null
+  },
+  {
+    "source": "clinicaltrials",
+    "url": "https://clinicaltrials.gov/api/v2/studies",
+    "params": {
+      "query.term": "(\"hematologic malignancies\" OR \"blood cancers\" OR lymphoma OR leukemia OR \"multiple myeloma\" OR \"Hematologic Neoplasms\") AND (\"CAR-T cell therapy\" OR \"bispecific T-cell engagers\" OR CAR-T OR CTLs)",
+      "pageSize": 100,
+      "format": "json",
+      "countTotal": "true"
+    },
+    "timestamp_utc": "2026-09-21T09:38:45.709680+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1338,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.08.24.20177576/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T09:38:46.322366+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 824,
+    "error": null
+  },
+  {
+    "source": "europepmc",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "(TITLE_ABS:\"hematologic malignancies\" OR TITLE_ABS:\"blood cancers\" OR TITLE_ABS:lymphoma OR TITLE_ABS:leukemia OR TITLE_ABS:\"multiple myeloma\" OR MESH:\"Hematologic Neoplasms\" OR MESH:\"Lymphoma\" OR MESH:\"Leukemia\" OR MESH:\"Multiple Myeloma\") AND (TITLE_ABS:\"CAR-T cell therapy\" OR TITLE_ABS:\"bispecific T-cell engagers\" OR TITLE_ABS:CAR-T OR TITLE_ABS:CTLs OR MESH:\"CAR-T Cell Therapy\" OR MESH:\"Bispecific T-Cell Engagers\")",
+      "format": "json",
+      "resultType": "core",
+      "pageSize": 100,
+      "cursorMark": "*"
+    },
+    "timestamp_utc": "2026-09-21T09:38:46.723220+00:00",
+    "status_code": 200,
+    "n_results": 1204,
+    "duration_ms": 2339,
+    "error": null
+  },
+  {
+    "source": "pubmed",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi",
+    "params": {
+      "db": "pubmed",
+      "id": "38977912,34445701,32023374,32616000,30837712,38657244,37227492,30528964,37787373,39256908,38266761,36583504,35718701,32301017,28725044,38052854,37420216,38865661,39779930,39676854,35704690,39938094,42270901,39908432,40098061,40188456,41410870,36085303,37651540,36764323,40074511,38181508,30686353,36026513,36151216,36251156,39466024,38871057,37740926,35333600,42392158,41964291,37137553,37142568,36172388,35705177,38035828,41123167,39723764,33740142,41605906,31651383,35995579,34626362,35765110,38183209,31419095,36371048,34991902,36585394,35939781,41627211,35534047,30101454,33563059,36700225,33067985,32457743,35983953,29385713,42139908,32358567,42148107,40554413,37814001,40875887,33914708,34628995,35464442,42237881,39984633,33899130,30979721,35017485,40625291,33212810,34920797,35315593,27170467,33632155,40191207,27491640,37774014,35580732,32383222,38194367,35275800,40885658,41307989,39052709",
+      "retmode": "xml",
+      "tool": "SRMA-Agent",
+      "email": ""
+    },
+    "timestamp_utc": "2026-09-21T09:38:47.423698+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 2254,
+    "error": null
+  },
+  {
+    "source": "crossref",
+    "url": "https://api.crossref.org/works",
+    "params": {
+      "query.bibliographic": "hematologic malignancies blood cancers CAR-T cell therapy bispecific T-cell engagers",
+      "rows": 100,
+      "cursor": "*",
+      "mailto": ""
+    },
+    "timestamp_utc": "2026-09-21T09:38:48.776556+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 4399,
+    "error": null
+  },
+  {
+    "source": "openalex",
+    "url": "https://api.openalex.org/works",
+    "params": {
+      "search": "(\"hematologic malignancies\" OR \"blood cancers\" OR lymphoma OR leukemia OR \"multiple myeloma\" OR \"Hematologic Neoplasms\") AND (\"CAR-T cell therapy\" OR \"bispecific T-cell engagers\" OR CAR-T OR CTLs)",
+      "mailto": "",
+      "per-page": 100,
+      "cursor": "*"
+    },
+    "timestamp_utc": "2026-09-21T09:38:49.605730+00:00",
+    "status_code": 200,
+    "n_results": 179657,
+    "duration_ms": 5220,
+    "error": null
+  },
+  {
+    "source": "semantic_scholar",
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search",
+    "params": {
+      "query": "hematologic malignancies blood cancers CAR-T cell therapy bispecific T-cell engagers",
+      "limit": 100,
+      "offset": 0,
+      "fields": "paperId,externalIds,title,abstract,venue,year,authors,publicationTypes,fieldsOfStudy,citationCount,referenceCount,openAccessPdf,isOpenAccess,url,publicationDate,journal"
+    },
+    "timestamp_utc": "2026-09-21T09:38:52.477707+00:00",
+    "status_code": 429,
+    "n_results": null,
+    "duration_ms": 8086,
+    "error": "HTTP 429"
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2021.12.06.471352/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T09:39:17.815397+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 32319,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2025.09.09.675083/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T09:39:49.801831+00:00",
+    "status_code": null,
+    "n_results": null,
+    "duration_ms": 64306,
+    "error": "ReadTimeout: HTTPSConnectionPool(host='api.biorxiv.org', port=443): Read timed out. (read timeout=30)"
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2025.09.09.675083/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T09:40:22.075729+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 32273,
+    "error": null
+  }
+]

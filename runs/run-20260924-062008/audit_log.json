@@ -1,0 +1,128 @@
+[
+  {
+    "source": "pubmed",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi",
+    "params": {
+      "db": "pubmed",
+      "term": "(\"heart failure\"[tiab] OR HF[tiab] OR HFpEF[tiab] OR \"preserved ejection fraction\"[tiab] OR \"Heart Failure\"[MeSH Terms] OR \"Heart Failure, Left Ventricular Non-Compaction\"[MeSH Terms]) AND (\"SGLT2 inhibitors\"[tiab] OR empagliflozin[tiab] OR dapagliflozin[tiab] OR canagliflozin[tiab] OR SGLT2[tiab] OR \"sodium-glucose cotransporter 2 inhibitors\"[tiab] OR \"SGLT2 Inhibitors\"[MeSH Terms])",
+      "retmax": 100,
+      "retmode": "json",
+      "sort": "relevance",
+      "tool": "SRMA-Agent",
+      "email": ""
+    },
+    "timestamp_utc": "2026-09-24T06:23:02.065083+00:00",
+    "status_code": 200,
+    "n_results": 6168,
+    "duration_ms": 592,
+    "error": null
+  },
+  {
+    "source": "clinicaltrials",
+    "url": "https://clinicaltrials.gov/api/v2/studies",
+    "params": {
+      "query.term": "(\"heart failure\" OR HF OR HFpEF OR \"preserved ejection fraction\" OR \"Heart Failure, Left Ventricular Non-Compaction\") AND (\"SGLT2 inhibitors\" OR empagliflozin OR dapagliflozin OR canagliflozin OR SGLT2 OR \"sodium-glucose cotransporter 2 inhibitors\")",
+      "pageSize": 100,
+      "format": "json",
+      "countTotal": "true"
+    },
+    "timestamp_utc": "2026-09-24T06:23:03.022412+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1571,
+    "error": null
+  },
+  {
+    "source": "crossref",
+    "url": "https://api.crossref.org/works",
+    "params": {
+      "query.bibliographic": "heart failure HF SGLT2 inhibitors empagliflozin",
+      "rows": 100,
+      "cursor": "*",
+      "mailto": ""
+    },
+    "timestamp_utc": "2026-09-24T06:23:04.881400+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 3429,
+    "error": null
+  },
+  {
+    "source": "pubmed",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi",
+    "params": {
+      "db": "pubmed",
+      "id": "38806171,38367642,36917048,36027570,40884036,32877652,38944348,38696170,34711976,36216487,38532020,36607775,38589689,33813813,38118414,39044275,35524007,37344038,36782248,37636033,36416174,40996542,40832702,36029467,35948644,29520964,39046464,35228753,40835369,37767674,41352525,40335233,38639697,36914068,37674356,38728438,38179304,39196095,39400108,41343213,35239201,33438858,40692068,42212619,39844745,39421941,39101201,40624547,34051124,40037646,39453357,39217550,40778782,39046727,40966463,38293914,34731652,36004654,40853593,33141609,42117592,31912605,33016115,38572654,35550428,34516288,40420397,35118602,41614664,39217458,38957943,41185008,38852615,37460142,40767292,37042079,41170566,35260016,34974611,35085205,37875242,37634707,41400906,29704192,38385941,31167663,36226396,37698314,38193327,34982348,35476142,30328645,40346546,35459367,37382223,35331406,38785682,37001168,40922034,34708866",
+      "retmode": "xml",
+      "tool": "SRMA-Agent",
+      "email": ""
+    },
+    "timestamp_utc": "2026-09-24T06:23:07.295380+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 5230,
+    "error": null
+  },
+  {
+    "source": "openalex",
+    "url": "https://api.openalex.org/works",
+    "params": {
+      "search": "(\"heart failure\" OR HF OR HFpEF OR \"preserved ejection fraction\" OR \"Heart Failure, Left Ventricular Non-Compaction\") AND (\"SGLT2 inhibitors\" OR empagliflozin OR dapagliflozin OR canagliflozin OR SGLT2 OR \"sodium-glucose cotransporter 2 inhibitors\")",
+      "mailto": "",
+      "per-page": 100,
+      "cursor": "*"
+    },
+    "timestamp_utc": "2026-09-24T06:23:09.296589+00:00",
+    "status_code": 429,
+    "n_results": null,
+    "duration_ms": 7830,
+    "error": "HTTP 429"
+  },
+  {
+    "source": "semantic_scholar",
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search",
+    "params": {
+      "query": "heart failure HF SGLT2 inhibitors empagliflozin",
+      "limit": 100,
+      "offset": 0,
+      "fields": "paperId,externalIds,title,abstract,venue,year,authors,publicationTypes,fieldsOfStudy,citationCount,referenceCount,openAccessPdf,isOpenAccess,url,publicationDate,journal"
+    },
+    "timestamp_utc": "2026-09-24T06:23:09.906791+00:00",
+    "status_code": 429,
+    "n_results": null,
+    "duration_ms": 8433,
+    "error": "HTTP 429"
+  },
+  {
+    "source": "preprints",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "((TITLE_ABS:\"heart failure\" OR TITLE_ABS:HF OR TITLE_ABS:HFpEF OR TITLE_ABS:\"preserved ejection fraction\" OR MESH:\"Heart Failure\" OR MESH:\"Heart Failure, Left Ventricular Non-Compaction\") AND (TITLE_ABS:\"SGLT2 inhibitors\" OR TITLE_ABS:empagliflozin OR TITLE_ABS:dapagliflozin OR TITLE_ABS:canagliflozin OR TITLE_ABS:SGLT2 OR TITLE_ABS:\"sodium-glucose cotransporter 2 inhibitors\" OR MESH:\"SGLT2 Inhibitors\")) AND (SRC:PPR)",
+      "format": "json",
+      "resultType": "core",
+      "pageSize": 100,
+      "cursorMark": "*"
+    },
+    "timestamp_utc": "2026-09-24T06:23:28.580307+00:00",
+    "status_code": 200,
+    "n_results": 0,
+    "duration_ms": 27108,
+    "error": null
+  },
+  {
+    "source": "europepmc",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "(TITLE_ABS:\"heart failure\" OR TITLE_ABS:HF OR TITLE_ABS:HFpEF OR TITLE_ABS:\"preserved ejection fraction\" OR MESH:\"Heart Failure\" OR MESH:\"Heart Failure, Left Ventricular Non-Compaction\") AND (TITLE_ABS:\"SGLT2 inhibitors\" OR TITLE_ABS:empagliflozin OR TITLE_ABS:dapagliflozin OR TITLE_ABS:canagliflozin OR TITLE_ABS:SGLT2 OR TITLE_ABS:\"sodium-glucose cotransporter 2 inhibitors\" OR MESH:\"SGLT2 Inhibitors\")",
+      "format": "json",
+      "resultType": "core",
+      "pageSize": 100,
+      "cursorMark": "*"
+    },
+    "timestamp_utc": "2026-09-24T06:23:30.570049+00:00",
+    "status_code": 200,
+    "n_results": 1,
+    "duration_ms": 29110,
+    "error": null
+  }
+]

@@ -1,0 +1,178 @@
+[
+  {
+    "source": "pubmed",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi",
+    "params": {
+      "db": "pubmed",
+      "term": "(\"COPD exacerbation\"[tiab] OR COPD[tiab] OR \"chronic kidney disease\"[tiab] OR CKD[tiab] OR \"acute kidney injury\"[tiab] OR \"acute kidney failure\"[tiab] OR \"COPD\"[MeSH Terms] OR \"Chronic Kidney Disease\"[MeSH Terms] OR \"Acute Kidney Injury\"[MeSH Terms] OR \"Acute Kidney Failure\"[MeSH Terms]) AND (\"non-macrolide antibiotics\"[tiab] OR \"macrolide antibiotics\"[tiab] OR antibiotics[tiab] OR \"antibiotic therapy\"[tiab] OR non-macrolide[tiab] OR macrolide[tiab] OR \"Antibiotics\"[MeSH Terms])",
+      "retmax": 100,
+      "retmode": "json",
+      "sort": "relevance",
+      "tool": "SRMA-Agent",
+      "email": ""
+    },
+    "timestamp_utc": "2026-09-21T07:04:57.779034+00:00",
+    "status_code": 200,
+    "n_results": 3925,
+    "duration_ms": 1110,
+    "error": null
+  },
+  {
+    "source": "clinicaltrials",
+    "url": "https://clinicaltrials.gov/api/v2/studies",
+    "params": {
+      "query.term": "(\"COPD exacerbation\" OR COPD OR \"chronic kidney disease\" OR CKD OR \"acute kidney injury\" OR \"acute kidney failure\") AND (\"non-macrolide antibiotics\" OR \"macrolide antibiotics\" OR antibiotics OR \"antibiotic therapy\" OR non-macrolide OR macrolide)",
+      "pageSize": 100,
+      "format": "json",
+      "countTotal": "true"
+    },
+    "timestamp_utc": "2026-09-21T07:04:58.110294+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1470,
+    "error": null
+  },
+  {
+    "source": "pubmed",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi",
+    "params": {
+      "db": "pubmed",
+      "id": "39138117,35830831,30219824,35216167,36668830,36633034,36757801,31939540,27908336,38761425,34343994,34344014,40222914,36972576,38170348,37949081,37704713,30799434,34229452,33495169,39276451,34714213,35647854,30951453,33057027,37820257,40847756,33812909,38135115,36220420,35751322,37563789,30888600,35037310,35272979,27718084,32500843,26854072,38623388,29181890,40914503,37660080,39465743,39980278,38688650,32146999,36259803,35678460,33617629,37820650,24940940,31851243,35655418,33690028,26577279,28683450,32783764,27506868,32470493,40878006,29961876,33458886,31952871,40653483,31356100,31833540,26260379,35672938,35946131,24255118,30624668,30677750,28919596,35271615,38615183,27743042,33316799,24589798,38466161,34669306,36305443,29545383,36001947,29329393,39879583,24442542,26801821,34930442,39399932,31809424,38252887,26498824,27172356,27266727,34731096,40307866,35124791,37837650,41057927,24485324",
+      "retmode": "xml",
+      "tool": "SRMA-Agent",
+      "email": ""
+    },
+    "timestamp_utc": "2026-09-21T07:05:00.124796+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 2345,
+    "error": null
+  },
+  {
+    "source": "openalex",
+    "url": "https://api.openalex.org/works",
+    "params": {
+      "search": "(\"COPD exacerbation\" OR COPD OR \"chronic kidney disease\" OR CKD OR \"acute kidney injury\" OR \"acute kidney failure\") AND (\"non-macrolide antibiotics\" OR \"macrolide antibiotics\" OR antibiotics OR \"antibiotic therapy\" OR non-macrolide OR macrolide)",
+      "mailto": "",
+      "per-page": 100,
+      "cursor": "*"
+    },
+    "timestamp_utc": "2026-09-21T07:05:00.805406+00:00",
+    "status_code": 200,
+    "n_results": 138995,
+    "duration_ms": 4147,
+    "error": null
+  },
+  {
+    "source": "crossref",
+    "url": "https://api.crossref.org/works",
+    "params": {
+      "query.bibliographic": "COPD exacerbation COPD non-macrolide antibiotics macrolide antibiotics",
+      "rows": 100,
+      "cursor": "*",
+      "mailto": ""
+    },
+    "timestamp_utc": "2026-09-21T07:05:01.456462+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 4814,
+    "error": null
+  },
+  {
+    "source": "semantic_scholar",
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search",
+    "params": {
+      "query": "COPD exacerbation COPD non-macrolide antibiotics macrolide antibiotics",
+      "limit": 100,
+      "offset": 0,
+      "fields": "paperId,externalIds,title,abstract,venue,year,authors,publicationTypes,fieldsOfStudy,citationCount,referenceCount,openAccessPdf,isOpenAccess,url,publicationDate,journal"
+    },
+    "timestamp_utc": "2026-09-21T07:05:02.306481+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 5634,
+    "error": null
+  },
+  {
+    "source": "europepmc",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "(TITLE_ABS:\"COPD exacerbation\" OR TITLE_ABS:COPD OR TITLE_ABS:\"chronic kidney disease\" OR TITLE_ABS:CKD OR TITLE_ABS:\"acute kidney injury\" OR TITLE_ABS:\"acute kidney failure\" OR MESH:\"COPD\" OR MESH:\"Chronic Kidney Disease\" OR MESH:\"Acute Kidney Injury\" OR MESH:\"Acute Kidney Failure\") AND (TITLE_ABS:\"non-macrolide antibiotics\" OR TITLE_ABS:\"macrolide antibiotics\" OR TITLE_ABS:antibiotics OR TITLE_ABS:\"antibiotic therapy\" OR TITLE_ABS:non-macrolide OR TITLE_ABS:macrolide OR MESH:\"Antibiotics\")",
+      "format": "json",
+      "resultType": "core",
+      "pageSize": 100,
+      "cursorMark": "*"
+    },
+    "timestamp_utc": "2026-09-21T07:05:06.606738+00:00",
+    "status_code": 200,
+    "n_results": 1408,
+    "duration_ms": 9959,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "((TITLE_ABS:\"COPD exacerbation\" OR TITLE_ABS:COPD OR TITLE_ABS:\"chronic kidney disease\" OR TITLE_ABS:CKD OR TITLE_ABS:\"acute kidney injury\" OR TITLE_ABS:\"acute kidney failure\" OR MESH:\"COPD\" OR MESH:\"Chronic Kidney Disease\" OR MESH:\"Acute Kidney Injury\" OR MESH:\"Acute Kidney Failure\") AND (TITLE_ABS:\"non-macrolide antibiotics\" OR TITLE_ABS:\"macrolide antibiotics\" OR TITLE_ABS:antibiotics OR TITLE_ABS:\"antibiotic therapy\" OR TITLE_ABS:non-macrolide OR TITLE_ABS:macrolide OR MESH:\"Antibiotics\")) AND (SRC:PPR)",
+      "format": "json",
+      "resultType": "core",
+      "pageSize": 100,
+      "cursorMark": "*"
+    },
+    "timestamp_utc": "2026-09-21T07:05:11.914309+00:00",
+    "status_code": 200,
+    "n_results": 21,
+    "duration_ms": 15249,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.02.08.21251343/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:05:12.651698+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 735,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.12.17.21267655/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:05:18.208414+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 5556,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2023.09.12.23295441/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:05:28.146234+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 9937,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2022.01.22.22269694/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:05:30.006593+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1860,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.02.06.20020974/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:05:50.724927+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 20718,
+    "error": null
+  }
+]

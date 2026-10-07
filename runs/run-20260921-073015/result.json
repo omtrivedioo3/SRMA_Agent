@@ -1,0 +1,663 @@
+{
+  "ok": false,
+  "run_id": "run-20260921-073015",
+  "run_dir": "/usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20260921-073015",
+  "question": "In adults receiving CAR-T cell therapy, does early administration of IL-6 inhibitors (such as tocilizumab) reduce the incidence of severe (Grade 3 or higher) cytokine release syndrome compared with standard or delayed treatment?",
+  "generated_utc": "2026-09-21T07:30:15.643728+00:00",
+  "config": {
+    "gemini_backend": "ai-studio",
+    "orchestrator_model": "gemini-3.6-flash",
+    "clinical_model": "ollama_chat/medgemma"
+  },
+  "phases_completed": [
+    "protocol",
+    "search_strategy",
+    "search",
+    "deduplication",
+    "screening"
+  ],
+  "errors": [
+    "No record survived screening. The eligibility criteria may be too strict, or the search may have retrieved the wrong literature. See screening.excluded_records for the reasons."
+  ],
+  "protocol": {
+    "population": "Adults receiving CAR-T cell therapy",
+    "intervention": "Early administration of IL-6 inhibitors (such as tocilizumab)",
+    "comparator": "Standard or delayed treatment",
+    "primary_outcome": "Incidence of severe (Grade 3 or higher) cytokine release syndrome",
+    "secondary_outcomes": [],
+    "study_designs": [
+      "Randomized Controlled Trial"
+    ],
+    "inclusion_criteria": [
+      "Adults receiving CAR-T cell therapy",
+      "Intervention group: Early administration of IL-6 inhibitors (such as tocilizumab)",
+      "Comparator group: Standard or delayed treatment",
+      "Severe (Grade 3 or higher) cytokine release syndrome as the primary outcome"
+    ],
+    "exclusion_criteria": [
+      "Animal studies",
+      "In-vitro studies",
+      "Narrative reviews",
+      "Editorials",
+      "Case reports"
+    ],
+    "search_keywords": [
+      "CAR-T cell therapy",
+      "IL-6 inhibitors",
+      "tocilizumab",
+      "cytokine release syndrome",
+      "CRS",
+      "Grade 3 or higher CRS"
+    ],
+    "mesh_terms": [
+      "CAR T-cell Therapy",
+      "Interleukin-6",
+      "Cytokine Release Syndrome",
+      "Cytokine Storm"
+    ]
+  },
+  "protocol_text": "  Population   : Adults receiving CAR-T cell therapy\n  Intervention : Early administration of IL-6 inhibitors (such as tocilizumab)\n  Comparator   : Standard or delayed treatment\n  Primary outcome : Incidence of severe (Grade 3 or higher) cytokine release syndrome\n  Eligible designs : Randomized Controlled Trial\n  Inclusion criteria:\n      - Adults receiving CAR-T cell therapy\n      - Intervention group: Early administration of IL-6 inhibitors (such as tocilizumab)\n      - Comparator group: Standard or delayed treatment\n      - Severe (Grade 3 or higher) cytokine release syndrome as the primary outcome\n  Exclusion criteria:\n      - Animal studies\n      - In-vitro studies\n      - Narrative reviews\n      - Editorials\n      - Case reports",
+  "search_strategy": {
+    "population_terms": [
+      "CAR-T cell therapy",
+      "CAR T-cell Therapy",
+      "CAR-T",
+      "CAR T"
+    ],
+    "population_mesh": [
+      "CAR T-cell Therapy",
+      "CAR-T cell Therapy",
+      "CAR-T",
+      "CAR T"
+    ],
+    "intervention_terms": [
+      "IL-6 inhibitors",
+      "IL-6",
+      "tocilizumab",
+      "IL-6 blockade",
+      "IL-6 inhibition"
+    ],
+    "intervention_mesh": [
+      "Interleukin-6"
+    ],
+    "outcome_terms": [
+      "cytokine release syndrome",
+      "CRS",
+      "cytokine storm"
+    ],
+    "outcome_excluded_from_query": true,
+    "outcome_exclusion_rationale": "Trials often omit outcome names from the title and abstract. Requiring an outcome term in the Boolean AND chain is a known cause of missed eligible studies (Cochrane Handbook).",
+    "hygiene_notes": [
+      "population: dropped 'adults' - not a searchable term (too long to appear in a title or abstract).",
+      "population: dropped 'adult' - not a searchable term (too long to appear in a title or abstract)."
+    ]
+  },
+  "query": "(\"CAR-T cell therapy\"[tiab] OR \"CAR T-cell Therapy\"[tiab] OR CAR-T[tiab] OR \"CAR T\"[tiab] OR \"CAR T-cell Therapy\"[MeSH Terms] OR \"CAR-T cell Therapy\"[MeSH Terms] OR \"CAR-T\"[MeSH Terms] OR \"CAR T\"[MeSH Terms]) AND (\"IL-6 inhibitors\"[tiab] OR IL-6[tiab] OR tocilizumab[tiab] OR \"IL-6 blockade\"[tiab] OR \"IL-6 inhibition\"[tiab] OR \"Interleukin-6\"[MeSH Terms])",
+  "queries_by_source": {
+    "clinicaltrials": "(\"CAR-T cell therapy\" OR \"CAR T-cell Therapy\" OR CAR-T OR \"CAR T\") AND (\"IL-6 inhibitors\" OR IL-6 OR tocilizumab OR \"IL-6 blockade\" OR \"IL-6 inhibition\" OR Interleukin-6)",
+    "crossref": "CAR-T cell therapy CAR T-cell Therapy IL-6 inhibitors IL-6",
+    "europepmc": "(TITLE_ABS:\"CAR-T cell therapy\" OR TITLE_ABS:\"CAR T-cell Therapy\" OR TITLE_ABS:CAR-T OR TITLE_ABS:\"CAR T\" OR MESH:\"CAR T-cell Therapy\" OR MESH:\"CAR-T cell Therapy\" OR MESH:\"CAR-T\" OR MESH:\"CAR T\") AND (TITLE_ABS:\"IL-6 inhibitors\" OR TITLE_ABS:IL-6 OR TITLE_ABS:tocilizumab OR TITLE_ABS:\"IL-6 blockade\" OR TITLE_ABS:\"IL-6 inhibition\" OR MESH:\"Interleukin-6\")",
+    "openalex": "(\"CAR-T cell therapy\" OR \"CAR T-cell Therapy\" OR CAR-T OR \"CAR T\") AND (\"IL-6 inhibitors\" OR IL-6 OR tocilizumab OR \"IL-6 blockade\" OR \"IL-6 inhibition\" OR Interleukin-6)",
+    "preprints": "(TITLE_ABS:\"CAR-T cell therapy\" OR TITLE_ABS:\"CAR T-cell Therapy\" OR TITLE_ABS:CAR-T OR TITLE_ABS:\"CAR T\" OR MESH:\"CAR T-cell Therapy\" OR MESH:\"CAR-T cell Therapy\" OR MESH:\"CAR-T\" OR MESH:\"CAR T\") AND (TITLE_ABS:\"IL-6 inhibitors\" OR TITLE_ABS:IL-6 OR TITLE_ABS:tocilizumab OR TITLE_ABS:\"IL-6 blockade\" OR TITLE_ABS:\"IL-6 inhibition\" OR MESH:\"Interleukin-6\")",
+    "pubmed": "(\"CAR-T cell therapy\"[tiab] OR \"CAR T-cell Therapy\"[tiab] OR CAR-T[tiab] OR \"CAR T\"[tiab] OR \"CAR T-cell Therapy\"[MeSH Terms] OR \"CAR-T cell Therapy\"[MeSH Terms] OR \"CAR-T\"[MeSH Terms] OR \"CAR T\"[MeSH Terms]) AND (\"IL-6 inhibitors\"[tiab] OR IL-6[tiab] OR tocilizumab[tiab] OR \"IL-6 blockade\"[tiab] OR \"IL-6 inhibition\"[tiab] OR \"Interleukin-6\"[MeSH Terms])",
+    "semantic_scholar": "CAR-T cell therapy CAR T-cell Therapy IL-6 inhibitors IL-6"
+  },
+  "search": {
+    "query": "(\"CAR-T cell therapy\"[tiab] OR \"CAR T-cell Therapy\"[tiab] OR CAR-T[tiab] OR \"CAR T\"[tiab] OR \"CAR T-cell Therapy\"[MeSH Terms] OR \"CAR-T cell Therapy\"[MeSH Terms] OR \"CAR-T\"[MeSH Terms] OR \"CAR T\"[MeSH Terms]) AND (\"IL-6 inhibitors\"[tiab] OR IL-6[tiab] OR tocilizumab[tiab] OR \"IL-6 blockade\"[tiab] OR \"IL-6 inhibition\"[tiab] OR \"Interleukin-6\"[MeSH Terms])",
+    "queries_by_source": {
+      "clinicaltrials": "(\"CAR-T cell therapy\" OR \"CAR T-cell Therapy\" OR CAR-T OR \"CAR T\") AND (\"IL-6 inhibitors\" OR IL-6 OR tocilizumab OR \"IL-6 blockade\" OR \"IL-6 inhibition\" OR Interleukin-6)",
+      "crossref": "CAR-T cell therapy CAR T-cell Therapy IL-6 inhibitors IL-6",
+      "europepmc": "(TITLE_ABS:\"CAR-T cell therapy\" OR TITLE_ABS:\"CAR T-cell Therapy\" OR TITLE_ABS:CAR-T OR TITLE_ABS:\"CAR T\" OR MESH:\"CAR T-cell Therapy\" OR MESH:\"CAR-T cell Therapy\" OR MESH:\"CAR-T\" OR MESH:\"CAR T\") AND (TITLE_ABS:\"IL-6 inhibitors\" OR TITLE_ABS:IL-6 OR TITLE_ABS:tocilizumab OR TITLE_ABS:\"IL-6 blockade\" OR TITLE_ABS:\"IL-6 inhibition\" OR MESH:\"Interleukin-6\")",
+      "openalex": "(\"CAR-T cell therapy\" OR \"CAR T-cell Therapy\" OR CAR-T OR \"CAR T\") AND (\"IL-6 inhibitors\" OR IL-6 OR tocilizumab OR \"IL-6 blockade\" OR \"IL-6 inhibition\" OR Interleukin-6)",
+      "preprints": "(TITLE_ABS:\"CAR-T cell therapy\" OR TITLE_ABS:\"CAR T-cell Therapy\" OR TITLE_ABS:CAR-T OR TITLE_ABS:\"CAR T\" OR MESH:\"CAR T-cell Therapy\" OR MESH:\"CAR-T cell Therapy\" OR MESH:\"CAR-T\" OR MESH:\"CAR T\") AND (TITLE_ABS:\"IL-6 inhibitors\" OR TITLE_ABS:IL-6 OR TITLE_ABS:tocilizumab OR TITLE_ABS:\"IL-6 blockade\" OR TITLE_ABS:\"IL-6 inhibition\" OR MESH:\"Interleukin-6\")",
+      "pubmed": "(\"CAR-T cell therapy\"[tiab] OR \"CAR T-cell Therapy\"[tiab] OR CAR-T[tiab] OR \"CAR T\"[tiab] OR \"CAR T-cell Therapy\"[MeSH Terms] OR \"CAR-T cell Therapy\"[MeSH Terms] OR \"CAR-T\"[MeSH Terms] OR \"CAR T\"[MeSH Terms]) AND (\"IL-6 inhibitors\"[tiab] OR IL-6[tiab] OR tocilizumab[tiab] OR \"IL-6 blockade\"[tiab] OR \"IL-6 inhibition\"[tiab] OR \"Interleukin-6\"[MeSH Terms])",
+      "semantic_scholar": "CAR-T cell therapy CAR T-cell Therapy IL-6 inhibitors IL-6"
+    },
+    "per_source": {
+      "clinicaltrials": {
+        "status": "success",
+        "count": 100,
+        "error": null,
+        "query_sent": "(\"CAR-T cell therapy\" OR \"CAR T-cell Therapy\" OR CAR-T OR \"CAR T\") AND (\"IL-6 inhibitors\" OR IL-6 OR tocilizumab OR \"IL-6 blockade\" OR \"IL-6 inhibition\" OR Interleukin-6)"
+      },
+      "europepmc": {
+        "status": "success",
+        "count": 100,
+        "error": null,
+        "query_sent": "(TITLE_ABS:\"CAR-T cell therapy\" OR TITLE_ABS:\"CAR T-cell Therapy\" OR TITLE_ABS:CAR-T OR TITLE_ABS:\"CAR T\" OR MESH:\"CAR T-cell Therapy\" OR MESH:\"CAR-T cell Therapy\" OR MESH:\"CAR-T\" OR MESH:\"CAR T\") AND (TITLE_ABS:\"IL-6 inhibitors\" OR TITLE_ABS:IL-6 OR TITLE_ABS:tocilizumab OR TITLE_ABS:\"IL-6 blockade\" OR TITLE_ABS:\"IL-6 inhibition\" OR MESH:\"Interleukin-6\")"
+      },
+      "pubmed": {
+        "status": "success",
+        "count": 100,
+        "error": null,
+        "query_sent": "(\"CAR-T cell therapy\"[tiab] OR \"CAR T-cell Therapy\"[tiab] OR CAR-T[tiab] OR \"CAR T\"[tiab] OR \"CAR T-cell Therapy\"[MeSH Terms] OR \"CAR-T cell Therapy\"[MeSH Terms] OR \"CAR-T\"[MeSH Terms] OR \"CAR T\"[MeSH Terms]) AND (\"IL-6 inhibitors\"[tiab] OR IL-6[tiab] OR tocilizumab[tiab] OR \"IL-6 blockade\"[tiab] OR \"IL-6 inhibition\"[tiab] OR \"Interleukin-6\"[MeSH Terms])"
+      },
+      "crossref": {
+        "status": "success",
+        "count": 100,
+        "error": null,
+        "query_sent": "CAR-T cell therapy CAR T-cell Therapy IL-6 inhibitors IL-6"
+      },
+      "openalex": {
+        "status": "success",
+        "count": 100,
+        "error": null,
+        "query_sent": "(\"CAR-T cell therapy\" OR \"CAR T-cell Therapy\" OR CAR-T OR \"CAR T\") AND (\"IL-6 inhibitors\" OR IL-6 OR tocilizumab OR \"IL-6 blockade\" OR \"IL-6 inhibition\" OR Interleukin-6)"
+      },
+      "semantic_scholar": {
+        "status": "success",
+        "count": 0,
+        "error": null,
+        "query_sent": "CAR-T cell therapy CAR T-cell Therapy IL-6 inhibitors IL-6"
+      },
+      "preprints": {
+        "status": "success",
+        "count": 31,
+        "error": null,
+        "query_sent": "(TITLE_ABS:\"CAR-T cell therapy\" OR TITLE_ABS:\"CAR T-cell Therapy\" OR TITLE_ABS:CAR-T OR TITLE_ABS:\"CAR T\" OR MESH:\"CAR T-cell Therapy\" OR MESH:\"CAR-T cell Therapy\" OR MESH:\"CAR-T\" OR MESH:\"CAR T\") AND (TITLE_ABS:\"IL-6 inhibitors\" OR TITLE_ABS:IL-6 OR TITLE_ABS:tocilizumab OR TITLE_ABS:\"IL-6 blockade\" OR TITLE_ABS:\"IL-6 inhibition\" OR MESH:\"Interleukin-6\")"
+      }
+    },
+    "total_identified": 531,
+    "duplicates_removed": 28,
+    "unique_records": 503,
+    "sources_unavailable": {},
+    "dedupe_report": {
+      "removed_duplicates": [
+        {
+          "duplicate_id": "NCT04499573",
+          "duplicate_source": "europepmc",
+          "title": "Bispecific CD19/CD22 CAR-T for Treatment of Children and Young Adults With r/r B-ALL",
+          "merged_into_id": "NCT04499573",
+          "merged_sources": [
+            "clinicaltrials",
+            "europepmc"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "NCT06925022",
+          "duplicate_source": "pubmed",
+          "title": "Educational Programs Based on Healthy Habits to Improve Quality of Life and Psychosocial Profile in Women With Neurodegenerative Diseases: The ADVICE Protocol Study (Phase 1)",
+          "merged_into_id": "NCT06925022",
+          "merged_sources": [
+            "europepmc",
+            "pubmed"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "NCT06716164",
+          "duplicate_source": "crossref",
+          "title": "Safety and Efficacy of Metabolically Armed CD19 CAR-T Cells (Meta10-19) in the Treatment of r/r B-NHL Clinical Research",
+          "merged_into_id": "NCT06716164",
+          "merged_sources": [
+            "pubmed",
+            "crossref"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "NCT07033299",
+          "duplicate_source": "openalex",
+          "title": "The Safety, Efficacy, and Cellular Metabolic Kinetics of CT1192 in Treating Patients With Anti Neutrophil Cytoplasmic Antibody Associated Vasculitis",
+          "merged_into_id": "NCT07033299",
+          "merged_sources": [
+            "crossref",
+            "openalex"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "NCT06228404",
+          "duplicate_source": "semantic_scholar",
+          "title": "Clinical Study of Safety and Efficacy of Enhanced PSMA CAR- T in Refractory CRPC",
+          "merged_into_id": "NCT06228404",
+          "merged_sources": [
+            "openalex",
+            "semantic_scholar"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "NCT06106893",
+          "duplicate_source": "preprints",
+          "title": "A Clinical Study of CD19 Universal CAR-\u03b3\u03b4T Cells in Active Systemic Lupus Erythematosus",
+          "merged_into_id": "NCT06106893",
+          "merged_sources": [
+            "semantic_scholar",
+            "preprints"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "NCT07456371",
+          "duplicate_source": "clinicaltrials",
+          "title": "PIC1 Injection Therapy for Relapsed/Refractory B-NHL",
+          "merged_into_id": "NCT07456371",
+          "merged_sources": [
+            "preprints",
+            "clinicaltrials"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "NCT06407947",
+          "duplicate_source": "europepmc",
+          "title": "Study of CT071 Injection in High Risk Newly Diagnosed Multiple Myeloma",
+          "merged_into_id": "NCT06407947",
+          "merged_sources": [
+            "clinicaltrials",
+            "europepmc"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "10.1016/j.jtct.2026.05.045",
+          "duplicate_source": "pubmed",
+          "title": "Clinical Study of SenL-T7 CAR T Cells in the Treatment of Relapsed and Refractory CD7+ T-cell Lymphoblastic Leukemia or T-cell Lymphoblastic Lymphoma",
+          "merged_into_id": "10.1016/j.jtct.2026.05.045",
+          "merged_sources": [
+            "europepmc",
+            "pubmed"
+          ],
+          "matched_on": "doi"
+        },
+        {
+          "duplicate_id": "NCT07563543",
+          "duplicate_source": "crossref",
+          "title": "RN1701 Injection in the Treatment of Relapsed/Refractory B-Cell Lymphomas",
+          "merged_into_id": "NCT07563543",
+          "merged_sources": [
+            "pubmed",
+            "crossref"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "NCT03146533",
+          "duplicate_source": "openalex",
+          "title": "CD19 CART Cells for Patients With Relapse and Refractory CD19+ B-cell Lymphoma.",
+          "merged_into_id": "NCT03146533",
+          "merged_sources": [
+            "crossref",
+            "openalex"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "NCT05473221",
+          "duplicate_source": "semantic_scholar",
+          "title": "Evaluate the Safety and Efficacy of CD33 CAR-T in Patients With R/R AML",
+          "merged_into_id": "NCT05473221",
+          "merged_sources": [
+            "openalex",
+            "semantic_scholar"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "NCT06987916",
+          "duplicate_source": "preprints",
+          "title": "Efficacy and Safety Evaluation of U01(ssCART-19) in B-Cell Lymphoma",
+          "merged_into_id": "NCT06987916",
+          "merged_sources": [
+            "semantic_scholar",
+            "preprints"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "NCT05667506",
+          "duplicate_source": "clinicaltrials",
+          "title": "A Study of CNCT19 Treatment in Children and Adolescent r/r ALL Patients(Pediatric)",
+          "merged_into_id": "NCT05667506",
+          "merged_sources": [
+            "preprints",
+            "clinicaltrials"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "NCT03633773",
+          "duplicate_source": "europepmc",
+          "title": "Safety and Efficacy Evaluation of MUC-1 CART in the Treatment of Intrahepatic Cholangiocarcinoma",
+          "merged_into_id": "NCT03633773",
+          "merged_sources": [
+            "clinicaltrials",
+            "europepmc"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "10.1016/j.clim.2022.109030",
+          "duplicate_source": "pubmed",
+          "title": "A Study to Evaluate the Safety and Efficacy of A2B395, an Allogeneic Logic-gated CAR T, in Participants With Solid Tumors That Express EGFR and Have Lost HLA-A*02 Expression",
+          "merged_into_id": "10.1016/j.clim.2022.109030",
+          "merged_sources": [
+            "europepmc",
+            "pubmed"
+          ],
+          "matched_on": "doi"
+        },
+        {
+          "duplicate_id": "NCT04546906",
+          "duplicate_source": "crossref",
+          "title": "Safety and Efficacy Study of CD22 CAR-T Cells for Relapsed or Refractory Acute Lymphoblastic Leukemia",
+          "merged_into_id": "NCT04546906",
+          "merged_sources": [
+            "pubmed",
+            "crossref"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "NCT06612645",
+          "duplicate_source": "openalex",
+          "title": "Safety and Efficacy of CMD03 CAR T Cell in Children With Relapse or Refractory Solid Tumors",
+          "merged_into_id": "NCT06612645",
+          "merged_sources": [
+            "crossref",
+            "openalex"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "NCT07078929",
+          "duplicate_source": "semantic_scholar",
+          "title": "Clinical Trial of CMD63 Chimeric Antigen Receptor T-cell (CAR T-cell) in Children With Acute Lymphoblastic Leukemia (ALL)",
+          "merged_into_id": "NCT07078929",
+          "merged_sources": [
+            "openalex",
+            "semantic_scholar"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "NCT06481735",
+          "duplicate_source": "preprints",
+          "title": "TCR Reserved and Power3 (SPPL3) Gene Knock-out Allogeneic CD19-targeting CAR-T Cell Therapy in r/r B-ALL",
+          "merged_into_id": "NCT06481735",
+          "merged_sources": [
+            "semantic_scholar",
+            "preprints"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "NCT04499573",
+          "duplicate_source": "clinicaltrials",
+          "title": "Bispecific CD19/CD22 CAR-T for Treatment of Children and Young Adults With r/r B-ALL",
+          "merged_into_id": "NCT04499573",
+          "merged_sources": [
+            "preprints",
+            "clinicaltrials"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "NCT06925022",
+          "duplicate_source": "europepmc",
+          "title": "Educational Programs Based on Healthy Habits to Improve Quality of Life and Psychosocial Profile in Women With Neurodegenerative Diseases: The ADVICE Protocol Study (Phase 1)",
+          "merged_into_id": "NCT06925022",
+          "merged_sources": [
+            "clinicaltrials",
+            "europepmc"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "NCT06716164",
+          "duplicate_source": "pubmed",
+          "title": "Safety and Efficacy of Metabolically Armed CD19 CAR-T Cells (Meta10-19) in the Treatment of r/r B-NHL Clinical Research",
+          "merged_into_id": "NCT06716164",
+          "merged_sources": [
+            "europepmc",
+            "pubmed"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "NCT07033299",
+          "duplicate_source": "crossref",
+          "title": "The Safety, Efficacy, and Cellular Metabolic Kinetics of CT1192 in Treating Patients With Anti Neutrophil Cytoplasmic Antibody Associated Vasculitis",
+          "merged_into_id": "NCT07033299",
+          "merged_sources": [
+            "pubmed",
+            "crossref"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "NCT06228404",
+          "duplicate_source": "openalex",
+          "title": "Clinical Study of Safety and Efficacy of Enhanced PSMA CAR- T in Refractory CRPC",
+          "merged_into_id": "NCT06228404",
+          "merged_sources": [
+            "crossref",
+            "openalex"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "NCT06106893",
+          "duplicate_source": "semantic_scholar",
+          "title": "A Clinical Study of CD19 Universal CAR-\u03b3\u03b4T Cells in Active Systemic Lupus Erythematosus",
+          "merged_into_id": "NCT06106893",
+          "merged_sources": [
+            "openalex",
+            "semantic_scholar"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "NCT07456371",
+          "duplicate_source": "preprints",
+          "title": "PIC1 Injection Therapy for Relapsed/Refractory B-NHL",
+          "merged_into_id": "NCT07456371",
+          "merged_sources": [
+            "semantic_scholar",
+            "preprints"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "NCT06407947",
+          "duplicate_source": "clinicaltrials",
+          "title": "Study of CT071 Injection in High Risk Newly Diagnosed Multiple Myeloma",
+          "merged_into_id": "NCT06407947",
+          "merged_sources": [
+            "preprints",
+            "clinicaltrials"
+          ],
+          "matched_on": "nct_id"
+        }
+      ],
+      "duplicates_removed": 28
+    }
+  },
+  "screening": {
+    "screened": 20,
+    "not_screened": 483,
+    "not_screened_note": "483 record(s) were not screened because the cap of 20 was reached. They are excluded from the review but counted here, because a PRISMA flow diagram must account for every identified record. Raise SRMA_MAX_ABSTRACTS_TO_SCREEN for a complete run.",
+    "included": 0,
+    "excluded": 20,
+    "exclusion_reasons": {
+      "Wrong population": 20
+    },
+    "included_records": [],
+    "excluded_records": [
+      {
+        "id": "NCT04499573",
+        "title": "Bispecific CD19/CD22 CAR-T for Treatment of Children and Young Adults With r/r B-ALL",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (IL-6 inhibitors, IL-6, tocilizumab).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT06925022",
+        "title": "Educational Programs Based on Healthy Habits to Improve Quality of Life and Psychosocial Profile in Women With Neurodegenerative Diseases: The ADVICE Protocol Study (Phase 1)",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the population (CAR-T cell therapy, CAR T-cell Therapy, CAR-T) or the intervention (IL-6 inhibitors, IL-6, tocilizumab).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT06716164",
+        "title": "Safety and Efficacy of Metabolically Armed CD19 CAR-T Cells (Meta10-19) in the Treatment of r/r B-NHL Clinical Research",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (IL-6 inhibitors, IL-6, tocilizumab).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT07033299",
+        "title": "The Safety, Efficacy, and Cellular Metabolic Kinetics of CT1192 in Treating Patients With Anti Neutrophil Cytoplasmic Antibody Associated Vasculitis",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (IL-6 inhibitors, IL-6, tocilizumab).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT06228404",
+        "title": "Clinical Study of Safety and Efficacy of Enhanced PSMA CAR- T in Refractory CRPC",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (IL-6 inhibitors, IL-6, tocilizumab).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT06106893",
+        "title": "A Clinical Study of CD19 Universal CAR-\u03b3\u03b4T Cells in Active Systemic Lupus Erythematosus",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the population (CAR-T cell therapy, CAR T-cell Therapy, CAR-T) or the intervention (IL-6 inhibitors, IL-6, tocilizumab).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT07456371",
+        "title": "PIC1 Injection Therapy for Relapsed/Refractory B-NHL",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (IL-6 inhibitors, IL-6, tocilizumab).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT06407947",
+        "title": "Study of CT071 Injection in High Risk Newly Diagnosed Multiple Myeloma",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the population (CAR-T cell therapy, CAR T-cell Therapy, CAR-T) or the intervention (IL-6 inhibitors, IL-6, tocilizumab).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "10.1016/j.jtct.2026.05.045",
+        "title": "Clinical Study of SenL-T7 CAR T Cells in the Treatment of Relapsed and Refractory CD7+ T-cell Lymphoblastic Leukemia or T-cell Lymphoblastic Lymphoma",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (IL-6 inhibitors, IL-6, tocilizumab).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT07563543",
+        "title": "RN1701 Injection in the Treatment of Relapsed/Refractory B-Cell Lymphomas",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (IL-6 inhibitors, IL-6, tocilizumab).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT03146533",
+        "title": "CD19 CART Cells for Patients With Relapse and Refractory CD19+ B-cell Lymphoma.",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the population (CAR-T cell therapy, CAR T-cell Therapy, CAR-T) or the intervention (IL-6 inhibitors, IL-6, tocilizumab).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT05473221",
+        "title": "Evaluate the Safety and Efficacy of CD33 CAR-T in Patients With R/R AML",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (IL-6 inhibitors, IL-6, tocilizumab).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT06987916",
+        "title": "Efficacy and Safety Evaluation of U01(ssCART-19) in B-Cell Lymphoma",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the population (CAR-T cell therapy, CAR T-cell Therapy, CAR-T).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT05667506",
+        "title": "A Study of CNCT19 Treatment in Children and Adolescent r/r ALL Patients(Pediatric)",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (IL-6 inhibitors, IL-6, tocilizumab).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT03633773",
+        "title": "Safety and Efficacy Evaluation of MUC-1 CART in the Treatment of Intrahepatic Cholangiocarcinoma",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (IL-6 inhibitors, IL-6, tocilizumab).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "10.1016/j.clim.2022.109030",
+        "title": "A Study to Evaluate the Safety and Efficacy of A2B395, an Allogeneic Logic-gated CAR T, in Participants With Solid Tumors That Express EGFR and Have Lost HLA-A*02 Expression",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (IL-6 inhibitors, IL-6, tocilizumab).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT04546906",
+        "title": "Safety and Efficacy Study of CD22 CAR-T Cells for Relapsed or Refractory Acute Lymphoblastic Leukemia",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (IL-6 inhibitors, IL-6, tocilizumab).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT06612645",
+        "title": "Safety and Efficacy of CMD03 CAR T Cell in Children With Relapse or Refractory Solid Tumors",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (IL-6 inhibitors, IL-6, tocilizumab).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT07078929",
+        "title": "Clinical Trial of CMD63 Chimeric Antigen Receptor T-cell (CAR T-cell) in Children With Acute Lymphoblastic Leukemia (ALL)",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (IL-6 inhibitors, IL-6, tocilizumab).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT06481735",
+        "title": "TCR Reserved and Power3 (SPPL3) Gene Knock-out Allogeneic CD19-targeting CAR-T Cell Therapy in r/r B-ALL",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (IL-6 inhibitors, IL-6, tocilizumab).",
+        "decided_by": "relevance gate (Python, no model call)"
+      }
+    ],
+    "gate_rejected": 20,
+    "gate_note": "20 record(s) were rejected by the Python relevance gate before any model call, because their title, abstract, MeSH headings and keywords never mentioned the population or the intervention. This is a deterministic check that the model cannot override.",
+    "reviewer_disagreements": 0,
+    "reviewer_agreement_rate": null,
+    "agreement_note": "Agreement is measured between two prompts with deliberately different risk tolerances, over the records that reached both reviewers. A rate of exactly 1.0 across many records suggests the personas are not actually diverging and the dual-review safeguard is not doing any work. Because inclusion follows the liberal rule, every disagreement counted here is a record that was admitted despite one reviewer objecting; the objection is recorded against each such record in `included_records` and should be settled at full text.",
+    "errors": [],
+    "elapsed_seconds": 0.0
+  },
+  "prisma": {
+    "identified_by_source": {
+      "clinicaltrials": 100,
+      "europepmc": 100,
+      "pubmed": 100,
+      "crossref": 100,
+      "openalex": 100,
+      "semantic_scholar": 0,
+      "preprints": 31
+    },
+    "total_identified": 531,
+    "duplicates_removed": 28,
+    "records_screened": 20,
+    "excluded_at_screening": 20,
+    "exclusion_reasons": {
+      "Wrong population": 20
+    },
+    "full_text_assessed": 0,
+    "excluded_at_full_text": 0,
+    "full_text_exclusion_reasons": {},
+    "studies_included": 0
+  },
+  "elapsed_seconds": 150.8,
+  "r_script_path": "runs/run-20260921-073015/r_script.R",
+  "pdf_report": "runs/run-20260921-073015/manuscript.pdf"
+}

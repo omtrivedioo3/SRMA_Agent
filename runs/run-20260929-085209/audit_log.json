@@ -1,0 +1,158 @@
+[
+  {
+    "source": "pubmed",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi",
+    "params": {
+      "db": "pubmed",
+      "term": "(\"hematologic malignancies\"[tiab] OR leukemia[tiab] OR lymphoma[tiab] OR \"multiple myeloma\"[tiab] OR \"chronic lymphocytic leukemia\"[tiab] OR \"acute lymphoblastic leukemia\"[tiab] OR \"Hematologic Neoplasms\"[MeSH Terms] OR \"Leukemia\"[MeSH Terms] OR \"Lymphoma\"[MeSH Terms] OR \"Multiple Myeloma\"[MeSH Terms]) AND (\"CAR-T cell therapy\"[tiab] OR \"bispecific antibodies\"[tiab] OR \"CAR-T cell immunotherapy\"[tiab] OR \"bispecific antibody therapy\"[tiab] OR \"CAR-T cell therapy\"[MeSH Terms] OR \"Bispecific Antibodies\"[MeSH Terms])",
+      "retmax": 100,
+      "retmode": "json",
+      "sort": "relevance",
+      "tool": "SRMA-Agent",
+      "email": ""
+    },
+    "timestamp_utc": "2026-09-29T08:53:31.781538+00:00",
+    "status_code": 200,
+    "n_results": 6439,
+    "duration_ms": 598,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "((TITLE_ABS:\"hematologic malignancies\" OR TITLE_ABS:leukemia OR TITLE_ABS:lymphoma OR TITLE_ABS:\"multiple myeloma\" OR TITLE_ABS:\"chronic lymphocytic leukemia\" OR TITLE_ABS:\"acute lymphoblastic leukemia\" OR MESH:\"Hematologic Neoplasms\" OR MESH:\"Leukemia\" OR MESH:\"Lymphoma\" OR MESH:\"Multiple Myeloma\") AND (TITLE_ABS:\"CAR-T cell therapy\" OR TITLE_ABS:\"bispecific antibodies\" OR TITLE_ABS:\"CAR-T cell immunotherapy\" OR TITLE_ABS:\"bispecific antibody therapy\" OR MESH:\"CAR-T cell therapy\" OR MESH:\"Bispecific Antibodies\")) AND (SRC:PPR)",
+      "format": "json",
+      "resultType": "core",
+      "pageSize": 100,
+      "cursorMark": "*"
+    },
+    "timestamp_utc": "2026-09-29T08:53:32.395456+00:00",
+    "status_code": 200,
+    "n_results": 19,
+    "duration_ms": 1214,
+    "error": null
+  },
+  {
+    "source": "clinicaltrials",
+    "url": "https://clinicaltrials.gov/api/v2/studies",
+    "params": {
+      "query.term": "(\"hematologic malignancies\" OR leukemia OR lymphoma OR \"multiple myeloma\" OR \"chronic lymphocytic leukemia\" OR \"acute lymphoblastic leukemia\" OR \"Hematologic Neoplasms\") AND (\"CAR-T cell therapy\" OR \"bispecific antibodies\" OR \"CAR-T cell immunotherapy\" OR \"bispecific antibody therapy\")",
+      "pageSize": 100,
+      "format": "json",
+      "countTotal": "true"
+    },
+    "timestamp_utc": "2026-09-29T08:53:32.647681+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1473,
+    "error": null
+  },
+  {
+    "source": "europepmc",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "(TITLE_ABS:\"hematologic malignancies\" OR TITLE_ABS:leukemia OR TITLE_ABS:lymphoma OR TITLE_ABS:\"multiple myeloma\" OR TITLE_ABS:\"chronic lymphocytic leukemia\" OR TITLE_ABS:\"acute lymphoblastic leukemia\" OR MESH:\"Hematologic Neoplasms\" OR MESH:\"Leukemia\" OR MESH:\"Lymphoma\" OR MESH:\"Multiple Myeloma\") AND (TITLE_ABS:\"CAR-T cell therapy\" OR TITLE_ABS:\"bispecific antibodies\" OR TITLE_ABS:\"CAR-T cell immunotherapy\" OR TITLE_ABS:\"bispecific antibody therapy\" OR MESH:\"CAR-T cell therapy\" OR MESH:\"Bispecific Antibodies\")",
+      "format": "json",
+      "resultType": "core",
+      "pageSize": 100,
+      "cursorMark": "*"
+    },
+    "timestamp_utc": "2026-09-29T08:53:33.068744+00:00",
+    "status_code": 200,
+    "n_results": 3642,
+    "duration_ms": 1891,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2024.09.02.610843/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-29T08:53:33.135361+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 738,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2024.01.18.24301502/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-29T08:53:33.181145+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 782,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.05.28.20115758/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-29T08:53:33.218216+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 818,
+    "error": null
+  },
+  {
+    "source": "pubmed",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi",
+    "params": {
+      "db": "pubmed",
+      "id": "33328345,37853078,33498529,33941237,40129265,37608202,35597971,38825523,41797460,38697166,37504327,36811414,42555778,32776808,40944758,37244325,35831199,39632797,32607727,37838564,33824268,39555596,39054331,37537597,36827628,40482735,33279180,34108322,39266530,40862787,41671523,42021304,36031077,28128714,41511330,38940040,42190708,42462106,40488820,40338452,42419996,38563345,41601684,39789980,41313664,41056951,41510841,34921673,42438267,36891310,34768899,39192546,38776433,38558812,38081142,38569225,35061547,42249956,40500259,38625072,37704875,39662763,35123801,29625831,39844726,39970330,37824758,32951662,39983893,38717927,37855056,28233151,32813253,38199897,41957634,37863793,31378663,38885481,41748023,42032324,29024301,35908571,35351984,36613644,39586285,38832423,40701744,40107382,39468313,40119970,34253497,37906232,42269717,42140572,40931245,40634160,38733817,38077330,36583504,33762110",
+      "retmode": "xml",
+      "tool": "SRMA-Agent",
+      "email": ""
+    },
+    "timestamp_utc": "2026-09-29T08:53:33.862629+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 2081,
+    "error": null
+  },
+  {
+    "source": "crossref",
+    "url": "https://api.crossref.org/works",
+    "params": {
+      "query.bibliographic": "hematologic malignancies leukemia CAR-T cell therapy bispecific antibodies",
+      "rows": 100,
+      "cursor": "*",
+      "mailto": ""
+    },
+    "timestamp_utc": "2026-09-29T08:53:34.609962+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 3435,
+    "error": null
+  },
+  {
+    "source": "openalex",
+    "url": "https://api.openalex.org/works",
+    "params": {
+      "search": "(\"hematologic malignancies\" OR leukemia OR lymphoma OR \"multiple myeloma\" OR \"chronic lymphocytic leukemia\" OR \"acute lymphoblastic leukemia\" OR \"Hematologic Neoplasms\") AND (\"CAR-T cell therapy\" OR \"bispecific antibodies\" OR \"CAR-T cell immunotherapy\" OR \"bispecific antibody therapy\")",
+      "mailto": "",
+      "per-page": 100,
+      "cursor": "*"
+    },
+    "timestamp_utc": "2026-09-29T08:53:38.022081+00:00",
+    "status_code": 200,
+    "n_results": 55596,
+    "duration_ms": 6841,
+    "error": null
+  },
+  {
+    "source": "semantic_scholar",
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search",
+    "params": {
+      "query": "hematologic malignancies leukemia CAR-T cell therapy bispecific antibodies",
+      "limit": 100,
+      "offset": 0,
+      "fields": "paperId,externalIds,title,abstract,venue,year,authors,publicationTypes,fieldsOfStudy,citationCount,referenceCount,openAccessPdf,isOpenAccess,url,publicationDate,journal"
+    },
+    "timestamp_utc": "2026-09-29T08:53:39.231498+00:00",
+    "status_code": 429,
+    "n_results": null,
+    "duration_ms": 8048,
+    "error": "HTTP 429"
+  }
+]

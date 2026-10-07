@@ -1,0 +1,325 @@
+==============================================================================
+SYSTEMATIC REVIEW AND META-ANALYSIS (FULL TRANSPARENCY REPORT)
+==============================================================================
+Question : In adult patients with relapsed or refractory multiple myeloma, what is the incidence and relative risk of Cytokine Release Syndrome (CRS) in CAR-T cell therapy compared to bispecific antibodies or standard regimens?
+Run      : run-20261001-123948  (2026-10-01T12:39:48.127497+00:00)
+Elapsed  : 1323.7s
+
+------------------------------------------------------------------------------
+1. STRUCTURED CLINICAL ABSTRACT & EXECUTIVE SYNTHESIS
+------------------------------------------------------------------------------
+  Comparison      : [CAR-T cell therapy] vs. [Bispecific antibodies or standard regimens]
+  Target Cohort   : Adult patients with relapsed or refractory multiple myeloma
+  Primary Endpoint: Incidence and relative risk of Cytokine Release Syndrome (CRS)
+
+  Synthesis Status: Quantitative two-arm pooling was not executed because fewer than 2
+                    extracted abstracts reported complete comparative arm counts. See Section 5
+                    below for the structured qualitative and single-arm study synthesis.
+
+------------------------------------------------------------------------------
+2. PROTOCOL (PICO)
+------------------------------------------------------------------------------
+  Population   : Adult patients with relapsed or refractory multiple myeloma
+  Intervention : CAR-T cell therapy
+  Comparator   : Bispecific antibodies or standard regimens
+  Outcome      : Incidence and relative risk of Cytokine Release Syndrome (CRS)
+
+------------------------------------------------------------------------------
+3. SEARCH STRATEGY
+------------------------------------------------------------------------------
+  (patients[tiab] OR "multiple myeloma"[tiab] OR relapsed[tiab] OR refractory[tiab] OR "Multiple Myeloma"[MeSH Terms]) AND ("CAR-T cell therapy"[tiab] OR "bispecific antibodies"[tiab] OR "standard regimens"[tiab] OR "CAR-T Cell Therapy"[MeSH Terms] OR "Bispecific Antibodies"[MeSH Terms])
+
+------------------------------------------------------------------------------
+4. PRISMA 2020 FLOW & RECORD ACCOUNTING
+------------------------------------------------------------------------------
+  clinicaltrials.................. 25
+  europepmc....................... 25
+  preprints....................... 3
+  crossref........................ 25
+  pubmed.......................... 25
+  openalex........................ 25
+  semantic_scholar................ 0
+  TOTAL IDENTIFIED................ 128
+  duplicates removed.............. -5
+  unique records after dedup...... 123
+  unscreened (screening cap)...... -93
+  records screened................ 30
+  excluded at screening........... -11
+      Wrong intervention.......... 10
+      Wrong population............ 1
+  approved at screening........... 17
+  skipped (extraction cap)........ -5
+  studies extracted (Phase 6)..... 12
+  narrative only (missing counts). -12
+  FINAL STUDIES POOLED............ 0
+
+------------------------------------------------------------------------------
+5. INCLUDED & EXTRACTED STUDIES (12 STUDIES)
+------------------------------------------------------------------------------
+  [1] ID: 10.1016/j.cmi.2024.02.023  |  Citation: Jourdes et al. (2024). PMID:38432433
+      Title     : Characteristics and incidence of infections in patients with multiple myeloma treated by bispecific antibodies: a national retrospective study.
+      Source DB : pubmed  |  Verify: https://pubmed.ncbi.nlm.nih.gov/38432433/
+      Intervent.: Intervention (events=None, N=None, mean=None, sd=None)
+      Control   : Control (events=None, N=None, mean=None, sd=None)
+      Pooling   : NOT POOLED (Narrative Only) -> Reason: no_outcome_data_in_abstract, assessed_from_abstract_only
+      RoB 2     : RobLevel.LOW
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study is a retrospective, multicentre study in BsAb-treated patients with multiple myeloma. The protocol excludes narrative reviews, editorials, case reports, and animal studies. This study is a journal article, which is not an excluded type.
+
+  [2] ID: 10.1080/21645515.2026.2711554  |  Citation: Zhang et al. (2026). PMID:42623170
+      Title     : Global trends in CAR-T cell therapy for multiple myeloma: A bibliometric analysis, 2013-2025.
+      Source DB : europepmc  |  Verify: https://pubmed.ncbi.nlm.nih.gov/42623170/
+      Intervent.: Intervention (events=None, N=874, mean=None, sd=None)
+      Control   : Control (events=None, N=787, mean=None, sd=None)
+      Pooling   : NOT POOLED (Narrative Only) -> Reason: Missing arm event counts
+      RoB 2     : RobLevel.LOW
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study is a bibliometric analysis, not a randomized controlled trial. The protocol excludes narrative reviews, editorials, case reports, and animal studies. The abstract is a review, which is excluded.
+
+  [3] ID: 10.1080/10428194.2026.2699285  |  Citation: Leitner et al. (2026). PMID:42518303
+      Title     : Real-world analyses of bispecific antibodies and CAR-T cell therapy in relapsed or refractory multiple myeloma: a global TriNetX discovery and contemporary validation cohort.
+      Source DB : europepmc  |  Verify: https://pubmed.ncbi.nlm.nih.gov/42518303/
+      Intervent.: BsAbs (events=None, N=822, mean=None, sd=None)
+      Control   : CAR-T (events=None, N=822, mean=None, sd=None)
+      Pooling   : NOT POOLED (Narrative Only) -> Reason: assessed_from_abstract_only
+      RoB 2     : RobLevel.LOW
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study compares bispecific antibodies and CAR-T cell therapy, which is not the comparator specified in the protocol. The protocol states that the comparator is bispecific antibodies or standard regimens.
+
+  [4] ID: 10.1101/2024.09.02.610843  |  Citation: Tirado et al. (2024). DOI:10.1101/2024.09.02.610843
+      Title     : CAR-T cells targeting CCR9 and CD1a for the treatment of T cell acute lymphoblastic leukemia
+      Source DB : preprints  |  Verify: https://doi.org/10.1101/2024.09.02.610843
+      Intervent.: CCR9/CD1a CAR-T cells (events=None, N=None, mean=None, sd=None)
+      Control   : Single CAR-T cell (events=None, N=None, mean=None, sd=None)
+      Pooling   : NOT POOLED (Narrative Only) -> Reason: no_outcome_data_in_abstract
+      RoB 2     : RobLevel.LOW
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: Wrong population. The abstract states that the study is targeting T-ALL, not multiple myeloma.
+
+  [5] ID: 10.1056/nejmoa2204591  |  Citation: Chari et al. (2024). PMID:38609727
+      Title     : Talquetamab, a T-Cell–Redirecting GPRC5D Bispecific Antibody for Multiple Myeloma
+      Source DB : pubmed, openalex  |  Verify: https://pubmed.ncbi.nlm.nih.gov/38609727/
+      Intervent.: Talquetamab (events=None, N=None, mean=None, sd=None)
+      Control   : None (events=None, N=None, mean=None, sd=None)
+      Pooling   : NOT POOLED (Narrative Only) -> Reason: Missing arm event counts
+      RoB 2     : RobLevel.LOW
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study included patients with heavily pretreated relapsed or refractory multiple myeloma that had progressed with established therapies or who could not receive these therapies without unacceptable side effects. The protocol excludes studies using bispecific antibodies or
+
+  [6] ID: 10.6004/jnccn.2026.7004  |  Citation: Miller et al. (2026). PMID:42190708
+      Title     : Incorporating the Next Generation of Immunotherapies Into the Treatment of Multiple Myeloma.
+      Source DB : europepmc  |  Verify: https://pubmed.ncbi.nlm.nih.gov/42190708/
+      Intervent.: Intervention (events=None, N=None, mean=None, sd=None)
+      Control   : Control (events=None, N=None, mean=None, sd=None)
+      Pooling   : NOT POOLED (Narrative Only) -> Reason: assessed_from_abstract_only
+      RoB 2     : RobLevel.LOW
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states "CAR T-cell therapy and BsAbs necessitate careful attention to unique toxicities, including cytokine release syndrome, immune effector cell-associated neurotoxicity syndrome, cytopenias, and heightened infection risk.", which is not in the protocol.
+
+  [7] ID: 10.1200/jco.20.00386  |  Citation: Steinhardt et al. (2025). PMID:40738883
+      Title     : Activity of CAR-T cells and bispecific antibodies in multiple myeloma with extramedullary involvement.
+      Source DB : pubmed  |  Verify: https://pubmed.ncbi.nlm.nih.gov/40738883/
+      Intervent.: Cilta-cel (events=None, N=15, mean=None, sd=None)
+      Control   : Talquetamab (events=None, N=15, mean=None, sd=None)
+      Pooling   : NOT POOLED (Narrative Only) -> Reason: ungrounded_event_counts_removed_by_python_verifier
+      RoB 2     : RobLevel.LOW
+      Inclusion : both reviewers agreed to include
+
+  [8] ID: 10.3390/cells15181660  |  Citation: Canichella et al. (2026). PMID:42782760
+      Title     : Beyond CAR-T: Preventing and Treating Relapse in B-Cell Haematological Malignancies.
+      Source DB : europepmc  |  Verify: https://pubmed.ncbi.nlm.nih.gov/42782760/
+      Intervent.: Intervention (events=None, N=None, mean=None, sd=None)
+      Control   : Control (events=None, N=None, mean=None, sd=None)
+      Pooling   : NOT POOLED (Narrative Only) -> Reason: Missing arm event counts
+      RoB 2     : RobLevel.LOW
+      Inclusion : both reviewers agreed to include
+
+  [9] ID: 10.1038/s41408-022-00643-3  |  Citation: Merz et al. (2024). PMID:39632797
+      Title     : Bispecific antibodies targeting BCMA or GPRC5D are highly effective in relapsed myeloma after CAR T-cell therapy.
+      Source DB : pubmed  |  Verify: https://pubmed.ncbi.nlm.nih.gov/39632797/
+      Intervent.: Talquetamab (events=None, N=28, mean=None, sd=None)
+      Control   : Teclistamab (events=None, N=37, mean=None, sd=None)
+      Pooling   : NOT POOLED (Narrative Only) -> Reason: Missing arm event counts
+      RoB 2     : RobLevel.LOW
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study analyzed outcomes of post-CAR T-cell therapy relapse and impact of different salvage strategies in an international cohort of 139 patients (n = 130 ide-cel, n = 9 cilta-cel), receiving talquetamab (n = 28), teclistamab (n = 37), combinations of immunomodulating dru
+
+  [10] ID: 10.3390/ijms27167179  |  Citation: Shambhavi et al. (2026). PMID:42653183
+      Title     : T-Cell Engagers Targeting <i>BCMA</i>, <i>GPRC5D</i>, or <i>FcRH5</i> in Relapsed/Refractory Multiple Myeloma: The Landscape Beyond CAR-T Cell Therapy-A Systematic Review and Network Meta-Analysis.
+      Source DB : europepmc, pubmed  |  Verify: https://pubmed.ncbi.nlm.nih.gov/42653183/
+      Intervent.: Talquetamab (events=None, N=None, mean=None, sd=None)
+      Control   : Standard of care (SOC) (events=None, N=None, mean=None, sd=None)
+      Pooling   : NOT POOLED (Narrative Only) -> Reason: Missing arm event counts
+      RoB 2     : RobLevel.LOW
+      Inclusion : both reviewers agreed to include
+
+  [11] ID: 10.1016/j.blre.2025.101342  |  Citation: Zhou et al. (2025). PMID:41177723
+      Title     : Bispecific antibodies in multiple myeloma: maximizing potential through rational combination therapies.
+      Source DB : pubmed  |  Verify: https://pubmed.ncbi.nlm.nih.gov/41177723/
+      Intervent.: Intervention (events=None, N=None, mean=None, sd=None)
+      Control   : Control (events=None, N=None, mean=None, sd=None)
+      Pooling   : NOT POOLED (Narrative Only) -> Reason: assessed_from_abstract_only
+      RoB 2     : RobLevel.LOW
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that teclistamab, elranatamab, linvoseltamab (all BCMA×CD3) and talquetamab (GPRC5D × CD3) have received regulatory approval for relapsed/refractory MM. The protocol excludes studies using CAR-T cell therapy.
+
+  [12] ID: 10.1007/s12015-026-11228-z  |  Citation: Su et al. (2026). PMID:42684629
+      Title     : Beyond Remission: Risk-Adapted Maintenance and Mechanism-Guided Salvage After CAR T-Cell Therapy for Multiple Myeloma.
+      Source DB : europepmc  |  Verify: https://pubmed.ncbi.nlm.nih.gov/42684629/
+      Intervent.: Intervention (events=None, N=None, mean=None, sd=None)
+      Control   : Control (events=None, N=None, mean=None, sd=None)
+      Pooling   : NOT POOLED (Narrative Only) -> Reason: assessed_from_abstract_only
+      RoB 2     : RobLevel.LOW
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that this is a review, not a primary research study. The protocol excludes narrative reviews.
+
+------------------------------------------------------------------------------
+6. EXCLUDED ARTICLES AT SCREENING (11 ARTICLES WITH REASONS)
+------------------------------------------------------------------------------
+  [1] ID: 10.1056/nejmoa1707447  |  Category: Wrong intervention  |  Verify: https://pubmed.ncbi.nlm.nih.gov/29226797/
+      Title      : Axicabtagene Ciloleucel CAR T-Cell Therapy in Refractory Large B-Cell Lymphoma
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).
+
+  [2] ID: 10.1056/nejmoa1817226  |  Category: Wrong intervention  |  Verify: https://pubmed.ncbi.nlm.nih.gov/31042825/
+      Title      : Anti-BCMA CAR T-Cell Therapy bb2121 in Relapsed or Refractory Multiple Myeloma
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).
+
+  [3] ID: 10.1056/nejmoa2024850  |  Category: Wrong intervention  |  Verify: https://pubmed.ncbi.nlm.nih.gov/33626253/
+      Title      : Idecabtagene Vicleucel in Relapsed and Refractory Multiple Myeloma
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).
+
+  [4] ID: 10.1101/2020.05.28.20115758  |  Category: Wrong intervention  |  Verify: https://doi.org/10.1101/2020.05.28.20115758
+      Title      : An inflammatory cytokine signature helps predict COVID-19 severity and death
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).
+
+  [5] ID: 10.1056/nejmoa1914347  |  Category: Wrong intervention  |  Verify: https://pubmed.ncbi.nlm.nih.gov/32242358/
+      Title      : KTE-X19 CAR T-Cell Therapy in Relapsed or Refractory Mantle-Cell Lymphoma
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).
+
+  [6] ID: 10.1056/nejmoa1804980  |  Category: Wrong intervention  |  Verify: https://pubmed.ncbi.nlm.nih.gov/30501490/
+      Title      : Tisagenlecleucel in Adult Relapsed or Refractory Diffuse Large B-Cell Lymphoma
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).
+
+  [7] ID: 10.1007/s40262-026-01663-z  |  Category: Wrong intervention  |  Verify: https://pubmed.ncbi.nlm.nih.gov/42287565/
+      Title      : PF-06863135 As Single Agent And In Combination With Immunomodulatory Agents In Relapse/Refractory Multiple Myeloma
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).
+
+  [8] ID: 10.1056/nejmoa2203478  |  Category: Wrong intervention  |  Verify: https://pubmed.ncbi.nlm.nih.gov/35661166/
+      Title      : Teclistamab in Relapsed or Refractory Multiple Myeloma
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).
+
+  [9] ID: 10.1080/14712598.2024.2352591  |  Category: Wrong intervention  |  Verify: https://pubmed.ncbi.nlm.nih.gov/38738379/
+      Title      : Cilta-cel, a BCMA-targeting CAR-T therapy for patients with multiple myeloma.
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).
+
+  [10] ID: 10.1056/nejmoa1709866  |  Category: Wrong intervention  |  Verify: https://pubmed.ncbi.nlm.nih.gov/29385370/
+      Title      : Tisagenlecleucel in Children and Young Adults with B-Cell Lymphoblastic Leukemia
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).
+
+  [11] ID: 10.1038/s41408-021-00459-7  |  Category: Wrong population  |  Verify: https://pubmed.ncbi.nlm.nih.gov/33824268/
+      Title      : CAR-T cell therapy: current limitations and potential strategies
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the population (patients, multiple myeloma, relapsed).
+
+------------------------------------------------------------------------------
+7. APPROVED AT SCREENING BUT NOT POOLED IN META-ANALYSIS
+------------------------------------------------------------------------------
+  [1] ID: 10.1016/j.cmi.2024.02.023  |  Stage: Phase 7 (Pooling)  |  Verify: https://pubmed.ncbi.nlm.nih.gov/38432433/
+      Title  : Characteristics and incidence of infections in patients with multiple myeloma treated by bispecific antibodies: a national retrospective study.
+      Reason : MISSING_BINARY_DATA: Requires n_events and n_total in both arms; one or more were missing.
+
+  [2] ID: 10.1080/21645515.2026.2711554  |  Stage: Phase 7 (Pooling)  |  Verify: https://pubmed.ncbi.nlm.nih.gov/42623170/
+      Title  : Global trends in CAR-T cell therapy for multiple myeloma: A bibliometric analysis, 2013-2025.
+      Reason : MISSING_BINARY_DATA: Requires n_events and n_total in both arms; one or more were missing.
+
+  [3] ID: 10.1080/10428194.2026.2699285  |  Stage: Phase 7 (Pooling)  |  Verify: https://pubmed.ncbi.nlm.nih.gov/42518303/
+      Title  : Real-world analyses of bispecific antibodies and CAR-T cell therapy in relapsed or refractory multiple myeloma: a global TriNetX discovery and contemporary validation cohort.
+      Reason : MISSING_BINARY_DATA: Requires n_events and n_total in both arms; one or more were missing.
+
+  [4] ID: 10.1101/2024.09.02.610843  |  Stage: Phase 7 (Pooling)  |  Verify: https://doi.org/10.1101/2024.09.02.610843
+      Title  : CAR-T cells targeting CCR9 and CD1a for the treatment of T cell acute lymphoblastic leukemia
+      Reason : MISSING_BINARY_DATA: Requires n_events and n_total in both arms; one or more were missing.
+
+  [5] ID: 10.1056/nejmoa2204591  |  Stage: Phase 7 (Pooling)  |  Verify: https://pubmed.ncbi.nlm.nih.gov/38609727/
+      Title  : Talquetamab, a T-Cell–Redirecting GPRC5D Bispecific Antibody for Multiple Myeloma
+      Reason : MISSING_BINARY_DATA: Requires n_events and n_total in both arms; one or more were missing.
+
+  [6] ID: 10.6004/jnccn.2026.7004  |  Stage: Phase 7 (Pooling)  |  Verify: https://pubmed.ncbi.nlm.nih.gov/42190708/
+      Title  : Incorporating the Next Generation of Immunotherapies Into the Treatment of Multiple Myeloma.
+      Reason : MISSING_BINARY_DATA: Requires n_events and n_total in both arms; one or more were missing.
+
+  [7] ID: 10.1200/jco.20.00386  |  Stage: Phase 7 (Pooling)  |  Verify: https://pubmed.ncbi.nlm.nih.gov/40738883/
+      Title  : Activity of CAR-T cells and bispecific antibodies in multiple myeloma with extramedullary involvement.
+      Reason : MISSING_BINARY_DATA: Requires n_events and n_total in both arms; one or more were missing.
+
+  [8] ID: 10.3390/cells15181660  |  Stage: Phase 7 (Pooling)  |  Verify: https://pubmed.ncbi.nlm.nih.gov/42782760/
+      Title  : Beyond CAR-T: Preventing and Treating Relapse in B-Cell Haematological Malignancies.
+      Reason : MISSING_BINARY_DATA: Requires n_events and n_total in both arms; one or more were missing.
+
+  [9] ID: 10.1038/s41408-022-00643-3  |  Stage: Phase 7 (Pooling)  |  Verify: https://pubmed.ncbi.nlm.nih.gov/39632797/
+      Title  : Bispecific antibodies targeting BCMA or GPRC5D are highly effective in relapsed myeloma after CAR T-cell therapy.
+      Reason : MISSING_BINARY_DATA: Requires n_events and n_total in both arms; one or more were missing.
+
+  [10] ID: 10.3390/ijms27167179  |  Stage: Phase 7 (Pooling)  |  Verify: https://pubmed.ncbi.nlm.nih.gov/42653183/
+      Title  : T-Cell Engagers Targeting <i>BCMA</i>, <i>GPRC5D</i>, or <i>FcRH5</i> in Relapsed/Refractory Multiple Myeloma: The Landscape Beyond CAR-T Cell Therapy-A Systematic Review and Network Meta-Analysis.
+      Reason : MISSING_BINARY_DATA: Requires n_events and n_total in both arms; one or more were missing.
+
+  [11] ID: 10.1016/j.blre.2025.101342  |  Stage: Phase 7 (Pooling)  |  Verify: https://pubmed.ncbi.nlm.nih.gov/41177723/
+      Title  : Bispecific antibodies in multiple myeloma: maximizing potential through rational combination therapies.
+      Reason : MISSING_BINARY_DATA: Requires n_events and n_total in both arms; one or more were missing.
+
+  [12] ID: 10.1007/s12015-026-11228-z  |  Stage: Phase 7 (Pooling)  |  Verify: https://pubmed.ncbi.nlm.nih.gov/42684629/
+      Title  : Beyond Remission: Risk-Adapted Maintenance and Mechanism-Guided Salvage After CAR T-Cell Therapy for Multiple Myeloma.
+      Reason : MISSING_BINARY_DATA: Requires n_events and n_total in both arms; one or more were missing.
+
+  [13] ID: 10.1056/nejmoa2213614  |  Stage: Phase 6 (Extraction Cap)  |  Verify: https://pubmed.ncbi.nlm.nih.gov/36762851/
+      Title  : Ide-cel or Standard Regimens in Relapsed and Refractory Multiple Myeloma
+      Reason : Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=12 cap was reached.
+
+  [14] ID: 10.1080/14737140.2024.2445145  |  Stage: Phase 6 (Extraction Cap)  |  Verify: https://pubmed.ncbi.nlm.nih.gov/39729045/
+      Title  : Practical insights into bispecific antibody therapy in multiple myeloma.
+      Reason : Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=12 cap was reached.
+
+  [15] ID: 10.3390/cancers18152415  |  Stage: Phase 6 (Extraction Cap)  |  Verify: https://pubmed.ncbi.nlm.nih.gov/42588634/
+      Title  : When Myeloma Escapes the Bone Marrow: Extramedullary Disease in the Immunotherapy Era.
+      Reason : Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=12 cap was reached.
+
+  [16] ID: 10.1080/14712598.2026.2646947  |  Stage: Phase 6 (Extraction Cap)  |  Verify: https://pubmed.ncbi.nlm.nih.gov/41842719/
+      Title  : A review of the clinical efficacy of monoclonal antibody (mAb)-based therapies for relapsed/refractory multiple myeloma (RRMM).
+      Reason : Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=12 cap was reached.
+
+  [17] ID: 10.1158/2643-3230.bcd-25-0461  |  Stage: Phase 6 (Extraction Cap)  |  Verify: https://pubmed.ncbi.nlm.nih.gov/42284467/
+      Title  : Outcomes of CAR T-cell Therapy and Bispecific Antibodies as Single-Modality and Sequential Strategies in Relapsed/Refractory Multiple Myeloma.
+      Reason : Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=12 cap was reached.
+
+------------------------------------------------------------------------------
+8. DEDUPLICATION AUDIT LOG (5 DUPLICATES REMOVED)
+------------------------------------------------------------------------------
+  [1] Duplicate ID: 10.20944/preprints202607.0989.v1 (europepmc) -> Merged Into: 10.3390/ijms27167179 [Matched on: title]
+      Title  : T-Cell Engagers Targeting BCMA, GPRC5D, or FcRH5 in Relapsed/ Refractory Multiple Myeloma, Landscape Beyond CAR-T Cell Therapy, a Systematic Review and Network Meta Analysis
+      Verify : https://doi.org/10.20944/preprints202607.0989.v1
+  [2] Duplicate ID: 10.1038/s41419-025-08203-w (pubmed) -> Merged Into: 10.3390/ijms27167179 [Matched on: pmid]
+      Title  : T-Cell Engagers Targeting BCMA, GPRC5D, or FcRH5 in Relapsed/Refractory Multiple Myeloma: The Landscape Beyond CAR-T Cell Therapy-A Systematic Review and Network Meta-Analysis.
+      Verify : https://pubmed.ncbi.nlm.nih.gov/42653183/
+  [3] Duplicate ID: 10.1097/ppo.0000000000000847 (pubmed) -> Merged Into: 10.1056/nejmoa2514663 [Matched on: pmcid]
+      Title  : T-Cell Redirecting Antibodies for the Treatment of Multiple Myeloma: Off-the-Shelf T-Cell Immunity.
+      Verify : https://pubmed.ncbi.nlm.nih.gov/42809698/
+  [4] Duplicate ID: 10.1056/nejmoa2204591 (openalex) -> Merged Into: 10.1056/nejmoa2204591 [Matched on: doi]
+      Title  : Talquetamab, a T-Cell–Redirecting GPRC5D Bispecific Antibody for Multiple Myeloma
+      Verify : https://pubmed.ncbi.nlm.nih.gov/36507686/
+  [5] Duplicate ID: 10.21037/cco-25-110 (europepmc) -> Merged Into: 10.21037/cco-25-110 [Matched on: doi]
+      Title  : The evolution of bispecific antibodies in multiple myeloma.
+      Verify : https://pubmed.ncbi.nlm.nih.gov/41797460/
+
+------------------------------------------------------------------------------
+ISSUES ENCOUNTERED
+------------------------------------------------------------------------------
+  - Quantitative pooling was not possible: No study contained data sufficient for this analysis.. This usually means the abstracts did not report event counts or means with standard deviations. A narrative synthesis is the correct output in that case, not a fabricated number.
+
+------------------------------------------------------------------------------
+This is a research tool that supports expert reviewers. It does not
+replace them, and its output is not clinical advice. Every number
+above was computed in Python from extracted data; verify against the
+source records in result.json and report.md before citing.
+------------------------------------------------------------------------------

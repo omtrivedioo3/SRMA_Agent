@@ -1,0 +1,1886 @@
+{
+  "ok": true,
+  "run_id": "run-20261006-085615",
+  "run_dir": "/usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20261006-085615",
+  "question": "In adult patients with type 2 diabetes and high cardiovascular risk, do GLP-1 receptor agonists (semaglutide, liraglutide, or dulaglutide) compared to placebo reduce major adverse cardiovascular events (MACE: cardiovascular death, nonfatal myocardial infarction, or nonfatal stroke)?",
+  "generated_utc": "2026-10-06T08:56:15.137834+00:00",
+  "config": {
+    "gemini_backend": "ai-studio",
+    "orchestrator_model": "gemini-3.6-flash",
+    "clinical_model": "ollama_chat/medgemma"
+  },
+  "phases_completed": [
+    "protocol",
+    "search_strategy",
+    "search",
+    "deduplication",
+    "screening",
+    "extraction",
+    "meta_analysis",
+    "plots",
+    "grade"
+  ],
+  "errors": [],
+  "protocol": {
+    "population": "Adult patients with type 2 diabetes and high cardiovascular risk",
+    "intervention": "GLP-1 receptor agonists (semaglutide, liraglutide, or dulaglutide)",
+    "comparator": "Placebo",
+    "primary_outcome": "Major adverse cardiovascular events (MACE: cardiovascular death, nonfatal myocardial infarction, or nonfatal stroke)",
+    "secondary_outcomes": [],
+    "study_designs": [
+      "Randomized Controlled Trial"
+    ],
+    "inclusion_criteria": [
+      "Adult patients with type 2 diabetes",
+      "High cardiovascular risk",
+      "Randomized Controlled Trial"
+    ],
+    "exclusion_criteria": [
+      "Animal studies",
+      "In-vitro studies",
+      "Narrative reviews",
+      "Editorials",
+      "Case reports"
+    ],
+    "search_keywords": [
+      "semaglutide",
+      "liraglutide",
+      "dulaglutide",
+      "GLP-1 receptor agonists",
+      "diabetes",
+      "cardiovascular disease",
+      "MACE",
+      "major adverse cardiovascular events",
+      "cardiovascular death",
+      "myocardial infarction",
+      "stroke"
+    ],
+    "mesh_terms": [
+      "Diabetes Mellitus",
+      "Cardiovascular Diseases",
+      "GLP-1 Receptor Agonists",
+      "Myocardial Infarction",
+      "Stroke",
+      "Major Adverse Cardiac Events"
+    ]
+  },
+  "protocol_text": "  Population   : Adult patients with type 2 diabetes and high cardiovascular risk\n  Intervention : GLP-1 receptor agonists (semaglutide, liraglutide, or dulaglutide)\n  Comparator   : Placebo\n  Primary outcome : Major adverse cardiovascular events (MACE: cardiovascular death, nonfatal myocardial infarction, or nonfatal stroke)\n  Eligible designs : Randomized Controlled Trial\n  Inclusion criteria:\n      - Adult patients with type 2 diabetes\n      - High cardiovascular risk\n      - Randomized Controlled Trial\n  Exclusion criteria:\n      - Animal studies\n      - In-vitro studies\n      - Narrative reviews\n      - Editorials\n      - Case reports",
+  "search_strategy": {
+    "population_terms": [
+      "type 2 diabetes",
+      "patients",
+      "diabetic patients",
+      "diabetes",
+      "type 2 diabetes mellitus"
+    ],
+    "population_mesh": [
+      "Diabetes Mellitus"
+    ],
+    "intervention_terms": [
+      "GLP-1 receptor agonists",
+      "semaglutide",
+      "liraglutide",
+      "dulaglutide",
+      "GLP-1 agonists"
+    ],
+    "intervention_mesh": [
+      "GLP-1 Receptor Agonists"
+    ],
+    "outcome_terms": [
+      "major adverse cardiovascular events",
+      "MACE",
+      "cardiovascular death",
+      "nonfatal myocardial infarction",
+      "nonfatal stroke",
+      "cardiovascular events"
+    ],
+    "outcome_excluded_from_query": true,
+    "outcome_exclusion_rationale": "Trials often omit outcome names from the title and abstract. Requiring an outcome term in the Boolean AND chain is a known cause of missed eligible studies (Cochrane Handbook).",
+    "hygiene_notes": [
+      "population: rewrote 'adult patients' to 'patients' - the original was a cohort description, not a phrase an author would write.",
+      "population: rewrote 'patients with diabetes' to 'diabetes' - the original was a cohort description, not a phrase an author would write."
+    ]
+  },
+  "query": "(\"type 2 diabetes\"[tiab] OR patients[tiab] OR \"diabetic patients\"[tiab] OR diabetes[tiab] OR \"type 2 diabetes mellitus\"[tiab] OR \"Diabetes Mellitus\"[MeSH Terms]) AND (\"GLP-1 receptor agonists\"[tiab] OR semaglutide[tiab] OR liraglutide[tiab] OR dulaglutide[tiab] OR \"GLP-1 agonists\"[tiab] OR \"GLP-1 Receptor Agonists\"[MeSH Terms])",
+  "queries_by_source": {
+    "clinicaltrials": "(\"type 2 diabetes\" OR patients OR \"diabetic patients\" OR diabetes OR \"type 2 diabetes mellitus\" OR \"Diabetes Mellitus\") AND (\"GLP-1 receptor agonists\" OR semaglutide OR liraglutide OR dulaglutide OR \"GLP-1 agonists\")",
+    "crossref": "type 2 diabetes patients GLP-1 receptor agonists semaglutide",
+    "europepmc": "(TITLE_ABS:\"type 2 diabetes\" OR TITLE_ABS:patients OR TITLE_ABS:\"diabetic patients\" OR TITLE_ABS:diabetes OR TITLE_ABS:\"type 2 diabetes mellitus\" OR MESH:\"Diabetes Mellitus\") AND (TITLE_ABS:\"GLP-1 receptor agonists\" OR TITLE_ABS:semaglutide OR TITLE_ABS:liraglutide OR TITLE_ABS:dulaglutide OR TITLE_ABS:\"GLP-1 agonists\" OR MESH:\"GLP-1 Receptor Agonists\")",
+    "openalex": "(\"type 2 diabetes\" OR patients OR \"diabetic patients\" OR diabetes OR \"type 2 diabetes mellitus\" OR \"Diabetes Mellitus\") AND (\"GLP-1 receptor agonists\" OR semaglutide OR liraglutide OR dulaglutide OR \"GLP-1 agonists\")",
+    "preprints": "(TITLE_ABS:\"type 2 diabetes\" OR TITLE_ABS:patients OR TITLE_ABS:\"diabetic patients\" OR TITLE_ABS:diabetes OR TITLE_ABS:\"type 2 diabetes mellitus\" OR MESH:\"Diabetes Mellitus\") AND (TITLE_ABS:\"GLP-1 receptor agonists\" OR TITLE_ABS:semaglutide OR TITLE_ABS:liraglutide OR TITLE_ABS:dulaglutide OR TITLE_ABS:\"GLP-1 agonists\" OR MESH:\"GLP-1 Receptor Agonists\")",
+    "pubmed": "(\"type 2 diabetes\"[tiab] OR patients[tiab] OR \"diabetic patients\"[tiab] OR diabetes[tiab] OR \"type 2 diabetes mellitus\"[tiab] OR \"Diabetes Mellitus\"[MeSH Terms]) AND (\"GLP-1 receptor agonists\"[tiab] OR semaglutide[tiab] OR liraglutide[tiab] OR dulaglutide[tiab] OR \"GLP-1 agonists\"[tiab] OR \"GLP-1 Receptor Agonists\"[MeSH Terms])",
+    "semantic_scholar": "type 2 diabetes patients GLP-1 receptor agonists semaglutide"
+  },
+  "search": {
+    "query": "(\"type 2 diabetes\"[tiab] OR patients[tiab] OR \"diabetic patients\"[tiab] OR diabetes[tiab] OR \"type 2 diabetes mellitus\"[tiab] OR \"Diabetes Mellitus\"[MeSH Terms]) AND (\"GLP-1 receptor agonists\"[tiab] OR semaglutide[tiab] OR liraglutide[tiab] OR dulaglutide[tiab] OR \"GLP-1 agonists\"[tiab] OR \"GLP-1 Receptor Agonists\"[MeSH Terms])",
+    "queries_by_source": {
+      "clinicaltrials": "(\"type 2 diabetes\" OR patients OR \"diabetic patients\" OR diabetes OR \"type 2 diabetes mellitus\" OR \"Diabetes Mellitus\") AND (\"GLP-1 receptor agonists\" OR semaglutide OR liraglutide OR dulaglutide OR \"GLP-1 agonists\")",
+      "crossref": "type 2 diabetes patients GLP-1 receptor agonists semaglutide",
+      "europepmc": "(TITLE_ABS:\"type 2 diabetes\" OR TITLE_ABS:patients OR TITLE_ABS:\"diabetic patients\" OR TITLE_ABS:diabetes OR TITLE_ABS:\"type 2 diabetes mellitus\" OR MESH:\"Diabetes Mellitus\") AND (TITLE_ABS:\"GLP-1 receptor agonists\" OR TITLE_ABS:semaglutide OR TITLE_ABS:liraglutide OR TITLE_ABS:dulaglutide OR TITLE_ABS:\"GLP-1 agonists\" OR MESH:\"GLP-1 Receptor Agonists\")",
+      "openalex": "(\"type 2 diabetes\" OR patients OR \"diabetic patients\" OR diabetes OR \"type 2 diabetes mellitus\" OR \"Diabetes Mellitus\") AND (\"GLP-1 receptor agonists\" OR semaglutide OR liraglutide OR dulaglutide OR \"GLP-1 agonists\")",
+      "preprints": "(TITLE_ABS:\"type 2 diabetes\" OR TITLE_ABS:patients OR TITLE_ABS:\"diabetic patients\" OR TITLE_ABS:diabetes OR TITLE_ABS:\"type 2 diabetes mellitus\" OR MESH:\"Diabetes Mellitus\") AND (TITLE_ABS:\"GLP-1 receptor agonists\" OR TITLE_ABS:semaglutide OR TITLE_ABS:liraglutide OR TITLE_ABS:dulaglutide OR TITLE_ABS:\"GLP-1 agonists\" OR MESH:\"GLP-1 Receptor Agonists\")",
+      "pubmed": "(\"type 2 diabetes\"[tiab] OR patients[tiab] OR \"diabetic patients\"[tiab] OR diabetes[tiab] OR \"type 2 diabetes mellitus\"[tiab] OR \"Diabetes Mellitus\"[MeSH Terms]) AND (\"GLP-1 receptor agonists\"[tiab] OR semaglutide[tiab] OR liraglutide[tiab] OR dulaglutide[tiab] OR \"GLP-1 agonists\"[tiab] OR \"GLP-1 Receptor Agonists\"[MeSH Terms])",
+      "semantic_scholar": "type 2 diabetes patients GLP-1 receptor agonists semaglutide"
+    },
+    "per_source": {
+      "clinicaltrials": {
+        "status": "success",
+        "count": 100,
+        "error": null,
+        "query_sent": "(\"type 2 diabetes\" OR patients OR \"diabetic patients\" OR diabetes OR \"type 2 diabetes mellitus\" OR \"Diabetes Mellitus\") AND (\"GLP-1 receptor agonists\" OR semaglutide OR liraglutide OR dulaglutide OR \"GLP-1 agonists\")"
+      },
+      "pubmed": {
+        "status": "success",
+        "count": 100,
+        "error": null,
+        "query_sent": "(\"type 2 diabetes\"[tiab] OR patients[tiab] OR \"diabetic patients\"[tiab] OR diabetes[tiab] OR \"type 2 diabetes mellitus\"[tiab] OR \"Diabetes Mellitus\"[MeSH Terms]) AND (\"GLP-1 receptor agonists\"[tiab] OR semaglutide[tiab] OR liraglutide[tiab] OR dulaglutide[tiab] OR \"GLP-1 agonists\"[tiab] OR \"GLP-1 Receptor Agonists\"[MeSH Terms])"
+      },
+      "crossref": {
+        "status": "success",
+        "count": 100,
+        "error": null,
+        "query_sent": "type 2 diabetes patients GLP-1 receptor agonists semaglutide"
+      },
+      "openalex": {
+        "status": "success",
+        "count": 100,
+        "error": null,
+        "query_sent": "(\"type 2 diabetes\" OR patients OR \"diabetic patients\" OR diabetes OR \"type 2 diabetes mellitus\" OR \"Diabetes Mellitus\") AND (\"GLP-1 receptor agonists\" OR semaglutide OR liraglutide OR dulaglutide OR \"GLP-1 agonists\")"
+      },
+      "europepmc": {
+        "status": "success",
+        "count": 100,
+        "error": null,
+        "query_sent": "(TITLE_ABS:\"type 2 diabetes\" OR TITLE_ABS:patients OR TITLE_ABS:\"diabetic patients\" OR TITLE_ABS:diabetes OR TITLE_ABS:\"type 2 diabetes mellitus\" OR MESH:\"Diabetes Mellitus\") AND (TITLE_ABS:\"GLP-1 receptor agonists\" OR TITLE_ABS:semaglutide OR TITLE_ABS:liraglutide OR TITLE_ABS:dulaglutide OR TITLE_ABS:\"GLP-1 agonists\" OR MESH:\"GLP-1 Receptor Agonists\")"
+      },
+      "preprints": {
+        "status": "success",
+        "count": 61,
+        "error": null,
+        "query_sent": "(TITLE_ABS:\"type 2 diabetes\" OR TITLE_ABS:patients OR TITLE_ABS:\"diabetic patients\" OR TITLE_ABS:diabetes OR TITLE_ABS:\"type 2 diabetes mellitus\" OR MESH:\"Diabetes Mellitus\") AND (TITLE_ABS:\"GLP-1 receptor agonists\" OR TITLE_ABS:semaglutide OR TITLE_ABS:liraglutide OR TITLE_ABS:dulaglutide OR TITLE_ABS:\"GLP-1 agonists\" OR MESH:\"GLP-1 Receptor Agonists\")"
+      },
+      "semantic_scholar": {
+        "status": "success",
+        "count": 0,
+        "error": null,
+        "query_sent": "type 2 diabetes patients GLP-1 receptor agonists semaglutide"
+      }
+    },
+    "total_identified": 561,
+    "duplicates_removed": 32,
+    "unique_records": 529,
+    "dedupe_report": {
+      "input_count": 561,
+      "unique_count": 529,
+      "duplicates_removed": 32,
+      "matched_by": {
+        "doi": 18,
+        "pmid": 5,
+        "pmcid": 0,
+        "nct_id": 0,
+        "title": 9
+      },
+      "removed_duplicates": [
+        {
+          "duplicate_id": "10.1016/j.molmet.2020.101090",
+          "duplicate_source": "pubmed",
+          "title": "GLP-1 receptor agonists in the treatment of type 2 diabetes - state-of-the-art.",
+          "merged_into_id": "10.1016/j.molmet.2020.101102",
+          "merged_sources": [
+            "openalex",
+            "pubmed"
+          ],
+          "matched_on": "pmid",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33068776/"
+        },
+        {
+          "duplicate_id": "10.1097/iae.0000000000004995",
+          "duplicate_source": "europepmc",
+          "title": "RE: Comment on: \"Impact of GLP-1 Receptor Agonists for Type 2 Diabetes Mellitus on the Development and Progression of Age-Related Macular Degeneration.",
+          "merged_into_id": "10.1097/iae.0000000000004994",
+          "merged_sources": [
+            "europepmc"
+          ],
+          "matched_on": "title",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42640660/"
+        },
+        {
+          "duplicate_id": "10.1038/nrendo.2012.140",
+          "duplicate_source": "pubmed",
+          "title": "GLP-1 receptor agonists for individualized treatment of type 2 diabetes mellitus.",
+          "merged_into_id": "10.1038/nrendo.2012.140",
+          "merged_sources": [
+            "openalex",
+            "pubmed"
+          ],
+          "matched_on": "doi",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/22945360/"
+        },
+        {
+          "duplicate_id": "10.2165/11592810-000000000-00000",
+          "duplicate_source": "openalex",
+          "title": "Glucagon-like Peptide\u20131 Analogues for Type 2 Diabetes Mellitus",
+          "merged_into_id": "10.1002/14651858.cd006423.pub2",
+          "merged_sources": [
+            "openalex"
+          ],
+          "matched_on": "title",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21902291/"
+        },
+        {
+          "duplicate_id": "10.1111/dom.13361",
+          "duplicate_source": "pubmed",
+          "title": "Semaglutide for type 2 diabetes mellitus: A systematic review and meta-analysis.",
+          "merged_into_id": "10.1111/dom.13361",
+          "merged_sources": [
+            "openalex",
+            "pubmed"
+          ],
+          "matched_on": "doi",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29756388/"
+        },
+        {
+          "duplicate_id": "10.5281/zenodo.22812604",
+          "duplicate_source": "openalex",
+          "title": "Long-Term Follow-Up of GLP-1 receptor agonist therapy for type 2 diabetes mellitus",
+          "merged_into_id": "10.5281/zenodo.22812603",
+          "merged_sources": [
+            "openalex"
+          ],
+          "matched_on": "title",
+          "url": "https://doi.org/10.5281/zenodo.22812604"
+        },
+        {
+          "duplicate_id": "10.1093/ajhp/zxag086",
+          "duplicate_source": "openalex",
+          "title": "Pharmacist-led management of GLP-1 and GIP/GLP-1 receptor agonists in type 2 diabetes mellitus",
+          "merged_into_id": "10.1093/ajhp/zxag086",
+          "merged_sources": [
+            "europepmc",
+            "openalex"
+          ],
+          "matched_on": "doi",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41870187/"
+        },
+        {
+          "duplicate_id": "10.15829/2713-0177-2024-5-1-04",
+          "duplicate_source": "openalex",
+          "title": "The effect of semaglutide on body weight in patients with type 2 diabetes mellitus",
+          "merged_into_id": "10.62751/2713-0177-2024-5-1-04",
+          "merged_sources": [
+            "openalex"
+          ],
+          "matched_on": "title",
+          "url": "https://doi.org/10.15829/2713-0177-2024-5-1-04"
+        },
+        {
+          "duplicate_id": "10.1371/journal.pone.0160221",
+          "duplicate_source": "pubmed",
+          "title": "Association between different GLP-1 receptor agonists and gastrointestinal adverse reactions: A real-world disproportionality study based on FDA adverse event reporting system data",
+          "merged_into_id": "10.3389/fendo.2022.1043789",
+          "merged_sources": [
+            "openalex",
+            "pubmed"
+          ],
+          "matched_on": "pmid",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36568085/"
+        },
+        {
+          "duplicate_id": "10.1016/j.dsx.2022.102427",
+          "duplicate_source": "openalex",
+          "title": "Adverse drug reactions of GLP-1 agonists: A systematic review of case reports",
+          "merged_into_id": "10.1016/j.dsx.2022.102427",
+          "merged_sources": [
+            "pubmed",
+            "openalex"
+          ],
+          "matched_on": "doi",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35217468/"
+        },
+        {
+          "duplicate_id": "10.1097/mca.0000000000000830",
+          "duplicate_source": "pubmed",
+          "title": "Cardiovascular Safety and Benefits of Semaglutide in Patients With Type 2 Diabetes: Findings From SUSTAIN 6 and PIONEER 6.",
+          "merged_into_id": "10.3389/fendo.2021.645566",
+          "merged_sources": [
+            "openalex",
+            "pubmed"
+          ],
+          "matched_on": "pmid",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33854484/"
+        },
+        {
+          "duplicate_id": "10.1016/j.numecd.2021.07.015",
+          "duplicate_source": "pubmed",
+          "title": "Effects of GLP-1 receptor agonists on myokine levels and pro-inflammatory cytokines in patients with type 2 diabetes mellitus.",
+          "merged_into_id": "10.1016/j.numecd.2021.07.015",
+          "merged_sources": [
+            "openalex",
+            "pubmed"
+          ],
+          "matched_on": "doi",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34518091/"
+        },
+        {
+          "duplicate_id": "10.1016/j.ajo.2026.02.004",
+          "duplicate_source": "europepmc",
+          "title": "Reply to Comment on: \"Potential Eye Disorders in People With and Without Type 2 Diabetes Mellitus Exposed to GLP-1 Receptor Agonists: An Examination of the FAERS Database\".",
+          "merged_into_id": "10.1016/j.ajo.2026.01.042",
+          "merged_sources": [
+            "europepmc"
+          ],
+          "matched_on": "title",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41679369/"
+        },
+        {
+          "duplicate_id": "10.1016/s2213-8587(19)30249-9",
+          "duplicate_source": "openalex",
+          "title": "Cardiovascular, mortality, and kidney outcomes with GLP-1 receptor agonists in patients with type 2 diabetes: a systematic review and meta-analysis of cardiovascular outcome trials",
+          "merged_into_id": "10.1016/s2213-8587(19)30249-9",
+          "merged_sources": [
+            "pubmed",
+            "openalex"
+          ],
+          "matched_on": "doi",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31422062/"
+        },
+        {
+          "duplicate_id": "10.3390/biomedicines14040806",
+          "duplicate_source": "openalex",
+          "title": "The Interplay Between GLP-1-Based Therapies, the Gut Microbiome, and MASLD/MASH in Type 2 Diabetes Mellitus: A Narrative Review",
+          "merged_into_id": "10.3390/biomedicines14040806",
+          "merged_sources": [
+            "europepmc",
+            "openalex"
+          ],
+          "matched_on": "doi",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42072347/"
+        },
+        {
+          "duplicate_id": "10.1016/j.diabres.2025.112910",
+          "duplicate_source": "europepmc",
+          "title": "Comparative effectiveness of GLP-1 receptor agonists on cardiovascular outcomes among adults with type 2 diabetes and moderate cardiovascular risk: emulation of a target trial.",
+          "merged_into_id": "10.1016/j.diabres.2025.112910",
+          "merged_sources": [
+            "pubmed",
+            "europepmc"
+          ],
+          "matched_on": "doi",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40983112/"
+        },
+        {
+          "duplicate_id": "10.1056/nejmoa1612917",
+          "duplicate_source": "pubmed",
+          "title": "GLP-1 Receptor Agonists and Cardiovascular Disease in Patients with Type 2 Diabetes.",
+          "merged_into_id": "10.1155/2018/4020492",
+          "merged_sources": [
+            "openalex",
+            "pubmed"
+          ],
+          "matched_on": "pmid",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29805980/"
+        },
+        {
+          "duplicate_id": "10.1016/j.diabres.2025.112910",
+          "duplicate_source": "openalex",
+          "title": "Comparative effectiveness of GLP-1 receptor agonists on cardiovascular outcomes among adults with type 2 diabetes and moderate cardiovascular risk: emulation of a target trial",
+          "merged_into_id": "10.1016/j.diabres.2025.112910",
+          "merged_sources": [
+            "pubmed",
+            "europepmc",
+            "openalex"
+          ],
+          "matched_on": "doi",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40983112/"
+        },
+        {
+          "duplicate_id": "10.1001/jamanetworkopen.2024.57349",
+          "duplicate_source": "openalex",
+          "title": "Discontinuation and Reinitiation of Dual-Labeled GLP-1 Receptor Agonists Among US Adults With Overweight or Obesity",
+          "merged_into_id": "10.1101/2024.07.26.24311058",
+          "merged_sources": [
+            "preprints",
+            "openalex"
+          ],
+          "matched_on": "title",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39888616/"
+        },
+        {
+          "duplicate_id": "10.1007/s11154-023-09807-3",
+          "duplicate_source": "pubmed",
+          "title": "Effects of GLP-1 receptor agonists on neurological complications of diabetes.",
+          "merged_into_id": "10.1007/s11154-023-09807-3",
+          "merged_sources": [
+            "openalex",
+            "pubmed"
+          ],
+          "matched_on": "doi",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37231200/"
+        },
+        {
+          "duplicate_id": "10.1016/s2213-8587(18)30024-x",
+          "duplicate_source": "openalex",
+          "title": "Semaglutide versus dulaglutide once weekly in patients with type 2 diabetes (SUSTAIN 7): a randomised, open-label, phase 3b trial",
+          "merged_into_id": "10.1016/s2213-8587(18)30024-x",
+          "merged_sources": [
+            "pubmed",
+            "openalex"
+          ],
+          "matched_on": "doi",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29397376/"
+        },
+        {
+          "duplicate_id": "10.1016/s0025-7753(14)70104-6",
+          "duplicate_source": "pubmed",
+          "title": "[Effects of GLP-1 receptor agonists on carbohydrate metabolism control].",
+          "merged_into_id": "10.1016/s0025-7753(14)70104-6",
+          "merged_sources": [
+            "pubmed"
+          ],
+          "matched_on": "doi",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25326839/"
+        },
+        {
+          "duplicate_id": "10.1111/dom.13479",
+          "duplicate_source": "openalex",
+          "title": "Impact on HbA1c and body weight of switching from other GLP\u20101 receptor agonists to semaglutide: A model\u2010based approach",
+          "merged_into_id": "10.1111/dom.13479",
+          "merged_sources": [
+            "clinicaltrials",
+            "openalex"
+          ],
+          "matched_on": "doi",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30047216/"
+        },
+        {
+          "duplicate_id": "10.1111/dom.15312",
+          "duplicate_source": "openalex",
+          "title": "Effect of tirzepatide on glycaemic control and weight loss compared with other glucagon\u2010like peptide\u20101 receptor agonists in Japanese patients with type 2 diabetes mellitus",
+          "merged_into_id": "10.1111/dom.15312",
+          "merged_sources": [
+            "pubmed",
+            "openalex"
+          ],
+          "matched_on": "doi",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37828829/"
+        },
+        {
+          "duplicate_id": "10.1016/j.biopha.2018.08.088",
+          "duplicate_source": "pubmed",
+          "title": "Recent updates on GLP-1 agonists: Current advancements & challenges.",
+          "merged_into_id": "10.1016/j.biopha.2018.08.088",
+          "merged_sources": [
+            "openalex",
+            "pubmed"
+          ],
+          "matched_on": "doi",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30372907/"
+        },
+        {
+          "duplicate_id": "10.1016/j.diabres.2021.108656",
+          "duplicate_source": "pubmed",
+          "title": "Efficacy and safety of the glucagon-like peptide-1 receptor agonist oral semaglutide in patients with type 2 diabetes mellitus: A systematic review and meta-analysis.",
+          "merged_into_id": "10.1016/j.diabres.2021.108656",
+          "merged_sources": [
+            "openalex",
+            "pubmed"
+          ],
+          "matched_on": "doi",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33434602/"
+        },
+        {
+          "duplicate_id": "10.7326/m20-0864",
+          "duplicate_source": "openalex",
+          "title": "Comparative Effectiveness of Glucose-Lowering Drugs for Type 2 Diabetes",
+          "merged_into_id": "10.7326/m20-0864",
+          "merged_sources": [
+            "pubmed",
+            "openalex"
+          ],
+          "matched_on": "doi",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32598218/"
+        },
+        {
+          "duplicate_id": "10.1093/eurheartj/ehz486",
+          "duplicate_source": "pubmed",
+          "title": "An overview of GLP-1 agonists and recent cardiovascular outcomes trials.",
+          "merged_into_id": "10.1136/postgradmedj-2019-137186",
+          "merged_sources": [
+            "openalex",
+            "pubmed"
+          ],
+          "matched_on": "pmid",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31801807/"
+        },
+        {
+          "duplicate_id": "10.20944/preprints202506.0860.v1",
+          "duplicate_source": "europepmc",
+          "title": "Perioperative Management of Patients on GLP-1 Receptor Agonists: Clinical Implications and Best Practices",
+          "merged_into_id": "10.20944/preprints202506.0860.v1",
+          "merged_sources": [
+            "openalex",
+            "europepmc"
+          ],
+          "matched_on": "doi",
+          "url": "https://doi.org/10.20944/preprints202506.0860.v1"
+        },
+        {
+          "duplicate_id": "10.1016/j.jval.2018.09.773",
+          "duplicate_source": "openalex",
+          "title": "PDB68 - COST-EFFECTIVENESS ANALYSIS OF EXENATIDE VERSUS GLP-1 RECEPTOR AGONISTS IN PATIENTS WITH TYPE 2 DIABETES MELLITUS",
+          "merged_into_id": "10.1007/s41669-019-0171-y",
+          "merged_sources": [
+            "openalex"
+          ],
+          "matched_on": "title",
+          "url": "https://doi.org/10.1016/j.jval.2018.09.773"
+        },
+        {
+          "duplicate_id": "NCT05473286",
+          "duplicate_source": "clinicaltrials",
+          "title": "A Research Study Looking at How Oral Semaglutide Works in People With Type 2 Diabetes in Germany, as Part of Local Clinical Practice",
+          "merged_into_id": "NCT05316662",
+          "merged_sources": [
+            "clinicaltrials"
+          ],
+          "matched_on": "title",
+          "url": "https://clinicaltrials.gov/study/NCT05473286"
+        },
+        {
+          "duplicate_id": "10.21203/rs.3.rs-7631508/v1",
+          "duplicate_source": "europepmc",
+          "title": "The Effects of GLP-1 Receptor Agonists on Alzheimer's Pathophysiology: A Systematic Review",
+          "merged_into_id": "10.1016/j.mcn.2026.104091",
+          "merged_sources": [
+            "europepmc"
+          ],
+          "matched_on": "title",
+          "url": "https://doi.org/10.21203/rs.3.rs-7631508/v1"
+        }
+      ],
+      "records_with_doi": 466,
+      "records_with_pmid": 292,
+      "records_without_identifier": 1
+    },
+    "sources_unavailable": {}
+  },
+  "screening": {
+    "screened": 20,
+    "not_screened": 509,
+    "not_screened_note": "509 record(s) were not screened because the cap of 20 was reached. They are excluded from the review but counted here, because a PRISMA flow diagram must account for every identified record. Raise SRMA_MAX_ABSTRACTS_TO_SCREEN for a complete run.",
+    "included": 20,
+    "excluded": 0,
+    "exclusion_reasons": {},
+    "included_records": [
+      {
+        "id": "10.4088/jcp.13m08398",
+        "citation": "Tobaiqy et al. (2024). PMID:38265519",
+        "year": 2024,
+        "source": "pubmed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38265519/",
+        "title": "Psychiatric adverse events associated with semaglutide, liraglutide and tirzepatide: a pharmacovigilance analysis of individual case safety reports submitted to the EudraVigilance database.",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states that the study population is adult patients with type 2 diabetes and high cardiovascular risk, which aligns with the population criteria for the review. The intervention is GLP-1 receptor agonists (semaglutide, liraglutide, or dulaglutide), which matches the intervention criteria. The comparator is placebo, which matches the comparator criteria. The primary outcome is major adv",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "The abstract states that the study population is patients with type 2 diabetes and high cardiovascular risk, but the protocol states that the population is adult patients with type 2 diabetes and high cardiovascular risk. The abstract does not mention the intervention, comparator, or outcome, so it is not eligible.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study population is patients with type 2 diabetes and high cardiovascular risk, but the protocol states that the population is adult patients with type 2 diabetes and high cardiovascular risk. The abstract does not mention the intervention, comparator, or outcome, so it "
+      },
+      {
+        "id": "10.1038/nrendo.2012.140",
+        "citation": "Meier (2012). PMID:22945360",
+        "year": 2012,
+        "source": "openalex, pubmed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/22945360/",
+        "title": "GLP-1 receptor agonists for individualized treatment of type 2 diabetes mellitus.",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract does not mention the comparator.",
+        "reviewer_2_decision": "Include",
+        "reviewer_2_reason": "The abstract states that GLP-1 receptor agonists are used to treat type 2 diabetes mellitus, which is consistent with the protocol.",
+        "decided_by": "both reviewers agreed to include"
+      },
+      {
+        "id": "10.1101/2025.09.01.25334855",
+        "citation": "Ramteke et al. (2025). DOI:10.1101/2025.09.01.25334855",
+        "year": 2025,
+        "source": "preprints",
+        "url": "https://doi.org/10.1101/2025.09.01.25334855",
+        "title": "Comparative Efficacy and Safety of GLP-1 Receptor Agonists in Neurological and Nephrological Outcomes of Type 2 Diabetes: A Systematic Review and Network Meta-Analysis",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states that the study evaluated the effects of GLP-1 RAs on neurological and nephrological outcomes in T2D patients. The inclusion criteria include adult patients with type 2 diabetes and high cardiovascular risk, and the study design is a randomized controlled trial. The abstract does not mention a comparator.",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "The abstract states that the review and meta-analysis aimed to evaluate the impact of GLP-1 RAs on neurological and nephrological outcomes in T2D patients. The protocol excludes studies that evaluate the effects of GLP-1 RAs on neurological and nephrological outcomes in T2D patients. The abstract states that the review and meta-analysis aimed to evaluate the impact of GLP-1 RAs on neurological and",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the review and meta-analysis aimed to evaluate the impact of GLP-1 RAs on neurological and nephrological outcomes in T2D patients. The protocol excludes studies that evaluate the effects of GLP-1 RAs on neurological and nephrological outcomes in T2D patients. The abstract st"
+      },
+      {
+        "id": "10.1053/j.ajkd.2026.04.007",
+        "citation": "Neumiller et al. (2026). PMID:42302979",
+        "year": 2026,
+        "source": "europepmc",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42302979/",
+        "title": "Comparison of Specific Glucagon-Like Peptide-1 Receptor Agonists on Kidney Outcomes Among Patients With Type 2 Diabetes.",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states that this is a retrospective observational study using the target trial emulation framework. This is not a randomized controlled trial, which is an exclusion criterion.",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "The abstract states that this is a retrospective observational study using the target trial emulation framework. The protocol excludes observational studies.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that this is a retrospective observational study using the target trial emulation framework. The protocol excludes observational studies."
+      },
+      {
+        "id": "10.1016/j.molmet.2020.101102",
+        "citation": "Nauck et al. (2020). PMID:33068776",
+        "year": 2020,
+        "source": "openalex, pubmed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/33068776/",
+        "title": "GLP-1 receptor agonists in the treatment of type 2 diabetes - state-of-the-art.",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract does not mention the comparator.",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "The abstract states that GLP-1 receptor agonists are used to treat type 2 diabetes, which is not the population specified in the protocol. The protocol specifies adult patients with type 2 diabetes and high cardiovascular risk.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that GLP-1 receptor agonists are used to treat type 2 diabetes, which is not the population specified in the protocol. The protocol specifies adult patients with type 2 diabetes and high cardiovascular risk."
+      },
+      {
+        "id": "10.1101/2024.11.11.24317112",
+        "citation": "Brook et al. (2024). DOI:10.1101/2024.11.11.24317112",
+        "year": 2024,
+        "source": "preprints",
+        "url": "https://doi.org/10.1101/2024.11.11.24317112",
+        "title": "Potential Lives Saved Through Widespread Global Availability of GLP-1 Receptor Agonists: A Modeling Study",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states that the study uses global population data, T2DM and obesity prevalence, cardiovascular risk, and mortality reduction from GLP-1s to estimate the potential impact of GLP-1 receptor agonists (GLP-1) in reducing global mortality linked to obesity, type 2 diabetes mellitus (T2DM), and cardiovascular disease (CVD). The abstract does not mention a comparator.",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "The abstract states that the study attempts to quantify the potential impact of GLP-1 receptor agonists (GLP-1) in reducing global mortality linked to obesity, type 2 diabetes mellitus (T2DM), and cardiovascular disease (CVD). The protocol states that the intervention is GLP-1 receptor agonists (semaglutide, liraglutide, or dulaglutide). The abstract does not mention semaglutide, liraglutide, or d",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study attempts to quantify the potential impact of GLP-1 receptor agonists (GLP-1) in reducing global mortality linked to obesity, type 2 diabetes mellitus (T2DM), and cardiovascular disease (CVD). The protocol states that the intervention is GLP-1 receptor agonists (sem"
+      },
+      {
+        "id": "10.1530/eje-19-0566",
+        "citation": "Nauck et al. (2019). PMID:31600725",
+        "year": 2019,
+        "source": "openalex",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31600725/",
+        "title": "MANAGEMENT OF ENDOCRINE DISEASE: Are all GLP-1 agonists equal in the treatment of type 2 diabetes?",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states that liraglutide, semaglutide, albiglutide, and dulaglutide reduced the time to first major adverse cardiovascular events (non-fatal myocardial infarction and stroke, cardiovascular death). Liraglutide, in addition, reduced cardiovascular and all-cause mortality.",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "The abstract states that most GLP-1 receptor agonists have been examined in cardiovascular outcomes studies. The protocol states that the eligible designs are Randomized Controlled Trial. The abstract does not state that the study is a Randomized Controlled Trial.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that most GLP-1 receptor agonists have been examined in cardiovascular outcomes studies. The protocol states that the eligible designs are Randomized Controlled Trial. The abstract does not state that the study is a Randomized Controlled Trial."
+      },
+      {
+        "id": "10.1101/2025.04.17.649402",
+        "citation": "Windram et al. (2025). DOI:10.1101/2025.04.17.649402",
+        "year": 2025,
+        "source": "preprints",
+        "url": "https://doi.org/10.1101/2025.04.17.649402",
+        "title": "Semaglutide, Tirzepatide, and Retatrutide Attenuate the Interoceptive Effects of Alcohol in Male and Female Rats",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract does not mention the comparator.",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "The abstract describes studies on alcohol effects in rats, not on cardiovascular outcomes in patients with type 2 diabetes and high cardiovascular risk.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract describes studies on alcohol effects in rats, not on cardiovascular outcomes in patients with type 2 diabetes and high cardiovascular risk."
+      },
+      {
+        "id": "10.1001/jama.2023.19574",
+        "citation": "Kr\u00fcger et al. (2026). PMID:41207920",
+        "year": 2026,
+        "source": "pubmed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41207920/",
+        "title": "Cardiovascular outcomes of semaglutide and tirzepatide for patients with type 2 diabetes in clinical practice.",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states that the study compares tirzepatide versus semaglutide, which is the intervention.",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "The abstract states \"Here we conducted five cohort studies to assess the effectiveness of tirzepatide and semaglutide in patients with elevated cardiovascular risk, including obesity and type 2 diabetes, enrolled in insurance programs in the USA between 2018 and 2025.\", which is not a randomized controlled trial. The protocol requires a randomized controlled trial.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states \"Here we conducted five cohort studies to assess the effectiveness of tirzepatide and semaglutide in patients with elevated cardiovascular risk, including obesity and type 2 diabetes, enrolled in insurance programs in the USA between 2018 and 2025.\", which is not a randomized con"
+      },
+      {
+        "id": "10.1111/dom.13361",
+        "citation": "Andreadis et al. (2018). PMID:29756388",
+        "year": 2018,
+        "source": "openalex, pubmed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/29756388/",
+        "title": "Semaglutide for type 2 diabetes mellitus: A systematic review and meta-analysis.",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states that the study compared semaglutide with placebo.",
+        "reviewer_2_decision": "Include",
+        "reviewer_2_reason": "The abstract states that the study compares semaglutide with placebo, which is the comparator specified in the protocol.",
+        "decided_by": "both reviewers agreed to include"
+      },
+      {
+        "id": "10.1101/2024.05.06.592704",
+        "citation": "Joly et al. (2024). DOI:10.1101/2024.05.06.592704",
+        "year": 2024,
+        "source": "preprints",
+        "url": "https://doi.org/10.1101/2024.05.06.592704",
+        "title": "Semaglutide interferes with postnatal development of juvenile mice with compromised growth",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract mentions GLP-1 receptor agonists, including semaglutide, as an intervention. The abstract also mentions type 2 diabetes as a population, which is relevant to the review question. The abstract does not mention a placebo comparator.",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "The abstract states that the study was conducted in juvenile mice with compromised growth, which is not the target population of adults with type 2 diabetes and high cardiovascular risk.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study was conducted in juvenile mice with compromised growth, which is not the target population of adults with type 2 diabetes and high cardiovascular risk."
+      },
+      {
+        "id": "10.7326/annals-25-01724",
+        "citation": "Crisafulli et al. (2026). PMID:41183330",
+        "year": 2026,
+        "source": "pubmed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41183330/",
+        "title": "Comparative Gastrointestinal Safety of Dulaglutide, Semaglutide, and Tirzepatide in Adults With Type 2 Diabetes.",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states that the study compares dulaglutide, semaglutide, and tirzepatide in adults with type 2 diabetes. The population is adults with type 2 diabetes, the intervention is GLP-1 receptor agonists (semaglutide, liraglutide, or dulaglutide), the comparator is placebo, the primary outcome is major adverse cardiovascular events (MACE), and the study design is a cohort study. The abstract ",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "The abstract states that the study compares dulaglutide, semaglutide, and tirzepatide, but the protocol only mentions GLP-1 receptor agonists (semaglutide, liraglutide, or dulaglutide).",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study compares dulaglutide, semaglutide, and tirzepatide, but the protocol only mentions GLP-1 receptor agonists (semaglutide, liraglutide, or dulaglutide)."
+      },
+      {
+        "id": "10.3760/cma.j.cn112137-20260527-01398",
+        "citation": "Endocrinology and Metabolism Professional Com (2026). PMID:42618499",
+        "year": 2026,
+        "source": "europepmc",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42618499/",
+        "title": "[Expert consensus on the clinical application of nutrient-stimulated hormone receptor agonist in the treatment of type 2 diabetes mellitus (2026 edition)].",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract does not mention the comparator.",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "The abstract states that the consensus focuses on the timing and applicable population of NuSH receptor agonists in T2DM, the precautions when combined with other hypoglycemic drugs, the impacts on cardiovascular, renal or hepatic outcomes, forming 10 recommended opinions aimed at providing reference for clinical doctors to standardize the use of such drugs and better serve T2DM patients. This is ",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the consensus focuses on the timing and applicable population of NuSH receptor agonists in T2DM, the precautions when combined with other hypoglycemic drugs, the impacts on cardiovascular, renal or hepatic outcomes, forming 10 recommended opinions aimed at providing referenc"
+      },
+      {
+        "id": "10.1016/j.biopha.2018.08.088",
+        "citation": "Sharma et al. (2018). PMID:30372907",
+        "year": 2018,
+        "source": "openalex, pubmed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/30372907/",
+        "title": "Recent updates on GLP-1 agonists: Current advancements & challenges.",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract mentions GLP-1 receptor agonists (semaglutide, liraglutide, or dulaglutide) as an intervention, which aligns with the intervention criteria.",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "The abstract describes a review article on GLP-1 agonists, not a randomized controlled trial.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract describes a review article on GLP-1 agonists, not a randomized controlled trial."
+      },
+      {
+        "id": "10.1101/2024.10.28.24316312",
+        "citation": "Kukhareva et al. (2024). DOI:10.1101/2024.10.28.24316312",
+        "year": 2024,
+        "source": "preprints",
+        "url": "https://doi.org/10.1101/2024.10.28.24316312",
+        "title": "Racial and Ethnic Disparities in Prescribing of GLP-1 Receptor Agonists in the United States: A Retrospective Cohort Analysis",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract does not mention the comparator.",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "The abstract describes a retrospective cohort analysis of GLP-1 receptor agonist prescriptions, not a randomized controlled trial. The protocol specifies that the eligible design is a Randomized Controlled Trial.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract describes a retrospective cohort analysis of GLP-1 receptor agonist prescriptions, not a randomized controlled trial. The protocol specifies that the eligible design is a Randomized Controlled Trial."
+      },
+      {
+        "id": "10.1111/dom.14110",
+        "citation": "Urva et al. (2020). PMID:32519795",
+        "year": 2020,
+        "source": "pubmed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/32519795/",
+        "title": "The novel dual glucose-dependent insulinotropic polypeptide and glucagon-like peptide-1 (GLP-1) receptor agonist tirzepatide transiently delays gastric emptying similarly to selective long-acting GLP-1 receptor agonists.",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract mentions participants with and without type 2 diabetes, which is not explicitly stated in the eligibility criteria.",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "The abstract states that the study investigated the effect of tirzepatide on gastric emptying, but the protocol only includes randomized controlled trials of GLP-1 receptor agonists (semaglutide, liraglutide, or dulaglutide).",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study investigated the effect of tirzepatide on gastric emptying, but the protocol only includes randomized controlled trials of GLP-1 receptor agonists (semaglutide, liraglutide, or dulaglutide)."
+      },
+      {
+        "id": "10.2174/011871529x480529260812061106",
+        "citation": "Ahamed et al. (2026). PMID:42708338",
+        "year": 2026,
+        "source": "europepmc",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42708338/",
+        "title": "SGLT-2 Inhibitors and GLP-1 Receptor Agonists in Managing Metabolic Syndrome Among Patients with Type 2 Diabetes Mellitus - A Narrative Review.",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract does not mention the comparator.",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "The abstract states that the study examines the role of SGLT-2 inhibitors and GLP-1 receptor agonists in managing metabolic syndrome in patients with type 2 diabetes mellitus. The protocol excludes studies that are narrative reviews, editorials, or case reports. The abstract is a narrative review.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study examines the role of SGLT-2 inhibitors and GLP-1 receptor agonists in managing metabolic syndrome in patients with type 2 diabetes mellitus. The protocol excludes studies that are narrative reviews, editorials, or case reports. The abstract is a narrative review."
+      },
+      {
+        "id": "10.1002/dmrr.3070",
+        "citation": "Gentilella et al. (2018). PMID:30156747",
+        "year": 2018,
+        "source": "openalex",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/30156747/",
+        "title": "Glucagon\u2010like peptide\u20101 receptor agonists in type 2 diabetes treatment: are they all the same?",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states that the primary pharmacodynamic difference between short-acting and long-acting GLP-1 RAs is that short-acting agents primarily delay gastric emptying (lowering postprandial glucose) and long-acting agents affect both fasting glucose (via enhanced glucose-dependent insulin secretion and reduced glucagon secretion in the fasting state) and postprandial glucose (via enhanced pos",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "The abstract states that the review focuses on the differences between and similarities of GLP-1 RAs, focusing particularly on the properties characterising the single short-acting and long-acting GLP-1 RAs rather than on their individual efficacy and safety profiles. This is not a primary research study, but a review. The protocol requires a primary research study.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the review focuses on the differences between and similarities of GLP-1 RAs, focusing particularly on the properties characterising the single short-acting and long-acting GLP-1 RAs rather than on their individual efficacy and safety profiles. This is not a primary research "
+      },
+      {
+        "id": "10.1101/2025.10.07.680898",
+        "citation": "Ye et al. (2025). DOI:10.1101/2025.10.07.680898",
+        "year": 2025,
+        "source": "preprints",
+        "url": "https://doi.org/10.1101/2025.10.07.680898",
+        "title": "Gut delivery of pentameric GLP-1 using genetically engineered Bacillus subtilis",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract mentions GLP-1 receptor agonists (semaglutide, liraglutide, or dulaglutide) as a comparator, which is a relevant comparator for this review.",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "The abstract states \"semaglutide included as a positive pharmacologic benchmark\", which is a different drug than the intervention specified in the protocol. The protocol states \"GLP-1 receptor agonists (semaglutide, liraglutide, or dulaglutide)\".",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states \"semaglutide included as a positive pharmacologic benchmark\", which is a different drug than the intervention specified in the protocol. The protocol states \"GLP-1 receptor agonists (semaglutide, liraglutide, or dulaglutide)\"."
+      },
+      {
+        "id": "10.1111/dom.14988",
+        "citation": "France et al. (2024). PMID:38388874",
+        "year": 2024,
+        "source": "pubmed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38388874/",
+        "title": "Tirzepatide: A Review in Type 2 Diabetes.",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states that tirzepatide was superior to GLP-1 receptor agonists (RAs) dulaglutide 0.75 mg and semaglutide 1 mg as well as basal and prandial insulin for glycaemic control and weight loss in adults with inadequately controlled T2DM.",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "The abstract states that tirzepatide is a dual incretin agonist of the glucose-dependent insulinotropic polypeptide (GIP) and glucagon-like peptide-1 (GLP-1) receptors, not GLP-1 receptor agonists. The protocol specifies GLP-1 receptor agonists (semaglutide, liraglutide, or dulaglutide) as the intervention.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that tirzepatide is a dual incretin agonist of the glucose-dependent insulinotropic polypeptide (GIP) and glucagon-like peptide-1 (GLP-1) receptors, not GLP-1 receptor agonists. The protocol specifies GLP-1 receptor agonists (semaglutide, liraglutide, or dulaglutide) as the inter"
+      }
+    ],
+    "excluded_records": [],
+    "gate_rejected": 0,
+    "gate_note": "",
+    "reviewer_disagreements": 18,
+    "reviewer_agreement_rate": 0.1,
+    "agreement_note": "Agreement is measured between two prompts with deliberately different risk tolerances, over the records that reached both reviewers. A rate of exactly 1.0 across many records suggests the personas are not actually diverging and the dual-review safeguard is not doing any work. Because inclusion follows the liberal rule, every disagreement counted here is a record that was admitted despite one reviewer objecting; the objection is recorded against each such record in `included_records` and should be settled at full text.",
+    "errors": [],
+    "elapsed_seconds": 464.0
+  },
+  "extraction": {
+    "attempted": 10,
+    "succeeded": 10,
+    "not_attempted": 10,
+    "skipped_due_to_cap": [
+      {
+        "id": "10.1101/2024.05.06.592704",
+        "citation": "Joly et al. (2024). DOI:10.1101/2024.05.06.592704",
+        "year": 2024,
+        "source": "preprints",
+        "url": "https://doi.org/10.1101/2024.05.06.592704",
+        "title": "Semaglutide interferes with postnatal development of juvenile mice with compromised growth",
+        "reason": "Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=10 cap was reached."
+      },
+      {
+        "id": "10.7326/annals-25-01724",
+        "citation": "Crisafulli et al. (2026). PMID:41183330",
+        "year": 2026,
+        "source": "pubmed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41183330/",
+        "title": "Comparative Gastrointestinal Safety of Dulaglutide, Semaglutide, and Tirzepatide in Adults With Type 2 Diabetes.",
+        "reason": "Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=10 cap was reached."
+      },
+      {
+        "id": "10.3760/cma.j.cn112137-20260527-01398",
+        "citation": "Endocrinology and Metabolism Professional Com (2026). PMID:42618499",
+        "year": 2026,
+        "source": "europepmc",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42618499/",
+        "title": "[Expert consensus on the clinical application of nutrient-stimulated hormone receptor agonist in the treatment of type 2 diabetes mellitus (2026 edition)].",
+        "reason": "Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=10 cap was reached."
+      },
+      {
+        "id": "10.1016/j.biopha.2018.08.088",
+        "citation": "Sharma et al. (2018). PMID:30372907",
+        "year": 2018,
+        "source": "openalex, pubmed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/30372907/",
+        "title": "Recent updates on GLP-1 agonists: Current advancements & challenges.",
+        "reason": "Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=10 cap was reached."
+      },
+      {
+        "id": "10.1101/2024.10.28.24316312",
+        "citation": "Kukhareva et al. (2024). DOI:10.1101/2024.10.28.24316312",
+        "year": 2024,
+        "source": "preprints",
+        "url": "https://doi.org/10.1101/2024.10.28.24316312",
+        "title": "Racial and Ethnic Disparities in Prescribing of GLP-1 Receptor Agonists in the United States: A Retrospective Cohort Analysis",
+        "reason": "Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=10 cap was reached."
+      },
+      {
+        "id": "10.1111/dom.14110",
+        "citation": "Urva et al. (2020). PMID:32519795",
+        "year": 2020,
+        "source": "pubmed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/32519795/",
+        "title": "The novel dual glucose-dependent insulinotropic polypeptide and glucagon-like peptide-1 (GLP-1) receptor agonist tirzepatide transiently delays gastric emptying similarly to selective long-acting GLP-1 receptor agonists.",
+        "reason": "Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=10 cap was reached."
+      },
+      {
+        "id": "10.2174/011871529x480529260812061106",
+        "citation": "Ahamed et al. (2026). PMID:42708338",
+        "year": 2026,
+        "source": "europepmc",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42708338/",
+        "title": "SGLT-2 Inhibitors and GLP-1 Receptor Agonists in Managing Metabolic Syndrome Among Patients with Type 2 Diabetes Mellitus - A Narrative Review.",
+        "reason": "Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=10 cap was reached."
+      },
+      {
+        "id": "10.1002/dmrr.3070",
+        "citation": "Gentilella et al. (2018). PMID:30156747",
+        "year": 2018,
+        "source": "openalex",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/30156747/",
+        "title": "Glucagon\u2010like peptide\u20101 receptor agonists in type 2 diabetes treatment: are they all the same?",
+        "reason": "Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=10 cap was reached."
+      },
+      {
+        "id": "10.1101/2025.10.07.680898",
+        "citation": "Ye et al. (2025). DOI:10.1101/2025.10.07.680898",
+        "year": 2025,
+        "source": "preprints",
+        "url": "https://doi.org/10.1101/2025.10.07.680898",
+        "title": "Gut delivery of pentameric GLP-1 using genetically engineered Bacillus subtilis",
+        "reason": "Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=10 cap was reached."
+      },
+      {
+        "id": "10.1111/dom.14988",
+        "citation": "France et al. (2024). PMID:38388874",
+        "year": 2024,
+        "source": "pubmed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38388874/",
+        "title": "Tirzepatide: A Review in Type 2 Diabetes.",
+        "reason": "Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=10 cap was reached."
+      }
+    ],
+    "errors": [],
+    "studies": [
+      {
+        "study_id": "10.4088/jcp.13m08398",
+        "study_label": "Tobaiqy et al. (2024). PMID:38265519",
+        "title": "Psychiatric adverse events associated with semaglutide, liraglutide and tirzepatide: a pharmacovigilance analysis of individual case safety reports submitted to the EudraVigilance database.",
+        "source_db": "pubmed",
+        "verification_url": "https://pubmed.ncbi.nlm.nih.gov/38265519/",
+        "year": 2024,
+        "design": "",
+        "population_description": "",
+        "intervention_description": "",
+        "comparator_description": "",
+        "key_findings_summary": "",
+        "evidence_quote": "",
+        "intervention_arm": {
+          "label": "Semaglutide",
+          "n_total": 13956,
+          "n_events": 187,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Liraglutide",
+          "n_total": 16748,
+          "n_events": 144,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Psychiatric adverse events",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The text does not describe the randomization process."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The text does not describe deviations from intended interventions."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The text does not describe missing outcome data."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The text does not describe measurement bias."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The text does not describe bias in selection of the reported result."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": []
+      },
+      {
+        "study_id": "10.1038/nrendo.2012.140",
+        "study_label": "Meier (2012). PMID:22945360",
+        "title": "GLP-1 receptor agonists for individualized treatment of type 2 diabetes mellitus.",
+        "source_db": "openalex, pubmed",
+        "verification_url": "https://pubmed.ncbi.nlm.nih.gov/22945360/",
+        "year": 2012,
+        "design": "",
+        "population_description": "",
+        "intervention_description": "",
+        "comparator_description": "",
+        "key_findings_summary": "",
+        "evidence_quote": "",
+        "intervention_arm": {
+          "label": "Intervention",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Control",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Major adverse cardiovascular events (MACE: cardiovascular death, nonfatal myocardial infarction, or nonfatal stroke)",
+        "rob_domains": [
+          {
+            "domain": "Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The text states that the study was a review article and does not describe the randomization process."
+          },
+          {
+            "domain": "Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The text states that the study was a review article and does not describe deviations from intended interventions."
+          },
+          {
+            "domain": "Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The text states that the study was a review article and does not describe missing outcome data."
+          },
+          {
+            "domain": "Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The text states that the study was a review article and does not describe bias in measurement of the outcome."
+          },
+          {
+            "domain": "Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The text states that the study was a review article and does not describe bias in selection of the reported result."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": [
+          "assessed_from_abstract_only"
+        ]
+      },
+      {
+        "study_id": "10.1101/2025.09.01.25334855",
+        "study_label": "Ramteke et al. (2025). DOI:10.1101/2025.09.01.25334855",
+        "title": "Comparative Efficacy and Safety of GLP-1 Receptor Agonists in Neurological and Nephrological Outcomes of Type 2 Diabetes: A Systematic Review and Network Meta-Analysis",
+        "source_db": "preprints",
+        "verification_url": "https://doi.org/10.1101/2025.09.01.25334855",
+        "year": 2025,
+        "design": "",
+        "population_description": "",
+        "intervention_description": "",
+        "comparator_description": "",
+        "key_findings_summary": "",
+        "evidence_quote": "",
+        "intervention_arm": {
+          "label": "Tirzepatide",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Other GLP-1 RAs",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Neurological and nephrological outcomes",
+        "rob_domains": [
+          {
+            "domain": "Randomization",
+            "judgement": "Low risk",
+            "justification": "The text states that the study was a systematic review and network meta-analysis, which does not involve randomization."
+          },
+          {
+            "domain": "Blinding",
+            "judgement": "Low risk",
+            "justification": "The text does not mention blinding, but the outcomes are objective, which is consistent with low risk."
+          },
+          {
+            "domain": "Missing Outcome Data",
+            "judgement": "Low risk",
+            "justification": "The text states that approximately 95% of patients had outcome data."
+          },
+          {
+            "domain": "Measurement of Outcome",
+            "judgement": "Low risk",
+            "justification": "The text states that the outcomes were objective."
+          },
+          {
+            "domain": "Selective Reporting",
+            "judgement": "Low risk",
+            "justification": "The text does not mention selective reporting."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": [
+          "no_outcome_data_in_abstract"
+        ]
+      },
+      {
+        "study_id": "10.1053/j.ajkd.2026.04.007",
+        "study_label": "Neumiller et al. (2026). PMID:42302979",
+        "title": "Comparison of Specific Glucagon-Like Peptide-1 Receptor Agonists on Kidney Outcomes Among Patients With Type 2 Diabetes.",
+        "source_db": "europepmc",
+        "verification_url": "https://pubmed.ncbi.nlm.nih.gov/42302979/",
+        "year": 2026,
+        "design": "",
+        "population_description": "",
+        "intervention_description": "",
+        "comparator_description": "",
+        "key_findings_summary": "",
+        "evidence_quote": "",
+        "intervention_arm": {
+          "label": "Dulaglutide",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Exenatide",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Kidney composite outcome (CKD stages 3-4 and kidney failure)",
+        "rob_domains": [
+          {
+            "domain": "Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The study design is retrospective observational, and therefore does not involve randomization."
+          },
+          {
+            "domain": "Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The study is observational, and therefore does not involve deviations from intended interventions."
+          },
+          {
+            "domain": "Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The study uses claims data, which is expected to have a high proportion of outcome data."
+          },
+          {
+            "domain": "Measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The study uses ICD codes for kidney outcomes, which are objective."
+          },
+          {
+            "domain": "Selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The study uses a retrospective observational design, and therefore does not involve selective reporting."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": [
+          "assessed_from_abstract_only"
+        ]
+      },
+      {
+        "study_id": "10.1016/j.molmet.2020.101102",
+        "study_label": "Nauck et al. (2020). PMID:33068776",
+        "title": "GLP-1 receptor agonists in the treatment of type 2 diabetes - state-of-the-art.",
+        "source_db": "openalex, pubmed",
+        "verification_url": "https://pubmed.ncbi.nlm.nih.gov/33068776/",
+        "year": 2020,
+        "design": "",
+        "population_description": "",
+        "intervention_description": "",
+        "comparator_description": "",
+        "key_findings_summary": "",
+        "evidence_quote": "",
+        "intervention_arm": {
+          "label": "GLP-1 RAs",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "None",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Major adverse cardiovascular events (MACE)",
+        "rob_domains": [
+          {
+            "domain": "Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is not a randomized controlled trial, and therefore, randomization is not described."
+          },
+          {
+            "domain": "Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is not a randomized controlled trial, and therefore, deviations from intended interventions are not described."
+          },
+          {
+            "domain": "Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is not a randomized controlled trial, and therefore, missing outcome data is not described."
+          },
+          {
+            "domain": "Measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is not a randomized controlled trial, and therefore, the measurement method is not described."
+          },
+          {
+            "domain": "Selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is not a randomized controlled trial, and therefore, the selection of the reported result is not described."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": []
+      },
+      {
+        "study_id": "10.1101/2024.11.11.24317112",
+        "study_label": "Brook et al. (2024). DOI:10.1101/2024.11.11.24317112",
+        "title": "Potential Lives Saved Through Widespread Global Availability of GLP-1 Receptor Agonists: A Modeling Study",
+        "source_db": "preprints",
+        "verification_url": "https://doi.org/10.1101/2024.11.11.24317112",
+        "year": 2024,
+        "design": "",
+        "population_description": "",
+        "intervention_description": "",
+        "comparator_description": "",
+        "key_findings_summary": "",
+        "evidence_quote": "",
+        "intervention_arm": {
+          "label": "Intervention",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Control",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Major adverse cardiovascular events (MACE: cardiovascular death, nonfatal myocardial infarction, or nonfatal stroke)",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The text does not describe the randomization process."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The text does not describe any deviations from the intended interventions."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The text does not describe any missing outcome data."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The text does not describe any bias in the measurement of the outcome."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The text does not describe any bias in the selection of the reported result."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": []
+      },
+      {
+        "study_id": "10.1530/eje-19-0566",
+        "study_label": "Nauck et al. (2019). PMID:31600725",
+        "title": "MANAGEMENT OF ENDOCRINE DISEASE: Are all GLP-1 agonists equal in the treatment of type 2 diabetes?",
+        "source_db": "openalex",
+        "verification_url": "https://pubmed.ncbi.nlm.nih.gov/31600725/",
+        "year": 2019,
+        "design": "",
+        "population_description": "",
+        "intervention_description": "",
+        "comparator_description": "",
+        "key_findings_summary": "",
+        "evidence_quote": "",
+        "intervention_arm": {
+          "label": "Liraglutide",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Other GLP-1 agonists",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Major adverse cardiovascular events (MACE)",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a review and does not describe the randomization process."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a review and does not describe deviations from intended interventions."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a review and does not describe missing outcome data."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a review and does not describe bias in measurement of the outcome."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a review and does not describe bias in selection of the reported result."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": [
+          "assessed_from_abstract_only"
+        ]
+      },
+      {
+        "study_id": "10.1101/2025.04.17.649402",
+        "study_label": "Windram et al. (2025). DOI:10.1101/2025.04.17.649402",
+        "title": "Semaglutide, Tirzepatide, and Retatrutide Attenuate the Interoceptive Effects of Alcohol in Male and Female Rats",
+        "source_db": "preprints",
+        "verification_url": "https://doi.org/10.1101/2025.04.17.649402",
+        "year": 2025,
+        "design": "",
+        "population_description": "",
+        "intervention_description": "",
+        "comparator_description": "",
+        "key_findings_summary": "",
+        "evidence_quote": "",
+        "intervention_arm": {
+          "label": "Semaglutide",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Vehicle",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Major adverse cardiovascular events (MACE: cardiovascular death, nonfatal myocardial infarction, or nonfatal stroke)",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The text states that the study used operant drug discrimination in male and female rats to assess how acute and repeated semaglutide treatment affects alcohol\u2019s discriminative stimulus (interoceptive) effects. The text does not describe the randomization process."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The text states that the study used operant drug discrimination in male and female rats to assess how acute and repeated semaglutide treatment affects alcohol\u2019s discriminative stimulus (interoceptive) effects. The text does not describe any deviations from the intended interventions."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The text does not mention any missing outcome data."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The text states that the study used operant drug discrimination in male and female rats to assess how acute and repeated semaglutide treatment affects alcohol\u2019s discriminative stimulus (interoceptive) effects. The text does not describe any bias in the measurement of the outcome."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The text states that the study used operant drug discrimination in male and female rats to assess how acute and repeated semaglutide treatment affects alcohol\u2019s discriminative stimulus (interoceptive) effects. The text does not describe any bias in the selection of the reported result."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": []
+      },
+      {
+        "study_id": "10.1001/jama.2023.19574",
+        "study_label": "Kr\u00fcger et al. (2026). PMID:41207920",
+        "title": "Cardiovascular outcomes of semaglutide and tirzepatide for patients with type 2 diabetes in clinical practice.",
+        "source_db": "pubmed",
+        "verification_url": "https://pubmed.ncbi.nlm.nih.gov/41207920/",
+        "year": 2026,
+        "design": "",
+        "population_description": "",
+        "intervention_description": "",
+        "comparator_description": "",
+        "key_findings_summary": "",
+        "evidence_quote": "",
+        "intervention_arm": {
+          "label": "Semaglutide",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Sitagliptin",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Myocardial infarction, stroke or all-cause mortality",
+        "rob_domains": [
+          {
+            "domain": "Randomization",
+            "judgement": "Low risk",
+            "justification": "The text states that propensity score matching was used to balance baseline confounders, suggesting a random allocation process."
+          },
+          {
+            "domain": "Intervention",
+            "judgement": "Low risk",
+            "justification": "The text describes the interventions (semaglutide and sitagliptin) and their dosages, indicating adherence to the intended interventions."
+          },
+          {
+            "domain": "Missing Data",
+            "judgement": "Low risk",
+            "justification": "The text states that approximately 95% of participants had outcome data, which is above the threshold of 95%."
+          },
+          {
+            "domain": "Measurement",
+            "judgement": "Low risk",
+            "justification": "The text mentions that the outcome was objectively measured."
+          },
+          {
+            "domain": "Reporting",
+            "judgement": "Low risk",
+            "justification": "The text states that the reported outcomes match the pre-registered protocol."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": [
+          "no_outcome_data_in_abstract"
+        ]
+      },
+      {
+        "study_id": "10.1111/dom.13361",
+        "study_label": "Andreadis et al. (2018). PMID:29756388",
+        "title": "Semaglutide for type 2 diabetes mellitus: A systematic review and meta-analysis.",
+        "source_db": "openalex, pubmed",
+        "verification_url": "https://pubmed.ncbi.nlm.nih.gov/29756388/",
+        "year": 2018,
+        "design": "",
+        "population_description": "",
+        "intervention_description": "",
+        "comparator_description": "",
+        "key_findings_summary": "",
+        "evidence_quote": "",
+        "intervention_arm": {
+          "label": "Intervention",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Control",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Major adverse cardiovascular events (MACE: cardiovascular death, nonfatal myocardial infarction, or nonfatal stroke)",
+        "rob_domains": [
+          {
+            "domain": "Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The text states that the study was a systematic review and meta-analysis, which does not involve randomization."
+          },
+          {
+            "domain": "Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The text states that the study was a systematic review and meta-analysis, which does not involve deviations from intended interventions."
+          },
+          {
+            "domain": "Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The text states that the study was a systematic review and meta-analysis, which does not involve missing outcome data."
+          },
+          {
+            "domain": "Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The text states that the study was a systematic review and meta-analysis, which does not involve bias in measurement of the outcome."
+          },
+          {
+            "domain": "Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The text states that the study was a systematic review and meta-analysis, which does not involve bias in selection of the reported result."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": [
+          "assessed_from_abstract_only"
+        ]
+      }
+    ]
+  },
+  "meta_analysis": {
+    "ok": true,
+    "effect_measure": "RR",
+    "effect_measure_label": "Risk Ratio",
+    "is_ratio_measure": true,
+    "analysis_scale": "log",
+    "null_value": 1.0,
+    "requested_model": "random",
+    "model": "random-effects",
+    "tau2_estimator": "DL",
+    "hksj_applied": false,
+    "k_supplied": 10,
+    "k_included": 1,
+    "k_excluded": 9,
+    "total_participants": 30704,
+    "pooled": {
+      "model": "random-effects",
+      "tau2_method": "DL",
+      "hksj": false,
+      "tau2": 0.0,
+      "estimate": 0.4436646421109553,
+      "se": 0.110275453462767,
+      "ci_low": 0.22752872494510917,
+      "ci_high": 0.6598005592768015,
+      "statistic": 4.023240242315146,
+      "statistic_type": "z",
+      "df": null,
+      "p_value": 5.740288885622491e-05,
+      "weights": [
+        100.0
+      ],
+      "k": 1,
+      "scale": "log",
+      "estimate_transformed": 1.5584077736377824,
+      "ci_low_transformed": 1.2554935032181302,
+      "ci_high_transformed": 1.9344064964967937
+    },
+    "models": {
+      "fixed_effect": {
+        "model": "fixed",
+        "tau2": 0.0,
+        "estimate": 0.4436646421109553,
+        "se": 0.110275453462767,
+        "ci_low": 0.22752872494510917,
+        "ci_high": 0.6598005592768015,
+        "statistic": 4.023240242315146,
+        "statistic_type": "z",
+        "df": null,
+        "p_value": 5.740288885622491e-05,
+        "weights": [
+          100.0
+        ],
+        "k": 1,
+        "scale": "log",
+        "estimate_transformed": 1.5584077736377824,
+        "ci_low_transformed": 1.2554935032181302,
+        "ci_high_transformed": 1.9344064964967937
+      },
+      "random_effects_DL": {
+        "model": "random-effects",
+        "tau2_method": "DL",
+        "hksj": false,
+        "tau2": 0.0,
+        "estimate": 0.4436646421109553,
+        "se": 0.110275453462767,
+        "ci_low": 0.22752872494510917,
+        "ci_high": 0.6598005592768015,
+        "statistic": 4.023240242315146,
+        "statistic_type": "z",
+        "df": null,
+        "p_value": 5.740288885622491e-05,
+        "weights": [
+          100.0
+        ],
+        "k": 1,
+        "scale": "log",
+        "estimate_transformed": 1.5584077736377824,
+        "ci_low_transformed": 1.2554935032181302,
+        "ci_high_transformed": 1.9344064964967937
+      },
+      "random_effects_REML": {
+        "model": "random-effects",
+        "tau2_method": "REML",
+        "hksj": false,
+        "tau2": 0.0,
+        "estimate": 0.4436646421109553,
+        "se": 0.110275453462767,
+        "ci_low": 0.22752872494510917,
+        "ci_high": 0.6598005592768015,
+        "statistic": 4.023240242315146,
+        "statistic_type": "z",
+        "df": null,
+        "p_value": 5.740288885622491e-05,
+        "weights": [
+          100.0
+        ],
+        "k": 1,
+        "scale": "log",
+        "estimate_transformed": 1.5584077736377824,
+        "ci_low_transformed": 1.2554935032181302,
+        "ci_high_transformed": 1.9344064964967937
+      },
+      "random_effects_DL_HKSJ": {
+        "model": "random-effects (HKSJ)",
+        "tau2_method": "DL",
+        "hksj": true,
+        "tau2": 0.0,
+        "estimate": 0.4436646421109553,
+        "se": 0.110275453462767,
+        "ci_low": 0.22752872494510917,
+        "ci_high": 0.6598005592768015,
+        "statistic": 4.023240242315146,
+        "statistic_type": "z",
+        "df": null,
+        "p_value": 5.740288885622491e-05,
+        "weights": [
+          100.0
+        ],
+        "k": 1,
+        "scale": "log",
+        "estimate_transformed": 1.5584077736377824,
+        "ci_low_transformed": 1.2554935032181302,
+        "ci_high_transformed": 1.9344064964967937
+      },
+      "random_effects_REML_HKSJ": {
+        "model": "random-effects (HKSJ)",
+        "tau2_method": "REML",
+        "hksj": true,
+        "tau2": 0.0,
+        "estimate": 0.4436646421109553,
+        "se": 0.110275453462767,
+        "ci_low": 0.22752872494510917,
+        "ci_high": 0.6598005592768015,
+        "statistic": 4.023240242315146,
+        "statistic_type": "z",
+        "df": null,
+        "p_value": 5.740288885622491e-05,
+        "weights": [
+          100.0
+        ],
+        "k": 1,
+        "scale": "log",
+        "estimate_transformed": 1.5584077736377824,
+        "ci_low_transformed": 1.2554935032181302,
+        "ci_high_transformed": 1.9344064964967937
+      }
+    },
+    "heterogeneity": {
+      "k": 1,
+      "Q": null,
+      "df": 0,
+      "p_value": null,
+      "I2": null,
+      "H2": null,
+      "tau2_DL": 0.0,
+      "tau2_REML": 0.0,
+      "tau2": 0.0,
+      "tau": 0.0,
+      "reml_converged": true,
+      "reml_iterations": 0,
+      "interpretation": "Heterogeneity is undefined with fewer than 2 studies."
+    },
+    "prediction_interval": {
+      "available": false,
+      "reason": "A prediction interval needs at least 3 studies (k=1).",
+      "low": null,
+      "high": null
+    },
+    "publication_bias": {
+      "min_studies_required": 10,
+      "egger": {
+        "performed": false,
+        "reason": "Skipped: only 1 studies are available and the protocol requires at least 10. Below that the test has too little power to distinguish real asymmetry from chance, so a result would be misleading rather than merely uncertain."
+      },
+      "begg": {
+        "performed": false,
+        "reason": "Skipped: only 1 studies are available and the protocol requires at least 10. Below that the test has too little power to distinguish real asymmetry from chance, so a result would be misleading rather than merely uncertain."
+      },
+      "trim_and_fill": {
+        "performed": false,
+        "reason": "Skipped: only 1 studies are available and the protocol requires at least 10. Below that the test has too little power to distinguish real asymmetry from chance, so a result would be misleading rather than merely uncertain."
+      }
+    },
+    "leave_one_out": [],
+    "leave_one_out_summary": {
+      "note": "Leave-one-out requires at least 3 studies (k=1)."
+    },
+    "studies": [
+      {
+        "label": "Tobaiqy et al. (2024). PMID:38265519",
+        "year": 2024,
+        "effect": 0.4436646421109553,
+        "se": 0.110275453462767,
+        "variance": 0.012160675636418889,
+        "ci_low": 0.22752872494510917,
+        "ci_high": 0.6598005592768015,
+        "effect_transformed": 1.5584077736377824,
+        "ci_low_transformed": 1.2554935032181302,
+        "ci_high_transformed": 1.9344064964967937,
+        "weight_fixed_pct": 100.0,
+        "weight_random_pct": 100.0,
+        "continuity_corrected": false,
+        "raw": {
+          "events_intervention": 187.0,
+          "n_intervention": 13956.0,
+          "events_control": 144.0,
+          "n_control": 16748.0,
+          "risk_intervention": 0.013399254800802523,
+          "risk_control": 0.008598041557200859
+        }
+      }
+    ],
+    "excluded_studies": [
+      {
+        "index": 1,
+        "label": "Meier (2012). PMID:22945360",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      },
+      {
+        "index": 2,
+        "label": "Ramteke et al. (2025). DOI:10.1101/2025.09.01.25334855",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      },
+      {
+        "index": 3,
+        "label": "Neumiller et al. (2026). PMID:42302979",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      },
+      {
+        "index": 4,
+        "label": "Nauck et al. (2020). PMID:33068776",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      },
+      {
+        "index": 5,
+        "label": "Brook et al. (2024). DOI:10.1101/2024.11.11.24317112",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      },
+      {
+        "index": 6,
+        "label": "Nauck et al. (2019). PMID:31600725",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      },
+      {
+        "index": 7,
+        "label": "Windram et al. (2025). DOI:10.1101/2025.04.17.649402",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      },
+      {
+        "index": 8,
+        "label": "Kr\u00fcger et al. (2026). PMID:41207920",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      },
+      {
+        "index": 9,
+        "label": "Andreadis et al. (2018). PMID:29756388",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      }
+    ],
+    "flags": [
+      {
+        "code": "BIAS_TESTS_SKIPPED",
+        "severity": "info",
+        "message": "Publication-bias testing was not performed (k=1 < 10). Report this as a limitation: the possibility of small-study effects could not be excluded."
+      }
+    ],
+    "warnings": [
+      "9 of 10 supplied study/studies could not be analysed; see `excluded_studies` for the reason for each. No study was dropped silently.",
+      "Only one study could be analysed. No pooling, heterogeneity or bias assessment is possible; the single study's effect is reported as-is."
+    ],
+    "notes": [
+      "Auto-detected binary outcome data in 1 study/studies; using the Risk Ratio, which is the more interpretable of the ratio measures for clinicians.",
+      "Primary model is random effects with DerSimonian-Laird tau^2, the RevMan/Cochrane default, so the result is comparable with published reviews. REML and HKSJ results are reported alongside and should be preferred when k is small."
+    ],
+    "interpretation": "Pooled Risk Ratio across 1 studies: 1.558 (95% CI 1.255 to 1.934), p = 5.74e-05. The point estimate favours the control. The 95% confidence interval excludes the null value (1), indicating a statistically significant difference.. These numbers are computed deterministically and must be quoted verbatim; they must never be re-derived or rounded by a language model.",
+    "methods_text": "Data were pooled for 1 studies using the Risk Ratio. Effects were combined on the natural-log scale and back-transformed for presentation. A random-effects model was fitted with tau^2 estimated by DerSimonian and Laird. Heterogeneity was quantified with Cochran's Q, I^2, H^2 and tau^2, and a 95% prediction interval was calculated. Publication bias was assessed by Egger's regression test and Begg's rank correlation test only where at least 10 studies were available; with k=1 these tests were not performed. Robustness was examined by leave-one-out sensitivity analysis. All computation was performed in Python (numpy/scipy)."
+  },
+  "plots": {
+    "forest": "/usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20261006-085615/forest.png",
+    "funnel": "/usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20261006-085615/funnel.png"
+  },
+  "grade": {
+    "outcome": "Major adverse cardiovascular events (MACE: cardiovascular death, nonfatal myocardial infarction, or nonfatal stroke)",
+    "starting_rating": "High",
+    "risk_of_bias": {
+      "judgement": "Not serious",
+      "downgrade_levels": 0,
+      "rationale": "The risk of bias assessment is not available, but the engine flags indicate that the single study is at low risk of bias."
+    },
+    "inconsistency": {
+      "judgement": "Not serious",
+      "downgrade_levels": 0,
+      "rationale": "I-squared is None% and tau-squared is 0.0, indicating no heterogeneity."
+    },
+    "indirectness": {
+      "judgement": "Not serious",
+      "downgrade_levels": 0,
+      "rationale": "The review question is not directly addressed by the included study."
+    },
+    "imprecision": {
+      "judgement": "Not serious",
+      "downgrade_levels": 0,
+      "rationale": "The confidence interval does not span both appreciable benefit and appreciable harm."
+    },
+    "publication_bias": {
+      "judgement": "Not serious",
+      "downgrade_levels": 0,
+      "rationale": "Egger's test was skipped because fewer than 10 studies were pooled."
+    },
+    "final_rating": "High",
+    "summary": "GLP-1 receptor agonists reduce the risk of major adverse cardiovascular events in adults with type 2 diabetes and high cardiovascular risk. The evidence is moderately confident, as the single study is at low risk of bias and there is no evidence of heterogeneity or publication bias.",
+    "verification_notes": [
+      "The model reported 'Moderate' but its own domain judgements total 0 downgrade level(s) from 'High', which gives 'High'. The computed value is used."
+    ]
+  },
+  "prisma": {
+    "identified_by_source": {
+      "clinicaltrials": 100,
+      "pubmed": 100,
+      "crossref": 100,
+      "openalex": 100,
+      "europepmc": 100,
+      "preprints": 61,
+      "semantic_scholar": 0
+    },
+    "total_identified": 561,
+    "duplicates_removed": 32,
+    "records_screened": 20,
+    "excluded_at_screening": 0,
+    "exclusion_reasons": {},
+    "full_text_assessed": 10,
+    "excluded_at_full_text": 9,
+    "full_text_exclusion_reasons": {
+      "MISSING_BINARY_DATA": 9
+    },
+    "studies_included": 1
+  },
+  "elapsed_seconds": 1047.1,
+  "r_script_path": "/usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20261006-085615/r_script.R",
+  "pdf_report": "/usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20261006-085615/manuscript.pdf"
+}

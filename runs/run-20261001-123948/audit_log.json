@@ -1,0 +1,158 @@
+[
+  {
+    "source": "clinicaltrials",
+    "url": "https://clinicaltrials.gov/api/v2/studies",
+    "params": {
+      "query.term": "(patients OR \"multiple myeloma\" OR relapsed OR refractory) AND (\"CAR-T cell therapy\" OR \"bispecific antibodies\" OR \"standard regimens\")",
+      "pageSize": 25,
+      "format": "json",
+      "countTotal": "true"
+    },
+    "timestamp_utc": "2026-10-01T12:40:57.714516+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 928,
+    "error": null
+  },
+  {
+    "source": "pubmed",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi",
+    "params": {
+      "db": "pubmed",
+      "term": "(patients[tiab] OR \"multiple myeloma\"[tiab] OR relapsed[tiab] OR refractory[tiab] OR \"Multiple Myeloma\"[MeSH Terms]) AND (\"CAR-T cell therapy\"[tiab] OR \"bispecific antibodies\"[tiab] OR \"standard regimens\"[tiab] OR \"CAR-T Cell Therapy\"[MeSH Terms] OR \"Bispecific Antibodies\"[MeSH Terms])",
+      "retmax": 25,
+      "retmode": "json",
+      "sort": "relevance",
+      "tool": "SRMA-Agent",
+      "email": ""
+    },
+    "timestamp_utc": "2026-10-01T12:40:57.824745+00:00",
+    "status_code": 200,
+    "n_results": 8248,
+    "duration_ms": 1027,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "((TITLE_ABS:patients OR TITLE_ABS:\"multiple myeloma\" OR TITLE_ABS:relapsed OR TITLE_ABS:refractory OR MESH:\"Multiple Myeloma\") AND (TITLE_ABS:\"CAR-T cell therapy\" OR TITLE_ABS:\"bispecific antibodies\" OR TITLE_ABS:\"standard regimens\" OR MESH:\"CAR-T Cell Therapy\" OR MESH:\"Bispecific Antibodies\")) AND (SRC:PPR)",
+      "format": "json",
+      "resultType": "core",
+      "pageSize": 100,
+      "cursorMark": "*"
+    },
+    "timestamp_utc": "2026-10-01T12:40:57.985988+00:00",
+    "status_code": 200,
+    "n_results": 19,
+    "duration_ms": 1191,
+    "error": null
+  },
+  {
+    "source": "europepmc",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "(TITLE_ABS:patients OR TITLE_ABS:\"multiple myeloma\" OR TITLE_ABS:relapsed OR TITLE_ABS:refractory OR MESH:\"Multiple Myeloma\") AND (TITLE_ABS:\"CAR-T cell therapy\" OR TITLE_ABS:\"bispecific antibodies\" OR TITLE_ABS:\"standard regimens\" OR MESH:\"CAR-T Cell Therapy\" OR MESH:\"Bispecific Antibodies\")",
+      "format": "json",
+      "resultType": "core",
+      "pageSize": 25,
+      "cursorMark": "*"
+    },
+    "timestamp_utc": "2026-10-01T12:40:58.202419+00:00",
+    "status_code": 200,
+    "n_results": 3642,
+    "duration_ms": 1413,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2024.01.18.24301502/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T12:40:58.760689+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 773,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2024.09.02.610843/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T12:40:58.763030+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 775,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.05.28.20115758/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T12:40:58.822224+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 833,
+    "error": null
+  },
+  {
+    "source": "crossref",
+    "url": "https://api.crossref.org/works",
+    "params": {
+      "query.bibliographic": "patients multiple myeloma CAR-T cell therapy bispecific antibodies",
+      "rows": 25,
+      "cursor": "*",
+      "mailto": ""
+    },
+    "timestamp_utc": "2026-10-01T12:40:58.937581+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 2150,
+    "error": null
+  },
+  {
+    "source": "pubmed",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi",
+    "params": {
+      "db": "pubmed",
+      "id": "38432433,38423700,38609727,40738883,39632797,41177723,38738379,39729045,41842719,42653183,41152534,41797460,40356496,42163304,42809698,36464766,36081517,38785483,38462921,37307686,31085047,38485337,35443566,34758063,38717927",
+      "retmode": "xml",
+      "tool": "SRMA-Agent",
+      "email": ""
+    },
+    "timestamp_utc": "2026-10-01T12:40:59.186299+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1361,
+    "error": null
+  },
+  {
+    "source": "openalex",
+    "url": "https://api.openalex.org/works",
+    "params": {
+      "search": "(patients OR \"multiple myeloma\" OR relapsed OR refractory) AND (\"CAR-T cell therapy\" OR \"bispecific antibodies\" OR \"standard regimens\")",
+      "mailto": "",
+      "per-page": 25,
+      "cursor": "*"
+    },
+    "timestamp_utc": "2026-10-01T12:41:00.337561+00:00",
+    "status_code": 200,
+    "n_results": 95255,
+    "duration_ms": 3545,
+    "error": null
+  },
+  {
+    "source": "semantic_scholar",
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search",
+    "params": {
+      "query": "patients multiple myeloma CAR-T cell therapy bispecific antibodies",
+      "limit": 25,
+      "offset": 0,
+      "fields": "paperId,externalIds,title,abstract,venue,year,authors,publicationTypes,fieldsOfStudy,citationCount,referenceCount,openAccessPdf,isOpenAccess,url,publicationDate,journal"
+    },
+    "timestamp_utc": "2026-10-01T12:41:04.547750+00:00",
+    "status_code": 429,
+    "n_results": null,
+    "duration_ms": 7747,
+    "error": "HTTP 429"
+  }
+]

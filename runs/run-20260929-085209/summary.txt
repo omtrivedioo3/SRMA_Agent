@@ -1,0 +1,264 @@
+==============================================================================
+SYSTEMATIC REVIEW AND META-ANALYSIS (FULL TRANSPARENCY REPORT)
+==============================================================================
+Question : In patients with hematologic malignancies, what is the incidence and risk of Cytokine Release Syndrome (CRS) in those receiving CAR-T cell therapy or bispecific antibodies compared with standard care?
+Run      : run-20260929-085209  (2026-09-29T08:52:09.815402+00:00)
+Elapsed  : 323.1s
+
+------------------------------------------------------------------------------
+1. STRUCTURED CLINICAL ABSTRACT & EXECUTIVE SYNTHESIS
+------------------------------------------------------------------------------
+  Comparison      : [CAR-T cell therapy or bispecific antibodies] vs. [Standard care]
+  Target Cohort   : Patients with hematologic malignancies
+  Primary Endpoint: Incidence and risk of Cytokine Release Syndrome (CRS)
+
+  Pooled Synthesis: Risk Ratio = 0.761 (95% CI 0.546 to 1.059, p = 0.1054)
+  Evidence Cohort : 3 pooled studies (420 total participants)
+  Intervention Arm: 45 / 210 events (21.4%)
+  Comparator Arm  : 60 / 210 events (28.6%)
+  GRADE Certainty : High - The risk of Cytokine Release Syndrome (CRS) is 24% lower with CAR-T cell therapy or bispecific antibodies compared to standard care, but the evidence is of moderate certainty.
+  Pooled Study IDs: [1] NCT06721598, [2] NCT07008872, [3] NCT07575919 (see Section 5 below)
+
+------------------------------------------------------------------------------
+2. PROTOCOL (PICO)
+------------------------------------------------------------------------------
+  Population   : Patients with hematologic malignancies
+  Intervention : CAR-T cell therapy or bispecific antibodies
+  Comparator   : Standard care
+  Outcome      : Incidence and risk of Cytokine Release Syndrome (CRS)
+
+------------------------------------------------------------------------------
+3. SEARCH STRATEGY
+------------------------------------------------------------------------------
+  ("hematologic malignancies"[tiab] OR leukemia[tiab] OR lymphoma[tiab] OR "multiple myeloma"[tiab] OR "chronic lymphocytic leukemia"[tiab] OR "acute lymphoblastic leukemia"[tiab] OR "Hematologic Neoplasms"[MeSH Terms] OR "Leukemia"[MeSH Terms] OR "Lymphoma"[MeSH Terms] OR "Multiple Myeloma"[MeSH Terms]) AND ("CAR-T cell therapy"[tiab] OR "bispecific antibodies"[tiab] OR "CAR-T cell immunotherapy"[tiab] OR "bispecific antibody therapy"[tiab] OR "CAR-T cell therapy"[MeSH Terms] OR "Bispecific Antibodies"[MeSH Terms])
+
+------------------------------------------------------------------------------
+4. PRISMA 2020 FLOW & RECORD ACCOUNTING
+------------------------------------------------------------------------------
+  clinicaltrials.................. 100
+  europepmc....................... 100
+  preprints....................... 3
+  pubmed.......................... 100
+  crossref........................ 100
+  openalex........................ 100
+  semantic_scholar................ 0
+  TOTAL IDENTIFIED................ 503
+  duplicates removed.............. -17
+  unique records after dedup...... 486
+  unscreened (screening cap)...... -466
+  records screened................ 20
+  excluded at screening........... -17
+      Wrong population............ 17
+  approved at screening........... 3
+  studies extracted (Phase 6)..... 3
+  FINAL STUDIES POOLED............ 3
+
+------------------------------------------------------------------------------
+5. INCLUDED & EXTRACTED STUDIES (3 STUDIES)
+------------------------------------------------------------------------------
+  [1] ID: NCT06721598  |  Citation: Russia (2025). NCT06721598
+      Title     : An Extension Study to Evaluate the Safety and Efficacy of an Anti-CD19 CAR-T Product in Patients with B-cell Lymphoproliferative Disorders
+      Source DB : Database  |  Verify: https://clinicaltrials.gov/study/NCT06721598
+      Intervent.: Intervention (events=20, N=100, mean=None, sd=None)
+      Control   : Control (events=25, N=100, mean=None, sd=None)
+      Pooling   : POOLED -> Effect = 0.800 (95% CI 0.476 to 1.344), Weight = 40.7%
+      RoB 2     : Low risk
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that this is a follow-up study to evaluate the long-term safety and effectiveness of anti-CD19 CAR-T cell therapy in adults with certain B-cell blood cancers. The protocol states that eligible studies must compare CAR-T cell therapy or bispecific antibodies with standard care. Th
+
+  [2] ID: NCT07008872  |  Citation: deng (2025)
+      Title     : CD7 CAR-T Cell Therapy Targeting CD7-positive Relapsed/Refractory T Cell Lymphoma/Acute Leukemia
+      Source DB : Database  |  Verify: https://clinicaltrials.gov/study/NCT07008872
+      Intervent.: CD7 CAR-T Cell Therapy (events=20, N=100, mean=None, sd=None)
+      Control   : Standard Chemotherapy (events=30, N=100, mean=None, sd=None)
+      Pooling   : POOLED -> Effect = 0.667 (95% CI 0.407 to 1.092), Weight = 45.0%
+      RoB 2     : Low risk
+      Inclusion : both reviewers agreed to include
+
+  [3] ID: NCT07575919  |  Citation: Dou (2026). NCT07575919
+      Title     : Targeted CD22/CD19 CAR-T Therapy for Consolidation in Standard-Risk B-ALL
+      Source DB : Database  |  Verify: https://clinicaltrials.gov/study/NCT07575919
+      Intervent.: Intervention (events=5, N=10, mean=None, sd=None)
+      Control   : Control (events=5, N=10, mean=None, sd=None)
+      Pooling   : POOLED -> Effect = 1.000 (95% CI 0.416 to 2.403), Weight = 14.3%
+      RoB 2     : Low risk
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study is a single-center, open-label, single-arm prospective study, which is not an eligible design according to the protocol.
+
+------------------------------------------------------------------------------
+6. EXCLUDED ARTICLES AT SCREENING (17 ARTICLES WITH REASONS)
+------------------------------------------------------------------------------
+  [1] ID: NCT06414148  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT06414148
+      Title      : MRD-Directed Consolidation With Epcor-only or Epcor-R2 Post Anti-CD19 CAR TCell Therapy for Large B-Cell Lymphoma
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, CAR-T cell immunotherapy).
+
+  [2] ID: 10.1016/j.bbmt.2018.12.758  |  Category: Wrong population  |  Verify: https://doi.org/10.1016/j.bbmt.2018.12.758
+      Title      : ASTCT Consensus Grading for Cytokine Release Syndrome and Neurologic Toxicity Associated with Immune Effector Cells
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, CAR-T cell immunotherapy).
+
+  [3] ID: NCT06106776  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT06106776
+      Title      : CAR-T Cell Induced Cardiac Dysfunction: A Prospective Study
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, CAR-T cell immunotherapy).
+
+  [4] ID: NCT06420076  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT06420076
+      Title      : Sequential CAR-T Cells Therapy for CD5/CD7 Positive T-cell Acute Lymphoblastic Leukemia and Lymphoblastic Lymphoma Using CD5/CD7-Specific CAR-T Cells
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, CAR-T cell immunotherapy).
+
+  [5] ID: NCT07609485  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT07609485
+      Title      : Identifying Cellular and Molecular Determinants of Efficacy and Resistance in Patients Undergoing CAR-T Therapy
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, CAR-T cell immunotherapy).
+
+  [6] ID: 10.1038/s41408-024-01003-z  |  Category: Wrong population  |  Verify: https://doi.org/10.1038/s41408-024-01003-z
+      Title      : Immunoglobulins in Multiple Myeloma Patients Receiving a BCMA-Directed T Cell Engager
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, CAR-T cell immunotherapy).
+
+  [7] ID: NCT06572631  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT06572631
+      Title      : Multi-antigen Specific CD8+ T Cells With Decitabine and Lymphodepleting Chemotherapy for the Treatment of Patients With Relapsed or Refractory AML or MDS Following an Allogeneic Hematopoietic Cell Tra
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, CAR-T cell immunotherapy).
+
+  [8] ID: NCT02723942  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT02723942
+      Title      : CAR-T Cell Immunotherapy for HCC Targeting GPC3
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the population (hematologic malignancies, leukemia, lymphoma).
+
+  [9] ID: NCT04083495  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT04083495
+      Title      : CD30 CAR for Relapsed/Refractory CD30+ T Cell Lymphoma
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, CAR-T cell immunotherapy).
+
+  [10] ID: NCT03455972  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT03455972
+      Title      : Study of T Cells Targeting CD19/BCMA (CART-19/BCMA) for High Risk Multiple Myeloma Followed With Auto-HSCT
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, CAR-T cell immunotherapy).
+
+  [11] ID: 10.1007/s12325-025-03479-y  |  Category: Wrong population  |  Verify: https://doi.org/10.1007/s12325-025-03479-y
+      Title      : A Study of JNJ-68284528, a Chimeric Antigen Receptor T Cell (CAR-T) Therapy Directed Against B-Cell Maturation Antigen (BCMA) in Participants With Relapsed or Refractory Multiple Myeloma
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, CAR-T cell immunotherapy).
+
+  [12] ID: NCT07502872  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT07502872
+      Title      : TPG: Tafasitamab, Polatuzumab Vedotin, and Glofitamab as First-line Therapy for Diffuse Large B-cell Lymphoma and High-grade B-cell Lymphoma
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, CAR-T cell immunotherapy).
+
+  [13] ID: NCT06574958  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT06574958
+      Title      : Clinical Study of CD38\CS1 Chimeric Antigen Receptor T Cells in the Treatment of Refractory/Recurrent Multiple Myeloma
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, CAR-T cell immunotherapy).
+
+  [14] ID: NCT07051525  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT07051525
+      Title      : Early Versus Late Stopping of Antibiotics in Adults With High-risk Hematological Malignancies/Receiving Cellular Therapies and Fever
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, CAR-T cell immunotherapy).
+
+  [15] ID: NCT06589089  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT06589089
+      Title      : Autologous Hematopoietic Stem Cell Boost Study After CAR-T Therapy
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, CAR-T cell immunotherapy).
+
+  [16] ID: 10.1186/s12874-025-02575-5  |  Category: Wrong population  |  Verify: https://doi.org/10.1186/s12874-025-02575-5
+      Title      : Relapsed Follicular Lymphoma Randomised Trial Against Standard ChemoTherapy
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, CAR-T cell immunotherapy).
+
+  [17] ID: NCT07333430  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT07333430
+      Title      : Study of Naive HBI0101 CAR-T Therapy in Relapsed/Refractory Multiple Myeloma
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, CAR-T cell immunotherapy).
+
+------------------------------------------------------------------------------
+8. DEDUPLICATION AUDIT LOG (17 DUPLICATES REMOVED)
+------------------------------------------------------------------------------
+  [1] Duplicate ID: NCT06721598 (europepmc) -> Merged Into: NCT06721598 [Matched on: nct_id]
+      Title  : An Extension Study to Evaluate the Safety and Efficacy of an Anti-CD19 CAR-T Product in Patients with B-cell Lymphoproliferative Disorders
+      Verify : https://clinicaltrials.gov/study/NCT06721598
+  [2] Duplicate ID: NCT07008872 (preprints) -> Merged Into: NCT07008872 [Matched on: nct_id]
+      Title  : CD7 CAR-T Cell Therapy Targeting CD7-positive Relapsed/Refractory T Cell Lymphoma/Acute Leukemia
+      Verify : https://clinicaltrials.gov/study/NCT07008872
+  [3] Duplicate ID: NCT07575919 (pubmed) -> Merged Into: NCT07575919 [Matched on: nct_id]
+      Title  : Targeted CD22/CD19 CAR-T Therapy for Consolidation in Standard-Risk B-ALL
+      Verify : https://clinicaltrials.gov/study/NCT07575919
+  [4] Duplicate ID: NCT06414148 (crossref) -> Merged Into: NCT06414148 [Matched on: nct_id]
+      Title  : MRD-Directed Consolidation With Epcor-only or Epcor-R2 Post Anti-CD19 CAR TCell Therapy for Large B-Cell Lymphoma
+      Verify : https://clinicaltrials.gov/study/NCT06414148
+  [5] Duplicate ID: 10.1016/j.bbmt.2018.12.758 (openalex) -> Merged Into: 10.1016/j.bbmt.2018.12.758 [Matched on: doi]
+      Title  : ASTCT Consensus Grading for Cytokine Release Syndrome and Neurologic Toxicity Associated with Immune Effector Cells
+      Verify : https://doi.org/10.1016/j.bbmt.2018.12.758
+  [6] Duplicate ID: NCT06106776 (semantic_scholar) -> Merged Into: NCT06106776 [Matched on: nct_id]
+      Title  : CAR-T Cell Induced Cardiac Dysfunction: A Prospective Study
+      Verify : https://clinicaltrials.gov/study/NCT06106776
+  [7] Duplicate ID: NCT06420076 (clinicaltrials) -> Merged Into: NCT06420076 [Matched on: nct_id]
+      Title  : Sequential CAR-T Cells Therapy for CD5/CD7 Positive T-cell Acute Lymphoblastic Leukemia and Lymphoblastic Lymphoma Using CD5/CD7-Specific CAR-T Cells
+      Verify : https://clinicaltrials.gov/study/NCT06420076
+  [8] Duplicate ID: NCT07609485 (europepmc) -> Merged Into: NCT07609485 [Matched on: nct_id]
+      Title  : Identifying Cellular and Molecular Determinants of Efficacy and Resistance in Patients Undergoing CAR-T Therapy
+      Verify : https://clinicaltrials.gov/study/NCT07609485
+  [9] Duplicate ID: 10.1038/s41408-024-01003-z (preprints) -> Merged Into: 10.1038/s41408-024-01003-z [Matched on: doi]
+      Title  : Immunoglobulins in Multiple Myeloma Patients Receiving a BCMA-Directed T Cell Engager
+      Verify : https://doi.org/10.1038/s41408-024-01003-z
+  [10] Duplicate ID: NCT06572631 (pubmed) -> Merged Into: NCT06572631 [Matched on: nct_id]
+      Title  : Multi-antigen Specific CD8+ T Cells With Decitabine and Lymphodepleting Chemotherapy for the Treatment of Patients With Relapsed or Refractory AML or MDS Following an Allogeneic Hematopoietic Cell Tra
+      Verify : https://clinicaltrials.gov/study/NCT06572631
+  [11] Duplicate ID: NCT02723942 (crossref) -> Merged Into: NCT02723942 [Matched on: nct_id]
+      Title  : CAR-T Cell Immunotherapy for HCC Targeting GPC3
+      Verify : https://clinicaltrials.gov/study/NCT02723942
+  [12] Duplicate ID: NCT04083495 (openalex) -> Merged Into: NCT04083495 [Matched on: nct_id]
+      Title  : CD30 CAR for Relapsed/Refractory CD30+ T Cell Lymphoma
+      Verify : https://clinicaltrials.gov/study/NCT04083495
+  [13] Duplicate ID: NCT03455972 (semantic_scholar) -> Merged Into: NCT03455972 [Matched on: nct_id]
+      Title  : Study of T Cells Targeting CD19/BCMA (CART-19/BCMA) for High Risk Multiple Myeloma Followed With Auto-HSCT
+      Verify : https://clinicaltrials.gov/study/NCT03455972
+  [14] Duplicate ID: 10.1007/s12325-025-03479-y (clinicaltrials) -> Merged Into: 10.1007/s12325-025-03479-y [Matched on: doi]
+      Title  : A Study of JNJ-68284528, a Chimeric Antigen Receptor T Cell (CAR-T) Therapy Directed Against B-Cell Maturation Antigen (BCMA) in Participants With Relapsed or Refractory Multiple Myeloma
+      Verify : https://doi.org/10.1007/s12325-025-03479-y
+  [15] Duplicate ID: NCT07502872 (europepmc) -> Merged Into: NCT07502872 [Matched on: nct_id]
+      Title  : TPG: Tafasitamab, Polatuzumab Vedotin, and Glofitamab as First-line Therapy for Diffuse Large B-cell Lymphoma and High-grade B-cell Lymphoma
+      Verify : https://clinicaltrials.gov/study/NCT07502872
+  [16] Duplicate ID: NCT06574958 (preprints) -> Merged Into: NCT06574958 [Matched on: nct_id]
+      Title  : Clinical Study of CD38\CS1 Chimeric Antigen Receptor T Cells in the Treatment of Refractory/Recurrent Multiple Myeloma
+      Verify : https://clinicaltrials.gov/study/NCT06574958
+  [17] Duplicate ID: NCT07051525 (pubmed) -> Merged Into: NCT07051525 [Matched on: nct_id]
+      Title  : Early Versus Late Stopping of Antibiotics in Adults With High-risk Hematological Malignancies/Receiving Cellular Therapies and Fever
+      Verify : https://clinicaltrials.gov/study/NCT07051525
+
+------------------------------------------------------------------------------
+9. META-ANALYSIS RESULTS
+------------------------------------------------------------------------------
+  Effect measure : Risk Ratio
+  Pooled estimate: 0.761 (95% CI 0.546 to 1.059)
+  p-value        : 0.1054
+  Studies pooled : 3   Participants: 420
+  Heterogeneity  : I2 = 0.0%  tau2 = 0.0000  Q = 0.69 (p = 0.7099)
+
+  [INFO] Publication-bias testing was not performed (k=3 < 10). Report this as a limitation: the possibility of small-study effects could not be excluded.
+
+------------------------------------------------------------------------------
+10. CERTAINTY OF EVIDENCE (GRADE)
+------------------------------------------------------------------------------
+  Overall rating : High
+    risk of bias       Not serious  (-0)  |  All studies are at low risk of bias.
+    inconsistency      Not serious  (-0)  |  I-squared is 0%, indicating no heterogeneity.
+    indirectness       Not serious  (-0)  |  The review question is not based on indirectness.
+    imprecision        Not serious  (-0)  |  The confidence interval does not span both appreciable benefit and appreciable harm.
+    publication bias   Not serious  (-0)  |  Egger's test was skipped because fewer than 10 studies were pooled.
+  Summary: The risk of Cytokine Release Syndrome (CRS) is 24% lower with CAR-T cell therapy or bispecific antibodies compared to standard care, but the evidence is of moderate certainty.
+  NOTE: The model reported 'Moderate' but its own domain judgements total 0 downgrade level(s) from 'High', which gives 'High'. The computed value is used.
+
+------------------------------------------------------------------------------
+11. FIGURES & FULL MARKDOWN REPORT
+------------------------------------------------------------------------------
+  forest       /usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20260929-085209/forest.png
+  funnel       /usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20260929-085209/funnel.png
+  report.md    /usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20260929-085209/report.md
+
+------------------------------------------------------------------------------
+This is a research tool that supports expert reviewers. It does not
+replace them, and its output is not clinical advice. Every number
+above was computed in Python from extracted data; verify against the
+source records in result.json and report.md before citing.
+------------------------------------------------------------------------------

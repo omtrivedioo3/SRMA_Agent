@@ -1,0 +1,770 @@
+[
+  {
+    "source": "pubmed",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi",
+    "params": {
+      "db": "pubmed",
+      "term": "(\"type 2 diabetes\"[tiab] OR patients[tiab] OR \"diabetic patients\"[tiab] OR diabetes[tiab] OR \"type 2 diabetes mellitus\"[tiab] OR \"Diabetes Mellitus\"[MeSH Terms]) AND (\"GLP-1 receptor agonists\"[tiab] OR semaglutide[tiab] OR liraglutide[tiab] OR dulaglutide[tiab] OR \"GLP-1 agonists\"[tiab] OR \"GLP-1 Receptor Agonists\"[MeSH Terms])",
+      "retmax": 100,
+      "retmode": "json",
+      "sort": "relevance",
+      "tool": "SRMA-Agent",
+      "email": ""
+    },
+    "timestamp_utc": "2026-10-06T08:57:38.111157+00:00",
+    "status_code": 200,
+    "n_results": 11834,
+    "duration_ms": 600,
+    "error": null
+  },
+  {
+    "source": "clinicaltrials",
+    "url": "https://clinicaltrials.gov/api/v2/studies",
+    "params": {
+      "query.term": "(\"type 2 diabetes\" OR patients OR \"diabetic patients\" OR diabetes OR \"type 2 diabetes mellitus\" OR \"Diabetes Mellitus\") AND (\"GLP-1 receptor agonists\" OR semaglutide OR liraglutide OR dulaglutide OR \"GLP-1 agonists\")",
+      "pageSize": 100,
+      "format": "json",
+      "countTotal": "true"
+    },
+    "timestamp_utc": "2026-10-06T08:57:39.081367+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1580,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "((TITLE_ABS:\"type 2 diabetes\" OR TITLE_ABS:patients OR TITLE_ABS:\"diabetic patients\" OR TITLE_ABS:diabetes OR TITLE_ABS:\"type 2 diabetes mellitus\" OR MESH:\"Diabetes Mellitus\") AND (TITLE_ABS:\"GLP-1 receptor agonists\" OR TITLE_ABS:semaglutide OR TITLE_ABS:liraglutide OR TITLE_ABS:dulaglutide OR TITLE_ABS:\"GLP-1 agonists\" OR MESH:\"GLP-1 Receptor Agonists\")) AND (SRC:PPR)",
+      "format": "json",
+      "resultType": "core",
+      "pageSize": 100,
+      "cursorMark": "*"
+    },
+    "timestamp_utc": "2026-10-06T08:57:39.357068+00:00",
+    "status_code": 200,
+    "n_results": 192,
+    "duration_ms": 1848,
+    "error": null
+  },
+  {
+    "source": "pubmed",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi",
+    "params": {
+      "db": "pubmed",
+      "id": "38265519,34543259,33068776,41207920,41183330,32519795,38388874,37445623,40523289,38241775,32598218,22945360,25725635,26358288,38612620,29397376,34248838,31837125,38795152,31422062,39181497,32077010,29756388,34903039,34302978,36722623,35217468,34526024,36691309,41778928,41703894,41219651,36568085,40829097,37701904,31186120,31539622,40614622,38691645,40196945,33854484,37828829,36384763,34518091,40983112,40617160,32333875,35802842,40590655,27563838,32267058,42034831,33772451,41493256,28274140,41008590,31606525,41082229,41334697,28483748,29805980,35128745,41482652,35311455,31770356,37231200,27252246,25437461,25326839,26423061,22111970,30499733,39332263,31770362,31790314,41051803,33594405,41192935,30372907,33434602,41820778,40240532,31801807,27835045,29949126,28431666,41340366,32567125,27652617,26761217,27766579,33292155,36710450,40980971,26242767,38553173,26511102,28086882,30269833,30156446",
+      "retmode": "xml",
+      "tool": "SRMA-Agent",
+      "email": ""
+    },
+    "timestamp_utc": "2026-10-06T08:57:40.085774+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1974,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "((TITLE_ABS:\"type 2 diabetes\" OR TITLE_ABS:patients OR TITLE_ABS:\"diabetic patients\" OR TITLE_ABS:diabetes OR TITLE_ABS:\"type 2 diabetes mellitus\" OR MESH:\"Diabetes Mellitus\") AND (TITLE_ABS:\"GLP-1 receptor agonists\" OR TITLE_ABS:semaglutide OR TITLE_ABS:liraglutide OR TITLE_ABS:dulaglutide OR TITLE_ABS:\"GLP-1 agonists\" OR MESH:\"GLP-1 Receptor Agonists\")) AND (SRC:PPR)",
+      "format": "json",
+      "resultType": "core",
+      "pageSize": 100,
+      "cursorMark": "AoIIQQJ53Sg1MjY4Mjc5OA=="
+    },
+    "timestamp_utc": "2026-10-06T08:57:40.179632+00:00",
+    "status_code": 200,
+    "n_results": 192,
+    "duration_ms": 820,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "((TITLE_ABS:\"type 2 diabetes\" OR TITLE_ABS:patients OR TITLE_ABS:\"diabetic patients\" OR TITLE_ABS:diabetes OR TITLE_ABS:\"type 2 diabetes mellitus\" OR MESH:\"Diabetes Mellitus\") AND (TITLE_ABS:\"GLP-1 receptor agonists\" OR TITLE_ABS:semaglutide OR TITLE_ABS:liraglutide OR TITLE_ABS:dulaglutide OR TITLE_ABS:\"GLP-1 agonists\" OR MESH:\"GLP-1 Receptor Agonists\")) AND (SRC:PPR)",
+      "format": "json",
+      "resultType": "core",
+      "pageSize": 100,
+      "cursorMark": "AoIIP5s8ICg1MDQ0OTUzMg=="
+    },
+    "timestamp_utc": "2026-10-06T08:57:40.410857+00:00",
+    "status_code": 200,
+    "n_results": 192,
+    "duration_ms": 224,
+    "error": null
+  },
+  {
+    "source": "crossref",
+    "url": "https://api.crossref.org/works",
+    "params": {
+      "query.bibliographic": "type 2 diabetes patients GLP-1 receptor agonists semaglutide",
+      "rows": 100,
+      "cursor": "*",
+      "mailto": ""
+    },
+    "timestamp_utc": "2026-10-06T08:57:41.078353+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 3576,
+    "error": null
+  },
+  {
+    "source": "openalex",
+    "url": "https://api.openalex.org/works",
+    "params": {
+      "search": "(\"type 2 diabetes\" OR patients OR \"diabetic patients\" OR diabetes OR \"type 2 diabetes mellitus\" OR \"Diabetes Mellitus\") AND (\"GLP-1 receptor agonists\" OR semaglutide OR liraglutide OR dulaglutide OR \"GLP-1 agonists\")",
+      "mailto": "",
+      "per-page": 100,
+      "cursor": "*"
+    },
+    "timestamp_utc": "2026-10-06T08:57:41.427067+00:00",
+    "status_code": 200,
+    "n_results": 96962,
+    "duration_ms": 3920,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2024.05.06.592704/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:41.497028+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1081,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2024.10.28.24316312/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:41.533569+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1117,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2024.11.11.24317112/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:41.631644+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1218,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2024.06.27.24309551/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:41.641401+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1224,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2025.11.10.25339908/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:41.752889+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1335,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2025.09.01.25334855/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:41.769354+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1357,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2025.10.23.25338682/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:41.772371+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 275,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2025.10.07.680898/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:41.813167+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1396,
+    "error": null
+  },
+  {
+    "source": "europepmc",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "(TITLE_ABS:\"type 2 diabetes\" OR TITLE_ABS:patients OR TITLE_ABS:\"diabetic patients\" OR TITLE_ABS:diabetes OR TITLE_ABS:\"type 2 diabetes mellitus\" OR MESH:\"Diabetes Mellitus\") AND (TITLE_ABS:\"GLP-1 receptor agonists\" OR TITLE_ABS:semaglutide OR TITLE_ABS:liraglutide OR TITLE_ABS:dulaglutide OR TITLE_ABS:\"GLP-1 agonists\" OR MESH:\"GLP-1 Receptor Agonists\")",
+      "format": "json",
+      "resultType": "core",
+      "pageSize": 100,
+      "cursorMark": "*"
+    },
+    "timestamp_utc": "2026-10-06T08:57:41.865975+00:00",
+    "status_code": 200,
+    "n_results": 16042,
+    "duration_ms": 4360,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2025.04.17.649402/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:41.875394+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1460,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2025.06.12.25329536/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:41.884438+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 252,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2025.06.07.25329184/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:41.913685+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1496,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2025.11.11.25339931/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:42.001185+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 467,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2025.05.29.25328594/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:42.058649+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 289,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2025.05.08.25327248/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:42.154592+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 341,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2025.05.05.25326993/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:42.300368+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 386,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2024.11.01.24316620/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:42.406824+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 348,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2023.11.19.23298750/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:42.414816+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 539,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2023.12.11.23299784/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:42.432891+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 2014,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2024.11.28.24317099/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:42.456432+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 571,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2024.05.20.24307619/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:42.525610+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 753,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2023.08.22.23294277/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:42.550040+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 249,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2025.11.10.25339912/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:42.569704+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 928,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2025.03.26.25324631/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:42.626240+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 873,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2023.11.06.23298185/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:42.668896+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 262,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2024.10.17.24315627/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:42.784530+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 783,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2023.08.04.23293636/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:42.810091+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 353,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2025.05.14.25327583/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:42.859794+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 334,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2024.09.29.24314577/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:42.921067+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 506,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2024.09.11.24313458/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:43.089167+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 934,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2023.03.30.23287965/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:43.181877+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 612,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2024.02.05.24302354/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:43.236397+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 610,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2022.05.27.22271124/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:43.253570+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 332,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2024.05.06.24306943/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:43.265026+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 596,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2022.02.23.22271434/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:43.348079+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 797,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2024.07.26.24311058/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:43.384880+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 951,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2023.01.28.526057/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:43.513641+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 277,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2023.04.07.23288197/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:43.533718+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 749,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2025.08.21.25334148/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:43.577719+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 767,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2023.06.12.544498/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:43.626194+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 766,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2024.11.09.622781/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:43.683142+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 298,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2023.05.12.23289807/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:43.771494+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 257,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2022.02.16.22270981/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:43.792801+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 527,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2025.06.06.25329114/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:43.813956+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 280,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2022.04.11.487850/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:43.845000+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 496,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2024.07.31.24311262/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:43.858235+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 280,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2025.09.08.25335314/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:43.862660+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 680,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/315705/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:43.915693+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 289,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2025.05.28.25328401/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:43.961083+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 277,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2022.02.06.22270446/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:43.991218+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 737,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2025.10.15.25338065/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:44.025716+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 254,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2023.03.13.23287105/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:44.069218+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 276,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2023.02.14.528498/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:44.133976+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 319,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2022.05.24.22275518/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:44.178992+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 333,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2025.06.01.657083/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:44.227898+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 369,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2024.07.18.24310649/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:44.249051+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1159,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2024.12.13.24318555/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:44.282958+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 420,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2023.11.17.567387/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:44.423828+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 432,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2022.12.04.22283077/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:44.471161+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 445,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2024.04.06.24305415/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:44.526587+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 457,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2020.04.22.055384/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:44.557517+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 641,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2024.06.03.24308351/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-06T08:57:44.601554+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 640,
+    "error": null
+  },
+  {
+    "source": "semantic_scholar",
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search",
+    "params": {
+      "query": "type 2 diabetes patients GLP-1 receptor agonists semaglutide",
+      "limit": 100,
+      "offset": 0,
+      "fields": "paperId,externalIds,title,abstract,venue,year,authors,publicationTypes,fieldsOfStudy,citationCount,referenceCount,openAccessPdf,isOpenAccess,url,publicationDate,journal"
+    },
+    "timestamp_utc": "2026-10-06T08:57:45.629173+00:00",
+    "status_code": 429,
+    "n_results": null,
+    "duration_ms": 8118,
+    "error": "HTTP 429"
+  }
+]

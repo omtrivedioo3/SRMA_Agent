@@ -1,0 +1,448 @@
+[
+  {
+    "source": "pubmed",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi",
+    "params": {
+      "db": "pubmed",
+      "term": "(\"B-cell lymphoma\"[tiab] OR \"multiple myeloma\"[tiab] OR relapsed[tiab] OR refractory[tiab] OR \"B-cell Lymphoma\"[MeSH Terms] OR \"Multiple Myeloma\"[MeSH Terms]) AND (\"CAR-T cell therapy\"[tiab] OR \"CAR T-cell therapy\"[tiab] OR CAR-T[tiab] OR \"CAR T\"[tiab] OR \"bispecific antibodies\"[tiab] OR \"bispecific antibody\"[tiab] OR \"CAR-T Cell Therapy\"[MeSH Terms])",
+      "retmax": 100,
+      "retmode": "json",
+      "sort": "relevance",
+      "tool": "SRMA-Agent",
+      "email": ""
+    },
+    "timestamp_utc": "2026-10-01T10:49:36.948814+00:00",
+    "status_code": 200,
+    "n_results": 8192,
+    "duration_ms": 539,
+    "error": null
+  },
+  {
+    "source": "clinicaltrials",
+    "url": "https://clinicaltrials.gov/api/v2/studies",
+    "params": {
+      "query.term": "(\"B-cell lymphoma\" OR \"multiple myeloma\" OR relapsed OR refractory) AND (\"CAR-T cell therapy\" OR \"CAR T-cell therapy\" OR CAR-T OR \"CAR T\" OR \"bispecific antibodies\" OR \"bispecific antibody\")",
+      "pageSize": 100,
+      "format": "json",
+      "countTotal": "true"
+    },
+    "timestamp_utc": "2026-10-01T10:49:37.705261+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1310,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "((TITLE_ABS:\"B-cell lymphoma\" OR TITLE_ABS:\"multiple myeloma\" OR TITLE_ABS:relapsed OR TITLE_ABS:refractory OR MESH:\"B-cell Lymphoma\" OR MESH:\"Multiple Myeloma\") AND (TITLE_ABS:\"CAR-T cell therapy\" OR TITLE_ABS:\"CAR T-cell therapy\" OR TITLE_ABS:CAR-T OR TITLE_ABS:\"CAR T\" OR TITLE_ABS:\"bispecific antibodies\" OR TITLE_ABS:\"bispecific antibody\" OR MESH:\"CAR-T Cell Therapy\")) AND (SRC:PPR)",
+      "format": "json",
+      "resultType": "core",
+      "pageSize": 100,
+      "cursorMark": "*"
+    },
+    "timestamp_utc": "2026-10-01T10:49:38.511767+00:00",
+    "status_code": 200,
+    "n_results": 76,
+    "duration_ms": 2107,
+    "error": null
+  },
+  {
+    "source": "europepmc",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "(TITLE_ABS:\"B-cell lymphoma\" OR TITLE_ABS:\"multiple myeloma\" OR TITLE_ABS:relapsed OR TITLE_ABS:refractory OR MESH:\"B-cell Lymphoma\" OR MESH:\"Multiple Myeloma\") AND (TITLE_ABS:\"CAR-T cell therapy\" OR TITLE_ABS:\"CAR T-cell therapy\" OR TITLE_ABS:CAR-T OR TITLE_ABS:\"CAR T\" OR TITLE_ABS:\"bispecific antibodies\" OR TITLE_ABS:\"bispecific antibody\" OR MESH:\"CAR-T Cell Therapy\")",
+      "format": "json",
+      "resultType": "core",
+      "pageSize": 100,
+      "cursorMark": "*"
+    },
+    "timestamp_utc": "2026-10-01T10:49:38.971638+00:00",
+    "status_code": 200,
+    "n_results": 7142,
+    "duration_ms": 2570,
+    "error": null
+  },
+  {
+    "source": "crossref",
+    "url": "https://api.crossref.org/works",
+    "params": {
+      "query.bibliographic": "B-cell lymphoma multiple myeloma CAR-T cell therapy CAR T-cell therapy",
+      "rows": 100,
+      "cursor": "*",
+      "mailto": ""
+    },
+    "timestamp_utc": "2026-10-01T10:49:39.147865+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 2751,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2025.08.23.25334251/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T10:49:39.264144+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 747,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2025.01.31.25321490/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T10:49:39.338261+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 819,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2025.10.28.25338924/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T10:49:39.359085+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 839,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2025.04.01.646378/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T10:49:39.391687+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 871,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2025.05.06.651695/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T10:49:39.459054+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 938,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2024.03.21.586084/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T10:49:39.482222+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 961,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2024.01.24.24301058/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T10:49:39.505898+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 241,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2023.04.04.535580/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T10:49:39.582073+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1058,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2024.11.18.24317089/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T10:49:39.595124+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1073,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2024.09.02.610843/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T10:49:39.629647+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 291,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2022.12.08.22283148/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T10:49:39.633822+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 274,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.05.10.21256634/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T10:49:39.676790+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 284,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2025.08.20.671229/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T10:49:39.703127+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1176,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2024.05.22.24307750/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T10:49:39.708632+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1182,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2020.03.12.989491/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T10:49:39.733768+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 273,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2022.07.23.501252/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T10:49:39.798116+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 315,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2024.04.05.588098/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T10:49:39.828903+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 322,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.11.22.20232801/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T10:49:39.880070+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 297,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2024.08.19.608538/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T10:49:39.928545+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 333,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.09.13.21263365/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T10:49:40.008329+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 378,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.05.15.21256814/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T10:49:40.084249+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 450,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2022.04.08.22273602/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T10:49:40.100051+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 423,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2025.09.19.25336176/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T10:49:40.131746+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 428,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2023.03.16.532775/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T10:49:40.177060+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 468,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2022.12.07.22283208/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T10:49:40.232154+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 497,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2023.08.29.23293790/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T10:49:40.282683+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 484,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.12.08.21266760/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T10:49:40.332911+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 503,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.08.11.21261898/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T10:49:40.382770+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 502,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2025.04.15.648816/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T10:49:40.430660+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 502,
+    "error": null
+  },
+  {
+    "source": "pubmed",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi",
+    "params": {
+      "db": "pubmed",
+      "id": "38865661,41118600,42201805,41936184,33767695,40078993,38891821,41832944,42555778,41320284,41695471,37225044,37964302,34627333,39662763,36368473,41842719,41056951,39862629,37209218,36179419,33781540,36018590,36411210,41687033,36485132,41846541,36764323,38430810,39516088,35063182,38155115,41806461,35930999,40354099,41955632,34526365,32792360,40471555,39809660,41611596,33046423,40879107,42777241,37731379,41239377,31981097,40652308,36100310,38941416,38242888,32385241,31378662,38864479,34434610,38717927,42345308,41882240,31919085,38713595,36720972,41683862,38589248,42342528,37545132,40885679,33863601,36964840,37471687,39604778,38183209,37999125,39273462,34048683,42694447,28604120,33272302,38802346,33626253,37137553,37328635,39079964,33792221,40264764,39729053,40025529,38354229,32582204,34103900,27068946,35829636,36567210,37341719,40749169,36881609,38475811,35006032,41925575,36907717,35572513",
+      "retmode": "xml",
+      "tool": "SRMA-Agent",
+      "email": ""
+    },
+    "timestamp_utc": "2026-10-01T10:49:40.484004+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 3535,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.08.13.20174565/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T10:49:40.534110+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 449,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.11.06.21265967/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T10:49:40.540081+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 531,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.05.28.20115758/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-01T10:49:40.585517+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 485,
+    "error": null
+  },
+  {
+    "source": "openalex",
+    "url": "https://api.openalex.org/works",
+    "params": {
+      "search": "(\"B-cell lymphoma\" OR \"multiple myeloma\" OR relapsed OR refractory) AND (\"CAR-T cell therapy\" OR \"CAR T-cell therapy\" OR CAR-T OR \"CAR T\" OR \"bispecific antibodies\" OR \"bispecific antibody\")",
+      "mailto": "",
+      "per-page": 100,
+      "cursor": "*"
+    },
+    "timestamp_utc": "2026-10-01T10:49:41.009644+00:00",
+    "status_code": 200,
+    "n_results": 177257,
+    "duration_ms": 4605,
+    "error": null
+  },
+  {
+    "source": "semantic_scholar",
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search",
+    "params": {
+      "query": "B-cell lymphoma multiple myeloma CAR-T cell therapy CAR T-cell therapy",
+      "limit": 100,
+      "offset": 0,
+      "fields": "paperId,externalIds,title,abstract,venue,year,authors,publicationTypes,fieldsOfStudy,citationCount,referenceCount,openAccessPdf,isOpenAccess,url,publicationDate,journal"
+    },
+    "timestamp_utc": "2026-10-01T10:49:44.603120+00:00",
+    "status_code": 429,
+    "n_results": null,
+    "duration_ms": 8192,
+    "error": "HTTP 429"
+  }
+]

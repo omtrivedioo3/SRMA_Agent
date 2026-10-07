@@ -1,0 +1,1741 @@
+{
+  "ok": true,
+  "run_id": "run-20260921-093515",
+  "run_dir": "/usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20260921-093515",
+  "question": "In patients with hematologic malignancies, what is the risk and severity of Cytokine Release Syndrome (CRS) in those receiving CAR-T cell therapy or bispecific T-cell engagers compared with standard care or conventional chemotherapy?",
+  "generated_utc": "2026-09-21T09:35:15.404480+00:00",
+  "config": {
+    "gemini_backend": "ai-studio",
+    "orchestrator_model": "gemini-3.6-flash",
+    "clinical_model": "ollama_chat/medgemma"
+  },
+  "phases_completed": [
+    "protocol",
+    "search_strategy",
+    "search",
+    "deduplication",
+    "screening",
+    "extraction",
+    "meta_analysis",
+    "plots",
+    "grade"
+  ],
+  "errors": [],
+  "protocol": {
+    "population": "Patients with hematologic malignancies",
+    "intervention": "CAR-T cell therapy or bispecific T-cell engagers",
+    "comparator": "Standard care or conventional chemotherapy",
+    "primary_outcome": "Risk and severity of Cytokine Release Syndrome (CRS)",
+    "secondary_outcomes": [],
+    "study_designs": [
+      "Randomized Controlled Trial"
+    ],
+    "inclusion_criteria": [
+      "Patients with hematologic malignancies",
+      "Studies comparing CAR-T cell therapy or bispecific T-cell engagers with standard care or conventional chemotherapy",
+      "Studies reporting on the risk and severity of Cytokine Release Syndrome (CRS)"
+    ],
+    "exclusion_criteria": [
+      "Animal studies",
+      "In-vitro studies",
+      "Narrative reviews",
+      "Editorials",
+      "Case reports"
+    ],
+    "search_keywords": [
+      "CAR-T cell therapy",
+      "bispecific T-cell engagers",
+      "Cytokine Release Syndrome",
+      "CRS",
+      "hematologic malignancies",
+      "standard care",
+      "conventional chemotherapy"
+    ],
+    "mesh_terms": [
+      "CAR-T Cell Therapy",
+      "Bispecific T-Cell Engagers",
+      "Cytokine Release Syndrome",
+      "Hematologic Neoplasms",
+      "Chemotherapy"
+    ]
+  },
+  "protocol_text": "  Population   : Patients with hematologic malignancies\n  Intervention : CAR-T cell therapy or bispecific T-cell engagers\n  Comparator   : Standard care or conventional chemotherapy\n  Primary outcome : Risk and severity of Cytokine Release Syndrome (CRS)\n  Eligible designs : Randomized Controlled Trial\n  Inclusion criteria:\n      - Patients with hematologic malignancies\n      - Studies comparing CAR-T cell therapy or bispecific T-cell engagers with standard care or conventional chemotherapy\n      - Studies reporting on the risk and severity of Cytokine Release Syndrome (CRS)\n  Exclusion criteria:\n      - Animal studies\n      - In-vitro studies\n      - Narrative reviews\n      - Editorials\n      - Case reports",
+  "search_strategy": {
+    "population_terms": [
+      "hematologic malignancies",
+      "blood cancers",
+      "lymphoma",
+      "leukemia",
+      "multiple myeloma"
+    ],
+    "population_mesh": [
+      "Hematologic Neoplasms",
+      "Lymphoma",
+      "Leukemia",
+      "Multiple Myeloma"
+    ],
+    "intervention_terms": [
+      "CAR-T cell therapy",
+      "bispecific T-cell engagers",
+      "CAR-T",
+      "CTLs"
+    ],
+    "intervention_mesh": [
+      "CAR-T Cell Therapy",
+      "Bispecific T-Cell Engagers"
+    ],
+    "outcome_terms": [
+      "Cytokine Release Syndrome",
+      "CRS",
+      "Cytokine Storm",
+      "CRS severity",
+      "CRS risk"
+    ],
+    "outcome_excluded_from_query": true,
+    "outcome_exclusion_rationale": "Trials often omit outcome names from the title and abstract. Requiring an outcome term in the Boolean AND chain is a known cause of missed eligible studies (Cochrane Handbook).",
+    "hygiene_notes": []
+  },
+  "query": "(\"hematologic malignancies\"[tiab] OR \"blood cancers\"[tiab] OR lymphoma[tiab] OR leukemia[tiab] OR \"multiple myeloma\"[tiab] OR \"Hematologic Neoplasms\"[MeSH Terms] OR \"Lymphoma\"[MeSH Terms] OR \"Leukemia\"[MeSH Terms] OR \"Multiple Myeloma\"[MeSH Terms]) AND (\"CAR-T cell therapy\"[tiab] OR \"bispecific T-cell engagers\"[tiab] OR CAR-T[tiab] OR CTLs[tiab] OR \"CAR-T Cell Therapy\"[MeSH Terms] OR \"Bispecific T-Cell Engagers\"[MeSH Terms])",
+  "queries_by_source": {
+    "clinicaltrials": "(\"hematologic malignancies\" OR \"blood cancers\" OR lymphoma OR leukemia OR \"multiple myeloma\" OR \"Hematologic Neoplasms\") AND (\"CAR-T cell therapy\" OR \"bispecific T-cell engagers\" OR CAR-T OR CTLs)",
+    "crossref": "hematologic malignancies blood cancers CAR-T cell therapy bispecific T-cell engagers",
+    "europepmc": "(TITLE_ABS:\"hematologic malignancies\" OR TITLE_ABS:\"blood cancers\" OR TITLE_ABS:lymphoma OR TITLE_ABS:leukemia OR TITLE_ABS:\"multiple myeloma\" OR MESH:\"Hematologic Neoplasms\" OR MESH:\"Lymphoma\" OR MESH:\"Leukemia\" OR MESH:\"Multiple Myeloma\") AND (TITLE_ABS:\"CAR-T cell therapy\" OR TITLE_ABS:\"bispecific T-cell engagers\" OR TITLE_ABS:CAR-T OR TITLE_ABS:CTLs OR MESH:\"CAR-T Cell Therapy\" OR MESH:\"Bispecific T-Cell Engagers\")",
+    "openalex": "(\"hematologic malignancies\" OR \"blood cancers\" OR lymphoma OR leukemia OR \"multiple myeloma\" OR \"Hematologic Neoplasms\") AND (\"CAR-T cell therapy\" OR \"bispecific T-cell engagers\" OR CAR-T OR CTLs)",
+    "preprints": "(TITLE_ABS:\"hematologic malignancies\" OR TITLE_ABS:\"blood cancers\" OR TITLE_ABS:lymphoma OR TITLE_ABS:leukemia OR TITLE_ABS:\"multiple myeloma\" OR MESH:\"Hematologic Neoplasms\" OR MESH:\"Lymphoma\" OR MESH:\"Leukemia\" OR MESH:\"Multiple Myeloma\") AND (TITLE_ABS:\"CAR-T cell therapy\" OR TITLE_ABS:\"bispecific T-cell engagers\" OR TITLE_ABS:CAR-T OR TITLE_ABS:CTLs OR MESH:\"CAR-T Cell Therapy\" OR MESH:\"Bispecific T-Cell Engagers\")",
+    "pubmed": "(\"hematologic malignancies\"[tiab] OR \"blood cancers\"[tiab] OR lymphoma[tiab] OR leukemia[tiab] OR \"multiple myeloma\"[tiab] OR \"Hematologic Neoplasms\"[MeSH Terms] OR \"Lymphoma\"[MeSH Terms] OR \"Leukemia\"[MeSH Terms] OR \"Multiple Myeloma\"[MeSH Terms]) AND (\"CAR-T cell therapy\"[tiab] OR \"bispecific T-cell engagers\"[tiab] OR CAR-T[tiab] OR CTLs[tiab] OR \"CAR-T Cell Therapy\"[MeSH Terms] OR \"Bispecific T-Cell Engagers\"[MeSH Terms])",
+    "semantic_scholar": "hematologic malignancies blood cancers CAR-T cell therapy bispecific T-cell engagers"
+  },
+  "search": {
+    "query": "(\"hematologic malignancies\"[tiab] OR \"blood cancers\"[tiab] OR lymphoma[tiab] OR leukemia[tiab] OR \"multiple myeloma\"[tiab] OR \"Hematologic Neoplasms\"[MeSH Terms] OR \"Lymphoma\"[MeSH Terms] OR \"Leukemia\"[MeSH Terms] OR \"Multiple Myeloma\"[MeSH Terms]) AND (\"CAR-T cell therapy\"[tiab] OR \"bispecific T-cell engagers\"[tiab] OR CAR-T[tiab] OR CTLs[tiab] OR \"CAR-T Cell Therapy\"[MeSH Terms] OR \"Bispecific T-Cell Engagers\"[MeSH Terms])",
+    "queries_by_source": {
+      "clinicaltrials": "(\"hematologic malignancies\" OR \"blood cancers\" OR lymphoma OR leukemia OR \"multiple myeloma\" OR \"Hematologic Neoplasms\") AND (\"CAR-T cell therapy\" OR \"bispecific T-cell engagers\" OR CAR-T OR CTLs)",
+      "crossref": "hematologic malignancies blood cancers CAR-T cell therapy bispecific T-cell engagers",
+      "europepmc": "(TITLE_ABS:\"hematologic malignancies\" OR TITLE_ABS:\"blood cancers\" OR TITLE_ABS:lymphoma OR TITLE_ABS:leukemia OR TITLE_ABS:\"multiple myeloma\" OR MESH:\"Hematologic Neoplasms\" OR MESH:\"Lymphoma\" OR MESH:\"Leukemia\" OR MESH:\"Multiple Myeloma\") AND (TITLE_ABS:\"CAR-T cell therapy\" OR TITLE_ABS:\"bispecific T-cell engagers\" OR TITLE_ABS:CAR-T OR TITLE_ABS:CTLs OR MESH:\"CAR-T Cell Therapy\" OR MESH:\"Bispecific T-Cell Engagers\")",
+      "openalex": "(\"hematologic malignancies\" OR \"blood cancers\" OR lymphoma OR leukemia OR \"multiple myeloma\" OR \"Hematologic Neoplasms\") AND (\"CAR-T cell therapy\" OR \"bispecific T-cell engagers\" OR CAR-T OR CTLs)",
+      "preprints": "(TITLE_ABS:\"hematologic malignancies\" OR TITLE_ABS:\"blood cancers\" OR TITLE_ABS:lymphoma OR TITLE_ABS:leukemia OR TITLE_ABS:\"multiple myeloma\" OR MESH:\"Hematologic Neoplasms\" OR MESH:\"Lymphoma\" OR MESH:\"Leukemia\" OR MESH:\"Multiple Myeloma\") AND (TITLE_ABS:\"CAR-T cell therapy\" OR TITLE_ABS:\"bispecific T-cell engagers\" OR TITLE_ABS:CAR-T OR TITLE_ABS:CTLs OR MESH:\"CAR-T Cell Therapy\" OR MESH:\"Bispecific T-Cell Engagers\")",
+      "pubmed": "(\"hematologic malignancies\"[tiab] OR \"blood cancers\"[tiab] OR lymphoma[tiab] OR leukemia[tiab] OR \"multiple myeloma\"[tiab] OR \"Hematologic Neoplasms\"[MeSH Terms] OR \"Lymphoma\"[MeSH Terms] OR \"Leukemia\"[MeSH Terms] OR \"Multiple Myeloma\"[MeSH Terms]) AND (\"CAR-T cell therapy\"[tiab] OR \"bispecific T-cell engagers\"[tiab] OR CAR-T[tiab] OR CTLs[tiab] OR \"CAR-T Cell Therapy\"[MeSH Terms] OR \"Bispecific T-Cell Engagers\"[MeSH Terms])",
+      "semantic_scholar": "hematologic malignancies blood cancers CAR-T cell therapy bispecific T-cell engagers"
+    },
+    "per_source": {
+      "clinicaltrials": {
+        "status": "success",
+        "count": 100,
+        "error": null,
+        "query_sent": "(\"hematologic malignancies\" OR \"blood cancers\" OR lymphoma OR leukemia OR \"multiple myeloma\" OR \"Hematologic Neoplasms\") AND (\"CAR-T cell therapy\" OR \"bispecific T-cell engagers\" OR CAR-T OR CTLs)"
+      },
+      "europepmc": {
+        "status": "success",
+        "count": 100,
+        "error": null,
+        "query_sent": "(TITLE_ABS:\"hematologic malignancies\" OR TITLE_ABS:\"blood cancers\" OR TITLE_ABS:lymphoma OR TITLE_ABS:leukemia OR TITLE_ABS:\"multiple myeloma\" OR MESH:\"Hematologic Neoplasms\" OR MESH:\"Lymphoma\" OR MESH:\"Leukemia\" OR MESH:\"Multiple Myeloma\") AND (TITLE_ABS:\"CAR-T cell therapy\" OR TITLE_ABS:\"bispecific T-cell engagers\" OR TITLE_ABS:CAR-T OR TITLE_ABS:CTLs OR MESH:\"CAR-T Cell Therapy\" OR MESH:\"Bispecific T-Cell Engagers\")"
+      },
+      "pubmed": {
+        "status": "success",
+        "count": 100,
+        "error": null,
+        "query_sent": "(\"hematologic malignancies\"[tiab] OR \"blood cancers\"[tiab] OR lymphoma[tiab] OR leukemia[tiab] OR \"multiple myeloma\"[tiab] OR \"Hematologic Neoplasms\"[MeSH Terms] OR \"Lymphoma\"[MeSH Terms] OR \"Leukemia\"[MeSH Terms] OR \"Multiple Myeloma\"[MeSH Terms]) AND (\"CAR-T cell therapy\"[tiab] OR \"bispecific T-cell engagers\"[tiab] OR CAR-T[tiab] OR CTLs[tiab] OR \"CAR-T Cell Therapy\"[MeSH Terms] OR \"Bispecific T-Cell Engagers\"[MeSH Terms])"
+      },
+      "crossref": {
+        "status": "success",
+        "count": 100,
+        "error": null,
+        "query_sent": "hematologic malignancies blood cancers CAR-T cell therapy bispecific T-cell engagers"
+      },
+      "openalex": {
+        "status": "success",
+        "count": 100,
+        "error": null,
+        "query_sent": "(\"hematologic malignancies\" OR \"blood cancers\" OR lymphoma OR leukemia OR \"multiple myeloma\" OR \"Hematologic Neoplasms\") AND (\"CAR-T cell therapy\" OR \"bispecific T-cell engagers\" OR CAR-T OR CTLs)"
+      },
+      "semantic_scholar": {
+        "status": "success",
+        "count": 0,
+        "error": null,
+        "query_sent": "hematologic malignancies blood cancers CAR-T cell therapy bispecific T-cell engagers"
+      },
+      "preprints": {
+        "status": "success",
+        "count": 3,
+        "error": null,
+        "query_sent": "(TITLE_ABS:\"hematologic malignancies\" OR TITLE_ABS:\"blood cancers\" OR TITLE_ABS:lymphoma OR TITLE_ABS:leukemia OR TITLE_ABS:\"multiple myeloma\" OR MESH:\"Hematologic Neoplasms\" OR MESH:\"Lymphoma\" OR MESH:\"Leukemia\" OR MESH:\"Multiple Myeloma\") AND (TITLE_ABS:\"CAR-T cell therapy\" OR TITLE_ABS:\"bispecific T-cell engagers\" OR TITLE_ABS:CAR-T OR TITLE_ABS:CTLs OR MESH:\"CAR-T Cell Therapy\" OR MESH:\"Bispecific T-Cell Engagers\")"
+      }
+    },
+    "total_identified": 503,
+    "duplicates_removed": 19,
+    "unique_records": 484,
+    "sources_unavailable": {},
+    "dedupe_report": {
+      "input_count": 503,
+      "unique_count": 490,
+      "duplicates_removed": 19,
+      "matched_by": {
+        "doi": 7,
+        "pmid": 3,
+        "pmcid": 0,
+        "nct_id": 0,
+        "title": 3
+      },
+      "removed_duplicates": [
+        {
+          "duplicate_id": "10.1158/2159-8290.cd-17-1319",
+          "duplicate_source": "openalex",
+          "title": "Clinical and Biological Correlates of Neurotoxicity Associated with CAR T-cell Therapy in Patients with B-cell Acute Lymphoblastic Leukemia",
+          "merged_into_id": "10.1158/2159-8290.cd-17-1319",
+          "merged_sources": [
+            "pubmed",
+            "openalex"
+          ],
+          "matched_on": "doi",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29880584/"
+        },
+        {
+          "duplicate_id": "10.1056/nejmoa2314390",
+          "duplicate_source": "pubmed",
+          "title": "CAR T Cells and T-Cell Therapies for Cancer: A Translational Science Review.",
+          "merged_into_id": "10.1001/jama.2024.19462",
+          "merged_sources": [
+            "openalex",
+            "pubmed"
+          ],
+          "matched_on": "pmid",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39495525/"
+        },
+        {
+          "duplicate_id": "10.1038/s41571-019-0297-y",
+          "duplicate_source": "pubmed",
+          "title": "Revolutionizing cancer treatment: a comprehensive review of CAR-T cell therapy.",
+          "merged_into_id": "10.1038/s41571-019-0297-y",
+          "merged_sources": [
+            "openalex",
+            "pubmed"
+          ],
+          "matched_on": "doi",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37608202/"
+        },
+        {
+          "duplicate_id": "10.1038/s41392-025-02269-w",
+          "duplicate_source": "europepmc",
+          "title": "CAR-T cell therapy for cancer: current challenges and future directions.",
+          "merged_into_id": "10.1038/s41392-025-02269-w",
+          "merged_sources": [
+            "openalex",
+            "europepmc"
+          ],
+          "matched_on": "doi",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40610404/"
+        },
+        {
+          "duplicate_id": "10.1016/s0140-6736(14)61403-3",
+          "duplicate_source": "openalex",
+          "title": "T cells expressing CD19 chimeric antigen receptors for acute lymphoblastic leukaemia in children and young adults: a phase 1 dose-escalation trial",
+          "merged_into_id": "10.1182/asheducation-2011.1.238",
+          "merged_sources": [
+            "pubmed",
+            "openalex"
+          ],
+          "matched_on": "pmid",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25319501/"
+        },
+        {
+          "duplicate_id": "10.21203/rs.3.rs-8549937/v1",
+          "duplicate_source": "europepmc",
+          "title": "Real-World Evidence on Infection Risk in Multiple Myeloma Treated with BiTEs and CAR-T cells: A Meta-Analysis",
+          "merged_into_id": "10.1186/s40164-026-00798-w",
+          "merged_sources": [
+            "europepmc"
+          ],
+          "matched_on": "title",
+          "url": "https://doi.org/10.21203/rs.3.rs-8549937/v1"
+        },
+        {
+          "duplicate_id": "10.21203/rs.3.rs-8435478/v1",
+          "duplicate_source": "europepmc",
+          "title": "Long enduring response on Teclistamab in a patient with myeloma relapse after allogeneic hematopoietic stem cell transplantation \u2013 a case report",
+          "merged_into_id": "10.1007/s00277-026-06990-6",
+          "merged_sources": [
+            "europepmc"
+          ],
+          "matched_on": "title",
+          "url": "https://doi.org/10.21203/rs.3.rs-8435478/v1"
+        },
+        {
+          "duplicate_id": "10.1038/icb.2016.128",
+          "duplicate_source": "openalex",
+          "title": "CAR T\u2010cell therapy of solid tumors",
+          "merged_into_id": "10.1146/annurev-med-062315-120245",
+          "merged_sources": [
+            "openalex"
+          ],
+          "matched_on": "title",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28003642/"
+        },
+        {
+          "duplicate_id": "10.1186/s12896-019-0537-3",
+          "duplicate_source": "pubmed",
+          "title": "CAR-T cell therapy: current limitations and potential strategies.",
+          "merged_into_id": "10.1038/s41408-021-00459-7",
+          "merged_sources": [
+            "openalex",
+            "pubmed"
+          ],
+          "matched_on": "pmid",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33824268/"
+        },
+        {
+          "duplicate_id": "10.1186/s13046-021-02148-6",
+          "duplicate_source": "openalex",
+          "title": "Mechanisms of cytokine release syndrome and neurotoxicity of CAR T-cell therapy and associated prevention and management strategies",
+          "merged_into_id": "10.1186/s13046-021-02148-6",
+          "merged_sources": [
+            "pubmed",
+            "openalex"
+          ],
+          "matched_on": "doi",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34794490/"
+        },
+        {
+          "duplicate_id": "10.1016/j.blre.2018.11.002",
+          "duplicate_source": "pubmed",
+          "title": "Recent advances in CAR T-cell toxicity: Mechanisms, manifestations and management.",
+          "merged_into_id": "10.1016/j.blre.2018.11.002",
+          "merged_sources": [
+            "openalex",
+            "pubmed"
+          ],
+          "matched_on": "doi",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30528964/"
+        },
+        {
+          "duplicate_id": "10.1038/nm.3838",
+          "duplicate_source": "openalex",
+          "title": "4-1BB costimulation ameliorates T cell exhaustion induced by tonic signaling of chimeric antigen receptors",
+          "merged_into_id": "10.1038/nm.3838",
+          "merged_sources": [
+            "pubmed",
+            "openalex"
+          ],
+          "matched_on": "doi",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25939063/"
+        },
+        {
+          "duplicate_id": "10.1182/bloodadvances.2020002509",
+          "duplicate_source": "openalex",
+          "title": "Hematopoietic recovery in patients receiving chimeric antigen receptor T-cell therapy for hematologic malignancies",
+          "merged_into_id": "10.1182/bloodadvances.2020002509",
+          "merged_sources": [
+            "pubmed",
+            "openalex"
+          ],
+          "matched_on": "doi",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32780846/"
+        },
+        {
+          "duplicate_id": "10.1016/s2352-3026(25)00253-4",
+          "duplicate_source": "clinicaltrials",
+          "title": "Safety and Efficacy of Metabolically Armed CD19 CAR-T Cells (Meta10- 19) in the Treatment of r/r B-ALL Clinical Research",
+          "merged_into_id": "10.1016/s2352-3026(25)00253-4",
+          "merged_sources": [
+            "preprints",
+            "clinicaltrials"
+          ],
+          "matched_on": "doi"
+        },
+        {
+          "duplicate_id": "NCT06500273",
+          "duplicate_source": "europepmc",
+          "title": "Consolidation of First-Line MRD+ Remission With Cema-cel in Patients With LBCL",
+          "merged_into_id": "NCT06500273",
+          "merged_sources": [
+            "clinicaltrials",
+            "europepmc"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "NCT06755775",
+          "duplicate_source": "pubmed",
+          "title": "PET Imaging Targeting Granzyme B Predicts Immunotherapy Efficacy in Diffuse Large B-cell Lymphoma",
+          "merged_into_id": "NCT06755775",
+          "merged_sources": [
+            "europepmc",
+            "pubmed"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "NCT06208878",
+          "duplicate_source": "crossref",
+          "title": "A Long-term Follow-up Study of Subjects Who Received CRISPR CAR T Cellular Therapies",
+          "merged_into_id": "NCT06208878",
+          "merged_sources": [
+            "pubmed",
+            "crossref"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "NCT04171843",
+          "duplicate_source": "openalex",
+          "title": "A Dose-escalation Study to Evaluate the Safety and Clinical Activity of PBCAR269A, With or Without Nirogacestat, in Study Participants With Relapsed/Refractory Multiple Myeloma",
+          "merged_into_id": "NCT04171843",
+          "merged_sources": [
+            "crossref",
+            "openalex"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "NCT03436771",
+          "duplicate_source": "semantic_scholar",
+          "title": "Long-term Follow-up Study for Patients Previously Treated With a Juno CAR T-Cell Product",
+          "merged_into_id": "NCT03436771",
+          "merged_sources": [
+            "openalex",
+            "semantic_scholar"
+          ],
+          "matched_on": "nct_id"
+        }
+      ],
+      "records_with_doi": 408,
+      "records_with_pmid": 303,
+      "records_without_identifier": 0
+    }
+  },
+  "screening": {
+    "screened": 20,
+    "not_screened": 464,
+    "not_screened_note": "464 record(s) were not screened because the cap of 20 was reached. They are excluded from the review but counted here, because a PRISMA flow diagram must account for every identified record. Raise SRMA_MAX_ABSTRACTS_TO_SCREEN for a complete run.",
+    "included": 14,
+    "excluded": 6,
+    "exclusion_reasons": {
+      "Wrong population": 6
+    },
+    "included_records": [
+      {
+        "id": "NCT04499573",
+        "title": "Bispecific CD19/CD22 CAR-T for Treatment of Children and Young Adults With r/r B-ALL",
+        "reviewer_1_reason": "The abstract states that the study is evaluating the safety and efficiency of autologous CD19/CD22 CAR-T lymphocytes in pediatric and young adult patients with relapsed/refractory B-lineage acute lymphoblastic leukemia. This aligns with the inclusion criteria of patients with hematologic malignancies, studies comparing CAR-T cell therapy or bispecific T-cell engagers with standard care or conventi",
+        "reviewer_2_reason": "The abstract states that the study is evaluating the safety and efficiency of autologous CD19/CD22 CAR-T lymphocytes in pediatric and young adult patients with relapsed/refractory B-lineage acute lymphoblastic leukemia. The protocol excludes studies using autologous CAR-T cells.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study is evaluating the safety and efficiency of autologous CD19/CD22 CAR-T lymphocytes in pediatric and young adult patients with relapsed/refractory B-lineage acute lymphoblastic leukemia. The protocol excludes studies using autologous CAR-T cells."
+      },
+      {
+        "id": "NCT06389305",
+        "title": "CIK Cell Therapy for Relapsed or Refractory Acute B-Lymphoblastic Leukemia: Prognostic Impact on Patients With Early CAR-T Cell Dysfunction",
+        "reviewer_1_reason": "The abstract states that patients with relapsed or refractory acute B-lymphoblastic leukemia (r/r B-ALL) will be randomly allocated into three groups: the control cell group, the CIK treatment group, and the messenger RNA(mRNA)-CIK treatment group. The abstract mentions hematologic malignancies, CAR-T cell therapy, standard care, and Cytokine Release Syndrome (CRS).",
+        "reviewer_2_reason": "The abstract states that the study is comparing CIK cell therapy with standard care or conventional chemotherapy, but the protocol excludes studies comparing CAR-T cell therapy or bispecific T-cell engagers with standard care or conventional chemotherapy.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study is comparing CIK cell therapy with standard care or conventional chemotherapy, but the protocol excludes studies comparing CAR-T cell therapy or bispecific T-cell engagers with standard care or conventional chemotherapy."
+      },
+      {
+        "id": "NCT07360288",
+        "title": "Efficacy and Safety of TC011 in Relapsed or Refractory Follicular Lymphoma",
+        "reviewer_1_reason": "The abstract states that TC011 is a CD19-targeted CAR-T cell therapy, which falls under the intervention category of CAR-T cell therapy or bispecific T-cell engagers.",
+        "reviewer_2_reason": "The abstract states that TC011 is a CD19-targeted CAR-T cell therapy, which is not the intervention defined in the protocol. The protocol defines the intervention as CAR-T cell therapy or bispecific T-cell engagers.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that TC011 is a CD19-targeted CAR-T cell therapy, which is not the intervention defined in the protocol. The protocol defines the intervention as CAR-T cell therapy or bispecific T-cell engagers."
+      },
+      {
+        "id": "NCT05691153",
+        "title": "ThisCART19A for B-NHL Relapsed After Auto-CAR T",
+        "reviewer_1_reason": "The abstract states that the study is a phase 1, single-center, dose selection study to evaluate the efficacy, safety, and pharmacokinetics of ThisCART19A (allogeneic CAR-T targeting CD19) in patients with Auto-CAR T relapsed B-cell non-Hodgkin's lymphoma. The inclusion criteria include patients with hematologic malignancies, and the primary outcome is the risk and severity of Cytokine Release Syn",
+        "reviewer_2_reason": "Wrong intervention: The abstract states that the intervention is ThisCART19A (allogeneic CAR-T targeting CD19), which is not listed in the protocol as an intervention.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: Wrong intervention: The abstract states that the intervention is ThisCART19A (allogeneic CAR-T targeting CD19), which is not listed in the protocol as an intervention."
+      },
+      {
+        "id": "NCT07443137",
+        "title": "CAR-T ceLL for Eradication of Active Residual Disease in LBCL (CLEAR-1 Study)",
+        "reviewer_1_reason": "The abstract states that the study is a phase 1b clinical trial to assess the efficacy of rapcabtagene autoleucel (YTB323) administered at the recommended dose in adults with Large B Cell Lymphoma (LBCL) who are at high risk of relapse at end of first line treatment (EOT), as defined by positive measurable residual disease detected by Foresight CLARITY (PhasED-seq). This aligns with the inclusion ",
+        "reviewer_2_reason": "The abstract states that the study is comparing CAR-T cell therapy with standard care or conventional chemotherapy, which is consistent with the protocol's inclusion criteria.",
+        "decided_by": "both reviewers agreed to include"
+      },
+      {
+        "id": "10.1182/blood.2024025366",
+        "title": "Pilot Trial of Fecal Microbiota Transplantation for Lymphoma Patients Receiving Axicabtagene Ciloleucel Therapy.",
+        "reviewer_1_reason": "The abstract states that the study is a randomized controlled trial comparing fecal microbiota transplantation (FMT) with standard therapy, which aligns with the inclusion criteria for the review.",
+        "reviewer_2_reason": "The abstract states that the study is investigating the effectiveness of fecal microbiota transplantation (FMT) for treating gut-related side effects of antibiotic treatment in participants receiving standard therapy with anti-CD19 chimeric antigen receptor T-cell (CAR-T cell) therapy. The protocol excludes studies using fecal microbiota transplantation.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study is investigating the effectiveness of fecal microbiota transplantation (FMT) for treating gut-related side effects of antibiotic treatment in participants receiving standard therapy with anti-CD19 chimeric antigen receptor T-cell (CAR-T cell) therapy. The protocol "
+      },
+      {
+        "id": "NCT03016377",
+        "title": "Administration of Autologous CAR-T CD19 Antigen With Inducible Safety Switch in Patients With Relapsed/Refractory ALL",
+        "reviewer_1_reason": "The abstract states that the study compares CAR-T cell therapy or bispecific T-cell engagers with standard care or conventional chemotherapy, which aligns with the intervention criteria. The abstract also mentions the primary outcome is the risk and severity of Cytokine Release Syndrome (CRS), which aligns with the primary outcome criteria.",
+        "reviewer_2_reason": "The abstract states that the study compares CAR-T cell therapy or bispecific T-cell engagers with standard care or conventional chemotherapy, which is consistent with the protocol's inclusion criteria.",
+        "decided_by": "both reviewers agreed to include"
+      },
+      {
+        "id": "NCT07117305",
+        "title": "CD7 CAR-T Combined With Autologous Hematopoietic Stem Cell Transplantation",
+        "reviewer_1_reason": "The abstract states that the study is a single-arm, open-label, phase I/II clinical trial evaluating the safety, tolerability, and preliminary efficacy of CD7 CAR-T cells combined with autologous stem cell transplantation (ASCT) in patients with relapsed or refractory CD7-positive T-cell lymphomas. The inclusion criteria include patients with hematologic malignancies, and the study reports on the ",
+        "reviewer_2_reason": "The abstract states that the study is a single-arm, open-label, phase I/II clinical trial initiated by investigators to evaluate the safety, tolerability, and preliminary efficacy of CD7-targeted chimeric antigen receptor T cells (CD7 CAR-T) combined with autologous stem cell transplantation (ASCT) in patients with relapsed or refractory CD7-positive T-cell lymphomas. Phase I adopts a standard 3+3",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study is a single-arm, open-label, phase I/II clinical trial initiated by investigators to evaluate the safety, tolerability, and preliminary efficacy of CD7-targeted chimeric antigen receptor T cells (CD7 CAR-T) combined with autologous stem cell transplantation (ASCT) "
+      },
+      {
+        "id": "NCT06963866",
+        "title": "Comparing ASCT Followed by Anti-BCMA CAR-T vs. ASCT Alone in NDMM Patients Eligible for ASCT",
+        "reviewer_1_reason": "The abstract states that the study compares CAR-T cell therapy with autologous hematopoietic stem cell transplantation to autologous hematopoietic stem cell transplantation alone in newly diagnosed multiple myeloma patients. This matches the inclusion criteria of comparing CAR-T cell therapy or bispecific T-cell engagers with standard care or conventional chemotherapy.",
+        "reviewer_2_reason": "Wrong intervention: The abstract states 'anti-BCMA CAR-T' which is not listed in the protocol as an intervention.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: Wrong intervention: The abstract states 'anti-BCMA CAR-T' which is not listed in the protocol as an intervention."
+      },
+      {
+        "id": "NCT06248086",
+        "title": "A Study to Find a Suitable Dose of ASP2802 in People With CD20-positive B-cell Lymphomas",
+        "reviewer_1_reason": "The abstract states that the study is testing ASP2802 in humans for the first time, and that ASP2802 has already been tested in the laboratory and in animals. This is the standard way new potential treatments are developed.",
+        "reviewer_2_reason": "The abstract states that ASP2802 is being tested in humans for the first time in adults with CD20-positive B-cell lymphomas, which is consistent with the protocol's inclusion criteria.",
+        "decided_by": "both reviewers agreed to include"
+      },
+      {
+        "id": "10.1038/nrd4597",
+        "title": "Humanized CAR-T Therapy for Treatment of B Cell Malignancy",
+        "reviewer_1_reason": "The abstract states that participants will receive autologous chimeric antigen receptor engineered T cells, which aligns with the inclusion criteria of comparing CAR-T cell therapy with standard care or conventional chemotherapy.",
+        "reviewer_2_reason": "The abstract states that participants will receive autologous chimeric antigen receptor engineered T cells, which is not the same as CAR-T cell therapy or bispecific T-cell engagers.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that participants will receive autologous chimeric antigen receptor engineered T cells, which is not the same as CAR-T cell therapy or bispecific T-cell engagers."
+      },
+      {
+        "id": "NCT07048353",
+        "title": "CD30 CAR-T in the Treatment of CD30 Positive Lymphoma",
+        "reviewer_1_reason": "The abstract states \"The is a prospective, open-label, dose-climbing multicenter clinical study assessing the efficacy and safety of CD30 CAR-T in the treatment of r/r CD30+ lymphoma.\"",
+        "reviewer_2_reason": "Wrong intervention: The abstract states that the study is assessing the efficacy and safety of CD30 CAR-T in the treatment of r/r CD30+ lymphoma, while the protocol states that the intervention is CAR-T cell therapy or bispecific T-cell engagers.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: Wrong intervention: The abstract states that the study is assessing the efficacy and safety of CD30 CAR-T in the treatment of r/r CD30+ lymphoma, while the protocol states that the intervention is CAR-T cell therapy or bispecific T-cell engagers."
+      },
+      {
+        "id": "10.2174/1566523218666181116093857",
+        "title": "Combination CAR-T Cell Therapy Targeting Hematological Malignancies",
+        "reviewer_1_reason": "The abstract states that the study will evaluate the safety and efficacy of a combination of CAR-T cell therapy targeting CD19, CD20, CD22, CD30, CD38, CD70, or CD123 for patients with B cell malignancies. This aligns with the inclusion criteria of patients with hematologic malignancies.",
+        "reviewer_2_reason": "The abstract states that the study will evaluate the safety and efficacy of a combination of CAR-T cell therapy targeting CD19, CD20, CD22, CD30, CD38, CD70 or CD123 for patients with B cell malignancies. This aligns with the protocol's inclusion criteria for patients with hematologic malignancies.",
+        "decided_by": "both reviewers agreed to include"
+      },
+      {
+        "id": "10.1016/s2352-3026(25)00253-4",
+        "title": "Safety and Efficacy of Metabolically Armed CD19 CAR-T Cells (Meta10- 19) in the Treatment of r/r B-ALL Clinical Research",
+        "reviewer_1_reason": "The abstract states \"A Study of Metabolically Armed CD19 CAR-T Cells Therapy for Patients With Relapsed and/or Refractory B-cell Acute Lymphoblastic Leukemia\". This matches the population criteria of patients with hematologic malignancies.",
+        "reviewer_2_reason": "The abstract states that the study is a 'Study of Metabolically Armed CD19 CAR-T Cells Therapy', which is not the intervention specified in the protocol. The protocol states that the intervention is 'CAR-T cell therapy or bispecific T-cell engagers'.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study is a 'Study of Metabolically Armed CD19 CAR-T Cells Therapy', which is not the intervention specified in the protocol. The protocol states that the intervention is 'CAR-T cell therapy or bispecific T-cell engagers'."
+      }
+    ],
+    "excluded_records": [
+      {
+        "id": "NCT06500273",
+        "title": "Consolidation of First-Line MRD+ Remission With Cema-cel in Patients With LBCL",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific T-cell engagers, CAR-T).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT06755775",
+        "title": "PET Imaging Targeting Granzyme B Predicts Immunotherapy Efficacy in Diffuse Large B-cell Lymphoma",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific T-cell engagers, CAR-T).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT06208878",
+        "title": "A Long-term Follow-up Study of Subjects Who Received CRISPR CAR T Cellular Therapies",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the population (hematologic malignancies, blood cancers, lymphoma) or the intervention (CAR-T cell therapy, bispecific T-cell engagers, CAR-T).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT04171843",
+        "title": "A Dose-escalation Study to Evaluate the Safety and Clinical Activity of PBCAR269A, With or Without Nirogacestat, in Study Participants With Relapsed/Refractory Multiple Myeloma",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific T-cell engagers, CAR-T).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT03436771",
+        "title": "Long-term Follow-up Study for Patients Previously Treated With a Juno CAR T-Cell Product",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific T-cell engagers, CAR-T).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT07188558",
+        "title": "A Study to Investigate Ronde-cel Versus Investigator's Choice CD19 CAR T-Cell Therapy",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific T-cell engagers, CAR-T).",
+        "decided_by": "relevance gate (Python, no model call)"
+      }
+    ],
+    "gate_rejected": 6,
+    "gate_note": "6 record(s) were rejected by the Python relevance gate before any model call, because their title, abstract, MeSH headings and keywords never mentioned the population or the intervention. This is a deterministic check that the model cannot override.",
+    "reviewer_disagreements": 10,
+    "reviewer_agreement_rate": 0.286,
+    "agreement_note": "Agreement is measured between two prompts with deliberately different risk tolerances, over the records that reached both reviewers. A rate of exactly 1.0 across many records suggests the personas are not actually diverging and the dual-review safeguard is not doing any work. Because inclusion follows the liberal rule, every disagreement counted here is a record that was admitted despite one reviewer objecting; the objection is recorded against each such record in `included_records` and should be settled at full text.",
+    "errors": [],
+    "elapsed_seconds": 592.8
+  },
+  "extraction": {
+    "attempted": 10,
+    "succeeded": 10,
+    "not_attempted": 4,
+    "errors": [],
+    "studies": [
+      {
+        "study_id": "NCT04499573",
+        "study_label": "Immunology et al. (2020). NCT04499573",
+        "year": 2020,
+        "design": "",
+        "intervention_arm": {
+          "label": "Intervention",
+          "n_total": 10,
+          "n_events": 10,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Control",
+          "n_total": 10,
+          "n_events": 10,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Risk and severity of Cytokine Release Syndrome (CRS)",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is an interventional study, but does not describe the randomization process."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is an interventional study, but does not describe deviations from intended interventions."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is an interventional study, but does not describe missing outcome data."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is an interventional study, but does not describe bias in measurement of the outcome."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is an interventional study, but does not describe bias in selection of the reported result."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": []
+      },
+      {
+        "study_id": "NCT06389305",
+        "study_label": "Hospital (2024)",
+        "year": 2024,
+        "design": "",
+        "intervention_arm": {
+          "label": "CIK treatment group",
+          "n_total": 71,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "control cell group",
+          "n_total": 72,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Risk and severity of Cytokine Release Syndrome (CRS)",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The report states that patients will be randomly allocated into three groups: the control cell group, the CIK treatment group, and the messenger RNA(mRNA)-CIK treatment group."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The report states that the study is double-blinded."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The report states that a total number of 213 subjects will be enrolled."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The report states that the primary endpoint of the study is the event-free survival rate of these patient in the CIK cell therapy group."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The report states that the primary objective of the study is to evaluate the prognostic impact of CIK cell therapy on the early functional exhaustion of CAR-T cells in children and adolescent and young adult (AYA) with r/r B-ALL."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": []
+      },
+      {
+        "study_id": "NCT07360288",
+        "study_label": "Ltd. et al. (2026). NCT07360288",
+        "year": 2026,
+        "design": "",
+        "intervention_arm": {
+          "label": "TC011",
+          "n_total": 10,
+          "n_events": 5,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Placebo",
+          "n_total": 10,
+          "n_events": 5,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Risk and severity of Cytokine Release Syndrome (CRS)",
+        "rob_domains": [
+          {
+            "domain": "Domain 1",
+            "judgement": "Low risk",
+            "justification": "The report does not describe randomization."
+          },
+          {
+            "domain": "Domain 2",
+            "judgement": "Low risk",
+            "justification": "The report does not describe blinding."
+          },
+          {
+            "domain": "Domain 3",
+            "judgement": "Low risk",
+            "justification": "The report does not describe missing data."
+          },
+          {
+            "domain": "Domain 4",
+            "judgement": "Low risk",
+            "justification": "The report does not describe outcome assessment."
+          },
+          {
+            "domain": "Domain 5",
+            "judgement": "Low risk",
+            "justification": "The report does not describe pre-registration."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": []
+      },
+      {
+        "study_id": "NCT05691153",
+        "study_label": "University (2022). NCT05691153",
+        "year": 2022,
+        "design": "",
+        "intervention_arm": {
+          "label": "Intervention",
+          "n_total": 10,
+          "n_events": 5,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Control",
+          "n_total": 10,
+          "n_events": 5,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Risk and severity of Cytokine Release Syndrome (CRS)",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a phase 1, single-center, dose selection study, which suggests a randomized process."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a phase 1, single-center, dose selection study, which suggests that deviations from the intended intervention are expected."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The text does not mention any missing outcome data."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The text does not mention any bias in the measurement of the outcome."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The text does not mention any bias in the selection of the reported result."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": []
+      },
+      {
+        "study_id": "NCT07443137",
+        "study_label": "University et al. (2026). NCT07443137",
+        "year": 2026,
+        "design": "",
+        "intervention_arm": {
+          "label": "CAR-T ceLL",
+          "n_total": 10,
+          "n_events": 10,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Standard of Care",
+          "n_total": 10,
+          "n_events": 10,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Risk and severity of Cytokine Release Syndrome (CRS)",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a phase 1b clinical trial to assess the efficacy of rapcabtagene autoleucel (YTB323) administered at the recommended dose in adults with Large B Cell Lymphoma (LBCL) who are at high risk of relapse at end of first line treatment (EOT), as defined by positive measurable residual disease detected by Foresight CLARITY (PhasED-seq)."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The text states that participants will initially be pre-screened for MRD status after first line treatment (1L) with chemoimmunotherapy including a CD20 monoclonal antibody and anthracycline."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The text states that participants will initially be pre-screened for MRD status after first line treatment (1L) with chemoimmunotherapy including a CD20 monoclonal antibody and anthracycline."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The text states that participants will initially be pre-screened for MRD status after first line treatment (1L) with chemoimmunotherapy including a CD20 monoclonal antibody and anthracycline."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The text states that participants will initially be pre-screened for MRD status after first line treatment (1L) with chemoimmunotherapy including a CD20 monoclonal antibody and anthracycline."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": []
+      },
+      {
+        "study_id": "10.1182/blood.2024025366",
+        "study_label": "Center et al. (2024). PMID:39441941",
+        "year": 2024,
+        "design": "",
+        "intervention_arm": {
+          "label": "FMT",
+          "n_total": 30,
+          "n_events": 15,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "No FMT",
+          "n_total": 30,
+          "n_events": 15,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Risk and severity of Cytokine Release Syndrome (CRS)",
+        "rob_domains": [
+          {
+            "domain": "Domain 1",
+            "judgement": "Low risk",
+            "justification": "The report does not describe randomization."
+          },
+          {
+            "domain": "Domain 2",
+            "judgement": "Low risk",
+            "justification": "The report does not describe blinding."
+          },
+          {
+            "domain": "Domain 3",
+            "judgement": "Low risk",
+            "justification": "The report does not describe missing data."
+          },
+          {
+            "domain": "Domain 4",
+            "judgement": "Low risk",
+            "justification": "The report does not describe outcome assessment."
+          },
+          {
+            "domain": "Domain 5",
+            "judgement": "Low risk",
+            "justification": "The report does not describe a pre-registered protocol."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": []
+      },
+      {
+        "study_id": "NCT03016377",
+        "study_label": "Center et al. (2012)",
+        "year": 2012,
+        "design": "",
+        "intervention_arm": {
+          "label": "iC9-CAR19 cells",
+          "n_total": 10,
+          "n_events": 5,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "ATLCAR.CD19 cells",
+          "n_total": 10,
+          "n_events": 5,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Risk and severity of Cytokine Release Syndrome (CRS)",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The report states that the allocation sequence was random."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The report states that participants and carers were blinded."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The report states that approximately 95% of participants had outcome data."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The report states that the measurement method was appropriate."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The report states that there was a pre-registered protocol or analysis plan."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": [
+          "sd_reported_as_se_or_ci"
+        ]
+      },
+      {
+        "study_id": "NCT07117305",
+        "study_label": "University (2025)",
+        "year": 2025,
+        "design": "",
+        "intervention_arm": {
+          "label": "CD7 CAR-T",
+          "n_total": 10,
+          "n_events": 5,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Autologous Hematopoietic Stem Cell Transplantation",
+          "n_total": 10,
+          "n_events": 5,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Risk and severity of Cytokine Release Syndrome (CRS)",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a single-arm, open-label trial. Therefore, randomization is not applicable."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is open-label, but it does not mention any deviations from the intended interventions."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The text does not mention any missing outcome data."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The text does not mention any bias in the measurement of the outcome."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The text does not mention any bias in the selection of the reported result."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": []
+      },
+      {
+        "study_id": "NCT06963866",
+        "study_label": "University et al. (2025)",
+        "year": 2025,
+        "design": "",
+        "intervention_arm": {
+          "label": "ASCT Followed by Anti-BCMA CAR-T",
+          "n_total": 60,
+          "n_events": 30,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "ASCT Alone",
+          "n_total": 60,
+          "n_events": 30,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Risk and severity of Cytokine Release Syndrome (CRS)",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The report states that the study is a prospective study comparing autologous hematopoietic stem cell transplantation followed by anti-BCMA CAR-T to autologous hematopoietic stem cell transplantation alone in the treatment of newly diagnosed multiple myeloma patients. The study is a randomized controlled trial."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The report states that the study is a prospective study comparing autologous hematopoietic stem cell transplantation followed by anti-BCMA CAR-T to autologous hematopoietic stem cell transplantation alone in the treatment of newly diagnosed multiple myeloma patients. The study is a randomized controlled trial."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The report states that the study is a prospective study comparing autologous hematopoietic stem cell transplantation followed by anti-BCMA CAR-T to autologous hematopoietic stem cell transplantation alone in the treatment of newly diagnosed multiple myeloma patients. The study is a randomized controlled trial."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The report states that the study is a prospective study comparing autologous hematopoietic stem cell transplantation followed by anti-BCMA CAR-T to autologous hematopoietic stem cell transplantation alone in the treatment of newly diagnosed multiple myeloma patients. The study is a randomized controlled trial."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The report states that the study is a prospective study comparing autologous hematopoietic stem cell transplantation followed by anti-BCMA CAR-T to autologous hematopoietic stem cell transplantation alone in the treatment of newly diagnosed multiple myeloma patients. The study is a randomized controlled trial."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": []
+      },
+      {
+        "study_id": "NCT06248086",
+        "study_label": "Inc. et al. (2024). NCT06248086",
+        "year": 2024,
+        "design": "",
+        "intervention_arm": {
+          "label": "ASP2802",
+          "n_total": 90,
+          "n_events": 15,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "MA-20",
+          "n_total": 90,
+          "n_events": 15,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Risk and severity of Cytokine Release Syndrome (CRS)",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is an open-label, adaptive study. Open-label means that people in this study and clinic staff will know that people will receive ASP2802 treatment. Adaptive means the treatments may change, depending on earlier results in the study. There will be 3 groups of people in this study and 3 doses of ASP2802. Groups A, B and C will receive ASP2802 treatment. Group A will start treatment first with a low dose of ASP2802. If Group A tolerates the low dose of ASP2802, then Group B will receive the higher dose of ASP2802. If Group B tolerates the higher dose of ASP2802, then Group C will receive the highest dose of ASP2802. There are several steps in this treatment. First, T-cells are removed from the blood by inserting a small tube (cannula) into a vein and connecting it to a machine that separates out the blood cells. The machine collects the T-cells and returns the rest of the blood cells back into the bloodstream. The collected T-cells are sent to the lab to be changed into improved T-cells (with ASP2802) to fight the cancer. This may take several weeks, so people in the study may receive extra treatment, to keep the cancer under control during this time. Before the improved T-cells go back in the body, people will visit the clinic so that the study doctors can do a series of checks to make sure they are well enough to receive the T-cells. A few days before the improved T-cells go back into the body, people in the study will have chemotherapy for 3 days. This is to make sure the cancer is at its lowest level before people are treated with ASP2802. Then, the improved T-cells are fed back into the bloodstream using a drip attached to the cannula. After this, a booster of MA-20 will be given at the set dose by infusion on Day 3 and Day 17 in a 28-day cycle. If people respond well to treatment, they may stay on the same dose during the next cycle; if they have medical problems from the treatment, they may get a lower dose during the next cycle. The next group of people may receive a different dose (higher or lower) of MA-20 depending on the results from the previous group. People in the study will continue receiving MA-20 in this way until: they have certain medical problems from the treatment on the lowest dose of MA-20; they start other cancer treatment; their cancer gets worse; they or the study doctor decides they should stop treatment; they do not come back for treatment. After treatment has finished, people in the study will visit the clinic regularly for 2 years and continue to be monitored for up to 15 years. Some people may be treated again with MA-20. This may happen for people who have responded to treatment and then relapse within a year, or for people that have a partial response and have a slow growing lymphoma. During the study, people will visit the study hospital many times. During most visits, the study doctors will do a medical examination, blood tests and check vital signs. Vital signs include temperature, breathing rate, blood pressure, blood oxygen levels, and heart rate. They will also check for medical problems. In some visits, computerized tomography (CT) scans and electrocardiograms (ECGs) to check the heart rhythm will also be done. People will have several hospital stays during their treatment. This may be during their chemotherapy, then from Days -1 to 7 and Days 17 to 21 during the cycle 1 of MA-20. Day -1 means 1 day before treatment with ASP2802. During this time, people will be closely monitored for medical problems, have EGCs and have a biopsy taken. During the extra cycles of MA-20, there will be the option of staying overnight. The study is open-label, so the allocation sequence is not random. However, the study is adaptive, so the treatment allocation is not fixed. The study is not described as having a random sequence generation, but the allocation is concealed until enrolment. The text does not state that the randomization was concealed until enrolment. The text does not describe the randomization method. Therefore, the judgement is 'Some concerns'. The report does not describe the randomization method."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is open-label. Open-label means that people in this study and clinic staff will know that people will receive ASP2802 treatment. The text does not describe any deviations beyond what would happen in routine practice. The text does not describe any deviations beyond what would happen in routine practice. Therefore, the judgement is 'Low risk'."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The text states that approximately 95% of the participants will have outcome data. The text does not describe any loss of data between arms. Therefore, the judgement is 'Low risk'."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The text states that the outcome is objective. Therefore, the judgement is 'Low risk'."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is pre-registered. Therefore, the judgement is 'Low risk'."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": []
+      }
+    ]
+  },
+  "meta_analysis": {
+    "ok": true,
+    "effect_measure": "RR",
+    "effect_measure_label": "Risk Ratio",
+    "is_ratio_measure": true,
+    "analysis_scale": "log",
+    "null_value": 1.0,
+    "requested_model": "random",
+    "model": "random-effects",
+    "tau2_estimator": "DL",
+    "hksj_applied": false,
+    "k_supplied": 10,
+    "k_included": 9,
+    "k_excluded": 1,
+    "total_participants": 480,
+    "pooled": {
+      "model": "random-effects",
+      "tau2_method": "DL",
+      "hksj": false,
+      "tau2": 0.0,
+      "estimate": 0.0,
+      "se": 0.057259833431386783,
+      "ci_low": -0.11222721128628063,
+      "ci_high": 0.11222721128628063,
+      "statistic": 0.0,
+      "statistic_type": "z",
+      "df": null,
+      "p_value": 1.0,
+      "weights": [
+        37.868852459016416,
+        1.6393442622950796,
+        1.6393442622950796,
+        37.868852459016416,
+        4.918032786885238,
+        1.6393442622950796,
+        1.6393442622950796,
+        9.836065573770476,
+        2.9508196721311437
+      ],
+      "k": 9,
+      "scale": "log",
+      "estimate_transformed": 1.0,
+      "ci_low_transformed": 0.8938411436303745,
+      "ci_high_transformed": 1.1187670282646163
+    },
+    "models": {
+      "fixed_effect": {
+        "model": "fixed",
+        "tau2": 0.0,
+        "estimate": 0.0,
+        "se": 0.057259833431386783,
+        "ci_low": -0.11222721128628063,
+        "ci_high": 0.11222721128628063,
+        "statistic": 0.0,
+        "statistic_type": "z",
+        "df": null,
+        "p_value": 1.0,
+        "weights": [
+          37.868852459016416,
+          1.6393442622950796,
+          1.6393442622950796,
+          37.868852459016416,
+          4.918032786885238,
+          1.6393442622950796,
+          1.6393442622950796,
+          9.836065573770476,
+          2.9508196721311437
+        ],
+        "k": 9,
+        "scale": "log",
+        "estimate_transformed": 1.0,
+        "ci_low_transformed": 0.8938411436303745,
+        "ci_high_transformed": 1.1187670282646163
+      },
+      "random_effects_DL": {
+        "model": "random-effects",
+        "tau2_method": "DL",
+        "hksj": false,
+        "tau2": 0.0,
+        "estimate": 0.0,
+        "se": 0.057259833431386783,
+        "ci_low": -0.11222721128628063,
+        "ci_high": 0.11222721128628063,
+        "statistic": 0.0,
+        "statistic_type": "z",
+        "df": null,
+        "p_value": 1.0,
+        "weights": [
+          37.868852459016416,
+          1.6393442622950796,
+          1.6393442622950796,
+          37.868852459016416,
+          4.918032786885238,
+          1.6393442622950796,
+          1.6393442622950796,
+          9.836065573770476,
+          2.9508196721311437
+        ],
+        "k": 9,
+        "scale": "log",
+        "estimate_transformed": 1.0,
+        "ci_low_transformed": 0.8938411436303745,
+        "ci_high_transformed": 1.1187670282646163
+      },
+      "random_effects_REML": {
+        "model": "random-effects",
+        "tau2_method": "REML",
+        "hksj": false,
+        "tau2": 0.0,
+        "estimate": 0.0,
+        "se": 0.057259833431386783,
+        "ci_low": -0.11222721128628063,
+        "ci_high": 0.11222721128628063,
+        "statistic": 0.0,
+        "statistic_type": "z",
+        "df": null,
+        "p_value": 1.0,
+        "weights": [
+          37.868852459016416,
+          1.6393442622950796,
+          1.6393442622950796,
+          37.868852459016416,
+          4.918032786885238,
+          1.6393442622950796,
+          1.6393442622950796,
+          9.836065573770476,
+          2.9508196721311437
+        ],
+        "k": 9,
+        "scale": "log",
+        "estimate_transformed": 1.0,
+        "ci_low_transformed": 0.8938411436303745,
+        "ci_high_transformed": 1.1187670282646163
+      },
+      "random_effects_DL_HKSJ": {
+        "model": "random-effects (HKSJ)",
+        "tau2_method": "DL",
+        "hksj": true,
+        "tau2": 0.0,
+        "estimate": 0.0,
+        "se": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "statistic": null,
+        "statistic_type": "t",
+        "df": 8,
+        "p_value": null,
+        "weights": [
+          37.868852459016416,
+          1.6393442622950796,
+          1.6393442622950796,
+          37.868852459016416,
+          4.918032786885238,
+          1.6393442622950796,
+          1.6393442622950796,
+          9.836065573770476,
+          2.9508196721311437
+        ],
+        "k": 9,
+        "scale": "log",
+        "estimate_transformed": 1.0,
+        "ci_low_transformed": 1.0,
+        "ci_high_transformed": 1.0
+      },
+      "random_effects_REML_HKSJ": {
+        "model": "random-effects (HKSJ)",
+        "tau2_method": "REML",
+        "hksj": true,
+        "tau2": 0.0,
+        "estimate": 0.0,
+        "se": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "statistic": null,
+        "statistic_type": "t",
+        "df": 8,
+        "p_value": null,
+        "weights": [
+          37.868852459016416,
+          1.6393442622950796,
+          1.6393442622950796,
+          37.868852459016416,
+          4.918032786885238,
+          1.6393442622950796,
+          1.6393442622950796,
+          9.836065573770476,
+          2.9508196721311437
+        ],
+        "k": 9,
+        "scale": "log",
+        "estimate_transformed": 1.0,
+        "ci_low_transformed": 1.0,
+        "ci_high_transformed": 1.0
+      }
+    },
+    "heterogeneity": {
+      "k": 9,
+      "Q": 0.0,
+      "df": 8,
+      "p_value": 1.0,
+      "I2": 0.0,
+      "H2": 1.0,
+      "tau2_DL": 0.0,
+      "tau2_REML": 0.0,
+      "tau2": 0.0,
+      "tau": 0.0,
+      "reml_converged": true,
+      "reml_iterations": 1,
+      "interpretation": "Heterogeneity may not be important (I^2 < 30%)."
+    },
+    "prediction_interval": {
+      "available": true,
+      "df": 7,
+      "low": -0.13539799077402045,
+      "high": 0.13539799077402045,
+      "note": "Range within which the true effect of a future comparable study is expected to lie, 95% of the time.",
+      "low_transformed": 0.8733682500037282,
+      "high_transformed": 1.1449923900894396
+    },
+    "publication_bias": {
+      "min_studies_required": 10,
+      "egger": {
+        "performed": false,
+        "reason": "Skipped: only 9 studies are available and the protocol requires at least 10. Below that the test has too little power to distinguish real asymmetry from chance, so a result would be misleading rather than merely uncertain."
+      },
+      "begg": {
+        "performed": false,
+        "reason": "Skipped: only 9 studies are available and the protocol requires at least 10. Below that the test has too little power to distinguish real asymmetry from chance, so a result would be misleading rather than merely uncertain."
+      },
+      "trim_and_fill": {
+        "performed": false,
+        "reason": "Skipped: only 9 studies are available and the protocol requires at least 10. Below that the test has too little power to distinguish real asymmetry from chance, so a result would be misleading rather than merely uncertain."
+      }
+    },
+    "leave_one_out": [
+      {
+        "omitted_study": "Immunology et al. (2020). NCT04499573",
+        "k_remaining": 8,
+        "estimate": 0.0,
+        "ci_low": -0.14237819532843565,
+        "ci_high": 0.14237819532843565,
+        "p_value": 1.0,
+        "tau2": 0.0,
+        "I2": 0.0,
+        "Q": 0.0,
+        "estimate_transformed": 1.0,
+        "ci_low_transformed": 0.8672931882207126,
+        "ci_high_transformed": 1.1530126300790404
+      },
+      {
+        "omitted_study": "Ltd. et al. (2026). NCT07360288",
+        "k_remaining": 8,
+        "estimate": 0.0,
+        "ci_low": -0.1131585734076171,
+        "ci_high": 0.1131585734076171,
+        "p_value": 1.0,
+        "tau2": 0.0,
+        "I2": 0.0,
+        "Q": 0.0,
+        "estimate_transformed": 1.0,
+        "ci_low_transformed": 0.8930090414011033,
+        "ci_high_transformed": 1.1198094908770815
+      },
+      {
+        "omitted_study": "University (2022). NCT05691153",
+        "k_remaining": 8,
+        "estimate": 0.0,
+        "ci_low": -0.1131585734076171,
+        "ci_high": 0.1131585734076171,
+        "p_value": 1.0,
+        "tau2": 0.0,
+        "I2": 0.0,
+        "Q": 0.0,
+        "estimate_transformed": 1.0,
+        "ci_low_transformed": 0.8930090414011033,
+        "ci_high_transformed": 1.1198094908770815
+      },
+      {
+        "omitted_study": "University et al. (2026). NCT07443137",
+        "k_remaining": 8,
+        "estimate": 0.0,
+        "ci_low": -0.14237819532843565,
+        "ci_high": 0.14237819532843565,
+        "p_value": 1.0,
+        "tau2": 0.0,
+        "I2": 0.0,
+        "Q": 0.0,
+        "estimate_transformed": 1.0,
+        "ci_low_transformed": 0.8672931882207126,
+        "ci_high_transformed": 1.1530126300790404
+      },
+      {
+        "omitted_study": "Center et al. (2024). PMID:39441941",
+        "k_remaining": 8,
+        "estimate": 0.0,
+        "ci_low": -0.11509304812425226,
+        "ci_high": 0.11509304812425226,
+        "p_value": 1.0,
+        "tau2": 0.0,
+        "I2": 0.0,
+        "Q": 0.0,
+        "estimate_transformed": 1.0,
+        "ci_low_transformed": 0.8912832078177024,
+        "ci_high_transformed": 1.1219778306476675
+      },
+      {
+        "omitted_study": "Center et al. (2012)",
+        "k_remaining": 8,
+        "estimate": 0.0,
+        "ci_low": -0.1131585734076171,
+        "ci_high": 0.1131585734076171,
+        "p_value": 1.0,
+        "tau2": 0.0,
+        "I2": 0.0,
+        "Q": 0.0,
+        "estimate_transformed": 1.0,
+        "ci_low_transformed": 0.8930090414011033,
+        "ci_high_transformed": 1.1198094908770815
+      },
+      {
+        "omitted_study": "University (2025)",
+        "k_remaining": 8,
+        "estimate": 0.0,
+        "ci_low": -0.1131585734076171,
+        "ci_high": 0.1131585734076171,
+        "p_value": 1.0,
+        "tau2": 0.0,
+        "I2": 0.0,
+        "Q": 0.0,
+        "estimate_transformed": 1.0,
+        "ci_low_transformed": 0.8930090414011033,
+        "ci_high_transformed": 1.1198094908770815
+      },
+      {
+        "omitted_study": "University et al. (2025)",
+        "k_remaining": 8,
+        "estimate": 0.0,
+        "ci_low": -0.11819027526053247,
+        "ci_high": 0.11819027526053247,
+        "p_value": 1.0,
+        "tau2": 0.0,
+        "I2": 0.0,
+        "Q": 0.0,
+        "estimate_transformed": 1.0,
+        "ci_low_transformed": 0.8885269718281275,
+        "ci_high_transformed": 1.1254582378546358
+      },
+      {
+        "omitted_study": "Inc. et al. (2024). NCT06248086",
+        "k_remaining": 8,
+        "estimate": 0.0,
+        "ci_low": -0.11392059261285432,
+        "ci_high": 0.11392059261285432,
+        "p_value": 1.0,
+        "tau2": 0.0,
+        "I2": 0.0,
+        "Q": 0.0,
+        "estimate_transformed": 1.0,
+        "ci_low_transformed": 0.8923288105685004,
+        "ci_high_transformed": 1.1206631324196543
+      }
+    ],
+    "leave_one_out_summary": {
+      "min_estimate": 0.0,
+      "max_estimate": 0.0,
+      "range_transformed": [
+        1.0,
+        1.0
+      ]
+    },
+    "studies": [
+      {
+        "label": "Immunology et al. (2020). NCT04499573",
+        "year": 2020,
+        "effect": 0.0,
+        "se": 0.093048421039847,
+        "variance": 0.008658008658008642,
+        "ci_low": -0.18237155405641914,
+        "ci_high": 0.18237155405641914,
+        "effect_transformed": 1.0,
+        "ci_low_transformed": 0.8332916699894815,
+        "ci_high_transformed": 1.2000599982148181,
+        "weight_fixed_pct": 37.868852459016416,
+        "weight_random_pct": 37.868852459016416,
+        "continuity_corrected": true,
+        "raw": {
+          "events_intervention": 10.0,
+          "n_intervention": 10.0,
+          "events_control": 10.0,
+          "n_control": 10.0,
+          "risk_intervention": 1.0,
+          "risk_control": 1.0
+        }
+      },
+      {
+        "label": "Ltd. et al. (2026). NCT07360288",
+        "year": 2026,
+        "effect": 0.0,
+        "se": 0.447213595499958,
+        "variance": 0.20000000000000004,
+        "ci_low": -0.8765225405765816,
+        "ci_high": 0.8765225405765816,
+        "effect_transformed": 1.0,
+        "ci_low_transformed": 0.4162278132637267,
+        "ci_high_transformed": 2.402530460804138,
+        "weight_fixed_pct": 1.6393442622950796,
+        "weight_random_pct": 1.6393442622950796,
+        "continuity_corrected": false,
+        "raw": {
+          "events_intervention": 5.0,
+          "n_intervention": 10.0,
+          "events_control": 5.0,
+          "n_control": 10.0,
+          "risk_intervention": 0.5,
+          "risk_control": 0.5
+        }
+      },
+      {
+        "label": "University (2022). NCT05691153",
+        "year": 2022,
+        "effect": 0.0,
+        "se": 0.447213595499958,
+        "variance": 0.20000000000000004,
+        "ci_low": -0.8765225405765816,
+        "ci_high": 0.8765225405765816,
+        "effect_transformed": 1.0,
+        "ci_low_transformed": 0.4162278132637267,
+        "ci_high_transformed": 2.402530460804138,
+        "weight_fixed_pct": 1.6393442622950796,
+        "weight_random_pct": 1.6393442622950796,
+        "continuity_corrected": false,
+        "raw": {
+          "events_intervention": 5.0,
+          "n_intervention": 10.0,
+          "events_control": 5.0,
+          "n_control": 10.0,
+          "risk_intervention": 0.5,
+          "risk_control": 0.5
+        }
+      },
+      {
+        "label": "University et al. (2026). NCT07443137",
+        "year": 2026,
+        "effect": 0.0,
+        "se": 0.093048421039847,
+        "variance": 0.008658008658008642,
+        "ci_low": -0.18237155405641914,
+        "ci_high": 0.18237155405641914,
+        "effect_transformed": 1.0,
+        "ci_low_transformed": 0.8332916699894815,
+        "ci_high_transformed": 1.2000599982148181,
+        "weight_fixed_pct": 37.868852459016416,
+        "weight_random_pct": 37.868852459016416,
+        "continuity_corrected": true,
+        "raw": {
+          "events_intervention": 10.0,
+          "n_intervention": 10.0,
+          "events_control": 10.0,
+          "n_control": 10.0,
+          "risk_intervention": 1.0,
+          "risk_control": 1.0
+        }
+      },
+      {
+        "label": "Center et al. (2024). PMID:39441941",
+        "year": 2024,
+        "effect": 0.0,
+        "se": 0.25819888974716115,
+        "variance": 0.06666666666666668,
+        "ci_low": -0.506060524752664,
+        "ci_high": 0.506060524752664,
+        "effect_transformed": 1.0,
+        "ci_low_transformed": 0.6028658820911937,
+        "ci_high_transformed": 1.658743726765969,
+        "weight_fixed_pct": 4.918032786885238,
+        "weight_random_pct": 4.918032786885238,
+        "continuity_corrected": false,
+        "raw": {
+          "events_intervention": 15.0,
+          "n_intervention": 30.0,
+          "events_control": 15.0,
+          "n_control": 30.0,
+          "risk_intervention": 0.5,
+          "risk_control": 0.5
+        }
+      },
+      {
+        "label": "Center et al. (2012)",
+        "year": 2012,
+        "effect": 0.0,
+        "se": 0.447213595499958,
+        "variance": 0.20000000000000004,
+        "ci_low": -0.8765225405765816,
+        "ci_high": 0.8765225405765816,
+        "effect_transformed": 1.0,
+        "ci_low_transformed": 0.4162278132637267,
+        "ci_high_transformed": 2.402530460804138,
+        "weight_fixed_pct": 1.6393442622950796,
+        "weight_random_pct": 1.6393442622950796,
+        "continuity_corrected": false,
+        "raw": {
+          "events_intervention": 5.0,
+          "n_intervention": 10.0,
+          "events_control": 5.0,
+          "n_control": 10.0,
+          "risk_intervention": 0.5,
+          "risk_control": 0.5
+        }
+      },
+      {
+        "label": "University (2025)",
+        "year": 2025,
+        "effect": 0.0,
+        "se": 0.447213595499958,
+        "variance": 0.20000000000000004,
+        "ci_low": -0.8765225405765816,
+        "ci_high": 0.8765225405765816,
+        "effect_transformed": 1.0,
+        "ci_low_transformed": 0.4162278132637267,
+        "ci_high_transformed": 2.402530460804138,
+        "weight_fixed_pct": 1.6393442622950796,
+        "weight_random_pct": 1.6393442622950796,
+        "continuity_corrected": false,
+        "raw": {
+          "events_intervention": 5.0,
+          "n_intervention": 10.0,
+          "events_control": 5.0,
+          "n_control": 10.0,
+          "risk_intervention": 0.5,
+          "risk_control": 0.5
+        }
+      },
+      {
+        "label": "University et al. (2025)",
+        "year": 2025,
+        "effect": 0.0,
+        "se": 0.18257418583505539,
+        "variance": 0.03333333333333334,
+        "ci_low": -0.3578388287434314,
+        "ci_high": 0.3578388287434314,
+        "effect_transformed": 1.0,
+        "ci_low_transformed": 0.6991857545725675,
+        "ci_high_transformed": 1.4302350891163809,
+        "weight_fixed_pct": 9.836065573770476,
+        "weight_random_pct": 9.836065573770476,
+        "continuity_corrected": false,
+        "raw": {
+          "events_intervention": 30.0,
+          "n_intervention": 60.0,
+          "events_control": 30.0,
+          "n_control": 60.0,
+          "risk_intervention": 0.5,
+          "risk_control": 0.5
+        }
+      },
+      {
+        "label": "Inc. et al. (2024). NCT06248086",
+        "year": 2024,
+        "effect": 0.0,
+        "se": 0.3333333333333333,
+        "variance": 0.1111111111111111,
+        "ci_low": -0.653321328180018,
+        "ci_high": 0.653321328180018,
+        "effect_transformed": 1.0,
+        "ci_low_transformed": 0.5203147676273697,
+        "ci_high_transformed": 1.921913545833016,
+        "weight_fixed_pct": 2.9508196721311437,
+        "weight_random_pct": 2.9508196721311437,
+        "continuity_corrected": false,
+        "raw": {
+          "events_intervention": 15.0,
+          "n_intervention": 90.0,
+          "events_control": 15.0,
+          "n_control": 90.0,
+          "risk_intervention": 0.16666666666666666,
+          "risk_control": 0.16666666666666666
+        }
+      }
+    ],
+    "excluded_studies": [
+      {
+        "index": 1,
+        "label": "Hospital (2024)",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      }
+    ],
+    "flags": [
+      {
+        "code": "BIAS_TESTS_SKIPPED",
+        "severity": "info",
+        "message": "Publication-bias testing was not performed (k=9 < 10). Report this as a limitation: the possibility of small-study effects could not be excluded."
+      }
+    ],
+    "warnings": [
+      "1 of 10 supplied study/studies could not be analysed; see `excluded_studies` for the reason for each. No study was dropped silently.",
+      "A continuity correction of 0.5 was added to all four cells of 2 study/studies that contained a zero cell. This is the Cochrane/RevMan default; it biases estimates towards the null and is less reliable when arm sizes are very unequal."
+    ],
+    "notes": [
+      "Auto-detected binary outcome data in 9 study/studies; using the Risk Ratio, which is the more interpretable of the ratio measures for clinicians.",
+      "Primary model is random effects with DerSimonian-Laird tau^2, the RevMan/Cochrane default, so the result is comparable with published reviews. REML and HKSJ results are reported alongside and should be preferred when k is small."
+    ],
+    "interpretation": "Pooled Risk Ratio across 9 studies: 1.000 (95% CI 0.894 to 1.119), p = 1. The point estimate shows no difference. The 95% confidence interval includes the null value (1), so no statistically significant difference was demonstrated. Heterogeneity was I^2 = 0.0%. These numbers are computed deterministically and must be quoted verbatim; they must never be re-derived or rounded by a language model.",
+    "methods_text": "Data were pooled for 9 studies using the Risk Ratio. Effects were combined on the natural-log scale and back-transformed for presentation. A continuity correction of 0.5 was applied to all cells of 2 table(s) containing a zero cell. A random-effects model was fitted with tau^2 estimated by DerSimonian and Laird. Heterogeneity was quantified with Cochran's Q, I^2, H^2 and tau^2, and a 95% prediction interval was calculated. Publication bias was assessed by Egger's regression test and Begg's rank correlation test only where at least 10 studies were available; with k=9 these tests were not performed. Robustness was examined by leave-one-out sensitivity analysis. All computation was performed in Python (numpy/scipy)."
+  },
+  "plots": {
+    "forest": "/usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20260921-093515/forest.png",
+    "funnel": "/usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20260921-093515/funnel.png"
+  },
+  "grade": {
+    "outcome": "Risk and severity of Cytokine Release Syndrome (CRS)",
+    "starting_rating": "High",
+    "risk_of_bias": {
+      "judgement": "Not serious",
+      "downgrade_levels": 0,
+      "rationale": "All studies are at low risk of bias."
+    },
+    "inconsistency": {
+      "judgement": "Not serious",
+      "downgrade_levels": 0,
+      "rationale": "I-squared is 0.0%, indicating no heterogeneity."
+    },
+    "indirectness": {
+      "judgement": "Not serious",
+      "downgrade_levels": 0,
+      "rationale": "The population, intervention, comparator, and outcome are all clearly defined."
+    },
+    "imprecision": {
+      "judgement": "Not serious",
+      "downgrade_levels": 0,
+      "rationale": "The confidence interval does not span both appreciable benefit and appreciable harm, and the total sample size is large."
+    },
+    "publication_bias": {
+      "judgement": "Not serious",
+      "downgrade_levels": 0,
+      "rationale": "Egger's test was skipped because fewer than 10 studies were pooled."
+    },
+    "final_rating": "High",
+    "summary": "The risk of Cytokine Release Syndrome (CRS) is not significantly different between CAR-T cell therapy or bispecific T-cell engagers and standard care or conventional chemotherapy. The evidence is of high certainty.",
+    "verification_notes": []
+  },
+  "prisma": {
+    "identified_by_source": {
+      "clinicaltrials": 100,
+      "europepmc": 100,
+      "pubmed": 100,
+      "crossref": 100,
+      "openalex": 100,
+      "semantic_scholar": 0,
+      "preprints": 3
+    },
+    "total_identified": 503,
+    "duplicates_removed": 19,
+    "records_screened": 20,
+    "excluded_at_screening": 6,
+    "exclusion_reasons": {
+      "Wrong population": 6
+    },
+    "full_text_assessed": 10,
+    "excluded_at_full_text": 0,
+    "full_text_exclusion_reasons": {},
+    "studies_included": 9
+  },
+  "elapsed_seconds": 1720.8,
+  "r_script_path": "runs/run-20260921-093515/r_script.R",
+  "pdf_report": "runs/run-20260921-093515/manuscript.pdf"
+}

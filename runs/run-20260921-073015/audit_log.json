@@ -1,0 +1,438 @@
+[
+  {
+    "source": "pubmed",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi",
+    "params": {
+      "db": "pubmed",
+      "term": "(\"CAR-T cell therapy\"[tiab] OR \"CAR T-cell Therapy\"[tiab] OR CAR-T[tiab] OR \"CAR T\"[tiab] OR \"CAR T-cell Therapy\"[MeSH Terms] OR \"CAR-T cell Therapy\"[MeSH Terms] OR \"CAR-T\"[MeSH Terms] OR \"CAR T\"[MeSH Terms]) AND (\"IL-6 inhibitors\"[tiab] OR IL-6[tiab] OR tocilizumab[tiab] OR \"IL-6 blockade\"[tiab] OR \"IL-6 inhibition\"[tiab] OR \"Interleukin-6\"[MeSH Terms])",
+      "retmax": 100,
+      "retmode": "json",
+      "sort": "relevance",
+      "tool": "SRMA-Agent",
+      "email": ""
+    },
+    "timestamp_utc": "2026-09-21T07:31:41.001124+00:00",
+    "status_code": 200,
+    "n_results": 567,
+    "duration_ms": 564,
+    "error": null
+  },
+  {
+    "source": "clinicaltrials",
+    "url": "https://clinicaltrials.gov/api/v2/studies",
+    "params": {
+      "query.term": "(\"CAR-T cell therapy\" OR \"CAR T-cell Therapy\" OR CAR-T OR \"CAR T\") AND (\"IL-6 inhibitors\" OR IL-6 OR tocilizumab OR \"IL-6 blockade\" OR \"IL-6 inhibition\" OR Interleukin-6)",
+      "pageSize": 100,
+      "format": "json",
+      "countTotal": "true"
+    },
+    "timestamp_utc": "2026-09-21T07:31:41.767112+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1347,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "((TITLE_ABS:\"CAR-T cell therapy\" OR TITLE_ABS:\"CAR T-cell Therapy\" OR TITLE_ABS:CAR-T OR TITLE_ABS:\"CAR T\" OR MESH:\"CAR T-cell Therapy\" OR MESH:\"CAR-T cell Therapy\" OR MESH:\"CAR-T\" OR MESH:\"CAR T\") AND (TITLE_ABS:\"IL-6 inhibitors\" OR TITLE_ABS:IL-6 OR TITLE_ABS:tocilizumab OR TITLE_ABS:\"IL-6 blockade\" OR TITLE_ABS:\"IL-6 inhibition\" OR MESH:\"Interleukin-6\")) AND (SRC:PPR)",
+      "format": "json",
+      "resultType": "core",
+      "pageSize": 100,
+      "cursorMark": "*"
+    },
+    "timestamp_utc": "2026-09-21T07:31:42.208021+00:00",
+    "status_code": 200,
+    "n_results": 64,
+    "duration_ms": 1773,
+    "error": null
+  },
+  {
+    "source": "europepmc",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "(TITLE_ABS:\"CAR-T cell therapy\" OR TITLE_ABS:\"CAR T-cell Therapy\" OR TITLE_ABS:CAR-T OR TITLE_ABS:\"CAR T\" OR MESH:\"CAR T-cell Therapy\" OR MESH:\"CAR-T cell Therapy\" OR MESH:\"CAR-T\" OR MESH:\"CAR T\") AND (TITLE_ABS:\"IL-6 inhibitors\" OR TITLE_ABS:IL-6 OR TITLE_ABS:tocilizumab OR TITLE_ABS:\"IL-6 blockade\" OR TITLE_ABS:\"IL-6 inhibition\" OR MESH:\"Interleukin-6\")",
+      "format": "json",
+      "resultType": "core",
+      "pageSize": 100,
+      "cursorMark": "*"
+    },
+    "timestamp_utc": "2026-09-21T07:31:42.588854+00:00",
+    "status_code": 200,
+    "n_results": 4656,
+    "duration_ms": 2164,
+    "error": null
+  },
+  {
+    "source": "pubmed",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi",
+    "params": {
+      "db": "pubmed",
+      "id": "36763238,40052127,29385370,39604730,39117839,36989488,38066881,34724386,30528964,30586620,29713085,37689733,29808005,40012027,27207799,32301017,32771558,35892735,29808007,39187161,36513049,37031746,37269857,41882404,39058976,37735875,36002054,38713510,41214679,36198546,30463995,30686357,40719826,32979154,34296427,36455991,30686354,40707782,40520784,40830482,39947004,40977952,42191889,33715009,41404620,41224498,41145445,40307941,41038347,41097712,40753722,35126471,41279642,34712233,42627932,34570442,33314568,34463175,37020516,41993175,40711524,36939851,39626349,35976532,35071407,41165751,38149027,42192954,38366102,31320380,40641008,33168950,30762706,38838226,38607370,36450377,37696939,32523801,37649264,28506444,41570368,40384272,36131934,38578977,35049413,33827116,35148417,36923358,39325308,37744005,33391257,31355491,30753567,32113143,40176077,33932067,40576759,35154102,31697826,35635259",
+      "retmode": "xml",
+      "tool": "SRMA-Agent",
+      "email": ""
+    },
+    "timestamp_utc": "2026-09-21T07:31:42.714624+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1713,
+    "error": null
+  },
+  {
+    "source": "crossref",
+    "url": "https://api.crossref.org/works",
+    "params": {
+      "query.bibliographic": "CAR-T cell therapy CAR T-cell Therapy IL-6 inhibitors IL-6",
+      "rows": 100,
+      "cursor": "*",
+      "mailto": ""
+    },
+    "timestamp_utc": "2026-09-21T07:31:43.428380+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 3007,
+    "error": null
+  },
+  {
+    "source": "openalex",
+    "url": "https://api.openalex.org/works",
+    "params": {
+      "search": "(\"CAR-T cell therapy\" OR \"CAR T-cell Therapy\" OR CAR-T OR \"CAR T\") AND (\"IL-6 inhibitors\" OR IL-6 OR tocilizumab OR \"IL-6 blockade\" OR \"IL-6 inhibition\" OR Interleukin-6)",
+      "mailto": "",
+      "per-page": 100,
+      "cursor": "*"
+    },
+    "timestamp_utc": "2026-09-21T07:31:45.941431+00:00",
+    "status_code": 200,
+    "n_results": 819138,
+    "duration_ms": 5510,
+    "error": null
+  },
+  {
+    "source": "semantic_scholar",
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search",
+    "params": {
+      "query": "CAR-T cell therapy CAR T-cell Therapy IL-6 inhibitors IL-6",
+      "limit": 100,
+      "offset": 0,
+      "fields": "paperId,externalIds,title,abstract,venue,year,authors,publicationTypes,fieldsOfStudy,citationCount,referenceCount,openAccessPdf,isOpenAccess,url,publicationDate,journal"
+    },
+    "timestamp_utc": "2026-09-21T07:31:48.173954+00:00",
+    "status_code": 429,
+    "n_results": null,
+    "duration_ms": 7734,
+    "error": "HTTP 429"
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2022.12.01.22282976/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:31:52.809823+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 10596,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2025.06.13.659463/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:31:59.661673+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 6851,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.08.28.21262692/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:32:04.046819+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 4385,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.06.12.20122374/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:32:08.772582+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 4725,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2021.12.28.474355/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:32:09.757312+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 984,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.05.29.20117358/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:32:15.718263+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 5960,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.05.10.21256933/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:32:18.298693+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 2580,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.08.25.21262417/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:32:18.934664+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 635,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.08.05.20169060/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:32:22.609395+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 3674,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.06.13.20130088/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:32:24.823614+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 2214,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.09.05.20188912/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:32:25.069887+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 246,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.01.28.21249932/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:32:25.312735+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 242,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.07.20.20157503/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:32:25.577890+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 265,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.01.07.21249390/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:32:26.518580+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 940,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.06.01.20119149/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:32:27.575061+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1056,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.03.22.21254128/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:32:28.646300+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1071,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2022.03.31.22269942/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:32:29.381575+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 735,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.02.04.21249959/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:32:30.477008+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1095,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.05.01.20086421/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:32:30.885134+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 408,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.06.15.20131870/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:32:31.187300+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 302,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.06.22.20133413/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:32:31.449345+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 261,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.05.07.20094599/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:32:31.749655+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 300,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2021.02.08.430254/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:32:33.539119+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1789,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.05.27.20115303/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:32:33.916594+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 377,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.08.10.20170761/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:32:34.210505+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 293,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.02.25.20134866/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:32:34.452814+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 242,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2024.03.25.585721/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:32:34.719591+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 266,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.03.24.20042655/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:32:36.714421+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1994,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.06.02.20120295/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:32:37.074219+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 359,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.05.14.20094144/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:32:39.301923+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 2227,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2020.11.03.366666/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-21T07:32:39.570428+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 268,
+    "error": null
+  }
+]

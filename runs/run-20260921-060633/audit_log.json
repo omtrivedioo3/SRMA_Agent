@@ -1,0 +1,160 @@
+[
+  {
+    "source": "pubmed",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi",
+    "params": {
+      "db": "pubmed",
+      "term": "(\"myocardial infarction\"[tiab] OR \"heart attack\"[tiab] OR post-MI[tiab] OR STEMI[tiab] OR NSTEMI[tiab] OR \"acute coronary syndrome\"[tiab] OR \"Myocardial Infarction\"[MeSH Terms]) AND (aspirin[tiab] OR \"acetylsalicylic acid\"[tiab] OR ASA[tiab] OR \"Aspirin\"[MeSH Terms])",
+      "retmax": 100,
+      "retmode": "json",
+      "sort": "relevance",
+      "tool": "SRMA-Agent",
+      "email": ""
+    },
+    "timestamp_utc": "2026-09-21T06:08:39.747650+00:00",
+    "status_code": 200,
+    "n_results": 12195,
+    "duration_ms": 794,
+    "error": null
+  },
+  {
+    "source": "clinicaltrials",
+    "url": "https://clinicaltrials.gov/api/v2/studies",
+    "params": {
+      "query.term": "(\"myocardial infarction\" OR \"heart attack\" OR post-MI OR STEMI OR NSTEMI OR \"acute coronary syndrome\") AND (aspirin OR \"acetylsalicylic acid\" OR ASA)",
+      "pageSize": 100,
+      "format": "json",
+      "countTotal": "true"
+    },
+    "timestamp_utc": "2026-09-21T06:08:40.441229+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1501,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "((TITLE_ABS:\"myocardial infarction\" OR TITLE_ABS:\"heart attack\" OR TITLE_ABS:post-MI OR TITLE_ABS:STEMI OR TITLE_ABS:NSTEMI OR TITLE_ABS:\"acute coronary syndrome\" OR MESH:\"Myocardial Infarction\") AND (TITLE_ABS:aspirin OR TITLE_ABS:\"acetylsalicylic acid\" OR TITLE_ABS:ASA OR MESH:\"Aspirin\")) AND (SRC:PPR)",
+      "format": "json",
+      "resultType": "core",
+      "pageSize": 100,
+      "cursorMark": "*"
+    },
+    "timestamp_utc": "2026-09-21T06:08:41.035363+00:00",
+    "status_code": 200,
+    "n_results": 222,
+    "duration_ms": 2086,
+    "error": null
+  },
+  {
+    "source": "pubmed",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi",
+    "params": {
+      "db": "pubmed",
+      "id": "40888737,40471776,37878786,36976424,41791655,36047409,32988222,18453785,35051864,41195776,16096727,9617597,15738565,26722003,29664423,35332750,42061600,26778745,35008828,36480147,30006115,38296575,27289074,29443445,29985284,12177638,23195914,16485051,33602439,26988949,31078438,41656976,19816626,35429947,29621983,26398390,34784901,31109212,38032364,37545028,22992163,34985465,17562300,41968214,32172203,35289471,41384891,40945808,42200636,38621683,39365905,41277137,36347732,4816857,39696804,729381,40036095,25239363,40164463,14759085,26093865,31030413,7438383,25670850,30608575,30178075,33108941,9791002,25739375,22833598,34076601,1244713,18341815,41697655,12679220,35950769,24076272,38153624,35961692,33952877,36509606,29535227,31300969,28635860,41575609,32860646,26351774,10968413,31917691,38382856,32713874,9049682,36550452,17167763,15272097,36259751,38285607,36746373,28193678,10395185",
+      "retmode": "xml",
+      "tool": "SRMA-Agent",
+      "email": ""
+    },
+    "timestamp_utc": "2026-09-21T06:08:41.655259+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1907,
+    "error": null
+  },
+  {
+    "source": "crossref",
+    "url": "https://api.crossref.org/works",
+    "params": {
+      "query.bibliographic": "myocardial infarction heart attack aspirin acetylsalicylic acid",
+      "rows": 100,
+      "cursor": "*",
+      "mailto": ""
+    },
+    "timestamp_utc": "2026-09-21T06:08:41.991264+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 3051,
+    "error": null
+  },
+  {
+    "source": "openalex",
+    "url": "https://api.openalex.org/works",
+    "params": {
+      "search": "(\"myocardial infarction\" OR \"heart attack\" OR post-MI OR STEMI OR NSTEMI OR \"acute coronary syndrome\") AND (aspirin OR \"acetylsalicylic acid\" OR ASA)",
+      "mailto": "",
+      "per-page": 100,
+      "cursor": "*"
+    },
+    "timestamp_utc": "2026-09-21T06:08:46.377742+00:00",
+    "status_code": 200,
+    "n_results": 196514,
+    "duration_ms": 7430,
+    "error": null
+  },
+  {
+    "source": "semantic_scholar",
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search",
+    "params": {
+      "query": "myocardial infarction heart attack aspirin acetylsalicylic acid",
+      "limit": 100,
+      "offset": 0,
+      "fields": "paperId,externalIds,title,abstract,venue,year,authors,publicationTypes,fieldsOfStudy,citationCount,referenceCount,openAccessPdf,isOpenAccess,url,publicationDate,journal"
+    },
+    "timestamp_utc": "2026-09-21T06:08:47.106813+00:00",
+    "status_code": 429,
+    "n_results": null,
+    "duration_ms": 8151,
+    "error": "HTTP 429"
+  },
+  {
+    "source": "preprints",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "((TITLE_ABS:\"myocardial infarction\" OR TITLE_ABS:\"heart attack\" OR TITLE_ABS:post-MI OR TITLE_ABS:STEMI OR TITLE_ABS:NSTEMI OR TITLE_ABS:\"acute coronary syndrome\" OR MESH:\"Myocardial Infarction\") AND (TITLE_ABS:aspirin OR TITLE_ABS:\"acetylsalicylic acid\" OR TITLE_ABS:ASA OR MESH:\"Aspirin\")) AND (SRC:PPR)",
+      "format": "json",
+      "resultType": "core",
+      "pageSize": 100,
+      "cursorMark": "AoIIQAIZBSg0MzkxODMxNA=="
+    },
+    "timestamp_utc": "2026-09-21T06:09:35.143143+00:00",
+    "status_code": 200,
+    "n_results": 222,
+    "duration_ms": 54102,
+    "error": null
+  },
+  {
+    "source": "europepmc",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "(TITLE_ABS:\"myocardial infarction\" OR TITLE_ABS:\"heart attack\" OR TITLE_ABS:post-MI OR TITLE_ABS:STEMI OR TITLE_ABS:NSTEMI OR TITLE_ABS:\"acute coronary syndrome\" OR MESH:\"Myocardial Infarction\") AND (TITLE_ABS:aspirin OR TITLE_ABS:\"acetylsalicylic acid\" OR TITLE_ABS:ASA OR MESH:\"Aspirin\")",
+      "format": "json",
+      "resultType": "core",
+      "pageSize": 100,
+      "cursorMark": "*"
+    },
+    "timestamp_utc": "2026-09-21T06:09:35.720900+00:00",
+    "status_code": 200,
+    "n_results": 68315,
+    "duration_ms": 56776,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "((TITLE_ABS:\"myocardial infarction\" OR TITLE_ABS:\"heart attack\" OR TITLE_ABS:post-MI OR TITLE_ABS:STEMI OR TITLE_ABS:NSTEMI OR TITLE_ABS:\"acute coronary syndrome\" OR MESH:\"Myocardial Infarction\") AND (TITLE_ABS:aspirin OR TITLE_ABS:\"acetylsalicylic acid\" OR TITLE_ABS:ASA OR MESH:\"Aspirin\")) AND (SRC:PPR)",
+      "format": "json",
+      "resultType": "core",
+      "pageSize": 100,
+      "cursorMark": "AoIIPzCtXig0MjIzOTUyOQ=="
+    },
+    "timestamp_utc": "2026-09-21T06:10:13.602610+00:00",
+    "status_code": 503,
+    "n_results": null,
+    "duration_ms": 38444,
+    "error": "HTTP 503"
+  }
+]

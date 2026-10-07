@@ -1,0 +1,1535 @@
+{
+  "ok": false,
+  "run_id": "run-20261001-123948",
+  "run_dir": "/usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20261001-123948",
+  "question": "In adult patients with relapsed or refractory multiple myeloma, what is the incidence and relative risk of Cytokine Release Syndrome (CRS) in CAR-T cell therapy compared to bispecific antibodies or standard regimens?",
+  "generated_utc": "2026-10-01T12:39:48.127497+00:00",
+  "config": {
+    "gemini_backend": "ai-studio",
+    "orchestrator_model": "gemini-3.6-flash",
+    "clinical_model": "ollama_chat/medgemma"
+  },
+  "phases_completed": [
+    "protocol",
+    "search_strategy",
+    "search",
+    "deduplication",
+    "screening",
+    "extraction",
+    "meta_analysis"
+  ],
+  "errors": [
+    "Quantitative pooling was not possible: No study contained data sufficient for this analysis.. This usually means the abstracts did not report event counts or means with standard deviations. A narrative synthesis is the correct output in that case, not a fabricated number."
+  ],
+  "protocol": {
+    "population": "Adult patients with relapsed or refractory multiple myeloma",
+    "intervention": "CAR-T cell therapy",
+    "comparator": "Bispecific antibodies or standard regimens",
+    "primary_outcome": "Incidence and relative risk of Cytokine Release Syndrome (CRS)",
+    "secondary_outcomes": [],
+    "study_designs": [
+      "Randomized Controlled Trial"
+    ],
+    "inclusion_criteria": [
+      "Adult patients with relapsed or refractory multiple myeloma"
+    ],
+    "exclusion_criteria": [
+      "Animal studies",
+      "In-vitro studies",
+      "Narrative reviews",
+      "Editorials",
+      "Case reports"
+    ],
+    "search_keywords": [
+      "CAR-T cell therapy",
+      "Cytokine Release Syndrome",
+      "CRS",
+      "multiple myeloma",
+      "relapsed",
+      "refractory",
+      "bispecific antibodies",
+      "standard regimens"
+    ],
+    "mesh_terms": [
+      "Multiple Myeloma",
+      "CAR-T Cell Therapy",
+      "Cytokine Release Syndrome",
+      "Bispecific Antibodies"
+    ]
+  },
+  "protocol_text": "  Population   : Adult patients with relapsed or refractory multiple myeloma\n  Intervention : CAR-T cell therapy\n  Comparator   : Bispecific antibodies or standard regimens\n  Primary outcome : Incidence and relative risk of Cytokine Release Syndrome (CRS)\n  Eligible designs : Randomized Controlled Trial\n  Inclusion criteria:\n      - Adult patients with relapsed or refractory multiple myeloma\n  Exclusion criteria:\n      - Animal studies\n      - In-vitro studies\n      - Narrative reviews\n      - Editorials\n      - Case reports",
+  "search_strategy": {
+    "population_terms": [
+      "patients",
+      "multiple myeloma",
+      "relapsed",
+      "refractory"
+    ],
+    "population_mesh": [
+      "Multiple Myeloma"
+    ],
+    "intervention_terms": [
+      "CAR-T cell therapy",
+      "bispecific antibodies",
+      "standard regimens"
+    ],
+    "intervention_mesh": [
+      "CAR-T Cell Therapy",
+      "Bispecific Antibodies"
+    ],
+    "outcome_terms": [
+      "Cytokine Release Syndrome",
+      "CRS",
+      "incidence",
+      "relative risk"
+    ],
+    "outcome_excluded_from_query": true,
+    "outcome_exclusion_rationale": "Trials often omit outcome names from the title and abstract. Requiring an outcome term in the Boolean AND chain is a known cause of missed eligible studies (Cochrane Handbook).",
+    "hygiene_notes": [
+      "population: rewrote 'adult patients' to 'patients' - the original was a cohort description, not a phrase an author would write."
+    ]
+  },
+  "query": "(patients[tiab] OR \"multiple myeloma\"[tiab] OR relapsed[tiab] OR refractory[tiab] OR \"Multiple Myeloma\"[MeSH Terms]) AND (\"CAR-T cell therapy\"[tiab] OR \"bispecific antibodies\"[tiab] OR \"standard regimens\"[tiab] OR \"CAR-T Cell Therapy\"[MeSH Terms] OR \"Bispecific Antibodies\"[MeSH Terms])",
+  "queries_by_source": {
+    "clinicaltrials": "(patients OR \"multiple myeloma\" OR relapsed OR refractory) AND (\"CAR-T cell therapy\" OR \"bispecific antibodies\" OR \"standard regimens\")",
+    "crossref": "patients multiple myeloma CAR-T cell therapy bispecific antibodies",
+    "europepmc": "(TITLE_ABS:patients OR TITLE_ABS:\"multiple myeloma\" OR TITLE_ABS:relapsed OR TITLE_ABS:refractory OR MESH:\"Multiple Myeloma\") AND (TITLE_ABS:\"CAR-T cell therapy\" OR TITLE_ABS:\"bispecific antibodies\" OR TITLE_ABS:\"standard regimens\" OR MESH:\"CAR-T Cell Therapy\" OR MESH:\"Bispecific Antibodies\")",
+    "openalex": "(patients OR \"multiple myeloma\" OR relapsed OR refractory) AND (\"CAR-T cell therapy\" OR \"bispecific antibodies\" OR \"standard regimens\")",
+    "preprints": "(TITLE_ABS:patients OR TITLE_ABS:\"multiple myeloma\" OR TITLE_ABS:relapsed OR TITLE_ABS:refractory OR MESH:\"Multiple Myeloma\") AND (TITLE_ABS:\"CAR-T cell therapy\" OR TITLE_ABS:\"bispecific antibodies\" OR TITLE_ABS:\"standard regimens\" OR MESH:\"CAR-T Cell Therapy\" OR MESH:\"Bispecific Antibodies\")",
+    "pubmed": "(patients[tiab] OR \"multiple myeloma\"[tiab] OR relapsed[tiab] OR refractory[tiab] OR \"Multiple Myeloma\"[MeSH Terms]) AND (\"CAR-T cell therapy\"[tiab] OR \"bispecific antibodies\"[tiab] OR \"standard regimens\"[tiab] OR \"CAR-T Cell Therapy\"[MeSH Terms] OR \"Bispecific Antibodies\"[MeSH Terms])",
+    "semantic_scholar": "patients multiple myeloma CAR-T cell therapy bispecific antibodies"
+  },
+  "search": {
+    "query": "(patients[tiab] OR \"multiple myeloma\"[tiab] OR relapsed[tiab] OR refractory[tiab] OR \"Multiple Myeloma\"[MeSH Terms]) AND (\"CAR-T cell therapy\"[tiab] OR \"bispecific antibodies\"[tiab] OR \"standard regimens\"[tiab] OR \"CAR-T Cell Therapy\"[MeSH Terms] OR \"Bispecific Antibodies\"[MeSH Terms])",
+    "queries_by_source": {
+      "clinicaltrials": "(patients OR \"multiple myeloma\" OR relapsed OR refractory) AND (\"CAR-T cell therapy\" OR \"bispecific antibodies\" OR \"standard regimens\")",
+      "crossref": "patients multiple myeloma CAR-T cell therapy bispecific antibodies",
+      "europepmc": "(TITLE_ABS:patients OR TITLE_ABS:\"multiple myeloma\" OR TITLE_ABS:relapsed OR TITLE_ABS:refractory OR MESH:\"Multiple Myeloma\") AND (TITLE_ABS:\"CAR-T cell therapy\" OR TITLE_ABS:\"bispecific antibodies\" OR TITLE_ABS:\"standard regimens\" OR MESH:\"CAR-T Cell Therapy\" OR MESH:\"Bispecific Antibodies\")",
+      "openalex": "(patients OR \"multiple myeloma\" OR relapsed OR refractory) AND (\"CAR-T cell therapy\" OR \"bispecific antibodies\" OR \"standard regimens\")",
+      "preprints": "(TITLE_ABS:patients OR TITLE_ABS:\"multiple myeloma\" OR TITLE_ABS:relapsed OR TITLE_ABS:refractory OR MESH:\"Multiple Myeloma\") AND (TITLE_ABS:\"CAR-T cell therapy\" OR TITLE_ABS:\"bispecific antibodies\" OR TITLE_ABS:\"standard regimens\" OR MESH:\"CAR-T Cell Therapy\" OR MESH:\"Bispecific Antibodies\")",
+      "pubmed": "(patients[tiab] OR \"multiple myeloma\"[tiab] OR relapsed[tiab] OR refractory[tiab] OR \"Multiple Myeloma\"[MeSH Terms]) AND (\"CAR-T cell therapy\"[tiab] OR \"bispecific antibodies\"[tiab] OR \"standard regimens\"[tiab] OR \"CAR-T Cell Therapy\"[MeSH Terms] OR \"Bispecific Antibodies\"[MeSH Terms])",
+      "semantic_scholar": "patients multiple myeloma CAR-T cell therapy bispecific antibodies"
+    },
+    "per_source": {
+      "clinicaltrials": {
+        "status": "success",
+        "count": 25,
+        "error": null,
+        "query_sent": "(patients OR \"multiple myeloma\" OR relapsed OR refractory) AND (\"CAR-T cell therapy\" OR \"bispecific antibodies\" OR \"standard regimens\")"
+      },
+      "europepmc": {
+        "status": "success",
+        "count": 25,
+        "error": null,
+        "query_sent": "(TITLE_ABS:patients OR TITLE_ABS:\"multiple myeloma\" OR TITLE_ABS:relapsed OR TITLE_ABS:refractory OR MESH:\"Multiple Myeloma\") AND (TITLE_ABS:\"CAR-T cell therapy\" OR TITLE_ABS:\"bispecific antibodies\" OR TITLE_ABS:\"standard regimens\" OR MESH:\"CAR-T Cell Therapy\" OR MESH:\"Bispecific Antibodies\")"
+      },
+      "preprints": {
+        "status": "success",
+        "count": 3,
+        "error": null,
+        "query_sent": "(TITLE_ABS:patients OR TITLE_ABS:\"multiple myeloma\" OR TITLE_ABS:relapsed OR TITLE_ABS:refractory OR MESH:\"Multiple Myeloma\") AND (TITLE_ABS:\"CAR-T cell therapy\" OR TITLE_ABS:\"bispecific antibodies\" OR TITLE_ABS:\"standard regimens\" OR MESH:\"CAR-T Cell Therapy\" OR MESH:\"Bispecific Antibodies\")"
+      },
+      "crossref": {
+        "status": "success",
+        "count": 25,
+        "error": null,
+        "query_sent": "patients multiple myeloma CAR-T cell therapy bispecific antibodies"
+      },
+      "pubmed": {
+        "status": "success",
+        "count": 25,
+        "error": null,
+        "query_sent": "(patients[tiab] OR \"multiple myeloma\"[tiab] OR relapsed[tiab] OR refractory[tiab] OR \"Multiple Myeloma\"[MeSH Terms]) AND (\"CAR-T cell therapy\"[tiab] OR \"bispecific antibodies\"[tiab] OR \"standard regimens\"[tiab] OR \"CAR-T Cell Therapy\"[MeSH Terms] OR \"Bispecific Antibodies\"[MeSH Terms])"
+      },
+      "openalex": {
+        "status": "success",
+        "count": 25,
+        "error": null,
+        "query_sent": "(patients OR \"multiple myeloma\" OR relapsed OR refractory) AND (\"CAR-T cell therapy\" OR \"bispecific antibodies\" OR \"standard regimens\")"
+      },
+      "semantic_scholar": {
+        "status": "success",
+        "count": 0,
+        "error": null,
+        "query_sent": "patients multiple myeloma CAR-T cell therapy bispecific antibodies"
+      }
+    },
+    "total_identified": 128,
+    "duplicates_removed": 5,
+    "unique_records": 123,
+    "dedupe_report": {
+      "input_count": 128,
+      "unique_count": 123,
+      "duplicates_removed": 5,
+      "matched_by": {
+        "doi": 2,
+        "pmid": 1,
+        "pmcid": 1,
+        "nct_id": 0,
+        "title": 1
+      },
+      "removed_duplicates": [
+        {
+          "duplicate_id": "10.20944/preprints202607.0989.v1",
+          "duplicate_source": "europepmc",
+          "title": "T-Cell Engagers Targeting BCMA, GPRC5D, or FcRH5 in Relapsed/ Refractory Multiple Myeloma, Landscape Beyond CAR-T Cell Therapy, a Systematic Review and Network Meta Analysis",
+          "merged_into_id": "10.3390/ijms27167179",
+          "merged_sources": [
+            "europepmc"
+          ],
+          "matched_on": "title",
+          "url": "https://doi.org/10.20944/preprints202607.0989.v1"
+        },
+        {
+          "duplicate_id": "10.1038/s41419-025-08203-w",
+          "duplicate_source": "pubmed",
+          "title": "T-Cell Engagers Targeting BCMA, GPRC5D, or FcRH5 in Relapsed/Refractory Multiple Myeloma: The Landscape Beyond CAR-T Cell Therapy-A Systematic Review and Network Meta-Analysis.",
+          "merged_into_id": "10.3390/ijms27167179",
+          "merged_sources": [
+            "europepmc",
+            "pubmed"
+          ],
+          "matched_on": "pmid",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42653183/"
+        },
+        {
+          "duplicate_id": "10.1097/ppo.0000000000000847",
+          "duplicate_source": "pubmed",
+          "title": "T-Cell Redirecting Antibodies for the Treatment of Multiple Myeloma: Off-the-Shelf T-Cell Immunity.",
+          "merged_into_id": "10.1056/nejmoa2514663",
+          "merged_sources": [
+            "pubmed"
+          ],
+          "matched_on": "pmcid",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42809698/"
+        },
+        {
+          "duplicate_id": "10.1056/nejmoa2204591",
+          "duplicate_source": "openalex",
+          "title": "Talquetamab, a T-Cell\u2013Redirecting GPRC5D Bispecific Antibody for Multiple Myeloma",
+          "merged_into_id": "10.1056/nejmoa2204591",
+          "merged_sources": [
+            "pubmed",
+            "openalex"
+          ],
+          "matched_on": "doi",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36507686/"
+        },
+        {
+          "duplicate_id": "10.21037/cco-25-110",
+          "duplicate_source": "europepmc",
+          "title": "The evolution of bispecific antibodies in multiple myeloma.",
+          "merged_into_id": "10.21037/cco-25-110",
+          "merged_sources": [
+            "pubmed",
+            "europepmc"
+          ],
+          "matched_on": "doi",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41797460/"
+        }
+      ],
+      "records_with_doi": 101,
+      "records_with_pmid": 74,
+      "records_without_identifier": 0
+    },
+    "sources_unavailable": {}
+  },
+  "screening": {
+    "screened": 30,
+    "not_screened": 93,
+    "not_screened_note": "93 record(s) were not screened because the cap of 30 was reached. They are excluded from the review but counted here, because a PRISMA flow diagram must account for every identified record. Raise SRMA_MAX_ABSTRACTS_TO_SCREEN for a complete run.",
+    "included": 17,
+    "excluded": 11,
+    "exclusion_reasons": {
+      "Wrong intervention": 10,
+      "Wrong population": 1
+    },
+    "included_records": [
+      {
+        "id": "10.1016/j.cmi.2024.02.023",
+        "citation": "Jourdes et al. (2024). PMID:38432433",
+        "year": 2024,
+        "source": "pubmed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38432433/",
+        "title": "Characteristics and incidence of infections in patients with multiple myeloma treated by bispecific antibodies: a national retrospective study.",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states that the study is performed in \"BsAb-treated patients with multiple myeloma\", which matches the population criteria.",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "The abstract states that the study is a retrospective, multicentre study in BsAb-treated patients with multiple myeloma. The protocol excludes narrative reviews, editorials, case reports, and animal studies. This study is a journal article, which is not an excluded type.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study is a retrospective, multicentre study in BsAb-treated patients with multiple myeloma. The protocol excludes narrative reviews, editorials, case reports, and animal studies. This study is a journal article, which is not an excluded type."
+      },
+      {
+        "id": "10.1080/21645515.2026.2711554",
+        "citation": "Zhang et al. (2026). PMID:42623170",
+        "year": 2026,
+        "source": "europepmc",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42623170/",
+        "title": "Global trends in CAR-T cell therapy for multiple myeloma: A bibliometric analysis, 2013-2025.",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states that the study is on CAR-T cell therapy for multiple myeloma, which is the target population.",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "The abstract states that the study is a bibliometric analysis, not a randomized controlled trial. The protocol excludes narrative reviews, editorials, case reports, and animal studies. The abstract is a review, which is excluded.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study is a bibliometric analysis, not a randomized controlled trial. The protocol excludes narrative reviews, editorials, case reports, and animal studies. The abstract is a review, which is excluded."
+      },
+      {
+        "id": "10.1080/10428194.2026.2699285",
+        "citation": "Leitner et al. (2026). PMID:42518303",
+        "year": 2026,
+        "source": "europepmc",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42518303/",
+        "title": "Real-world analyses of bispecific antibodies and CAR-T cell therapy in relapsed or refractory multiple myeloma: a global TriNetX discovery and contemporary validation cohort.",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states that the study compares bispecific antibodies and CAR-T cell therapy in relapsed or refractory multiple myeloma, which aligns with the defined intervention.",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "The abstract states that the study compares bispecific antibodies and CAR-T cell therapy, which is not the comparator specified in the protocol. The protocol states that the comparator is bispecific antibodies or standard regimens.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study compares bispecific antibodies and CAR-T cell therapy, which is not the comparator specified in the protocol. The protocol states that the comparator is bispecific antibodies or standard regimens."
+      },
+      {
+        "id": "10.1101/2024.09.02.610843",
+        "citation": "Tirado et al. (2024). DOI:10.1101/2024.09.02.610843",
+        "year": 2024,
+        "source": "preprints",
+        "url": "https://doi.org/10.1101/2024.09.02.610843",
+        "title": "CAR-T cells targeting CCR9 and CD1a for the treatment of T cell acute lymphoblastic leukemia",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract describes CAR-T cell therapy for T-ALL, which is a relevant intervention for multiple myeloma. The population is not the same, but the intervention is relevant.",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "Wrong population. The abstract states that the study is targeting T-ALL, not multiple myeloma.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: Wrong population. The abstract states that the study is targeting T-ALL, not multiple myeloma."
+      },
+      {
+        "id": "10.1056/nejmoa2204591",
+        "citation": "Chari et al. (2024). PMID:38609727",
+        "year": 2024,
+        "source": "pubmed, openalex",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38609727/",
+        "title": "Talquetamab, a T-Cell\u2013Redirecting GPRC5D Bispecific Antibody for Multiple Myeloma",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states that the study population consists of \"heavily pretreated relapsed or refractory multiple myeloma\", which aligns with the population criteria for this review.",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "The abstract states that the study included patients with heavily pretreated relapsed or refractory multiple myeloma that had progressed with established therapies or who could not receive these therapies without unacceptable side effects. The protocol excludes studies using bispecific antibodies or standard regimens. The abstract states that talquetamab is a bispecific antibody against CD3 and GP",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study included patients with heavily pretreated relapsed or refractory multiple myeloma that had progressed with established therapies or who could not receive these therapies without unacceptable side effects. The protocol excludes studies using bispecific antibodies or"
+      },
+      {
+        "id": "10.6004/jnccn.2026.7004",
+        "citation": "Miller et al. (2026). PMID:42190708",
+        "year": 2026,
+        "source": "europepmc",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42190708/",
+        "title": "Incorporating the Next Generation of Immunotherapies Into the Treatment of Multiple Myeloma.",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states \"Adult patients with relapsed or refractory multiple myeloma\", which matches the population criteria.",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "The abstract states \"CAR T-cell therapy and BsAbs necessitate careful attention to unique toxicities, including cytokine release syndrome, immune effector cell-associated neurotoxicity syndrome, cytopenias, and heightened infection risk.\", which is not in the protocol.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states \"CAR T-cell therapy and BsAbs necessitate careful attention to unique toxicities, including cytokine release syndrome, immune effector cell-associated neurotoxicity syndrome, cytopenias, and heightened infection risk.\", which is not in the protocol."
+      },
+      {
+        "id": "10.1200/jco.20.00386",
+        "citation": "Steinhardt et al. (2025). PMID:40738883",
+        "year": 2025,
+        "source": "pubmed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40738883/",
+        "title": "Activity of CAR-T cells and bispecific antibodies in multiple myeloma with extramedullary involvement.",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states that the study included patients with relapsed or refractory multiple myeloma, which aligns with the population criteria.",
+        "reviewer_2_decision": "Include",
+        "reviewer_2_reason": "The abstract states that the study included 80 patients with EMD not adjacent to the bone treated with ide-cel, cilta-cel, teclistamab, or talquetamab at three academic centers in Germany. The protocol states that the population is adult patients with relapsed or refractory multiple myeloma. This is consistent with the protocol.",
+        "decided_by": "both reviewers agreed to include"
+      },
+      {
+        "id": "10.3390/cells15181660",
+        "citation": "Canichella et al. (2026). PMID:42782760",
+        "year": 2026,
+        "source": "europepmc",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42782760/",
+        "title": "Beyond CAR-T: Preventing and Treating Relapse in B-Cell Haematological Malignancies.",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract mentions CAR-T cell therapy for relapsed/refractory multiple myeloma, which is within the target population. The abstract also mentions bispecific antibodies as a comparator.",
+        "reviewer_2_decision": "Include",
+        "reviewer_2_reason": "The abstract states that CAR-T cell therapy has revolutionized the treatment landscape of relapsed/refractory (R/R) B-cell acute lymphoblastic leukemia (B-ALL), non-Hodgkin lymphoma (NHL), and multiple myeloma (MM). The population is adult patients with relapsed or refractory multiple myeloma, which is stated in the protocol.",
+        "decided_by": "both reviewers agreed to include"
+      },
+      {
+        "id": "10.1038/s41408-022-00643-3",
+        "citation": "Merz et al. (2024). PMID:39632797",
+        "year": 2024,
+        "source": "pubmed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39632797/",
+        "title": "Bispecific antibodies targeting BCMA or GPRC5D are highly effective in relapsed myeloma after CAR T-cell therapy.",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states that the study analyzes outcomes of post-CAR T-cell therapy relapse and impact of different salvage strategies in an international cohort of 139 patients. The population is adult patients with relapsed or refractory multiple myeloma, which matches the eligibility criteria.",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "The abstract states that the study analyzed outcomes of post-CAR T-cell therapy relapse and impact of different salvage strategies in an international cohort of 139 patients (n = 130 ide-cel, n = 9 cilta-cel), receiving talquetamab (n = 28), teclistamab (n = 37), combinations of immunomodulating drugs (IMiDs), proteasome inhibitors (PIs) or CD38 monoclonal antibodies (n = 43), and others (n = 31).",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study analyzed outcomes of post-CAR T-cell therapy relapse and impact of different salvage strategies in an international cohort of 139 patients (n = 130 ide-cel, n = 9 cilta-cel), receiving talquetamab (n = 28), teclistamab (n = 37), combinations of immunomodulating dru"
+      },
+      {
+        "id": "10.3390/ijms27167179",
+        "citation": "Shambhavi et al. (2026). PMID:42653183",
+        "year": 2026,
+        "source": "europepmc, pubmed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42653183/",
+        "title": "T-Cell Engagers Targeting <i>BCMA</i>, <i>GPRC5D</i>, or <i>FcRH5</i> in Relapsed/Refractory Multiple Myeloma: The Landscape Beyond CAR-T Cell Therapy-A Systematic Review and Network Meta-Analysis.",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract does not mention the comparator.",
+        "reviewer_2_decision": "Include",
+        "reviewer_2_reason": "The abstract states that the study evaluates and compares the efficacy and safety of bispecific antibodies targeting BCMA, GPRC5D, or FcRH5 in RRMM using direct and indirect evidence. The population is adult patients with relapsed or refractory multiple myeloma, which is consistent with the protocol. The intervention is bispecific antibodies, which is consistent with the protocol. The comparator i",
+        "decided_by": "both reviewers agreed to include"
+      },
+      {
+        "id": "10.1016/j.blre.2025.101342",
+        "citation": "Zhou et al. (2025). PMID:41177723",
+        "year": 2025,
+        "source": "pubmed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41177723/",
+        "title": "Bispecific antibodies in multiple myeloma: maximizing potential through rational combination therapies.",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract mentions bispecific antibodies in multiple myeloma, which is the target population. It also mentions CAR-T cell therapy as a comparator, and the primary outcome is the incidence and relative risk of Cytokine Release Syndrome (CRS).",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "The abstract states that teclistamab, elranatamab, linvoseltamab (all BCMA\u00d7CD3) and talquetamab (GPRC5D \u00d7 CD3) have received regulatory approval for relapsed/refractory MM. The protocol excludes studies using CAR-T cell therapy.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that teclistamab, elranatamab, linvoseltamab (all BCMA\u00d7CD3) and talquetamab (GPRC5D \u00d7 CD3) have received regulatory approval for relapsed/refractory MM. The protocol excludes studies using CAR-T cell therapy."
+      },
+      {
+        "id": "10.1007/s12015-026-11228-z",
+        "citation": "Su et al. (2026). PMID:42684629",
+        "year": 2026,
+        "source": "europepmc",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42684629/",
+        "title": "Beyond Remission: Risk-Adapted Maintenance and Mechanism-Guided Salvage After CAR T-Cell Therapy for Multiple Myeloma.",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states that the review synthesizes pivotal trials, real-world cohorts, and translational studies into a risk-adapted framework for longitudinal care. The population is adult patients with relapsed or refractory multiple myeloma, which matches the eligibility criteria. The intervention is CAR-T cell therapy, and the comparator is bispecific antibodies or standard regimens, which matche",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "The abstract states that this is a review, not a primary research study. The protocol excludes narrative reviews.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that this is a review, not a primary research study. The protocol excludes narrative reviews."
+      },
+      {
+        "id": "10.1056/nejmoa2213614",
+        "citation": "Rodr\u00edguez\u2010Otero et al. (2023). PMID:36762851",
+        "year": 2023,
+        "source": "openalex",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36762851/",
+        "title": "Ide-cel or Standard Regimens in Relapsed and Refractory Multiple Myeloma",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states \"Adult patients with relapsed or refractory multiple myeloma\", which matches the population criteria.",
+        "reviewer_2_decision": "Include",
+        "reviewer_2_reason": "The abstract states: \"In this international, open-label, phase 3 trial involving adults with relapsed and refractory multiple myeloma who had received two to four regimens previously (including immunomodulatory agents, proteasome inhibitors, and daratumumab) and who had disease refractory to the last regimen, we randomly assigned patients in a 2:1 ratio to receive either ide-cel (dose range, 150\u00d71",
+        "decided_by": "both reviewers agreed to include"
+      },
+      {
+        "id": "10.1080/14737140.2024.2445145",
+        "citation": "Kawasaki et al. (2024). PMID:39729045",
+        "year": 2024,
+        "source": "pubmed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39729045/",
+        "title": "Practical insights into bispecific antibody therapy in multiple myeloma.",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract mentions \"relapsed/refractory multiple myeloma\", which is consistent with the population criteria.",
+        "reviewer_2_decision": "Include",
+        "reviewer_2_reason": "The abstract states that the review highlights the clinical trial data, safety endpoints, and practical administration considerations for the bispecific therapies currently used in multiple myeloma. The population is adult patients with relapsed or refractory multiple myeloma, which is consistent with the protocol.",
+        "decided_by": "both reviewers agreed to include"
+      },
+      {
+        "id": "10.3390/cancers18152415",
+        "citation": "Afrough et al. (2026). PMID:42588634",
+        "year": 2026,
+        "source": "europepmc",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42588634/",
+        "title": "When Myeloma Escapes the Bone Marrow: Extramedullary Disease in the Immunotherapy Era.",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract mentions CAR-T cell therapy as a treatment strategy for extramedullary disease in multiple myeloma, which is a relevant intervention.",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "The abstract states that the review provides a comprehensive overview of the biology, classification, and evolving treatment landscape of both non-CNS and CNS EMD in the era of T-cell-redirecting immunotherapy. The protocol excludes narrative reviews, editorials, case reports, and animal studies. The abstract is a review article, which is excluded.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the review provides a comprehensive overview of the biology, classification, and evolving treatment landscape of both non-CNS and CNS EMD in the era of T-cell-redirecting immunotherapy. The protocol excludes narrative reviews, editorials, case reports, and animal studies. Th"
+      },
+      {
+        "id": "10.1080/14712598.2026.2646947",
+        "citation": "Liu et al. (2026). PMID:41842719",
+        "year": 2026,
+        "source": "pubmed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41842719/",
+        "title": "A review of the clinical efficacy of monoclonal antibody (mAb)-based therapies for relapsed/refractory multiple myeloma (RRMM).",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract does not mention the comparator.",
+        "reviewer_2_decision": "Include",
+        "reviewer_2_reason": "The abstract states that CAR-T cell therapy is among the backbones of treatment for relapsed/refractory multiple myeloma (RRMM). The protocol excludes studies using CAR-T cell therapy.",
+        "decided_by": "both reviewers agreed to include"
+      },
+      {
+        "id": "10.1158/2643-3230.bcd-25-0461",
+        "citation": "Merz et al. (2026). PMID:42284467",
+        "year": 2026,
+        "source": "europepmc",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42284467/",
+        "title": "Outcomes of CAR T-cell Therapy and Bispecific Antibodies as Single-Modality and Sequential Strategies in Relapsed/Refractory Multiple Myeloma.",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states that the study included 640 patients with relapsed/refractory multiple myeloma, which aligns with the population criteria. The abstract also mentions CAR-T cell therapy as an intervention, which aligns with the intervention criteria. The abstract does not mention bispecific antibodies as a comparator, so this is not an exclusion.",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "The abstract states that the study is a retrospective multicenter study of 640 patients with relapsed/refractory multiple myeloma. The protocol excludes narrative reviews, editorials, case reports, and in-vitro studies. The abstract is a journal article, which is not excluded by the protocol.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study is a retrospective multicenter study of 640 patients with relapsed/refractory multiple myeloma. The protocol excludes narrative reviews, editorials, case reports, and in-vitro studies. The abstract is a journal article, which is not excluded by the protocol."
+      }
+    ],
+    "excluded_records": [
+      {
+        "id": "10.1056/nejmoa1707447",
+        "citation": "Neelapu et al. (2017). PMID:29226797",
+        "year": 2017,
+        "source": "openalex",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/29226797/",
+        "title": "Axicabtagene Ciloleucel CAR T-Cell Therapy in Refractory Large B-Cell Lymphoma",
+        "category": "Wrong intervention",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).",
+        "reviewer_1_decision": "Skipped (Gate)",
+        "reviewer_1_reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).",
+        "reviewer_2_decision": "Skipped (Gate)",
+        "reviewer_2_reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "10.1056/nejmoa1817226",
+        "citation": "Raje et al. (2019). PMID:31042825",
+        "year": 2019,
+        "source": "openalex",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31042825/",
+        "title": "Anti-BCMA CAR T-Cell Therapy bb2121 in Relapsed or Refractory Multiple Myeloma",
+        "category": "Wrong intervention",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).",
+        "reviewer_1_decision": "Skipped (Gate)",
+        "reviewer_1_reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).",
+        "reviewer_2_decision": "Skipped (Gate)",
+        "reviewer_2_reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "10.1056/nejmoa2024850",
+        "citation": "Munshi et al. (2021). PMID:33626253",
+        "year": 2021,
+        "source": "openalex",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/33626253/",
+        "title": "Idecabtagene Vicleucel in Relapsed and Refractory Multiple Myeloma",
+        "category": "Wrong intervention",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).",
+        "reviewer_1_decision": "Skipped (Gate)",
+        "reviewer_1_reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).",
+        "reviewer_2_decision": "Skipped (Gate)",
+        "reviewer_2_reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "10.1101/2020.05.28.20115758",
+        "citation": "Del et al. (2020). DOI:10.1101/2020.05.28.20115758",
+        "year": 2020,
+        "source": "preprints",
+        "url": "https://doi.org/10.1101/2020.05.28.20115758",
+        "title": "An inflammatory cytokine signature helps predict COVID-19 severity and death",
+        "category": "Wrong intervention",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).",
+        "reviewer_1_decision": "Skipped (Gate)",
+        "reviewer_1_reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).",
+        "reviewer_2_decision": "Skipped (Gate)",
+        "reviewer_2_reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "10.1056/nejmoa1914347",
+        "citation": "Wang et al. (2020). PMID:32242358",
+        "year": 2020,
+        "source": "openalex",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/32242358/",
+        "title": "KTE-X19 CAR T-Cell Therapy in Relapsed or Refractory Mantle-Cell Lymphoma",
+        "category": "Wrong intervention",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).",
+        "reviewer_1_decision": "Skipped (Gate)",
+        "reviewer_1_reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).",
+        "reviewer_2_decision": "Skipped (Gate)",
+        "reviewer_2_reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "10.1056/nejmoa1804980",
+        "citation": "Schuster et al. (2018). PMID:30501490",
+        "year": 2018,
+        "source": "openalex",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/30501490/",
+        "title": "Tisagenlecleucel in Adult Relapsed or Refractory Diffuse Large B-Cell Lymphoma",
+        "category": "Wrong intervention",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).",
+        "reviewer_1_decision": "Skipped (Gate)",
+        "reviewer_1_reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).",
+        "reviewer_2_decision": "Skipped (Gate)",
+        "reviewer_2_reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "10.1007/s40262-026-01663-z",
+        "citation": "Pfizer et al. (2017). PMID:42287565",
+        "year": 2017,
+        "source": "clinicaltrials",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42287565/",
+        "title": "PF-06863135 As Single Agent And In Combination With Immunomodulatory Agents In Relapse/Refractory Multiple Myeloma",
+        "category": "Wrong intervention",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).",
+        "reviewer_1_decision": "Skipped (Gate)",
+        "reviewer_1_reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).",
+        "reviewer_2_decision": "Skipped (Gate)",
+        "reviewer_2_reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "10.1056/nejmoa2203478",
+        "citation": "Moreau et al. (2022). PMID:35661166",
+        "year": 2022,
+        "source": "openalex",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/35661166/",
+        "title": "Teclistamab in Relapsed or Refractory Multiple Myeloma",
+        "category": "Wrong intervention",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).",
+        "reviewer_1_decision": "Skipped (Gate)",
+        "reviewer_1_reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).",
+        "reviewer_2_decision": "Skipped (Gate)",
+        "reviewer_2_reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "10.1080/14712598.2024.2352591",
+        "citation": "Jagannath et al. (2024). PMID:38738379",
+        "year": 2024,
+        "source": "pubmed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38738379/",
+        "title": "Cilta-cel, a BCMA-targeting CAR-T therapy for patients with multiple myeloma.",
+        "category": "Wrong intervention",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).",
+        "reviewer_1_decision": "Skipped (Gate)",
+        "reviewer_1_reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).",
+        "reviewer_2_decision": "Skipped (Gate)",
+        "reviewer_2_reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "10.1056/nejmoa1709866",
+        "citation": "Maude et al. (2018). PMID:29385370",
+        "year": 2018,
+        "source": "openalex",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/29385370/",
+        "title": "Tisagenlecleucel in Children and Young Adults with B-Cell Lymphoblastic Leukemia",
+        "category": "Wrong intervention",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).",
+        "reviewer_1_decision": "Skipped (Gate)",
+        "reviewer_1_reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).",
+        "reviewer_2_decision": "Skipped (Gate)",
+        "reviewer_2_reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (CAR-T cell therapy, bispecific antibodies, standard regimens).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "10.1038/s41408-021-00459-7",
+        "citation": "Sterner et al. (2021). PMID:33824268",
+        "year": 2021,
+        "source": "openalex",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/33824268/",
+        "title": "CAR-T cell therapy: current limitations and potential strategies",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the population (patients, multiple myeloma, relapsed).",
+        "reviewer_1_decision": "Skipped (Gate)",
+        "reviewer_1_reason": "Title, abstract, MeSH headings and keywords contain no mention of the population (patients, multiple myeloma, relapsed).",
+        "reviewer_2_decision": "Skipped (Gate)",
+        "reviewer_2_reason": "Title, abstract, MeSH headings and keywords contain no mention of the population (patients, multiple myeloma, relapsed).",
+        "decided_by": "relevance gate (Python, no model call)"
+      }
+    ],
+    "gate_rejected": 11,
+    "gate_note": "11 record(s) were rejected by the Python relevance gate before any model call, because their title, abstract, MeSH headings and keywords never mentioned the population or the intervention. This is a deterministic check that the model cannot override.",
+    "reviewer_disagreements": 11,
+    "reviewer_agreement_rate": 0.353,
+    "agreement_note": "Agreement is measured between two prompts with deliberately different risk tolerances, over the records that reached both reviewers. A rate of exactly 1.0 across many records suggests the personas are not actually diverging and the dual-review safeguard is not doing any work. Because inclusion follows the liberal rule, every disagreement counted here is a record that was admitted despite one reviewer objecting; the objection is recorded against each such record in `included_records` and should be settled at full text.",
+    "errors": [
+      {
+        "record": "10.1101/2024.01.18.24301502",
+        "error": "LlmCallError: Could not reach Ollama at http://127.0.0.1:11434/api/chat: HTTPConnectionPool(host='127.0.0.1', port=11434): Read timed out. (read timeout=300). Start it with `ollama serve`, and check the model is present with `ollama list`."
+      },
+      {
+        "record": "10.1016/s2352-3026(24)00005-x",
+        "error": "LlmCallError: Could not reach Ollama at http://127.0.0.1:11434/api/chat: HTTPConnectionPool(host='127.0.0.1', port=11434): Read timed out. (read timeout=300). Start it with `ollama serve`, and check the model is present with `ollama list`."
+      }
+    ],
+    "elapsed_seconds": 668.0
+  },
+  "extraction": {
+    "attempted": 12,
+    "succeeded": 12,
+    "not_attempted": 5,
+    "skipped_due_to_cap": [
+      {
+        "id": "10.1056/nejmoa2213614",
+        "citation": "Rodr\u00edguez\u2010Otero et al. (2023). PMID:36762851",
+        "year": 2023,
+        "source": "openalex",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36762851/",
+        "title": "Ide-cel or Standard Regimens in Relapsed and Refractory Multiple Myeloma",
+        "reason": "Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=12 cap was reached."
+      },
+      {
+        "id": "10.1080/14737140.2024.2445145",
+        "citation": "Kawasaki et al. (2024). PMID:39729045",
+        "year": 2024,
+        "source": "pubmed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39729045/",
+        "title": "Practical insights into bispecific antibody therapy in multiple myeloma.",
+        "reason": "Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=12 cap was reached."
+      },
+      {
+        "id": "10.3390/cancers18152415",
+        "citation": "Afrough et al. (2026). PMID:42588634",
+        "year": 2026,
+        "source": "europepmc",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42588634/",
+        "title": "When Myeloma Escapes the Bone Marrow: Extramedullary Disease in the Immunotherapy Era.",
+        "reason": "Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=12 cap was reached."
+      },
+      {
+        "id": "10.1080/14712598.2026.2646947",
+        "citation": "Liu et al. (2026). PMID:41842719",
+        "year": 2026,
+        "source": "pubmed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41842719/",
+        "title": "A review of the clinical efficacy of monoclonal antibody (mAb)-based therapies for relapsed/refractory multiple myeloma (RRMM).",
+        "reason": "Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=12 cap was reached."
+      },
+      {
+        "id": "10.1158/2643-3230.bcd-25-0461",
+        "citation": "Merz et al. (2026). PMID:42284467",
+        "year": 2026,
+        "source": "europepmc",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42284467/",
+        "title": "Outcomes of CAR T-cell Therapy and Bispecific Antibodies as Single-Modality and Sequential Strategies in Relapsed/Refractory Multiple Myeloma.",
+        "reason": "Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=12 cap was reached."
+      }
+    ],
+    "errors": [],
+    "studies": [
+      {
+        "study_id": "10.1016/j.cmi.2024.02.023",
+        "study_label": "Jourdes et al. (2024). PMID:38432433",
+        "title": "Characteristics and incidence of infections in patients with multiple myeloma treated by bispecific antibodies: a national retrospective study.",
+        "source_db": "pubmed",
+        "verification_url": "https://pubmed.ncbi.nlm.nih.gov/38432433/",
+        "year": 2024,
+        "design": "",
+        "population_description": "",
+        "intervention_description": "",
+        "comparator_description": "",
+        "key_findings_summary": "",
+        "evidence_quote": "",
+        "intervention_arm": {
+          "label": "Intervention",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Control",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Infections",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The study is a retrospective study, and therefore does not involve randomization."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The study is a retrospective study, and therefore does not involve deviations from intended interventions."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The study is a retrospective study, and therefore does not involve missing outcome data."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The study is a retrospective study, and therefore does not involve bias in measurement of the outcome."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The study is a retrospective study, and therefore does not involve bias in selection of the reported result."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": [
+          "no_outcome_data_in_abstract",
+          "assessed_from_abstract_only"
+        ]
+      },
+      {
+        "study_id": "10.1080/21645515.2026.2711554",
+        "study_label": "Zhang et al. (2026). PMID:42623170",
+        "title": "Global trends in CAR-T cell therapy for multiple myeloma: A bibliometric analysis, 2013-2025.",
+        "source_db": "europepmc",
+        "verification_url": "https://pubmed.ncbi.nlm.nih.gov/42623170/",
+        "year": 2026,
+        "design": "",
+        "population_description": "",
+        "intervention_description": "",
+        "comparator_description": "",
+        "key_findings_summary": "",
+        "evidence_quote": "",
+        "intervention_arm": {
+          "label": "Intervention",
+          "n_total": 874,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Control",
+          "n_total": 787,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Incidence and relative risk of Cytokine Release Syndrome (CRS)",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a bibliometric analysis, which does not involve randomization."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The text describes a bibliometric analysis, which does not involve deviations from intended interventions."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The text describes a bibliometric analysis, which does not involve missing outcome data."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The text describes a bibliometric analysis, which does not involve measurement of the outcome."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The text describes a bibliometric analysis, which does not involve selection of the reported result."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": []
+      },
+      {
+        "study_id": "10.1080/10428194.2026.2699285",
+        "study_label": "Leitner et al. (2026). PMID:42518303",
+        "title": "Real-world analyses of bispecific antibodies and CAR-T cell therapy in relapsed or refractory multiple myeloma: a global TriNetX discovery and contemporary validation cohort.",
+        "source_db": "europepmc",
+        "verification_url": "https://pubmed.ncbi.nlm.nih.gov/42518303/",
+        "year": 2026,
+        "design": "",
+        "population_description": "",
+        "intervention_description": "",
+        "comparator_description": "",
+        "key_findings_summary": "",
+        "evidence_quote": "",
+        "intervention_arm": {
+          "label": "BsAbs",
+          "n_total": 822,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "CAR-T",
+          "n_total": 822,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Overall Survival",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The text states that the study used propensity matching, which is a method to reduce selection bias. The text does not mention randomization."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The text states that the study used propensity matching, which is a method to reduce selection bias. The text does not mention blinding."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The text states that the study used propensity matching, which is a method to reduce selection bias. The text does not mention any missing data."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The text states that the study used propensity matching, which is a method to reduce selection bias. The text does not mention any measurement bias."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The text states that the study used propensity matching, which is a method to reduce selection bias. The text does not mention any bias in selection of the reported result."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": [
+          "assessed_from_abstract_only"
+        ]
+      },
+      {
+        "study_id": "10.1101/2024.09.02.610843",
+        "study_label": "Tirado et al. (2024). DOI:10.1101/2024.09.02.610843",
+        "title": "CAR-T cells targeting CCR9 and CD1a for the treatment of T cell acute lymphoblastic leukemia",
+        "source_db": "preprints",
+        "verification_url": "https://doi.org/10.1101/2024.09.02.610843",
+        "year": 2024,
+        "design": "",
+        "population_description": "",
+        "intervention_description": "",
+        "comparator_description": "",
+        "key_findings_summary": "",
+        "evidence_quote": "",
+        "intervention_arm": {
+          "label": "CCR9/CD1a CAR-T cells",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Single CAR-T cell",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Incidence and relative risk of Cytokine Release Syndrome (CRS)",
+        "rob_domains": [
+          {
+            "domain": "Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The text states that the study used CAR-T cells, which are not randomized."
+          },
+          {
+            "domain": "Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The text states that the study used CAR-T cells, which are not blinded."
+          },
+          {
+            "domain": "Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The text states that the study used CAR-T cells, which are not blinded."
+          },
+          {
+            "domain": "Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The text states that the study used CAR-T cells, which are not blinded."
+          },
+          {
+            "domain": "Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The text states that the study used CAR-T cells, which are not blinded."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": [
+          "no_outcome_data_in_abstract"
+        ]
+      },
+      {
+        "study_id": "10.1056/nejmoa2204591",
+        "study_label": "Chari et al. (2024). PMID:38609727",
+        "title": "Talquetamab, a T-Cell\u2013Redirecting GPRC5D Bispecific Antibody for Multiple Myeloma",
+        "source_db": "pubmed, openalex",
+        "verification_url": "https://pubmed.ncbi.nlm.nih.gov/38609727/",
+        "year": 2024,
+        "design": "",
+        "population_description": "",
+        "intervention_description": "",
+        "comparator_description": "",
+        "key_findings_summary": "",
+        "evidence_quote": "",
+        "intervention_arm": {
+          "label": "Talquetamab",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "None",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Cytokine Release Syndrome (CRS)",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The text states that the study was a phase 1 study, and the primary end points were assessed to select the recommended doses for a phase 2 study. The study design does not mention randomization."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The text states that the study was a phase 1 study, and the primary end points were assessed to select the recommended doses for a phase 2 study. The study design does not mention blinding."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The text states that the study was a phase 1 study, and the primary end points were assessed to select the recommended doses for a phase 2 study. The text does not mention missing outcome data."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The text states that the study was a phase 1 study, and the primary end points were assessed to select the recommended doses for a phase 2 study. The text does not mention the measurement method of the outcome."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The text states that the study was a phase 1 study, and the primary end points were assessed to select the recommended doses for a phase 2 study. The text does not mention a pre-registered protocol or analysis plan."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": []
+      },
+      {
+        "study_id": "10.6004/jnccn.2026.7004",
+        "study_label": "Miller et al. (2026). PMID:42190708",
+        "title": "Incorporating the Next Generation of Immunotherapies Into the Treatment of Multiple Myeloma.",
+        "source_db": "europepmc",
+        "verification_url": "https://pubmed.ncbi.nlm.nih.gov/42190708/",
+        "year": 2026,
+        "design": "",
+        "population_description": "",
+        "intervention_description": "",
+        "comparator_description": "",
+        "key_findings_summary": "",
+        "evidence_quote": "",
+        "intervention_arm": {
+          "label": "Intervention",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Control",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Incidence and relative risk of Cytokine Release Syndrome (CRS)",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a review and does not describe the randomization process."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a review and does not describe deviations from intended interventions."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a review and does not describe missing outcome data."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a review and does not describe bias in measurement of the outcome."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a review and does not describe bias in selection of the reported result."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": [
+          "assessed_from_abstract_only"
+        ]
+      },
+      {
+        "study_id": "10.1200/jco.20.00386",
+        "study_label": "Steinhardt et al. (2025). PMID:40738883",
+        "title": "Activity of CAR-T cells and bispecific antibodies in multiple myeloma with extramedullary involvement.",
+        "source_db": "pubmed",
+        "verification_url": "https://pubmed.ncbi.nlm.nih.gov/40738883/",
+        "year": 2025,
+        "design": "",
+        "population_description": "",
+        "intervention_description": "",
+        "comparator_description": "",
+        "key_findings_summary": "",
+        "evidence_quote": "",
+        "intervention_arm": {
+          "label": "Cilta-cel",
+          "n_total": 15,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Talquetamab",
+          "n_total": 15,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Cytokine Release Syndrome (CRS)",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The text states that the study was retrospective, and therefore randomization was not performed."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The text states that the patients were heavily pretreated, and that the majority of patients receiving cilta-cel, ide-cel, or teclistamab were BCMA-naive (>88%)."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The text states that the proportion of patients with outcome data was approximately 95% or more, and that the loss of data was balanced across arms."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The text states that the outcome was objective."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The text states that the study was retrospective, and that the reported outcomes matched the study protocol."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": [
+          "ungrounded_event_counts_removed_by_python_verifier"
+        ]
+      },
+      {
+        "study_id": "10.3390/cells15181660",
+        "study_label": "Canichella et al. (2026). PMID:42782760",
+        "title": "Beyond CAR-T: Preventing and Treating Relapse in B-Cell Haematological Malignancies.",
+        "source_db": "europepmc",
+        "verification_url": "https://pubmed.ncbi.nlm.nih.gov/42782760/",
+        "year": 2026,
+        "design": "",
+        "population_description": "",
+        "intervention_description": "",
+        "comparator_description": "",
+        "key_findings_summary": "",
+        "evidence_quote": "",
+        "intervention_arm": {
+          "label": "Intervention",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Control",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a review and does not describe the randomization process."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a review and does not describe deviations from intended interventions."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a review and does not describe missing outcome data."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a review and does not describe bias in measurement of the outcome."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a review and does not describe bias in selection of the reported result."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": []
+      },
+      {
+        "study_id": "10.1038/s41408-022-00643-3",
+        "study_label": "Merz et al. (2024). PMID:39632797",
+        "title": "Bispecific antibodies targeting BCMA or GPRC5D are highly effective in relapsed myeloma after CAR T-cell therapy.",
+        "source_db": "pubmed",
+        "verification_url": "https://pubmed.ncbi.nlm.nih.gov/39632797/",
+        "year": 2024,
+        "design": "",
+        "population_description": "",
+        "intervention_description": "",
+        "comparator_description": "",
+        "key_findings_summary": "",
+        "evidence_quote": "",
+        "intervention_arm": {
+          "label": "Talquetamab",
+          "n_total": 28,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Teclistamab",
+          "n_total": 37,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Cytokine Release Syndrome (CRS)",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a cohort study, and does not describe randomization."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a cohort study, and does not describe deviations from intended interventions."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a cohort study, and does not describe missing outcome data."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a cohort study, and does not describe bias in measurement of the outcome."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a cohort study, and does not describe bias in selection of the reported result."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": []
+      },
+      {
+        "study_id": "10.3390/ijms27167179",
+        "study_label": "Shambhavi et al. (2026). PMID:42653183",
+        "title": "T-Cell Engagers Targeting <i>BCMA</i>, <i>GPRC5D</i>, or <i>FcRH5</i> in Relapsed/Refractory Multiple Myeloma: The Landscape Beyond CAR-T Cell Therapy-A Systematic Review and Network Meta-Analysis.",
+        "source_db": "europepmc, pubmed",
+        "verification_url": "https://pubmed.ncbi.nlm.nih.gov/42653183/",
+        "year": 2026,
+        "design": "",
+        "population_description": "",
+        "intervention_description": "",
+        "comparator_description": "",
+        "key_findings_summary": "",
+        "evidence_quote": "",
+        "intervention_arm": {
+          "label": "Talquetamab",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Standard of care (SOC)",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Cytokine Release Syndrome (CRS)",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a systematic review and network meta-analysis, which does not involve randomization."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a systematic review and network meta-analysis, which does not involve deviations from intended interventions."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a systematic review and network meta-analysis, which does not involve missing outcome data."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a systematic review and network meta-analysis, which does not involve bias in measurement of the outcome."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a systematic review and network meta-analysis, which does not involve bias in selection of the reported result."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": []
+      },
+      {
+        "study_id": "10.1016/j.blre.2025.101342",
+        "study_label": "Zhou et al. (2025). PMID:41177723",
+        "title": "Bispecific antibodies in multiple myeloma: maximizing potential through rational combination therapies.",
+        "source_db": "pubmed",
+        "verification_url": "https://pubmed.ncbi.nlm.nih.gov/41177723/",
+        "year": 2025,
+        "design": "",
+        "population_description": "",
+        "intervention_description": "",
+        "comparator_description": "",
+        "key_findings_summary": "",
+        "evidence_quote": "",
+        "intervention_arm": {
+          "label": "Intervention",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Control",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Incidence and relative risk of Cytokine Release Syndrome (CRS)",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a journal article, and does not describe the randomization process."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a journal article, and does not describe deviations from intended interventions."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a journal article, and does not describe missing outcome data."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a journal article, and does not describe bias in measurement of the outcome."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a journal article, and does not describe bias in selection of the reported result."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": [
+          "assessed_from_abstract_only"
+        ]
+      },
+      {
+        "study_id": "10.1007/s12015-026-11228-z",
+        "study_label": "Su et al. (2026). PMID:42684629",
+        "title": "Beyond Remission: Risk-Adapted Maintenance and Mechanism-Guided Salvage After CAR T-Cell Therapy for Multiple Myeloma.",
+        "source_db": "europepmc",
+        "verification_url": "https://pubmed.ncbi.nlm.nih.gov/42684629/",
+        "year": 2026,
+        "design": "",
+        "population_description": "",
+        "intervention_description": "",
+        "comparator_description": "",
+        "key_findings_summary": "",
+        "evidence_quote": "",
+        "intervention_arm": {
+          "label": "Intervention",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Control",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Cytokine Release Syndrome (CRS)",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a review and does not describe the randomization process."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a review and does not describe deviations from intended interventions."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a review and does not describe missing outcome data."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a review and does not describe bias in measurement of the outcome."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a review and does not describe bias in selection of the reported result."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": [
+          "assessed_from_abstract_only"
+        ]
+      }
+    ]
+  },
+  "meta_analysis": {
+    "ok": false,
+    "error": "No study contained data sufficient for this analysis.",
+    "effect_measure": "OR",
+    "k_supplied": 12,
+    "k_included": 0,
+    "excluded_studies": [
+      {
+        "index": 0,
+        "label": "Jourdes et al. (2024). PMID:38432433",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      },
+      {
+        "index": 1,
+        "label": "Zhang et al. (2026). PMID:42623170",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      },
+      {
+        "index": 2,
+        "label": "Leitner et al. (2026). PMID:42518303",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      },
+      {
+        "index": 3,
+        "label": "Tirado et al. (2024). DOI:10.1101/2024.09.02.610843",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      },
+      {
+        "index": 4,
+        "label": "Chari et al. (2024). PMID:38609727",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      },
+      {
+        "index": 5,
+        "label": "Miller et al. (2026). PMID:42190708",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      },
+      {
+        "index": 6,
+        "label": "Steinhardt et al. (2025). PMID:40738883",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      },
+      {
+        "index": 7,
+        "label": "Canichella et al. (2026). PMID:42782760",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      },
+      {
+        "index": 8,
+        "label": "Merz et al. (2024). PMID:39632797",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      },
+      {
+        "index": 9,
+        "label": "Shambhavi et al. (2026). PMID:42653183",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      },
+      {
+        "index": 10,
+        "label": "Zhou et al. (2025). PMID:41177723",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      },
+      {
+        "index": 11,
+        "label": "Su et al. (2026). PMID:42684629",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      }
+    ],
+    "warnings": [
+      "12 of 12 supplied study/studies could not be analysed; see `excluded_studies` for the reason for each. No study was dropped silently."
+    ],
+    "notes": [
+      "Primary model is random effects with DerSimonian-Laird tau^2, the RevMan/Cochrane default, so the result is comparable with published reviews. REML and HKSJ results are reported alongside and should be preferred when k is small."
+    ]
+  },
+  "prisma": {
+    "identified_by_source": {
+      "clinicaltrials": 25,
+      "europepmc": 25,
+      "preprints": 3,
+      "crossref": 25,
+      "pubmed": 25,
+      "openalex": 25,
+      "semantic_scholar": 0
+    },
+    "total_identified": 128,
+    "duplicates_removed": 5,
+    "records_screened": 30,
+    "excluded_at_screening": 11,
+    "exclusion_reasons": {
+      "Wrong intervention": 10,
+      "Wrong population": 1
+    },
+    "full_text_assessed": 12,
+    "excluded_at_full_text": 12,
+    "full_text_exclusion_reasons": {
+      "MISSING_BINARY_DATA": 12
+    },
+    "studies_included": 0
+  },
+  "elapsed_seconds": 1323.7,
+  "r_script_path": "/usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20261001-123948/r_script.R",
+  "pdf_report": "/usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20261001-123948/manuscript.pdf"
+}

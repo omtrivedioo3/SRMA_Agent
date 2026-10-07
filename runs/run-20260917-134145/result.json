@@ -1,0 +1,404 @@
+{
+  "ok": false,
+  "run_id": "run-20260917-134145",
+  "run_dir": "/usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20260917-134145",
+  "question": "Does aspirin reduce mortality in adults after myocardial infarction compared with placebo?",
+  "generated_utc": "2026-09-17T13:41:45.104989+00:00",
+  "config": {
+    "gemini_backend": "ai-studio",
+    "orchestrator_model": "gemini-2.0-flash",
+    "clinical_model": "ollama_chat/medgemma"
+  },
+  "phases_completed": [
+    "protocol",
+    "search_strategy",
+    "search",
+    "deduplication",
+    "screening",
+    "extraction",
+    "meta_analysis"
+  ],
+  "errors": [
+    "Quantitative pooling was not possible: No study contained data sufficient for this analysis.. This usually means the abstracts did not report event counts or means with standard deviations. A narrative synthesis is the correct output in that case, not a fabricated number."
+  ],
+  "protocol": {
+    "population": "Adults with a prior myocardial infarction",
+    "intervention": "Aspirin",
+    "comparator": "Placebo",
+    "primary_outcome": "Mortality",
+    "secondary_outcomes": [],
+    "study_designs": [
+      "Randomized Controlled Trial"
+    ],
+    "inclusion_criteria": [
+      "Adults with a prior myocardial infarction",
+      "Randomized Controlled Trial"
+    ],
+    "exclusion_criteria": [
+      "Animal studies",
+      "In-vitro studies",
+      "Narrative reviews",
+      "Editorials",
+      "Case reports"
+    ],
+    "search_keywords": [
+      "aspirin",
+      "acetylsalicylic acid",
+      "ASA"
+    ],
+    "mesh_terms": [
+      "Aspirin",
+      "Myocardial Infarction",
+      "Mortality"
+    ]
+  },
+  "protocol_text": "  Population   : Adults with a prior myocardial infarction\n  Intervention : Aspirin\n  Comparator   : Placebo\n  Primary outcome : Mortality\n  Eligible designs : Randomized Controlled Trial\n  Inclusion criteria:\n      - Adults with a prior myocardial infarction\n      - Randomized Controlled Trial\n  Exclusion criteria:\n      - Animal studies\n      - In-vitro studies\n      - Narrative reviews\n      - Editorials\n      - Case reports",
+  "search_strategy": {
+    "population_terms": [
+      "Adults with a prior myocardial infarction"
+    ],
+    "population_mesh": [
+      "Myocardial Infarction"
+    ],
+    "intervention_terms": [
+      "Aspirin",
+      "acetylsalicylic acid",
+      "ASA"
+    ],
+    "intervention_mesh": [
+      "Aspirin"
+    ],
+    "outcome_terms": [
+      "Mortality"
+    ]
+  },
+  "query": "(\"Adults with a prior myocardial infarction\"[tiab] OR \"Myocardial Infarction\"[MeSH Terms]) AND (Aspirin[tiab] OR \"acetylsalicylic acid\"[tiab] OR ASA[tiab] OR \"Aspirin\"[MeSH Terms])",
+  "search": {
+    "query": "(\"Adults with a prior myocardial infarction\"[tiab] OR \"Myocardial Infarction\"[MeSH Terms]) AND (Aspirin[tiab] OR \"acetylsalicylic acid\"[tiab] OR ASA[tiab] OR \"Aspirin\"[MeSH Terms])",
+    "per_source": {
+      "preprints": {
+        "status": "success",
+        "count": 0,
+        "error": null
+      },
+      "europepmc": {
+        "status": "success",
+        "count": 4,
+        "error": null
+      },
+      "openalex": {
+        "status": "success",
+        "count": 0,
+        "error": null
+      },
+      "crossref": {
+        "status": "success",
+        "count": 10,
+        "error": null
+      },
+      "pubmed": {
+        "status": "success",
+        "count": 10,
+        "error": null
+      },
+      "clinicaltrials": {
+        "status": "error",
+        "count": 0,
+        "error": "SourceError: clinicaltrials: HTTPError: 400 Client Error: Bad Request for url: https://clinicaltrials.gov/api/v2/studies?query.term=%28%22Adults+with+a+prior+myocardial+infarction%22%5Btiab%5D+OR+%22Myocardial+Infarction%22%5BMeSH+Terms%5D%29+AND+%28Aspirin%5Btiab%5D+OR+%22acetylsalicylic+acid%22%5Btiab%5D+OR+ASA%5Btiab%5D+OR+%22Aspirin%22%5BMeSH+Terms%5D%29&pageSize=10&format=json&countTotal=true (url=https://clinicaltrials.gov/api/v2/studies?query.term=%28%22Adults+with+a+prior+myocardial+infarction%22%5Btiab%5D+OR+%22Myocardial+Infarction%22%5BMeSH+Terms%5D%29+AND+%28Aspirin%5Btiab%5D+OR+%22acetylsalicylic+acid%22%5Btiab%5D+OR+ASA%5Btiab)"
+      },
+      "semantic_scholar": {
+        "status": "success",
+        "count": 0,
+        "error": null
+      }
+    },
+    "total_identified": 24,
+    "duplicates_removed": 0,
+    "unique_records": 24,
+    "sources_unavailable": {}
+  },
+  "screening": {
+    "screened": 6,
+    "not_screened": 18,
+    "not_screened_note": "18 record(s) were not screened because the cap of 6 was reached. They are excluded from the review but counted here, because a PRISMA flow diagram must account for every identified record. Raise SRMA_MAX_ABSTRACTS_TO_SCREEN for a complete run.",
+    "included": 6,
+    "excluded": 0,
+    "exclusion_reasons": {},
+    "excluded_records": [],
+    "reviewer_agreement_rate": 0.167,
+    "agreement_note": "Agreement is measured between two prompts with deliberately different risk tolerances. A rate of exactly 1.0 across many records suggests the personas are not actually diverging and the dual-review safeguard is not doing any work.",
+    "errors": [],
+    "elapsed_seconds": 231.6
+  },
+  "extraction": {
+    "attempted": 4,
+    "succeeded": 4,
+    "not_attempted": 2,
+    "errors": [],
+    "studies": [
+      {
+        "study_id": "10.1002/trc2.12056",
+        "study_label": "EE et al. (2020)",
+        "year": 2020,
+        "design": "",
+        "intervention_arm": {
+          "label": "Intervention",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Control",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Mortality",
+        "rob_domains": [
+          {
+            "domain": "Domain 1",
+            "judgement": "Low risk",
+            "justification": "The report does not describe randomization."
+          },
+          {
+            "domain": "Domain 2",
+            "judgement": "Low risk",
+            "justification": "The report does not describe blinding."
+          },
+          {
+            "domain": "Domain 3",
+            "judgement": "Low risk",
+            "justification": "The report does not describe missing data."
+          },
+          {
+            "domain": "Domain 4",
+            "judgement": "Low risk",
+            "justification": "The report does not describe outcome assessment."
+          },
+          {
+            "domain": "Domain 5",
+            "judgement": "Low risk",
+            "justification": "The report does not describe a pre-registered protocol."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": []
+      },
+      {
+        "study_id": "10.1002/14651858.cd010649.pub2",
+        "study_label": "J et al. (2018)",
+        "year": 2018,
+        "design": "",
+        "intervention_arm": {
+          "label": "Intervention",
+          "n_total": 2392,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Control",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Mortality",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "stated random sequence generation AND concealed allocation"
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "blinded, or deviations balanced and ITT analysis used"
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "outcome data for approximately 95% or more, balanced across arms"
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "objective outcome, or blinded independent adjudication"
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "pre-registered (a trial registration number is given) and reported outcomes match"
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": []
+      },
+      {
+        "study_id": "PMC10576948",
+        "study_label": "Anon (2023)",
+        "year": 2023,
+        "design": "",
+        "intervention_arm": {
+          "label": "Intervention",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Control",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Mortality",
+        "rob_domains": [
+          {
+            "domain": "Domain 1",
+            "judgement": "Low risk",
+            "justification": "The report does not describe randomization."
+          },
+          {
+            "domain": "Domain 2",
+            "judgement": "Low risk",
+            "justification": "The report does not describe blinding."
+          },
+          {
+            "domain": "Domain 3",
+            "judgement": "Low risk",
+            "justification": "The report does not describe missing data."
+          },
+          {
+            "domain": "Domain 4",
+            "judgement": "Low risk",
+            "justification": "The report does not describe outcome assessment."
+          },
+          {
+            "domain": "Domain 5",
+            "judgement": "Low risk",
+            "justification": "The report does not describe pre-registration."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": []
+      },
+      {
+        "study_id": "PMC4894295",
+        "study_label": "Anon (2016)",
+        "year": 2016,
+        "design": "",
+        "intervention_arm": {
+          "label": "Intervention",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Control",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Mortality",
+        "rob_domains": [
+          {
+            "domain": "Domain 1",
+            "judgement": "Low risk",
+            "justification": "The report does not describe randomization."
+          },
+          {
+            "domain": "Domain 2",
+            "judgement": "Low risk",
+            "justification": "The report does not describe blinding."
+          },
+          {
+            "domain": "Domain 3",
+            "judgement": "Low risk",
+            "justification": "The report does not describe missing data."
+          },
+          {
+            "domain": "Domain 4",
+            "judgement": "Low risk",
+            "justification": "The report does not describe outcome assessment."
+          },
+          {
+            "domain": "Domain 5",
+            "judgement": "Low risk",
+            "justification": "The report does not describe pre-registration."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": []
+      }
+    ]
+  },
+  "meta_analysis": {
+    "ok": false,
+    "error": "No study contained data sufficient for this analysis.",
+    "effect_measure": "RR",
+    "k_supplied": 4,
+    "k_included": 0,
+    "excluded_studies": [
+      {
+        "index": 0,
+        "label": "EE et al. (2020)",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      },
+      {
+        "index": 1,
+        "label": "J et al. (2018)",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      },
+      {
+        "index": 2,
+        "label": "Anon (2023)",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      },
+      {
+        "index": 3,
+        "label": "Anon (2016)",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      }
+    ],
+    "warnings": [
+      "4 of 4 supplied study/studies could not be analysed; see `excluded_studies` for the reason for each. No study was dropped silently."
+    ],
+    "notes": [
+      "Auto-detection found neither complete binary (events/total) nor complete continuous (mean/SD/n) data in any study.",
+      "Primary model is random effects with DerSimonian-Laird tau^2, the RevMan/Cochrane default, so the result is comparable with published reviews. REML and HKSJ results are reported alongside and should be preferred when k is small."
+    ]
+  },
+  "prisma": {
+    "identified_by_source": {
+      "preprints": 0,
+      "europepmc": 4,
+      "openalex": 0,
+      "crossref": 10,
+      "pubmed": 10,
+      "clinicaltrials": 0,
+      "semantic_scholar": 0
+    },
+    "total_identified": 24,
+    "duplicates_removed": 0,
+    "records_screened": 6,
+    "excluded_at_screening": 0,
+    "exclusion_reasons": {},
+    "full_text_assessed": 4,
+    "excluded_at_full_text": 0,
+    "full_text_exclusion_reasons": {},
+    "studies_included": 6
+  },
+  "elapsed_seconds": 499.8,
+  "r_script_path": "runs/run-20260917-134145/r_script.R",
+  "pdf_report": "runs/run-20260917-134145/manuscript.pdf"
+}

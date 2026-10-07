@@ -1,0 +1,232 @@
+==============================================================================
+SYSTEMATIC REVIEW AND META-ANALYSIS (FULL TRANSPARENCY REPORT)
+==============================================================================
+Question : In adults with acute COPD exacerbation and severe chronic kidney disease (CKD), does non-macrolide antibiotic therapy improve clinical resolution compared with supportive care alone?
+Run      : run-20260921-070330  (2026-09-21T07:03:30.268017+00:00)
+Elapsed  : 310.0s
+
+------------------------------------------------------------------------------
+1. STRUCTURED CLINICAL ABSTRACT & EXECUTIVE SYNTHESIS
+------------------------------------------------------------------------------
+  Comparison      : [Non-macrolide antibiotic therapy] vs. [Supportive care alone]
+  Target Cohort   : Adults with acute COPD exacerbation and severe chronic kidney disease (CKD)
+  Primary Endpoint: Clinical resolution
+
+  Pooled Synthesis: Risk Ratio = 0.750 (95% CI 0.408 to 1.379, p = 0.3548)
+  Evidence Cohort : 1 pooled studies (200 total participants)
+  Intervention Arm: 15 / 100 events (15.0%)
+  Comparator Arm  : 20 / 100 events (20.0%)
+  GRADE Certainty : High - Non-macrolide antibiotics do not appear to improve clinical resolution in adults with acute COPD exacerbation and severe chronic kidney disease. The evidence is moderately confident, as the single study is at low risk of bias and the confidence interval does not span both appreciable benefit and appreciable harm.
+  Pooled Study IDs: [1] 10.3389/fradi.2026.1787168 (see Section 5 below)
+
+------------------------------------------------------------------------------
+2. PROTOCOL (PICO)
+------------------------------------------------------------------------------
+  Population   : Adults with acute COPD exacerbation and severe chronic kidney disease (CKD)
+  Intervention : Non-macrolide antibiotic therapy
+  Comparator   : Supportive care alone
+  Outcome      : Clinical resolution
+
+------------------------------------------------------------------------------
+3. SEARCH STRATEGY
+------------------------------------------------------------------------------
+  ("COPD exacerbation"[tiab] OR COPD[tiab] OR "chronic kidney disease"[tiab] OR CKD[tiab] OR "acute kidney injury"[tiab] OR "acute kidney failure"[tiab] OR "COPD"[MeSH Terms] OR "Chronic Kidney Disease"[MeSH Terms] OR "Acute Kidney Injury"[MeSH Terms] OR "Acute Kidney Failure"[MeSH Terms]) AND ("non-macrolide antibiotics"[tiab] OR "macrolide antibiotics"[tiab] OR antibiotics[tiab] OR "antibiotic therapy"[tiab] OR non-macrolide[tiab] OR macrolide[tiab] OR "Antibiotics"[MeSH Terms])
+
+------------------------------------------------------------------------------
+4. PRISMA 2020 FLOW & RECORD ACCOUNTING
+------------------------------------------------------------------------------
+  clinicaltrials.................. 100
+  pubmed.......................... 100
+  openalex........................ 100
+  crossref........................ 100
+  semantic_scholar................ 100
+  europepmc....................... 100
+  preprints....................... 5
+  TOTAL IDENTIFIED................ 605
+  duplicates removed.............. -9
+  unique records after dedup...... 596
+  unscreened (screening cap)...... -576
+  records screened................ 20
+  excluded at screening........... -19
+      Wrong population............ 19
+  approved at screening........... 1
+  studies extracted (Phase 6)..... 1
+  FINAL STUDIES POOLED............ 1
+
+------------------------------------------------------------------------------
+5. INCLUDED & EXTRACTED STUDIES (1 STUDIES)
+------------------------------------------------------------------------------
+  [1] ID: 10.3389/fradi.2026.1787168  |  Citation: Hospital et al. (2021). PMID:42238679
+      Title     : Antibiotic Prophylaxis in Percutaneous Nephrostomy Placements and Replacements for Malignant Urinary Tract Obstruction
+      Source DB : Database  |  Verify: https://doi.org/10.3389/fradi.2026.1787168
+      Intervent.: Intervention (events=15, N=100, mean=None, sd=None)
+      Control   : Control (events=20, N=100, mean=None, sd=None)
+      Pooling   : POOLED -> Effect = 0.750 (95% CI 0.408 to 1.379), Weight = 100.0%
+      RoB 2     : Low risk
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: Wrong population: The abstract describes a study on percutaneous nephrostomy placement for malignant urinary tract obstruction, which is not the same as acute COPD exacerbation and severe chronic kidney disease.
+
+------------------------------------------------------------------------------
+6. EXCLUDED ARTICLES AT SCREENING (19 ARTICLES WITH REASONS)
+------------------------------------------------------------------------------
+  [1] ID: NCT03924596  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT03924596
+      Title      : Treatment of Renal Stones With Frankincense (Luban)
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (non-macrolide antibiotics, macrolide antibiotics, antibiotics).
+
+  [2] ID: 10.1111/ajt.14377  |  Category: Wrong population  |  Verify: https://doi.org/10.1111/ajt.14377
+      Title      : Optimization of NULOJIX® Usage As A Means of Avoiding CNI and Steroids in Renal Transplantation
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the population (COPD exacerbation, COPD, chronic kidney disease) or the intervention (non-macrolide antibiotics, macrolide antibiotics, antibiotics).
+
+  [3] ID: 10.2147/copd.s15455  |  Category: Wrong population  |  Verify: https://doi.org/10.2147/copd.s15455
+      Title      : Outcomes and Costs Associated With Initiating Maintenance Treatment With Fluticasone Propionate 250mcg/Salmeterol Xinafoate 50mcg Combination (FSC) Versus Anticholinergics Including Tiotropium (TIO) i
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (non-macrolide antibiotics, macrolide antibiotics, antibiotics).
+
+  [4] ID: NCT06074042  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT06074042
+      Title      : The Clinical Characteristics, Treatment and Prognosis of Tuberculosis-associated COPD
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (non-macrolide antibiotics, macrolide antibiotics, antibiotics).
+
+  [5] ID: 10.1186/s12890-025-03646-5  |  Category: Wrong population  |  Verify: https://doi.org/10.1186/s12890-025-03646-5
+      Title      : Expertise Asthma COPD Program with Digital Support
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (non-macrolide antibiotics, macrolide antibiotics, antibiotics).
+
+  [6] ID: 10.1186/s41512-023-00140-6  |  Category: Wrong population  |  Verify: https://doi.org/10.1186/s41512-023-00140-6
+      Title      : Using Clinical Prediction Models to Improve Treatment for Patients With Chronic Obstructive Pulmonary Disease (COPD)
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (non-macrolide antibiotics, macrolide antibiotics, antibiotics).
+
+  [7] ID: NCT06224075  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT06224075
+      Title      : Task-specific Training for Patients With Acute Exacerbation of COPD
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (non-macrolide antibiotics, macrolide antibiotics, antibiotics).
+
+  [8] ID: NCT01270594  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT01270594
+      Title      : A Pilot Study to Evaluate a Telepharmacy Intervention to Improve Inhaler Adherence in Veterans With COPD
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (non-macrolide antibiotics, macrolide antibiotics, antibiotics).
+
+  [9] ID: 10.1111/j.1600-6143.2008.02159.x  |  Category: Wrong population  |  Verify: https://doi.org/10.1111/j.1600-6143.2008.02159.x
+      Title      : Research Study of ATG and Rituximab in Renal Transplantation
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the population (COPD exacerbation, COPD, chronic kidney disease) or the intervention (non-macrolide antibiotics, macrolide antibiotics, antibiotics).
+
+  [10] ID: 10.1136/bmjresp-2018-000379  |  Category: Wrong population  |  Verify: https://doi.org/10.1136/bmjresp-2018-000379
+      Title      : Innovations in Treating COPD Exacerbations: Pilot Project on Action Plans Using New Technology.
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (non-macrolide antibiotics, macrolide antibiotics, antibiotics).
+
+  [11] ID: 10.1056/nejmcp1611090  |  Category: Wrong population  |  Verify: https://doi.org/10.1056/nejmcp1611090
+      Title      : Preventive Norepinephrine Infusion During Surgery for Upper Femoral Fracture and Post-operative Acute Renal Failure
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (non-macrolide antibiotics, macrolide antibiotics, antibiotics).
+
+  [12] ID: NCT03438214  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT03438214
+      Title      : Effect of Intermittent Infusion Versus Continuous Infusion of Vancomycin on Kidney Failure in Critically Ill Patients
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the population (COPD exacerbation, COPD, chronic kidney disease) or the intervention (non-macrolide antibiotics, macrolide antibiotics, antibiotics).
+
+  [13] ID: NCT07604103  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT07604103
+      Title      : Analysis of Growth Differentiation Factor 15 (GDF-15), Mid Regional proAdrenomedullin (MR proADM), and Persepsin Levels in Patient in Acute Coronary Syndrome Patients With Pneumonia, With or Without I
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (non-macrolide antibiotics, macrolide antibiotics, antibiotics).
+
+  [14] ID: NCT02334488  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT02334488
+      Title      : Study Evaluating the Benefit of Two Immunosuppressive Strategies on Renal Function
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (non-macrolide antibiotics, macrolide antibiotics, antibiotics).
+
+  [15] ID: 10.1186/s13063-026-09869-z  |  Category: Wrong population  |  Verify: https://doi.org/10.1186/s13063-026-09869-z
+      Title      : Effect of Early Dexamethasone on Major Complications and All-cause Mortality in Severe Burns
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the population (COPD exacerbation, COPD, chronic kidney disease) or the intervention (non-macrolide antibiotics, macrolide antibiotics, antibiotics).
+
+  [16] ID: NCT06035055  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT06035055
+      Title      : Ceftolozane/Tazobactam Continuous Infusion for Infective Exacerbations of Cystic Fibrosis and Bronchiectasis
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the population (COPD exacerbation, COPD, chronic kidney disease).
+
+  [17] ID: NCT05597540  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT05597540
+      Title      : Efficacy of 7 Days Versus 14 Days of Antibiotic Therapy for Acute Pyelonephritis in Kidney Transplant Recipients, a Multicentre Randomized Non-inferiority Trial.
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the population (COPD exacerbation, COPD, chronic kidney disease).
+
+  [18] ID: NCT06961214  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT06961214
+      Title      : Depemokimab as an Extended treatmeNt Duration Biologic in Adults With Chronic Obstructive Pulmonary Disease (COPD) and Type 2 Inflammation (ENDURA-2)
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (non-macrolide antibiotics, macrolide antibiotics, antibiotics).
+
+  [19] ID: NCT02521636  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT02521636
+      Title      : Clinical Trial Assessing the Value of an Antibiotic Protocol Guided by Serum Procalcitonin in Acute Exacerbations of Chronic Obstructive Pulmonary Disease in Intensive Care
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (non-macrolide antibiotics, macrolide antibiotics, antibiotics).
+
+------------------------------------------------------------------------------
+8. DEDUPLICATION AUDIT LOG (9 DUPLICATES REMOVED)
+------------------------------------------------------------------------------
+  [1] Duplicate ID: 10.3389/fradi.2026.1787168 (pubmed) -> Merged Into: 10.3389/fradi.2026.1787168 [Matched on: doi]
+      Title  : Antibiotic Prophylaxis in Percutaneous Nephrostomy Placements and Replacements for Malignant Urinary Tract Obstruction
+      Verify : https://doi.org/10.3389/fradi.2026.1787168
+  [2] Duplicate ID: NCT03924596 (openalex) -> Merged Into: NCT03924596 [Matched on: nct_id]
+      Title  : Treatment of Renal Stones With Frankincense (Luban)
+      Verify : https://clinicaltrials.gov/study/NCT03924596
+  [3] Duplicate ID: 10.1111/ajt.14377 (crossref) -> Merged Into: 10.1111/ajt.14377 [Matched on: doi]
+      Title  : Optimization of NULOJIX® Usage As A Means of Avoiding CNI and Steroids in Renal Transplantation
+      Verify : https://doi.org/10.1111/ajt.14377
+  [4] Duplicate ID: 10.2147/copd.s15455 (semantic_scholar) -> Merged Into: 10.2147/copd.s15455 [Matched on: doi]
+      Title  : Outcomes and Costs Associated With Initiating Maintenance Treatment With Fluticasone Propionate 250mcg/Salmeterol Xinafoate 50mcg Combination (FSC) Versus Anticholinergics Including Tiotropium (TIO) i
+      Verify : https://doi.org/10.2147/copd.s15455
+  [5] Duplicate ID: NCT06074042 (europepmc) -> Merged Into: NCT06074042 [Matched on: nct_id]
+      Title  : The Clinical Characteristics, Treatment and Prognosis of Tuberculosis-associated COPD
+      Verify : https://clinicaltrials.gov/study/NCT06074042
+  [6] Duplicate ID: 10.1186/s12890-025-03646-5 (preprints) -> Merged Into: 10.1186/s12890-025-03646-5 [Matched on: doi]
+      Title  : Expertise Asthma COPD Program with Digital Support
+      Verify : https://doi.org/10.1186/s12890-025-03646-5
+  [7] Duplicate ID: 10.1186/s41512-023-00140-6 (clinicaltrials) -> Merged Into: 10.1186/s41512-023-00140-6 [Matched on: doi]
+      Title  : Using Clinical Prediction Models to Improve Treatment for Patients With Chronic Obstructive Pulmonary Disease (COPD)
+      Verify : https://doi.org/10.1186/s41512-023-00140-6
+  [8] Duplicate ID: NCT06224075 (pubmed) -> Merged Into: NCT06224075 [Matched on: nct_id]
+      Title  : Task-specific Training for Patients With Acute Exacerbation of COPD
+      Verify : https://clinicaltrials.gov/study/NCT06224075
+  [9] Duplicate ID: NCT01270594 (openalex) -> Merged Into: NCT01270594 [Matched on: nct_id]
+      Title  : A Pilot Study to Evaluate a Telepharmacy Intervention to Improve Inhaler Adherence in Veterans With COPD
+      Verify : https://clinicaltrials.gov/study/NCT01270594
+
+------------------------------------------------------------------------------
+9. META-ANALYSIS RESULTS
+------------------------------------------------------------------------------
+  Effect measure : Risk Ratio
+  Pooled estimate: 0.750 (95% CI 0.408 to 1.379)
+  p-value        : 0.3548
+  Studies pooled : 1   Participants: 200
+  Heterogeneity  : not estimable
+
+  [INFO] Publication-bias testing was not performed (k=1 < 10). Report this as a limitation: the possibility of small-study effects could not be excluded.
+
+------------------------------------------------------------------------------
+10. CERTAINTY OF EVIDENCE (GRADE)
+------------------------------------------------------------------------------
+  Overall rating : High
+    risk of bias       Not serious  (-0)  |  The study is at low risk of bias.
+    inconsistency      Not serious  (-0)  |  I-squared is None%.
+    indirectness       Not serious  (-0)  |  The study is not indirect.
+    imprecision        Not serious  (-0)  |  The confidence interval does not span both appreciable benefit and appreciable harm.
+    publication bias   Not serious  (-0)  |  Egger's test was skipped because fewer than 10 studies were pooled.
+  Summary: Non-macrolide antibiotics do not appear to improve clinical resolution in adults with acute COPD exacerbation and severe chronic kidney disease. The evidence is moderately confident, as the single study is at low risk of bias and the confidence interval does not span both appreciable benefit and appreciable harm.
+  NOTE: The model reported 'Moderate' but its own domain judgements total 0 downgrade level(s) from 'High', which gives 'High'. The computed value is used.
+
+------------------------------------------------------------------------------
+11. FIGURES & FULL MARKDOWN REPORT
+------------------------------------------------------------------------------
+  forest       /usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20260921-070330/forest.png
+  funnel       /usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20260921-070330/funnel.png
+  report.md    /usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20260921-070330/report.md
+
+------------------------------------------------------------------------------
+This is a research tool that supports expert reviewers. It does not
+replace them, and its output is not clinical advice. Every number
+above was computed in Python from extracted data; verify against the
+source records in result.json and report.md before citing.
+------------------------------------------------------------------------------

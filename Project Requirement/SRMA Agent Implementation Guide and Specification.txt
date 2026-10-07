@@ -1,0 +1,103 @@
+SRMA Agent: System Specification & Implementation Guide
+This document defines the technical architecture, operational logic, and methodological standards for the SRMA Agent, a specialized AI agent built on Gemini Enterprise and Deep Research capabilities. The agent is designed to automate and augment Systematic Reviews and Meta-Analyses following PRISMA and Cochrane standards.
+1. System Architecture & External Repository Integration
+The SRMA Agent operates as an orchestrator between the Gemini 1.5 Pro model and a suite of specialized external tools. It utilizes Deep Research capabilities to perform iterative, multi-database queries.
+API Integration Specifications
+PubMed/NCBI E-Utilities: Integration via OpenAPI JSON spec targeting the research and efetch endpoints. It supports complex Boolean logic and MeSH term expansion.
+Europe PMC REST API: Used for accessing full-text Open Access articles and supplemental data not indexed in PubMed.
+ClinicalTrials.gov API v2: Integration via the JSON-based v2 API for identifying ongoing trials, unpublished results, and cross-referencing NCT identifiers.
+Enterprise Data Store: Connection to internal Vertex AI Search or BigQuery datasets for proprietary clinical data and previous internal reviews.
+2. Step-by-Step Implementation Guide
+Phase I: Agent Initialization & Tool Registration
+Define Agent Identity: Initialize the agent in Vertex AI Agent Builder with the "SRMA Agent" persona.
+Register OpenAPI Specs: Import the YAML/JSON specifications for NCBI, Europe PMC, and ClinicalTrials.gov.
+Authentication: Configure API Key or OAuth 2.0 credentials for secure repository access.
+Phase II: Multi-Stage PRISMA Pipeline Setup
+Search Stage: Agent generates and executes Boolean strings across all registered tools.
+De-duplication: Use a specialized script or tool (e.g., Python/Pandas) via Code Execution to remove duplicate DOIs/PMIDs.
+Dual-Pass Screening: Execute the screening sub-prompt iteratively across the identified corpus.
+Data Extraction: Extract PICO elements and outcome measures into a structured format.
+Synthesis: Generate R scripts for statistical computation.
+3. Master System Prompt: SRMA Agent
+Role: You are the SRMA Agent, a senior clinical evidence synthesis expert. Your goal is to conduct high-fidelity Systematic Reviews and Meta-Analyses.
+
+Methodological Standards:
+
+Adhere strictly to PRISMA 2020 reporting guidelines.
+Apply Cochrane Handbook methodologies for risk of bias and data synthesis.
+Use GRADE (Grading of Recommendations, Assessment, Development, and Evaluations) for certainty of evidence.
+
+Operational Guardrails:
+
+Transparency: Every claim must be linked to a specific DOI or PMID.
+Objectivity: Avoid subjective adjectives; report only what is explicitly stated in the source text.
+Reproducibility: Document every search string and filter used.
+Validation: If a study's data is missing or ambiguous, flag it as "High Risk" or "Incomplete" rather than inferring values.
+4. Modular Sub-Prompts
+A. PICO & Boolean Search Generation
+"Analyze the following research question: {User_Query}. Break this down into PICO components (Population, Intervention, Comparison, Outcome). Generate a comprehensive Boolean search string suitable for PubMed and Europe PMC, including MeSH terms and synonyms. Return the output in a structured JSON format."
+B. Dual-Pass Screening
+"Act as two independent reviewers. For the following Title/Abstract: {Abstract_Text}, determine eligibility based on these criteria: {Inclusion_Criteria}.
+Respond ONLY in the following JSON schema:
+{
+'reviewer_1': {'decision': 'Include'|'Exclude', 'reason': 'string'},
+'reviewer_2': {'decision': 'Include'|'Exclude', 'reason': 'string'},
+'consensus': {'final_decision': 'Include'|'Exclude', 'conflict_resolution': 'string'}
+}"
+C. Quantitative Data Extraction & RoB 2.0
+"Extract the following from the study: Sample size (N) per arm, Mean/SD or Events/Total for the primary outcome. Simultaneously, perform a Risk of Bias assessment using the Cochrane RoB 2.0 tool for Randomized Controlled Trials. Provide a justification for each domain (Randomization, Deviations, Missing Data, Measurement, Reporting)."
+D. Quantitative Meta-Analysis Synthesis
+"Based on the extracted data table {Data_Table}, synthesize the results. Identify the appropriate effect measure (e.g., Risk Ratio, Mean Difference). Discuss heterogeneity (I² statistic) and provide a narrative summary of the evidence strength using GRADE criteria."
+5. Reproducible R Script Template
+The SRMA Agent generates the following template for execution in the Code Execution environment to produce statistical outputs.
+
+# Load necessary libraries
+library(meta)
+library(metafor)
+
+# Data structure: study, event_e, n_e, event_c, n_c
+m_data <- data.frame(
+  study = c("Study A", "Study B", "Study C"),
+  event_e = c(10, 15, 5),
+  n_e = c(100, 120, 95),
+  event_c = c(20, 25, 12),
+  n_c = c(100, 120, 98)
+)
+
+# Conduct Random-Effects Meta-Analysis
+m_res <- metabin(event.e = event_e, n.e = n_e, 
+                 event.c = event_c, n.c = n_c, 
+                 data = m_data, 
+                 studlab = study, 
+                 method = "Inverse", 
+                 sm = "RR", 
+                 random = TRUE)
+
+# Generate Forest Plot
+forest(m_res, 
+       layout = "Cochrane", 
+       col.square = "navy", 
+       prediction = TRUE, 
+       print.I2 = TRUE)
+
+# Print Summary
+summary(m_res)
+6. Best Practices & Methodological Guardrails
+Category
+Requirement
+Agent Action
+Traceability
+Full lineage of every data point.
+Log the source PMID/DOI for every extracted numerical value.
+Reproducibility
+Immutable search history.
+Save the exact timestamp and API parameters for every repository query.
+Statistical Integrity
+Handling Heterogeneity.
+Automatically trigger a sensitivity analysis if I² exceeds 50%.
+Compliance
+Patient Privacy.
+Ensure no PII (Personally Identifiable Information) is processed or stored.
+Version Control
+PRISMA Flow Diagram.
+Maintain a live count of records identified, screened, and excluded at each stage.

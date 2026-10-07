@@ -1,0 +1,364 @@
+==============================================================================
+SYSTEMATIC REVIEW AND META-ANALYSIS (FULL TRANSPARENCY REPORT)
+==============================================================================
+Question : In adult patients with type 2 diabetes and high cardiovascular risk, do GLP-1 receptor agonists (semaglutide, liraglutide, or dulaglutide) compared to placebo reduce major adverse cardiovascular events (MACE: cardiovascular death, nonfatal myocardial infarction, or nonfatal stroke)?
+Run      : run-20261006-085615  (2026-10-06T08:56:15.137834+00:00)
+Elapsed  : 1047.1s
+
+------------------------------------------------------------------------------
+1. STRUCTURED CLINICAL ABSTRACT & EXECUTIVE SYNTHESIS
+------------------------------------------------------------------------------
+  Comparison      : [GLP-1 receptor agonists (semaglutide, liraglutide, or dulaglutide)] vs. [Placebo]
+  Target Cohort   : Adult patients with type 2 diabetes and high cardiovascular risk
+  Primary Endpoint: Major adverse cardiovascular events (MACE: cardiovascular death, nonfatal myocardial infarction, or nonfatal stroke)
+
+  Pooled Synthesis: Risk Ratio = 1.558 (95% CI 1.255 to 1.934, p = 5.74e-05)
+  Evidence Cohort : 1 pooled studies (30704 total participants)
+  Intervention Arm: 187 / 13956 events (1.3%)
+  Comparator Arm  : 144 / 16748 events (0.9%)
+  GRADE Certainty : High - GLP-1 receptor agonists reduce the risk of major adverse cardiovascular events in adults with type 2 diabetes and high cardiovascular risk. The evidence is moderately confident, as the single study is at low risk of bias and there is no evidence of heterogeneity or publication bias.
+  Pooled Study IDs: [1] 10.4088/jcp.13m08398 (see Section 5 below)
+
+------------------------------------------------------------------------------
+2. PROTOCOL (PICO)
+------------------------------------------------------------------------------
+  Population   : Adult patients with type 2 diabetes and high cardiovascular risk
+  Intervention : GLP-1 receptor agonists (semaglutide, liraglutide, or dulaglutide)
+  Comparator   : Placebo
+  Outcome      : Major adverse cardiovascular events (MACE: cardiovascular death, nonfatal myocardial infarction, or nonfatal stroke)
+
+------------------------------------------------------------------------------
+3. SEARCH STRATEGY
+------------------------------------------------------------------------------
+  ("type 2 diabetes"[tiab] OR patients[tiab] OR "diabetic patients"[tiab] OR diabetes[tiab] OR "type 2 diabetes mellitus"[tiab] OR "Diabetes Mellitus"[MeSH Terms]) AND ("GLP-1 receptor agonists"[tiab] OR semaglutide[tiab] OR liraglutide[tiab] OR dulaglutide[tiab] OR "GLP-1 agonists"[tiab] OR "GLP-1 Receptor Agonists"[MeSH Terms])
+
+------------------------------------------------------------------------------
+4. PRISMA 2020 FLOW & RECORD ACCOUNTING
+------------------------------------------------------------------------------
+  clinicaltrials.................. 100
+  pubmed.......................... 100
+  crossref........................ 100
+  openalex........................ 100
+  europepmc....................... 100
+  preprints....................... 61
+  semantic_scholar................ 0
+  TOTAL IDENTIFIED................ 561
+  duplicates removed.............. -32
+  unique records after dedup...... 529
+  unscreened (screening cap)...... -509
+  records screened................ 20
+  excluded at screening........... -0
+  approved at screening........... 20
+  skipped (extraction cap)........ -10
+  studies extracted (Phase 6)..... 10
+  narrative only (missing counts). -9
+  FINAL STUDIES POOLED............ 1
+
+------------------------------------------------------------------------------
+5. INCLUDED & EXTRACTED STUDIES (10 STUDIES)
+------------------------------------------------------------------------------
+  [1] ID: 10.4088/jcp.13m08398  |  Citation: Tobaiqy et al. (2024). PMID:38265519
+      Title     : Psychiatric adverse events associated with semaglutide, liraglutide and tirzepatide: a pharmacovigilance analysis of individual case safety reports submitted to the EudraVigilance database.
+      Source DB : pubmed  |  Verify: https://pubmed.ncbi.nlm.nih.gov/38265519/
+      Intervent.: Semaglutide (events=187, N=13956, mean=None, sd=None)
+      Control   : Liraglutide (events=144, N=16748, mean=None, sd=None)
+      Pooling   : POOLED -> Effect = 1.558 (95% CI 1.255 to 1.934), Weight = 100.0%
+      RoB 2     : RobLevel.LOW
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study population is patients with type 2 diabetes and high cardiovascular risk, but the protocol states that the population is adult patients with type 2 diabetes and high cardiovascular risk. The abstract does not mention the intervention, comparator, or outcome, so it 
+
+  [2] ID: 10.1038/nrendo.2012.140  |  Citation: Meier (2012). PMID:22945360
+      Title     : GLP-1 receptor agonists for individualized treatment of type 2 diabetes mellitus.
+      Source DB : openalex, pubmed  |  Verify: https://pubmed.ncbi.nlm.nih.gov/22945360/
+      Intervent.: Intervention (events=None, N=None, mean=None, sd=None)
+      Control   : Control (events=None, N=None, mean=None, sd=None)
+      Pooling   : NOT POOLED (Narrative Only) -> Reason: assessed_from_abstract_only
+      RoB 2     : RobLevel.LOW
+      Inclusion : both reviewers agreed to include
+
+  [3] ID: 10.1101/2025.09.01.25334855  |  Citation: Ramteke et al. (2025). DOI:10.1101/2025.09.01.25334855
+      Title     : Comparative Efficacy and Safety of GLP-1 Receptor Agonists in Neurological and Nephrological Outcomes of Type 2 Diabetes: A Systematic Review and Network Meta-Analysis
+      Source DB : preprints  |  Verify: https://doi.org/10.1101/2025.09.01.25334855
+      Intervent.: Tirzepatide (events=None, N=None, mean=None, sd=None)
+      Control   : Other GLP-1 RAs (events=None, N=None, mean=None, sd=None)
+      Pooling   : NOT POOLED (Narrative Only) -> Reason: no_outcome_data_in_abstract
+      RoB 2     : RobLevel.LOW
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the review and meta-analysis aimed to evaluate the impact of GLP-1 RAs on neurological and nephrological outcomes in T2D patients. The protocol excludes studies that evaluate the effects of GLP-1 RAs on neurological and nephrological outcomes in T2D patients. The abstract st
+
+  [4] ID: 10.1053/j.ajkd.2026.04.007  |  Citation: Neumiller et al. (2026). PMID:42302979
+      Title     : Comparison of Specific Glucagon-Like Peptide-1 Receptor Agonists on Kidney Outcomes Among Patients With Type 2 Diabetes.
+      Source DB : europepmc  |  Verify: https://pubmed.ncbi.nlm.nih.gov/42302979/
+      Intervent.: Dulaglutide (events=None, N=None, mean=None, sd=None)
+      Control   : Exenatide (events=None, N=None, mean=None, sd=None)
+      Pooling   : NOT POOLED (Narrative Only) -> Reason: assessed_from_abstract_only
+      RoB 2     : RobLevel.LOW
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that this is a retrospective observational study using the target trial emulation framework. The protocol excludes observational studies.
+
+  [5] ID: 10.1016/j.molmet.2020.101102  |  Citation: Nauck et al. (2020). PMID:33068776
+      Title     : GLP-1 receptor agonists in the treatment of type 2 diabetes - state-of-the-art.
+      Source DB : openalex, pubmed  |  Verify: https://pubmed.ncbi.nlm.nih.gov/33068776/
+      Intervent.: GLP-1 RAs (events=None, N=None, mean=None, sd=None)
+      Control   : None (events=None, N=None, mean=None, sd=None)
+      Pooling   : NOT POOLED (Narrative Only) -> Reason: Missing arm event counts
+      RoB 2     : RobLevel.LOW
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that GLP-1 receptor agonists are used to treat type 2 diabetes, which is not the population specified in the protocol. The protocol specifies adult patients with type 2 diabetes and high cardiovascular risk.
+
+  [6] ID: 10.1101/2024.11.11.24317112  |  Citation: Brook et al. (2024). DOI:10.1101/2024.11.11.24317112
+      Title     : Potential Lives Saved Through Widespread Global Availability of GLP-1 Receptor Agonists: A Modeling Study
+      Source DB : preprints  |  Verify: https://doi.org/10.1101/2024.11.11.24317112
+      Intervent.: Intervention (events=None, N=None, mean=None, sd=None)
+      Control   : Control (events=None, N=None, mean=None, sd=None)
+      Pooling   : NOT POOLED (Narrative Only) -> Reason: Missing arm event counts
+      RoB 2     : RobLevel.LOW
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study attempts to quantify the potential impact of GLP-1 receptor agonists (GLP-1) in reducing global mortality linked to obesity, type 2 diabetes mellitus (T2DM), and cardiovascular disease (CVD). The protocol states that the intervention is GLP-1 receptor agonists (sem
+
+  [7] ID: 10.1530/eje-19-0566  |  Citation: Nauck et al. (2019). PMID:31600725
+      Title     : MANAGEMENT OF ENDOCRINE DISEASE: Are all GLP-1 agonists equal in the treatment of type 2 diabetes?
+      Source DB : openalex  |  Verify: https://pubmed.ncbi.nlm.nih.gov/31600725/
+      Intervent.: Liraglutide (events=None, N=None, mean=None, sd=None)
+      Control   : Other GLP-1 agonists (events=None, N=None, mean=None, sd=None)
+      Pooling   : NOT POOLED (Narrative Only) -> Reason: assessed_from_abstract_only
+      RoB 2     : RobLevel.LOW
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that most GLP-1 receptor agonists have been examined in cardiovascular outcomes studies. The protocol states that the eligible designs are Randomized Controlled Trial. The abstract does not state that the study is a Randomized Controlled Trial.
+
+  [8] ID: 10.1101/2025.04.17.649402  |  Citation: Windram et al. (2025). DOI:10.1101/2025.04.17.649402
+      Title     : Semaglutide, Tirzepatide, and Retatrutide Attenuate the Interoceptive Effects of Alcohol in Male and Female Rats
+      Source DB : preprints  |  Verify: https://doi.org/10.1101/2025.04.17.649402
+      Intervent.: Semaglutide (events=None, N=None, mean=None, sd=None)
+      Control   : Vehicle (events=None, N=None, mean=None, sd=None)
+      Pooling   : NOT POOLED (Narrative Only) -> Reason: Missing arm event counts
+      RoB 2     : RobLevel.LOW
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract describes studies on alcohol effects in rats, not on cardiovascular outcomes in patients with type 2 diabetes and high cardiovascular risk.
+
+  [9] ID: 10.1001/jama.2023.19574  |  Citation: Krüger et al. (2026). PMID:41207920
+      Title     : Cardiovascular outcomes of semaglutide and tirzepatide for patients with type 2 diabetes in clinical practice.
+      Source DB : pubmed  |  Verify: https://pubmed.ncbi.nlm.nih.gov/41207920/
+      Intervent.: Semaglutide (events=None, N=None, mean=None, sd=None)
+      Control   : Sitagliptin (events=None, N=None, mean=None, sd=None)
+      Pooling   : NOT POOLED (Narrative Only) -> Reason: no_outcome_data_in_abstract
+      RoB 2     : RobLevel.LOW
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states "Here we conducted five cohort studies to assess the effectiveness of tirzepatide and semaglutide in patients with elevated cardiovascular risk, including obesity and type 2 diabetes, enrolled in insurance programs in the USA between 2018 and 2025.", which is not a randomized con
+
+  [10] ID: 10.1111/dom.13361  |  Citation: Andreadis et al. (2018). PMID:29756388
+      Title     : Semaglutide for type 2 diabetes mellitus: A systematic review and meta-analysis.
+      Source DB : openalex, pubmed  |  Verify: https://pubmed.ncbi.nlm.nih.gov/29756388/
+      Intervent.: Intervention (events=None, N=None, mean=None, sd=None)
+      Control   : Control (events=None, N=None, mean=None, sd=None)
+      Pooling   : NOT POOLED (Narrative Only) -> Reason: assessed_from_abstract_only
+      RoB 2     : RobLevel.LOW
+      Inclusion : both reviewers agreed to include
+
+------------------------------------------------------------------------------
+7. APPROVED AT SCREENING BUT NOT POOLED IN META-ANALYSIS
+------------------------------------------------------------------------------
+  [1] ID: 10.1038/nrendo.2012.140  |  Stage: Phase 7 (Pooling)  |  Verify: https://pubmed.ncbi.nlm.nih.gov/22945360/
+      Title  : GLP-1 receptor agonists for individualized treatment of type 2 diabetes mellitus.
+      Reason : MISSING_BINARY_DATA: Requires n_events and n_total in both arms; one or more were missing.
+
+  [2] ID: 10.1101/2025.09.01.25334855  |  Stage: Phase 7 (Pooling)  |  Verify: https://doi.org/10.1101/2025.09.01.25334855
+      Title  : Comparative Efficacy and Safety of GLP-1 Receptor Agonists in Neurological and Nephrological Outcomes of Type 2 Diabetes: A Systematic Review and Network Meta-Analysis
+      Reason : MISSING_BINARY_DATA: Requires n_events and n_total in both arms; one or more were missing.
+
+  [3] ID: 10.1053/j.ajkd.2026.04.007  |  Stage: Phase 7 (Pooling)  |  Verify: https://pubmed.ncbi.nlm.nih.gov/42302979/
+      Title  : Comparison of Specific Glucagon-Like Peptide-1 Receptor Agonists on Kidney Outcomes Among Patients With Type 2 Diabetes.
+      Reason : MISSING_BINARY_DATA: Requires n_events and n_total in both arms; one or more were missing.
+
+  [4] ID: 10.1016/j.molmet.2020.101102  |  Stage: Phase 7 (Pooling)  |  Verify: https://pubmed.ncbi.nlm.nih.gov/33068776/
+      Title  : GLP-1 receptor agonists in the treatment of type 2 diabetes - state-of-the-art.
+      Reason : MISSING_BINARY_DATA: Requires n_events and n_total in both arms; one or more were missing.
+
+  [5] ID: 10.1101/2024.11.11.24317112  |  Stage: Phase 7 (Pooling)  |  Verify: https://doi.org/10.1101/2024.11.11.24317112
+      Title  : Potential Lives Saved Through Widespread Global Availability of GLP-1 Receptor Agonists: A Modeling Study
+      Reason : MISSING_BINARY_DATA: Requires n_events and n_total in both arms; one or more were missing.
+
+  [6] ID: 10.1530/eje-19-0566  |  Stage: Phase 7 (Pooling)  |  Verify: https://pubmed.ncbi.nlm.nih.gov/31600725/
+      Title  : MANAGEMENT OF ENDOCRINE DISEASE: Are all GLP-1 agonists equal in the treatment of type 2 diabetes?
+      Reason : MISSING_BINARY_DATA: Requires n_events and n_total in both arms; one or more were missing.
+
+  [7] ID: 10.1101/2025.04.17.649402  |  Stage: Phase 7 (Pooling)  |  Verify: https://doi.org/10.1101/2025.04.17.649402
+      Title  : Semaglutide, Tirzepatide, and Retatrutide Attenuate the Interoceptive Effects of Alcohol in Male and Female Rats
+      Reason : MISSING_BINARY_DATA: Requires n_events and n_total in both arms; one or more were missing.
+
+  [8] ID: 10.1001/jama.2023.19574  |  Stage: Phase 7 (Pooling)  |  Verify: https://pubmed.ncbi.nlm.nih.gov/41207920/
+      Title  : Cardiovascular outcomes of semaglutide and tirzepatide for patients with type 2 diabetes in clinical practice.
+      Reason : MISSING_BINARY_DATA: Requires n_events and n_total in both arms; one or more were missing.
+
+  [9] ID: 10.1111/dom.13361  |  Stage: Phase 7 (Pooling)  |  Verify: https://pubmed.ncbi.nlm.nih.gov/29756388/
+      Title  : Semaglutide for type 2 diabetes mellitus: A systematic review and meta-analysis.
+      Reason : MISSING_BINARY_DATA: Requires n_events and n_total in both arms; one or more were missing.
+
+  [10] ID: 10.1101/2024.05.06.592704  |  Stage: Phase 6 (Extraction Cap)  |  Verify: https://doi.org/10.1101/2024.05.06.592704
+      Title  : Semaglutide interferes with postnatal development of juvenile mice with compromised growth
+      Reason : Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=10 cap was reached.
+
+  [11] ID: 10.7326/annals-25-01724  |  Stage: Phase 6 (Extraction Cap)  |  Verify: https://pubmed.ncbi.nlm.nih.gov/41183330/
+      Title  : Comparative Gastrointestinal Safety of Dulaglutide, Semaglutide, and Tirzepatide in Adults With Type 2 Diabetes.
+      Reason : Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=10 cap was reached.
+
+  [12] ID: 10.3760/cma.j.cn112137-20260527-01398  |  Stage: Phase 6 (Extraction Cap)  |  Verify: https://pubmed.ncbi.nlm.nih.gov/42618499/
+      Title  : [Expert consensus on the clinical application of nutrient-stimulated hormone receptor agonist in the treatment of type 2 diabetes mellitus (2026 edition)].
+      Reason : Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=10 cap was reached.
+
+  [13] ID: 10.1016/j.biopha.2018.08.088  |  Stage: Phase 6 (Extraction Cap)  |  Verify: https://pubmed.ncbi.nlm.nih.gov/30372907/
+      Title  : Recent updates on GLP-1 agonists: Current advancements & challenges.
+      Reason : Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=10 cap was reached.
+
+  [14] ID: 10.1101/2024.10.28.24316312  |  Stage: Phase 6 (Extraction Cap)  |  Verify: https://doi.org/10.1101/2024.10.28.24316312
+      Title  : Racial and Ethnic Disparities in Prescribing of GLP-1 Receptor Agonists in the United States: A Retrospective Cohort Analysis
+      Reason : Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=10 cap was reached.
+
+  [15] ID: 10.1111/dom.14110  |  Stage: Phase 6 (Extraction Cap)  |  Verify: https://pubmed.ncbi.nlm.nih.gov/32519795/
+      Title  : The novel dual glucose-dependent insulinotropic polypeptide and glucagon-like peptide-1 (GLP-1) receptor agonist tirzepatide transiently delays gastric emptying similarly to selective long-acting GLP-1 receptor agonists.
+      Reason : Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=10 cap was reached.
+
+  [16] ID: 10.2174/011871529x480529260812061106  |  Stage: Phase 6 (Extraction Cap)  |  Verify: https://pubmed.ncbi.nlm.nih.gov/42708338/
+      Title  : SGLT-2 Inhibitors and GLP-1 Receptor Agonists in Managing Metabolic Syndrome Among Patients with Type 2 Diabetes Mellitus - A Narrative Review.
+      Reason : Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=10 cap was reached.
+
+  [17] ID: 10.1002/dmrr.3070  |  Stage: Phase 6 (Extraction Cap)  |  Verify: https://pubmed.ncbi.nlm.nih.gov/30156747/
+      Title  : Glucagon‐like peptide‐1 receptor agonists in type 2 diabetes treatment: are they all the same?
+      Reason : Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=10 cap was reached.
+
+  [18] ID: 10.1101/2025.10.07.680898  |  Stage: Phase 6 (Extraction Cap)  |  Verify: https://doi.org/10.1101/2025.10.07.680898
+      Title  : Gut delivery of pentameric GLP-1 using genetically engineered Bacillus subtilis
+      Reason : Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=10 cap was reached.
+
+  [19] ID: 10.1111/dom.14988  |  Stage: Phase 6 (Extraction Cap)  |  Verify: https://pubmed.ncbi.nlm.nih.gov/38388874/
+      Title  : Tirzepatide: A Review in Type 2 Diabetes.
+      Reason : Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=10 cap was reached.
+
+------------------------------------------------------------------------------
+8. DEDUPLICATION AUDIT LOG (32 DUPLICATES REMOVED)
+------------------------------------------------------------------------------
+  [1] Duplicate ID: 10.1016/j.molmet.2020.101090 (pubmed) -> Merged Into: 10.1016/j.molmet.2020.101102 [Matched on: pmid]
+      Title  : GLP-1 receptor agonists in the treatment of type 2 diabetes - state-of-the-art.
+      Verify : https://pubmed.ncbi.nlm.nih.gov/33068776/
+  [2] Duplicate ID: 10.1097/iae.0000000000004995 (europepmc) -> Merged Into: 10.1097/iae.0000000000004994 [Matched on: title]
+      Title  : RE: Comment on: "Impact of GLP-1 Receptor Agonists for Type 2 Diabetes Mellitus on the Development and Progression of Age-Related Macular Degeneration.
+      Verify : https://pubmed.ncbi.nlm.nih.gov/42640660/
+  [3] Duplicate ID: 10.1038/nrendo.2012.140 (pubmed) -> Merged Into: 10.1038/nrendo.2012.140 [Matched on: doi]
+      Title  : GLP-1 receptor agonists for individualized treatment of type 2 diabetes mellitus.
+      Verify : https://pubmed.ncbi.nlm.nih.gov/22945360/
+  [4] Duplicate ID: 10.2165/11592810-000000000-00000 (openalex) -> Merged Into: 10.1002/14651858.cd006423.pub2 [Matched on: title]
+      Title  : Glucagon-like Peptide–1 Analogues for Type 2 Diabetes Mellitus
+      Verify : https://pubmed.ncbi.nlm.nih.gov/21902291/
+  [5] Duplicate ID: 10.1111/dom.13361 (pubmed) -> Merged Into: 10.1111/dom.13361 [Matched on: doi]
+      Title  : Semaglutide for type 2 diabetes mellitus: A systematic review and meta-analysis.
+      Verify : https://pubmed.ncbi.nlm.nih.gov/29756388/
+  [6] Duplicate ID: 10.5281/zenodo.22812604 (openalex) -> Merged Into: 10.5281/zenodo.22812603 [Matched on: title]
+      Title  : Long-Term Follow-Up of GLP-1 receptor agonist therapy for type 2 diabetes mellitus
+      Verify : https://doi.org/10.5281/zenodo.22812604
+  [7] Duplicate ID: 10.1093/ajhp/zxag086 (openalex) -> Merged Into: 10.1093/ajhp/zxag086 [Matched on: doi]
+      Title  : Pharmacist-led management of GLP-1 and GIP/GLP-1 receptor agonists in type 2 diabetes mellitus
+      Verify : https://pubmed.ncbi.nlm.nih.gov/41870187/
+  [8] Duplicate ID: 10.15829/2713-0177-2024-5-1-04 (openalex) -> Merged Into: 10.62751/2713-0177-2024-5-1-04 [Matched on: title]
+      Title  : The effect of semaglutide on body weight in patients with type 2 diabetes mellitus
+      Verify : https://doi.org/10.15829/2713-0177-2024-5-1-04
+  [9] Duplicate ID: 10.1371/journal.pone.0160221 (pubmed) -> Merged Into: 10.3389/fendo.2022.1043789 [Matched on: pmid]
+      Title  : Association between different GLP-1 receptor agonists and gastrointestinal adverse reactions: A real-world disproportionality study based on FDA adverse event reporting system data
+      Verify : https://pubmed.ncbi.nlm.nih.gov/36568085/
+  [10] Duplicate ID: 10.1016/j.dsx.2022.102427 (openalex) -> Merged Into: 10.1016/j.dsx.2022.102427 [Matched on: doi]
+      Title  : Adverse drug reactions of GLP-1 agonists: A systematic review of case reports
+      Verify : https://pubmed.ncbi.nlm.nih.gov/35217468/
+  [11] Duplicate ID: 10.1097/mca.0000000000000830 (pubmed) -> Merged Into: 10.3389/fendo.2021.645566 [Matched on: pmid]
+      Title  : Cardiovascular Safety and Benefits of Semaglutide in Patients With Type 2 Diabetes: Findings From SUSTAIN 6 and PIONEER 6.
+      Verify : https://pubmed.ncbi.nlm.nih.gov/33854484/
+  [12] Duplicate ID: 10.1016/j.numecd.2021.07.015 (pubmed) -> Merged Into: 10.1016/j.numecd.2021.07.015 [Matched on: doi]
+      Title  : Effects of GLP-1 receptor agonists on myokine levels and pro-inflammatory cytokines in patients with type 2 diabetes mellitus.
+      Verify : https://pubmed.ncbi.nlm.nih.gov/34518091/
+  [13] Duplicate ID: 10.1016/j.ajo.2026.02.004 (europepmc) -> Merged Into: 10.1016/j.ajo.2026.01.042 [Matched on: title]
+      Title  : Reply to Comment on: "Potential Eye Disorders in People With and Without Type 2 Diabetes Mellitus Exposed to GLP-1 Receptor Agonists: An Examination of the FAERS Database".
+      Verify : https://pubmed.ncbi.nlm.nih.gov/41679369/
+  [14] Duplicate ID: 10.1016/s2213-8587(19)30249-9 (openalex) -> Merged Into: 10.1016/s2213-8587(19)30249-9 [Matched on: doi]
+      Title  : Cardiovascular, mortality, and kidney outcomes with GLP-1 receptor agonists in patients with type 2 diabetes: a systematic review and meta-analysis of cardiovascular outcome trials
+      Verify : https://pubmed.ncbi.nlm.nih.gov/31422062/
+  [15] Duplicate ID: 10.3390/biomedicines14040806 (openalex) -> Merged Into: 10.3390/biomedicines14040806 [Matched on: doi]
+      Title  : The Interplay Between GLP-1-Based Therapies, the Gut Microbiome, and MASLD/MASH in Type 2 Diabetes Mellitus: A Narrative Review
+      Verify : https://pubmed.ncbi.nlm.nih.gov/42072347/
+  [16] Duplicate ID: 10.1016/j.diabres.2025.112910 (europepmc) -> Merged Into: 10.1016/j.diabres.2025.112910 [Matched on: doi]
+      Title  : Comparative effectiveness of GLP-1 receptor agonists on cardiovascular outcomes among adults with type 2 diabetes and moderate cardiovascular risk: emulation of a target trial.
+      Verify : https://pubmed.ncbi.nlm.nih.gov/40983112/
+  [17] Duplicate ID: 10.1056/nejmoa1612917 (pubmed) -> Merged Into: 10.1155/2018/4020492 [Matched on: pmid]
+      Title  : GLP-1 Receptor Agonists and Cardiovascular Disease in Patients with Type 2 Diabetes.
+      Verify : https://pubmed.ncbi.nlm.nih.gov/29805980/
+  [18] Duplicate ID: 10.1016/j.diabres.2025.112910 (openalex) -> Merged Into: 10.1016/j.diabres.2025.112910 [Matched on: doi]
+      Title  : Comparative effectiveness of GLP-1 receptor agonists on cardiovascular outcomes among adults with type 2 diabetes and moderate cardiovascular risk: emulation of a target trial
+      Verify : https://pubmed.ncbi.nlm.nih.gov/40983112/
+  [19] Duplicate ID: 10.1001/jamanetworkopen.2024.57349 (openalex) -> Merged Into: 10.1101/2024.07.26.24311058 [Matched on: title]
+      Title  : Discontinuation and Reinitiation of Dual-Labeled GLP-1 Receptor Agonists Among US Adults With Overweight or Obesity
+      Verify : https://pubmed.ncbi.nlm.nih.gov/39888616/
+  [20] Duplicate ID: 10.1007/s11154-023-09807-3 (pubmed) -> Merged Into: 10.1007/s11154-023-09807-3 [Matched on: doi]
+      Title  : Effects of GLP-1 receptor agonists on neurological complications of diabetes.
+      Verify : https://pubmed.ncbi.nlm.nih.gov/37231200/
+  [21] Duplicate ID: 10.1016/s2213-8587(18)30024-x (openalex) -> Merged Into: 10.1016/s2213-8587(18)30024-x [Matched on: doi]
+      Title  : Semaglutide versus dulaglutide once weekly in patients with type 2 diabetes (SUSTAIN 7): a randomised, open-label, phase 3b trial
+      Verify : https://pubmed.ncbi.nlm.nih.gov/29397376/
+  [22] Duplicate ID: 10.1016/s0025-7753(14)70104-6 (pubmed) -> Merged Into: 10.1016/s0025-7753(14)70104-6 [Matched on: doi]
+      Title  : [Effects of GLP-1 receptor agonists on carbohydrate metabolism control].
+      Verify : https://pubmed.ncbi.nlm.nih.gov/25326839/
+  [23] Duplicate ID: 10.1111/dom.13479 (openalex) -> Merged Into: 10.1111/dom.13479 [Matched on: doi]
+      Title  : Impact on HbA1c and body weight of switching from other GLP‐1 receptor agonists to semaglutide: A model‐based approach
+      Verify : https://pubmed.ncbi.nlm.nih.gov/30047216/
+  [24] Duplicate ID: 10.1111/dom.15312 (openalex) -> Merged Into: 10.1111/dom.15312 [Matched on: doi]
+      Title  : Effect of tirzepatide on glycaemic control and weight loss compared with other glucagon‐like peptide‐1 receptor agonists in Japanese patients with type 2 diabetes mellitus
+      Verify : https://pubmed.ncbi.nlm.nih.gov/37828829/
+  [25] Duplicate ID: 10.1016/j.biopha.2018.08.088 (pubmed) -> Merged Into: 10.1016/j.biopha.2018.08.088 [Matched on: doi]
+      Title  : Recent updates on GLP-1 agonists: Current advancements & challenges.
+      Verify : https://pubmed.ncbi.nlm.nih.gov/30372907/
+  [26] Duplicate ID: 10.1016/j.diabres.2021.108656 (pubmed) -> Merged Into: 10.1016/j.diabres.2021.108656 [Matched on: doi]
+      Title  : Efficacy and safety of the glucagon-like peptide-1 receptor agonist oral semaglutide in patients with type 2 diabetes mellitus: A systematic review and meta-analysis.
+      Verify : https://pubmed.ncbi.nlm.nih.gov/33434602/
+  [27] Duplicate ID: 10.7326/m20-0864 (openalex) -> Merged Into: 10.7326/m20-0864 [Matched on: doi]
+      Title  : Comparative Effectiveness of Glucose-Lowering Drugs for Type 2 Diabetes
+      Verify : https://pubmed.ncbi.nlm.nih.gov/32598218/
+  [28] Duplicate ID: 10.1093/eurheartj/ehz486 (pubmed) -> Merged Into: 10.1136/postgradmedj-2019-137186 [Matched on: pmid]
+      Title  : An overview of GLP-1 agonists and recent cardiovascular outcomes trials.
+      Verify : https://pubmed.ncbi.nlm.nih.gov/31801807/
+  [29] Duplicate ID: 10.20944/preprints202506.0860.v1 (europepmc) -> Merged Into: 10.20944/preprints202506.0860.v1 [Matched on: doi]
+      Title  : Perioperative Management of Patients on GLP-1 Receptor Agonists: Clinical Implications and Best Practices
+      Verify : https://doi.org/10.20944/preprints202506.0860.v1
+  [30] Duplicate ID: 10.1016/j.jval.2018.09.773 (openalex) -> Merged Into: 10.1007/s41669-019-0171-y [Matched on: title]
+      Title  : PDB68 - COST-EFFECTIVENESS ANALYSIS OF EXENATIDE VERSUS GLP-1 RECEPTOR AGONISTS IN PATIENTS WITH TYPE 2 DIABETES MELLITUS
+      Verify : https://doi.org/10.1016/j.jval.2018.09.773
+  [31] Duplicate ID: NCT05473286 (clinicaltrials) -> Merged Into: NCT05316662 [Matched on: title]
+      Title  : A Research Study Looking at How Oral Semaglutide Works in People With Type 2 Diabetes in Germany, as Part of Local Clinical Practice
+      Verify : https://clinicaltrials.gov/study/NCT05473286
+  [32] Duplicate ID: 10.21203/rs.3.rs-7631508/v1 (europepmc) -> Merged Into: 10.1016/j.mcn.2026.104091 [Matched on: title]
+      Title  : The Effects of GLP-1 Receptor Agonists on Alzheimer's Pathophysiology: A Systematic Review
+      Verify : https://doi.org/10.21203/rs.3.rs-7631508/v1
+
+------------------------------------------------------------------------------
+9. META-ANALYSIS RESULTS
+------------------------------------------------------------------------------
+  Effect measure : Risk Ratio
+  Pooled estimate: 1.558 (95% CI 1.255 to 1.934)
+  p-value        : 5.74e-05
+  Studies pooled : 1   Participants: 30704
+  Heterogeneity  : not estimable
+
+  [INFO] Publication-bias testing was not performed (k=1 < 10). Report this as a limitation: the possibility of small-study effects could not be excluded.
+
+------------------------------------------------------------------------------
+10. CERTAINTY OF EVIDENCE (GRADE)
+------------------------------------------------------------------------------
+  Overall rating : High
+    risk of bias       Not serious  (-0)  |  The risk of bias assessment is not available, but the engine flags indicate that the single study is at low risk of bias.
+    inconsistency      Not serious  (-0)  |  I-squared is None% and tau-squared is 0.0, indicating no heterogeneity.
+    indirectness       Not serious  (-0)  |  The review question is not directly addressed by the included study.
+    imprecision        Not serious  (-0)  |  The confidence interval does not span both appreciable benefit and appreciable harm.
+    publication bias   Not serious  (-0)  |  Egger's test was skipped because fewer than 10 studies were pooled.
+  Summary: GLP-1 receptor agonists reduce the risk of major adverse cardiovascular events in adults with type 2 diabetes and high cardiovascular risk. The evidence is moderately confident, as the single study is at low risk of bias and there is no evidence of heterogeneity or publication bias.
+  NOTE: The model reported 'Moderate' but its own domain judgements total 0 downgrade level(s) from 'High', which gives 'High'. The computed value is used.
+
+------------------------------------------------------------------------------
+11. FIGURES & FULL MARKDOWN REPORT
+------------------------------------------------------------------------------
+  forest       /usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20261006-085615/forest.png
+  funnel       /usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20261006-085615/funnel.png
+  report.md    /usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20261006-085615/report.md
+
+------------------------------------------------------------------------------
+This is a research tool that supports expert reviewers. It does not
+replace them, and its output is not clinical advice. Every number
+above was computed in Python from extracted data; verify against the
+source records in result.json and report.md before citing.
+------------------------------------------------------------------------------

@@ -1,0 +1,117 @@
+==============================================================================
+SYSTEMATIC REVIEW AND META-ANALYSIS (FULL TRANSPARENCY REPORT)
+==============================================================================
+Question : Does aspirin reduce mortality in adults after myocardial infarction compared with placebo?
+Run      : run-20260917-134145  (2026-09-17T13:41:45.104989+00:00)
+Elapsed  : 499.8s
+
+------------------------------------------------------------------------------
+1. STRUCTURED CLINICAL ABSTRACT & EXECUTIVE SYNTHESIS
+------------------------------------------------------------------------------
+  Comparison      : [Aspirin] vs. [Placebo]
+  Target Cohort   : Adults with a prior myocardial infarction
+  Primary Endpoint: Mortality
+
+  Synthesis Status: Quantitative two-arm pooling was not executed because fewer than 2
+                    extracted abstracts reported complete comparative arm counts. See Section 5
+                    below for the structured qualitative and single-arm study synthesis.
+
+------------------------------------------------------------------------------
+2. PROTOCOL (PICO)
+------------------------------------------------------------------------------
+  Population   : Adults with a prior myocardial infarction
+  Intervention : Aspirin
+  Comparator   : Placebo
+  Outcome      : Mortality
+
+------------------------------------------------------------------------------
+3. SEARCH STRATEGY
+------------------------------------------------------------------------------
+  ("Adults with a prior myocardial infarction"[tiab] OR "Myocardial Infarction"[MeSH Terms]) AND (Aspirin[tiab] OR "acetylsalicylic acid"[tiab] OR ASA[tiab] OR "Aspirin"[MeSH Terms])
+
+------------------------------------------------------------------------------
+4. PRISMA 2020 FLOW & RECORD ACCOUNTING
+------------------------------------------------------------------------------
+  preprints....................... 0
+  europepmc....................... 4
+  openalex........................ 0
+  crossref........................ 10
+  pubmed.......................... 10
+  clinicaltrials.................. 0
+  semantic_scholar................ 0
+  TOTAL IDENTIFIED................ 24
+  duplicates removed.............. -0
+  unique records after dedup...... 24
+  unscreened (screening cap)...... -18
+  records screened................ 6
+  excluded at screening........... -0
+  approved at screening........... 6
+  skipped (extraction cap)........ -2
+  studies extracted (Phase 6)..... 4
+  FINAL STUDIES POOLED............ 6
+
+------------------------------------------------------------------------------
+5. INCLUDED & EXTRACTED STUDIES (4 STUDIES)
+------------------------------------------------------------------------------
+  [1] ID: 10.1002/trc2.12056  |  Citation: EE et al. (2020)
+      Title     : (Title not stated)
+      Source DB : Database  |  Verify: https://doi.org/10.1002/trc2.12056
+      Intervent.: Intervention (events=None, N=None, mean=None, sd=None)
+      Control   : Control (events=None, N=None, mean=None, sd=None)
+      Pooling   : NOT POOLED (Narrative Only) -> Reason: Missing arm event counts
+      RoB 2     : Low risk
+
+  [2] ID: 10.1002/14651858.cd010649.pub2  |  Citation: J et al. (2018)
+      Title     : (Title not stated)
+      Source DB : Database  |  Verify: https://doi.org/10.1002/14651858.cd010649.pub2
+      Intervent.: Intervention (events=None, N=2392, mean=None, sd=None)
+      Control   : Control (events=None, N=None, mean=None, sd=None)
+      Pooling   : NOT POOLED (Narrative Only) -> Reason: Missing arm event counts
+      RoB 2     : Low risk
+
+  [3] ID: PMC10576948  |  Citation: Anon (2023)
+      Title     : (Title not stated)
+      Source DB : Database  |  Verify: https://pmc.ncbi.nlm.nih.gov/articles/PMC10576948/
+      Intervent.: Intervention (events=None, N=None, mean=None, sd=None)
+      Control   : Control (events=None, N=None, mean=None, sd=None)
+      Pooling   : NOT POOLED (Narrative Only) -> Reason: Missing arm event counts
+      RoB 2     : Low risk
+
+  [4] ID: PMC4894295  |  Citation: Anon (2016)
+      Title     : (Title not stated)
+      Source DB : Database  |  Verify: https://pmc.ncbi.nlm.nih.gov/articles/PMC4894295/
+      Intervent.: Intervention (events=None, N=None, mean=None, sd=None)
+      Control   : Control (events=None, N=None, mean=None, sd=None)
+      Pooling   : NOT POOLED (Narrative Only) -> Reason: Missing arm event counts
+      RoB 2     : Low risk
+
+------------------------------------------------------------------------------
+7. APPROVED AT SCREENING BUT NOT POOLED IN META-ANALYSIS
+------------------------------------------------------------------------------
+  [1] ID: 10.1002/trc2.12056  |  Stage: Phase 7 (Pooling)  |  Verify: https://doi.org/10.1002/trc2.12056
+      Title  : EE et al. (2020)
+      Reason : MISSING_BINARY_DATA: Requires n_events and n_total in both arms; one or more were missing.
+
+  [2] ID: 10.1002/14651858.cd010649.pub2  |  Stage: Phase 7 (Pooling)  |  Verify: https://doi.org/10.1002/14651858.cd010649.pub2
+      Title  : J et al. (2018)
+      Reason : MISSING_BINARY_DATA: Requires n_events and n_total in both arms; one or more were missing.
+
+  [3] ID: PMC10576948  |  Stage: Phase 7 (Pooling)  |  Verify: https://pmc.ncbi.nlm.nih.gov/articles/PMC10576948/
+      Title  : Anon (2023)
+      Reason : MISSING_BINARY_DATA: Requires n_events and n_total in both arms; one or more were missing.
+
+  [4] ID: PMC4894295  |  Stage: Phase 7 (Pooling)  |  Verify: https://pmc.ncbi.nlm.nih.gov/articles/PMC4894295/
+      Title  : Anon (2016)
+      Reason : MISSING_BINARY_DATA: Requires n_events and n_total in both arms; one or more were missing.
+
+------------------------------------------------------------------------------
+ISSUES ENCOUNTERED
+------------------------------------------------------------------------------
+  - Quantitative pooling was not possible: No study contained data sufficient for this analysis.. This usually means the abstracts did not report event counts or means with standard deviations. A narrative synthesis is the correct output in that case, not a fabricated number.
+
+------------------------------------------------------------------------------
+This is a research tool that supports expert reviewers. It does not
+replace them, and its output is not clinical advice. Every number
+above was computed in Python from extracted data; verify against the
+source records in result.json and report.md before citing.
+------------------------------------------------------------------------------

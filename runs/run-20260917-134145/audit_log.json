@@ -1,0 +1,128 @@
+[
+  {
+    "source": "preprints",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "((\"Adults with a prior myocardial infarction\"[tiab] OR \"Myocardial Infarction\"[MeSH Terms]) AND (Aspirin[tiab] OR \"acetylsalicylic acid\"[tiab] OR ASA[tiab] OR \"Aspirin\"[MeSH Terms])) AND (SRC:PPR)",
+      "format": "json",
+      "resultType": "core",
+      "pageSize": 100,
+      "cursorMark": "*"
+    },
+    "timestamp_utc": "2026-09-17T13:42:45.271641+00:00",
+    "status_code": 200,
+    "n_results": 0,
+    "duration_ms": 836,
+    "error": null
+  },
+  {
+    "source": "europepmc",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "(\"Adults with a prior myocardial infarction\"[tiab] OR \"Myocardial Infarction\"[MeSH Terms]) AND (Aspirin[tiab] OR \"acetylsalicylic acid\"[tiab] OR ASA[tiab] OR \"Aspirin\"[MeSH Terms])",
+      "format": "json",
+      "resultType": "core",
+      "pageSize": 10,
+      "cursorMark": "*"
+    },
+    "timestamp_utc": "2026-09-17T13:42:45.504855+00:00",
+    "status_code": 200,
+    "n_results": 4,
+    "duration_ms": 1075,
+    "error": null
+  },
+  {
+    "source": "pubmed",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi",
+    "params": {
+      "db": "pubmed",
+      "term": "(\"Adults with a prior myocardial infarction\"[tiab] OR \"Myocardial Infarction\"[MeSH Terms]) AND (Aspirin[tiab] OR \"acetylsalicylic acid\"[tiab] OR ASA[tiab] OR \"Aspirin\"[MeSH Terms])",
+      "retmax": 10,
+      "retmode": "json",
+      "sort": "relevance",
+      "tool": "SRMA-Agent",
+      "email": ""
+    },
+    "timestamp_utc": "2026-09-17T13:42:45.578711+00:00",
+    "status_code": 200,
+    "n_results": 6101,
+    "duration_ms": 1141,
+    "error": null
+  },
+  {
+    "source": "openalex",
+    "url": "https://api.openalex.org/works",
+    "params": {
+      "search": "(\"Adults with a prior myocardial infarction\"[tiab] OR \"Myocardial Infarction\"[MeSH Terms]) AND (Aspirin[tiab] OR \"acetylsalicylic acid\"[tiab] OR ASA[tiab] OR \"Aspirin\"[MeSH Terms])",
+      "mailto": "",
+      "per-page": 10,
+      "cursor": "*"
+    },
+    "timestamp_utc": "2026-09-17T13:42:45.603746+00:00",
+    "status_code": 200,
+    "n_results": 0,
+    "duration_ms": 1169,
+    "error": null
+  },
+  {
+    "source": "crossref",
+    "url": "https://api.crossref.org/works",
+    "params": {
+      "query.bibliographic": "(\"Adults with a prior myocardial infarction\"[tiab] OR \"Myocardial Infarction\"[MeSH Terms]) AND (Aspirin[tiab] OR \"acetylsalicylic acid\"[tiab] OR ASA[tiab] OR \"Aspirin\"[MeSH Terms])",
+      "rows": 10,
+      "cursor": "*",
+      "mailto": ""
+    },
+    "timestamp_utc": "2026-09-17T13:42:46.559135+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 2129,
+    "error": null
+  },
+  {
+    "source": "pubmed",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi",
+    "params": {
+      "db": "pubmed",
+      "id": "34824680,40888737,29766750,36047409,35471505,39780702,39115322,31177983,41791655,35837782",
+      "retmode": "xml",
+      "tool": "SRMA-Agent",
+      "email": ""
+    },
+    "timestamp_utc": "2026-09-17T13:42:46.760025+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1181,
+    "error": null
+  },
+  {
+    "source": "clinicaltrials",
+    "url": "https://clinicaltrials.gov/api/v2/studies",
+    "params": {
+      "query.term": "(\"Adults with a prior myocardial infarction\"[tiab] OR \"Myocardial Infarction\"[MeSH Terms]) AND (Aspirin[tiab] OR \"acetylsalicylic acid\"[tiab] OR ASA[tiab] OR \"Aspirin\"[MeSH Terms])",
+      "pageSize": 10,
+      "format": "json",
+      "countTotal": "true"
+    },
+    "timestamp_utc": "2026-09-17T13:42:52.233373+00:00",
+    "status_code": 400,
+    "n_results": null,
+    "duration_ms": 7804,
+    "error": "HTTPError: 400 Client Error: Bad Request for url: https://clinicaltrials.gov/api/v2/studies?query.term=%28%22Adults+with+a+prior+myocardial+infarction%22%5Btiab%5D+OR+%22Myocardial+Infarction%22%5BMeSH+Terms%5D%29+AND+%28Aspirin%5Btiab%5D+OR+%22acetylsalicylic+acid%22%5Btiab%5D+OR+ASA%5Btiab%5D+OR+%22Aspirin%22%5BMeSH+Terms%5D%29&pageSize=10&format=json&countTotal=true"
+  },
+  {
+    "source": "semantic_scholar",
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search",
+    "params": {
+      "query": "(\"Adults with a prior myocardial infarction\"[tiab] OR \"Myocardial Infarction\"[MeSH Terms]) AND (Aspirin[tiab] OR \"acetylsalicylic acid\"[tiab] OR ASA[tiab] OR \"Aspirin\"[MeSH Terms])",
+      "limit": 10,
+      "offset": 0,
+      "fields": "paperId,externalIds,title,abstract,venue,year,authors,publicationTypes,fieldsOfStudy,citationCount,referenceCount,openAccessPdf,isOpenAccess,url,publicationDate,journal"
+    },
+    "timestamp_utc": "2026-09-17T13:42:52.528192+00:00",
+    "status_code": 429,
+    "n_results": null,
+    "duration_ms": 8090,
+    "error": "HTTP 429"
+  }
+]

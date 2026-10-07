@@ -1,0 +1,1390 @@
+{
+  "ok": true,
+  "run_id": "run-20260921-060633",
+  "run_dir": "/usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20260921-060633",
+  "question": "Does aspirin reduce mortality in adults after myocardial infarction compared with placebo or control?",
+  "generated_utc": "2026-09-21T06:06:33.970573+00:00",
+  "config": {
+    "gemini_backend": "ai-studio",
+    "orchestrator_model": "gemini-3.6-flash",
+    "clinical_model": "ollama_chat/medgemma"
+  },
+  "phases_completed": [
+    "protocol",
+    "search_strategy",
+    "search",
+    "deduplication",
+    "screening",
+    "extraction",
+    "meta_analysis",
+    "plots",
+    "grade"
+  ],
+  "errors": [],
+  "protocol": {
+    "population": "Adults with a prior myocardial infarction",
+    "intervention": "Aspirin",
+    "comparator": "Placebo or control",
+    "primary_outcome": "Mortality",
+    "secondary_outcomes": [],
+    "study_designs": [
+      "Randomized Controlled Trial"
+    ],
+    "inclusion_criteria": [
+      "Adults with a prior myocardial infarction",
+      "Randomized Controlled Trial"
+    ],
+    "exclusion_criteria": [
+      "Animal studies",
+      "In-vitro studies",
+      "Narrative reviews",
+      "Editorials",
+      "Case reports"
+    ],
+    "search_keywords": [
+      "aspirin",
+      "acetylsalicylic acid",
+      "ASA"
+    ],
+    "mesh_terms": [
+      "Aspirin",
+      "Myocardial Infarction",
+      "Mortality"
+    ]
+  },
+  "protocol_text": "  Population   : Adults with a prior myocardial infarction\n  Intervention : Aspirin\n  Comparator   : Placebo or control\n  Primary outcome : Mortality\n  Eligible designs : Randomized Controlled Trial\n  Inclusion criteria:\n      - Adults with a prior myocardial infarction\n      - Randomized Controlled Trial\n  Exclusion criteria:\n      - Animal studies\n      - In-vitro studies\n      - Narrative reviews\n      - Editorials\n      - Case reports",
+  "search_strategy": {
+    "population_terms": [
+      "myocardial infarction",
+      "heart attack",
+      "post-MI",
+      "STEMI",
+      "NSTEMI",
+      "acute coronary syndrome"
+    ],
+    "population_mesh": [
+      "Myocardial Infarction"
+    ],
+    "intervention_terms": [
+      "aspirin",
+      "acetylsalicylic acid",
+      "ASA"
+    ],
+    "intervention_mesh": [
+      "Aspirin"
+    ],
+    "outcome_terms": [
+      "mortality"
+    ],
+    "outcome_excluded_from_query": true,
+    "outcome_exclusion_rationale": "Trials often omit outcome names from the title and abstract. Requiring an outcome term in the Boolean AND chain is a known cause of missed eligible studies (Cochrane Handbook).",
+    "hygiene_notes": []
+  },
+  "query": "(\"myocardial infarction\"[tiab] OR \"heart attack\"[tiab] OR post-MI[tiab] OR STEMI[tiab] OR NSTEMI[tiab] OR \"acute coronary syndrome\"[tiab] OR \"Myocardial Infarction\"[MeSH Terms]) AND (aspirin[tiab] OR \"acetylsalicylic acid\"[tiab] OR ASA[tiab] OR \"Aspirin\"[MeSH Terms])",
+  "queries_by_source": {
+    "clinicaltrials": "(\"myocardial infarction\" OR \"heart attack\" OR post-MI OR STEMI OR NSTEMI OR \"acute coronary syndrome\") AND (aspirin OR \"acetylsalicylic acid\" OR ASA)",
+    "crossref": "myocardial infarction heart attack aspirin acetylsalicylic acid",
+    "europepmc": "(TITLE_ABS:\"myocardial infarction\" OR TITLE_ABS:\"heart attack\" OR TITLE_ABS:post-MI OR TITLE_ABS:STEMI OR TITLE_ABS:NSTEMI OR TITLE_ABS:\"acute coronary syndrome\" OR MESH:\"Myocardial Infarction\") AND (TITLE_ABS:aspirin OR TITLE_ABS:\"acetylsalicylic acid\" OR TITLE_ABS:ASA OR MESH:\"Aspirin\")",
+    "openalex": "(\"myocardial infarction\" OR \"heart attack\" OR post-MI OR STEMI OR NSTEMI OR \"acute coronary syndrome\") AND (aspirin OR \"acetylsalicylic acid\" OR ASA)",
+    "preprints": "(TITLE_ABS:\"myocardial infarction\" OR TITLE_ABS:\"heart attack\" OR TITLE_ABS:post-MI OR TITLE_ABS:STEMI OR TITLE_ABS:NSTEMI OR TITLE_ABS:\"acute coronary syndrome\" OR MESH:\"Myocardial Infarction\") AND (TITLE_ABS:aspirin OR TITLE_ABS:\"acetylsalicylic acid\" OR TITLE_ABS:ASA OR MESH:\"Aspirin\")",
+    "pubmed": "(\"myocardial infarction\"[tiab] OR \"heart attack\"[tiab] OR post-MI[tiab] OR STEMI[tiab] OR NSTEMI[tiab] OR \"acute coronary syndrome\"[tiab] OR \"Myocardial Infarction\"[MeSH Terms]) AND (aspirin[tiab] OR \"acetylsalicylic acid\"[tiab] OR ASA[tiab] OR \"Aspirin\"[MeSH Terms])",
+    "semantic_scholar": "myocardial infarction heart attack aspirin acetylsalicylic acid"
+  },
+  "search": {
+    "query": "(\"myocardial infarction\"[tiab] OR \"heart attack\"[tiab] OR post-MI[tiab] OR STEMI[tiab] OR NSTEMI[tiab] OR \"acute coronary syndrome\"[tiab] OR \"Myocardial Infarction\"[MeSH Terms]) AND (aspirin[tiab] OR \"acetylsalicylic acid\"[tiab] OR ASA[tiab] OR \"Aspirin\"[MeSH Terms])",
+    "queries_by_source": {
+      "clinicaltrials": "(\"myocardial infarction\" OR \"heart attack\" OR post-MI OR STEMI OR NSTEMI OR \"acute coronary syndrome\") AND (aspirin OR \"acetylsalicylic acid\" OR ASA)",
+      "crossref": "myocardial infarction heart attack aspirin acetylsalicylic acid",
+      "europepmc": "(TITLE_ABS:\"myocardial infarction\" OR TITLE_ABS:\"heart attack\" OR TITLE_ABS:post-MI OR TITLE_ABS:STEMI OR TITLE_ABS:NSTEMI OR TITLE_ABS:\"acute coronary syndrome\" OR MESH:\"Myocardial Infarction\") AND (TITLE_ABS:aspirin OR TITLE_ABS:\"acetylsalicylic acid\" OR TITLE_ABS:ASA OR MESH:\"Aspirin\")",
+      "openalex": "(\"myocardial infarction\" OR \"heart attack\" OR post-MI OR STEMI OR NSTEMI OR \"acute coronary syndrome\") AND (aspirin OR \"acetylsalicylic acid\" OR ASA)",
+      "preprints": "(TITLE_ABS:\"myocardial infarction\" OR TITLE_ABS:\"heart attack\" OR TITLE_ABS:post-MI OR TITLE_ABS:STEMI OR TITLE_ABS:NSTEMI OR TITLE_ABS:\"acute coronary syndrome\" OR MESH:\"Myocardial Infarction\") AND (TITLE_ABS:aspirin OR TITLE_ABS:\"acetylsalicylic acid\" OR TITLE_ABS:ASA OR MESH:\"Aspirin\")",
+      "pubmed": "(\"myocardial infarction\"[tiab] OR \"heart attack\"[tiab] OR post-MI[tiab] OR STEMI[tiab] OR NSTEMI[tiab] OR \"acute coronary syndrome\"[tiab] OR \"Myocardial Infarction\"[MeSH Terms]) AND (aspirin[tiab] OR \"acetylsalicylic acid\"[tiab] OR ASA[tiab] OR \"Aspirin\"[MeSH Terms])",
+      "semantic_scholar": "myocardial infarction heart attack aspirin acetylsalicylic acid"
+    },
+    "per_source": {
+      "clinicaltrials": {
+        "status": "success",
+        "count": 100,
+        "error": null,
+        "query_sent": "(\"myocardial infarction\" OR \"heart attack\" OR post-MI OR STEMI OR NSTEMI OR \"acute coronary syndrome\") AND (aspirin OR \"acetylsalicylic acid\" OR ASA)"
+      },
+      "pubmed": {
+        "status": "success",
+        "count": 100,
+        "error": null,
+        "query_sent": "(\"myocardial infarction\"[tiab] OR \"heart attack\"[tiab] OR post-MI[tiab] OR STEMI[tiab] OR NSTEMI[tiab] OR \"acute coronary syndrome\"[tiab] OR \"Myocardial Infarction\"[MeSH Terms]) AND (aspirin[tiab] OR \"acetylsalicylic acid\"[tiab] OR ASA[tiab] OR \"Aspirin\"[MeSH Terms])"
+      },
+      "crossref": {
+        "status": "success",
+        "count": 100,
+        "error": null,
+        "query_sent": "myocardial infarction heart attack aspirin acetylsalicylic acid"
+      },
+      "openalex": {
+        "status": "success",
+        "count": 100,
+        "error": null,
+        "query_sent": "(\"myocardial infarction\" OR \"heart attack\" OR post-MI OR STEMI OR NSTEMI OR \"acute coronary syndrome\") AND (aspirin OR \"acetylsalicylic acid\" OR ASA)"
+      },
+      "semantic_scholar": {
+        "status": "success",
+        "count": 0,
+        "error": null,
+        "query_sent": "myocardial infarction heart attack aspirin acetylsalicylic acid"
+      },
+      "europepmc": {
+        "status": "success",
+        "count": 100,
+        "error": null,
+        "query_sent": "(TITLE_ABS:\"myocardial infarction\" OR TITLE_ABS:\"heart attack\" OR TITLE_ABS:post-MI OR TITLE_ABS:STEMI OR TITLE_ABS:NSTEMI OR TITLE_ABS:\"acute coronary syndrome\" OR MESH:\"Myocardial Infarction\") AND (TITLE_ABS:aspirin OR TITLE_ABS:\"acetylsalicylic acid\" OR TITLE_ABS:ASA OR MESH:\"Aspirin\")"
+      },
+      "preprints": {
+        "status": "error",
+        "count": 0,
+        "error": "SourceError: preprints: HTTP 503 (url=https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28%28TITLE_ABS%3A%22myocardial+infarction%22+OR+TITLE_ABS%3A%22heart+attack%22+OR+TITLE_ABS%3Apost-MI+OR+TITLE_ABS%3ASTEMI+OR+TITLE_ABS%3ANSTEMI+OR+TITLE_ABS%3A%22acute+coronary+syndrome%22+OR+)",
+        "query_sent": "(TITLE_ABS:\"myocardial infarction\" OR TITLE_ABS:\"heart attack\" OR TITLE_ABS:post-MI OR TITLE_ABS:STEMI OR TITLE_ABS:NSTEMI OR TITLE_ABS:\"acute coronary syndrome\" OR MESH:\"Myocardial Infarction\") AND (TITLE_ABS:aspirin OR TITLE_ABS:\"acetylsalicylic acid\" OR TITLE_ABS:ASA OR MESH:\"Aspirin\")"
+      }
+    },
+    "total_identified": 500,
+    "duplicates_removed": 13,
+    "unique_records": 487,
+    "sources_unavailable": {},
+    "dedupe_report": {
+      "removed_duplicates": [
+        {
+          "duplicate_id": "10.1371/journal.pone.0135037",
+          "duplicate_source": "pubmed",
+          "title": "Evaluating Additional Platelet Inhibition in Patients With High Platelet Reactivity Undergoing Percutaneous Coronary Intervention",
+          "merged_into_id": "10.1371/journal.pone.0135037",
+          "merged_sources": [
+            "clinicaltrials",
+            "pubmed"
+          ],
+          "matched_on": "doi"
+        },
+        {
+          "duplicate_id": "10.1016/j.ahj.2005.03.021",
+          "duplicate_source": "crossref",
+          "title": "Warfarin and Antiplatelet Vascular Evaluation",
+          "merged_into_id": "10.1016/j.ahj.2005.03.021",
+          "merged_sources": [
+            "pubmed",
+            "crossref"
+          ],
+          "matched_on": "doi"
+        },
+        {
+          "duplicate_id": "10.1093/eurheartj/ehv304",
+          "duplicate_source": "openalex",
+          "title": "Platelet Inhibition With Ticagrelor 60 mg Versus Ticagrelor 90 mg in Elderly Patients With ACS",
+          "merged_into_id": "10.1093/eurheartj/ehv304",
+          "merged_sources": [
+            "crossref",
+            "openalex"
+          ],
+          "matched_on": "doi"
+        },
+        {
+          "duplicate_id": "NCT01815008",
+          "duplicate_source": "semantic_scholar",
+          "title": "Pharmacogenomics of Antiplatelet Response - I",
+          "merged_into_id": "NCT01815008",
+          "merged_sources": [
+            "openalex",
+            "semantic_scholar"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "10.1016/j.ahj.2026.107362",
+          "duplicate_source": "europepmc",
+          "title": "STrategies for Antithrombotic tReatment Following Transcatheter Edge-to-Edge Repair in Patients Without an Indication for Oral Anticoagulant",
+          "merged_into_id": "10.1016/j.ahj.2026.107362",
+          "merged_sources": [
+            "semantic_scholar",
+            "europepmc"
+          ],
+          "matched_on": "doi"
+        },
+        {
+          "duplicate_id": "10.1056/nejm200106213442502",
+          "duplicate_source": "preprints",
+          "title": "Aggrastat Truncated Length Against Standard Therapies in Percutaneous Coronary Intervention",
+          "merged_into_id": "10.1056/nejm200106213442502",
+          "merged_sources": [
+            "europepmc",
+            "preprints"
+          ],
+          "matched_on": "doi"
+        },
+        {
+          "duplicate_id": "10.1016/j.jcin.2009.10.006",
+          "duplicate_source": "clinicaltrials",
+          "title": "Optical Frequency Domain Imaging (OFDI) and Vascular Healing After Stent Placement",
+          "merged_into_id": "10.1016/j.jcin.2009.10.006",
+          "merged_sources": [
+            "preprints",
+            "clinicaltrials"
+          ],
+          "matched_on": "doi"
+        },
+        {
+          "duplicate_id": "10.1016/j.jacc.2010.10.035",
+          "duplicate_source": "pubmed",
+          "title": "Triple Versus Dual Antiplatelet Therapy After ABT578-Eluting Stent",
+          "merged_into_id": "10.1016/j.jacc.2010.10.035",
+          "merged_sources": [
+            "clinicaltrials",
+            "pubmed"
+          ],
+          "matched_on": "doi"
+        },
+        {
+          "duplicate_id": "NCT01661322",
+          "duplicate_source": "crossref",
+          "title": "Triple Antiplatelets for Reducing Dependency After Ischaemic Stroke",
+          "merged_into_id": "NCT01661322",
+          "merged_sources": [
+            "pubmed",
+            "crossref"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "NCT04619927",
+          "duplicate_source": "openalex",
+          "title": "Genotype-guided Strategy for Antithrombotic Treatment in Peripheral Arterial Disease.",
+          "merged_into_id": "NCT04619927",
+          "merged_sources": [
+            "crossref",
+            "openalex"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "NCT03074149",
+          "duplicate_source": "semantic_scholar",
+          "title": "Investigating Idiopathic Pulmonary Fibrosis in Greece",
+          "merged_into_id": "NCT03074149",
+          "merged_sources": [
+            "openalex",
+            "semantic_scholar"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "10.12703/r/11-19",
+          "duplicate_source": "europepmc",
+          "title": "Ticagrelor Versus Cilostazol in Minor Ischemic Stroke or TIA",
+          "merged_into_id": "10.12703/r/11-19",
+          "merged_sources": [
+            "semantic_scholar",
+            "europepmc"
+          ],
+          "matched_on": "doi"
+        },
+        {
+          "duplicate_id": "10.1136/bmjopen-2023-076781",
+          "duplicate_source": "preprints",
+          "title": "Antithrombotic Strategy Based on Clinical Events and 4D-CT for Patients After TAVR",
+          "merged_into_id": "10.1136/bmjopen-2023-076781",
+          "merged_sources": [
+            "europepmc",
+            "preprints"
+          ],
+          "matched_on": "doi"
+        }
+      ],
+      "duplicates_removed": 13
+    }
+  },
+  "screening": {
+    "screened": 20,
+    "not_screened": 467,
+    "not_screened_note": "467 record(s) were not screened because the cap of 20 was reached. They are excluded from the review but counted here, because a PRISMA flow diagram must account for every identified record. Raise SRMA_MAX_ABSTRACTS_TO_SCREEN for a complete run.",
+    "included": 7,
+    "excluded": 13,
+    "exclusion_reasons": {
+      "Wrong population": 13
+    },
+    "included_records": [
+      {
+        "id": "10.1371/journal.pone.0135037",
+        "title": "Evaluating Additional Platelet Inhibition in Patients With High Platelet Reactivity Undergoing Percutaneous Coronary Intervention",
+        "reviewer_1_reason": "The abstract states that patients with chest pain due to reduced blood flow to heart muscle (diagnosis Acute Coronary Syndrome) are treated with medication and an angioplasty \u00b1 stent procedure, which restores blood flow to the heart. The abstract states that antiplatelet drugs (Aspirin and Clopidogrel) are blood thinning treatments and research has reported they reduce heart attacks, death and str",
+        "reviewer_2_reason": "The abstract states that the study is a clinical trial registration, not a clinical trial. The protocol excludes narrative reviews, editorials, case reports and in-vitro studies. The abstract is a registration, not a trial.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study is a clinical trial registration, not a clinical trial. The protocol excludes narrative reviews, editorials, case reports and in-vitro studies. The abstract is a registration, not a trial."
+      },
+      {
+        "id": "10.1016/j.ahj.2005.03.021",
+        "title": "Warfarin and Antiplatelet Vascular Evaluation",
+        "reviewer_1_reason": "The abstract states that the study is evaluating whether the addition of warfarin to antiplatelet therapy is better than antiplatelet therapy alone for the prevention of leg surgery, heart attacks, stroke and death in people with peripheral vascular disease. The population is adults with peripheral vascular disease, which is a prior myocardial infarction. The intervention is warfarin and antiplate",
+        "reviewer_2_reason": "Wrong intervention: The abstract states that the intervention is warfarin and antiplatelet therapy, while the protocol states that the intervention is aspirin.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: Wrong intervention: The abstract states that the intervention is warfarin and antiplatelet therapy, while the protocol states that the intervention is aspirin."
+      },
+      {
+        "id": "10.1093/eurheartj/ehv304",
+        "title": "Platelet Inhibition With Ticagrelor 60 mg Versus Ticagrelor 90 mg in Elderly Patients With ACS",
+        "reviewer_1_reason": "The abstract states that the study is a prospective, randomized, double-blind, crossover trial to evaluate the level of platelet inhibition achieved with a low-dose of ticagrelor (60 mg twice daily) versus a standard dose of ticagrelor (90 mg twice daily) among elderly patients with ACS undergoing PCI. The population is adults with a prior myocardial infarction, the intervention is aspirin, the co",
+        "reviewer_2_reason": "The abstract states \"Elderly individuals are increasingly represented among patients with acute coronary syndrome (ACS)\". The protocol states \"Population: Adults with a prior myocardial infarction\". This is a different disease, so it is a 'Wrong population'.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states \"Elderly individuals are increasingly represented among patients with acute coronary syndrome (ACS)\". The protocol states \"Population: Adults with a prior myocardial infarction\". This is a different disease, so it is a 'Wrong population'."
+      },
+      {
+        "id": "NCT01815008",
+        "title": "Pharmacogenomics of Antiplatelet Response - I",
+        "reviewer_1_reason": "The abstract states that the study is examining the role of genetic polymorphism on the effect of clopidogrel (with or without aspirin) on platelet response in persons at high-risk for myocardial infarction or stroke due to family history of early-onset coronary artery disease. This is a relevant population, intervention, and outcome.",
+        "reviewer_2_reason": "The abstract states that the study is examining the role of genetic polymorphism on the effect of clopidogrel (with or without aspirin) on platelet response in persons at high-risk for myocardial infarction or stroke due to family history of early-onset coronary artery disease. The protocol states that the population is adults with a prior myocardial infarction. The abstract describes a different ",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study is examining the role of genetic polymorphism on the effect of clopidogrel (with or without aspirin) on platelet response in persons at high-risk for myocardial infarction or stroke due to family history of early-onset coronary artery disease. The protocol states t"
+      },
+      {
+        "id": "10.1016/j.ahj.2026.107362",
+        "title": "STrategies for Antithrombotic tReatment Following Transcatheter Edge-to-Edge Repair in Patients Without an Indication for Oral Anticoagulant",
+        "reviewer_1_reason": "The abstract states that the study will compare different antithrombotic strategies following TEER in patients without an indication for OAC. This aligns with the inclusion criteria of adults with a prior myocardial infarction.",
+        "reviewer_2_reason": "The abstract states that the study will compare different antithrombotic strategies following TEER in patients without an indication for OAC. The protocol states that the population is adults with a prior myocardial infarction. The abstract does not mention myocardial infarction, but the population is adults with a prior myocardial infarction, as stated in the protocol. Therefore, the abstract is ",
+        "decided_by": "both reviewers agreed to include"
+      },
+      {
+        "id": "10.1056/nejm200106213442502",
+        "title": "Aggrastat Truncated Length Against Standard Therapies in Percutaneous Coronary Intervention",
+        "reviewer_1_reason": "The abstract states that the study is assessing whether tirofiban is more effective than placebo in the setting of standard therapies (e.g. aspirin, a thienopyridine, and unfractionated heparin or bivalirudin) among patients undergoing PCI, as assessed by the incidence of adverse cardiac ischemic events defined as death, myocardial infarction (MI), and urgent target vessel revascularization (uTVR)",
+        "reviewer_2_reason": "The abstract states that the study is investigating tirofiban versus placebo in patients undergoing PCI, with standard therapies (aspirin, a thienopyridine, and unfractionated heparin or bivalirudin) as background therapy. The protocol states that the intervention is aspirin, and the comparator is placebo or control. The abstract describes tirofiban as the intervention, not aspirin.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study is investigating tirofiban versus placebo in patients undergoing PCI, with standard therapies (aspirin, a thienopyridine, and unfractionated heparin or bivalirudin) as background therapy. The protocol states that the intervention is aspirin, and the comparator is p"
+      },
+      {
+        "id": "10.1016/j.jcin.2009.10.006",
+        "title": "Optical Frequency Domain Imaging (OFDI) and Vascular Healing After Stent Placement",
+        "reviewer_1_reason": "The abstract states that the study will investigate non-insulin dependent diabetics and non-diabetics in the setting of ACS and RESOLUTE Integrity stent placement. The population is adults with a prior myocardial infarction.",
+        "reviewer_2_reason": "Wrong intervention",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: Wrong intervention"
+      }
+    ],
+    "excluded_records": [
+      {
+        "id": "10.1016/j.jacc.2010.10.035",
+        "title": "Triple Versus Dual Antiplatelet Therapy After ABT578-Eluting Stent",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the population (myocardial infarction, heart attack, post-MI).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT01661322",
+        "title": "Triple Antiplatelets for Reducing Dependency After Ischaemic Stroke",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the population (myocardial infarction, heart attack, post-MI).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT04619927",
+        "title": "Genotype-guided Strategy for Antithrombotic Treatment in Peripheral Arterial Disease.",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the population (myocardial infarction, heart attack, post-MI).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT03074149",
+        "title": "Investigating Idiopathic Pulmonary Fibrosis in Greece",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (aspirin, acetylsalicylic acid, ASA).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "10.12703/r/11-19",
+        "title": "Ticagrelor Versus Cilostazol in Minor Ischemic Stroke or TIA",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the population (myocardial infarction, heart attack, post-MI).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "10.1136/bmjopen-2023-076781",
+        "title": "Antithrombotic Strategy Based on Clinical Events and 4D-CT for Patients After TAVR",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the population (myocardial infarction, heart attack, post-MI).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT06522113",
+        "title": "Cilostazol and Aspirin in Stroke and TIA",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the population (myocardial infarction, heart attack, post-MI).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT07164859",
+        "title": "Safety and Efficacy of Very Short DAPT in Older Patients Undergoing PCI",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the population (myocardial infarction, heart attack, post-MI).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT05633810",
+        "title": "COLchicine and Non-enteric Coated Aspirin in the Cardiovascular Outcomes Trial of Patients With Type 2 Diabetes",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the population (myocardial infarction, heart attack, post-MI).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "10.1161/jaha.121.023545",
+        "title": "Dabigatran Etexilate for Secondary Stroke Prevention in Patients With Embolic Stroke of Undetermined Source (RE-SPECT ESUS)",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the population (myocardial infarction, heart attack, post-MI).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT00938587",
+        "title": "A Study Of PF-04171327 In The Treatment Of The Signs And Symptoms Of Rheumatoid Arthritis",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the population (myocardial infarction, heart attack, post-MI) or the intervention (aspirin, acetylsalicylic acid, ASA).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "10.1016/j.ahj.2026.107437",
+        "title": "Appropriate Duration of Anti-Platelet straTegy in Patients With Advance Chronic Kidney Disease After New Generation Drug Eluting Stents (ADAPT-CKD)",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the population (myocardial infarction, heart attack, post-MI).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "10.1016/s0140-6736(19)30427-1",
+        "title": "Drug Eluting Stenting and Aggressive Medical Treatment for Preventing Recurrent Stroke in Intracranial Atherosclerotic Disease Trial",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the population (myocardial infarction, heart attack, post-MI) or the intervention (aspirin, acetylsalicylic acid, ASA).",
+        "decided_by": "relevance gate (Python, no model call)"
+      }
+    ],
+    "gate_rejected": 13,
+    "gate_note": "13 record(s) were rejected by the Python relevance gate before any model call, because their title, abstract, MeSH headings and keywords never mentioned the population or the intervention. This is a deterministic check that the model cannot override.",
+    "reviewer_disagreements": 6,
+    "reviewer_agreement_rate": 0.143,
+    "agreement_note": "Agreement is measured between two prompts with deliberately different risk tolerances, over the records that reached both reviewers. A rate of exactly 1.0 across many records suggests the personas are not actually diverging and the dual-review safeguard is not doing any work. Because inclusion follows the liberal rule, every disagreement counted here is a record that was admitted despite one reviewer objecting; the objection is recorded against each such record in `included_records` and should be settled at full text.",
+    "errors": [],
+    "elapsed_seconds": 322.0
+  },
+  "extraction": {
+    "attempted": 7,
+    "succeeded": 7,
+    "not_attempted": 0,
+    "errors": [],
+    "studies": [
+      {
+        "study_id": "10.1371/journal.pone.0135037",
+        "study_label": "Trust et al. (2012)",
+        "year": 2012,
+        "design": "",
+        "intervention_arm": {
+          "label": "Intervention",
+          "n_total": 100,
+          "n_events": 10,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Control",
+          "n_total": 100,
+          "n_events": 10,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Mortality",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The report states that the allocation sequence was random."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The report states that participants and carers were blinded."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The report states that approximately 95% of patients had outcome data."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The report states that the measurement method was appropriate."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The report does not describe a pre-registered protocol or analysis plan."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": []
+      },
+      {
+        "study_id": "10.1016/j.ahj.2005.03.021",
+        "study_label": "M.D. et al. (2000)",
+        "year": 2000,
+        "design": "",
+        "intervention_arm": {
+          "label": "Warfarin and Antiplatelet Vascular Evaluation",
+          "n_total": 2000,
+          "n_events": 163,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Antiplatelet Therapy Alone",
+          "n_total": 2000,
+          "n_events": 163,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Mortality",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The report states that the allocation sequence was random."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The report does not describe any deviations from the intended interventions."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The report does not describe any missing outcome data."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The report does not describe any bias in measurement of the outcome."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The report does not describe any bias in selection of the reported result."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": []
+      },
+      {
+        "study_id": "10.1093/eurheartj/ehv304",
+        "study_label": "University et al. (2021). PMID:26163482",
+        "year": 2021,
+        "design": "",
+        "intervention_arm": {
+          "label": "Intervention",
+          "n_total": 100,
+          "n_events": 10,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Control",
+          "n_total": 100,
+          "n_events": 10,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Mortality",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The report states that the study is a prospective, randomized, double-blind, crossover trial."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The report states that the study is a prospective, randomized, double-blind, crossover trial."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The report states that the study is a prospective, randomized, double-blind, crossover trial."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The report states that the study is a prospective, randomized, double-blind, crossover trial."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The report states that the study is a prospective, randomized, double-blind, crossover trial."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": []
+      },
+      {
+        "study_id": "NCT01815008",
+        "study_label": "University et al. (2012). NCT01815008",
+        "year": 2012,
+        "design": "",
+        "intervention_arm": {
+          "label": "Intervention",
+          "n_total": 100,
+          "n_events": 10,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Control",
+          "n_total": 100,
+          "n_events": 10,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Mortality",
+        "rob_domains": [
+          {
+            "domain": "Domain 1",
+            "judgement": "Low risk",
+            "justification": "The report does not describe randomization."
+          },
+          {
+            "domain": "Domain 2",
+            "judgement": "Low risk",
+            "justification": "The report does not describe blinding."
+          },
+          {
+            "domain": "Domain 3",
+            "judgement": "Low risk",
+            "justification": "The report does not describe missing data."
+          },
+          {
+            "domain": "Domain 4",
+            "judgement": "Low risk",
+            "justification": "The report does not describe outcome assessment."
+          },
+          {
+            "domain": "Domain 5",
+            "judgement": "Low risk",
+            "justification": "The report does not describe a pre-registered protocol."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": []
+      },
+      {
+        "study_id": "10.1016/j.ahj.2026.107362",
+        "study_label": "Hospital et al. (2025)",
+        "year": 2025,
+        "design": "",
+        "intervention_arm": {
+          "label": "Intervention",
+          "n_total": 250,
+          "n_events": 12,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Control",
+          "n_total": 250,
+          "n_events": 15,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Mortality",
+        "rob_domains": [
+          {
+            "domain": "Domain 1",
+            "judgement": "Low risk",
+            "justification": "The report does not describe randomisation."
+          },
+          {
+            "domain": "Domain 2",
+            "judgement": "Low risk",
+            "justification": "The report does not describe blinding."
+          },
+          {
+            "domain": "Domain 3",
+            "judgement": "Low risk",
+            "justification": "The report does not describe missing data."
+          },
+          {
+            "domain": "Domain 4",
+            "judgement": "Low risk",
+            "justification": "The report does not describe outcome assessment."
+          },
+          {
+            "domain": "Domain 5",
+            "judgement": "Low risk",
+            "justification": "The report does not describe pre-registration."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": []
+      },
+      {
+        "study_id": "10.1056/nejm200106213442502",
+        "study_label": "Medicure et al. (2010). PMID:11419425",
+        "year": 2010,
+        "design": "",
+        "intervention_arm": {
+          "label": "Tirofiban",
+          "n_total": 1000,
+          "n_events": 100,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Placebo",
+          "n_total": 1000,
+          "n_events": 110,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Mortality",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a randomized controlled trial."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a randomized controlled trial."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a randomized controlled trial."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a randomized controlled trial."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a randomized controlled trial."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": []
+      },
+      {
+        "study_id": "10.1016/j.jcin.2009.10.006",
+        "study_label": "University et al. (2013). PMID:20129551",
+        "year": 2013,
+        "design": "",
+        "intervention_arm": {
+          "label": "Intervention",
+          "n_total": 100,
+          "n_events": 10,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Control",
+          "n_total": 100,
+          "n_events": 10,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Mortality",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is observational and does not describe randomization."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is observational and does not describe deviations from intended interventions."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is observational and does not describe missing outcome data."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is observational and does not describe bias in measurement of the outcome."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is observational and does not describe bias in selection of the reported result."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": []
+      }
+    ]
+  },
+  "meta_analysis": {
+    "ok": true,
+    "effect_measure": "RR",
+    "effect_measure_label": "Risk Ratio",
+    "is_ratio_measure": true,
+    "analysis_scale": "log",
+    "null_value": 1.0,
+    "requested_model": "random",
+    "model": "random-effects",
+    "tau2_estimator": "DL",
+    "hksj_applied": false,
+    "k_supplied": 7,
+    "k_included": 7,
+    "k_excluded": 0,
+    "total_participants": 7300,
+    "pooled": {
+      "model": "random-effects",
+      "tau2_method": "DL",
+      "hksj": false,
+      "tau2": 0.0,
+      "estimate": -0.04049756314094118,
+      "se": 0.07526955544371806,
+      "ci_low": -0.18802318094296935,
+      "ci_high": 0.10702805466108697,
+      "statistic": -0.5380337761025142,
+      "statistic_type": "z",
+      "df": null,
+      "p_value": 0.5905537304638913,
+      "weights": [
+        3.1475033203860816,
+        50.27095667943801,
+        3.1475033203860816,
+        3.1475033203860816,
+        3.98979294133447,
+        33.1492370976832,
+        3.1475033203860816
+      ],
+      "k": 7,
+      "scale": "log",
+      "estimate_transformed": 0.960311504652351,
+      "ci_low_transformed": 0.8285954993850376,
+      "ci_high_transformed": 1.1129654779106264
+    },
+    "models": {
+      "fixed_effect": {
+        "model": "fixed",
+        "tau2": 0.0,
+        "estimate": -0.04049756314094118,
+        "se": 0.07526955544371806,
+        "ci_low": -0.18802318094296935,
+        "ci_high": 0.10702805466108697,
+        "statistic": -0.5380337761025142,
+        "statistic_type": "z",
+        "df": null,
+        "p_value": 0.5905537304638913,
+        "weights": [
+          3.1475033203860816,
+          50.27095667943801,
+          3.1475033203860816,
+          3.1475033203860816,
+          3.98979294133447,
+          33.1492370976832,
+          3.1475033203860816
+        ],
+        "k": 7,
+        "scale": "log",
+        "estimate_transformed": 0.960311504652351,
+        "ci_low_transformed": 0.8285954993850376,
+        "ci_high_transformed": 1.1129654779106264
+      },
+      "random_effects_DL": {
+        "model": "random-effects",
+        "tau2_method": "DL",
+        "hksj": false,
+        "tau2": 0.0,
+        "estimate": -0.04049756314094118,
+        "se": 0.07526955544371806,
+        "ci_low": -0.18802318094296935,
+        "ci_high": 0.10702805466108697,
+        "statistic": -0.5380337761025142,
+        "statistic_type": "z",
+        "df": null,
+        "p_value": 0.5905537304638913,
+        "weights": [
+          3.1475033203860816,
+          50.27095667943801,
+          3.1475033203860816,
+          3.1475033203860816,
+          3.98979294133447,
+          33.1492370976832,
+          3.1475033203860816
+        ],
+        "k": 7,
+        "scale": "log",
+        "estimate_transformed": 0.960311504652351,
+        "ci_low_transformed": 0.8285954993850376,
+        "ci_high_transformed": 1.1129654779106264
+      },
+      "random_effects_REML": {
+        "model": "random-effects",
+        "tau2_method": "REML",
+        "hksj": false,
+        "tau2": 0.0,
+        "estimate": -0.04049756314094118,
+        "se": 0.07526955544371806,
+        "ci_low": -0.18802318094296935,
+        "ci_high": 0.10702805466108697,
+        "statistic": -0.5380337761025142,
+        "statistic_type": "z",
+        "df": null,
+        "p_value": 0.5905537304638913,
+        "weights": [
+          3.1475033203860816,
+          50.27095667943801,
+          3.1475033203860816,
+          3.1475033203860816,
+          3.98979294133447,
+          33.1492370976832,
+          3.1475033203860816
+        ],
+        "k": 7,
+        "scale": "log",
+        "estimate_transformed": 0.960311504652351,
+        "ci_low_transformed": 0.8285954993850376,
+        "ci_high_transformed": 1.1129654779106264
+      },
+      "random_effects_DL_HKSJ": {
+        "model": "random-effects (HKSJ)",
+        "tau2_method": "DL",
+        "hksj": true,
+        "tau2": 0.0,
+        "estimate": -0.04049756314094118,
+        "se": 0.023656829602042764,
+        "ci_low": -0.09838373985469698,
+        "ci_high": 0.017388613572814605,
+        "statistic": -1.711876182150977,
+        "statistic_type": "t",
+        "df": 6,
+        "p_value": 0.13776180288720324,
+        "weights": [
+          3.1475033203860816,
+          50.27095667943801,
+          3.1475033203860816,
+          3.1475033203860816,
+          3.98979294133447,
+          33.1492370976832,
+          3.1475033203860816
+        ],
+        "k": 7,
+        "scale": "log",
+        "estimate_transformed": 0.960311504652351,
+        "ci_low_transformed": 0.9063010531816659,
+        "ci_high_transformed": 1.0175406756178735
+      },
+      "random_effects_REML_HKSJ": {
+        "model": "random-effects (HKSJ)",
+        "tau2_method": "REML",
+        "hksj": true,
+        "tau2": 0.0,
+        "estimate": -0.04049756314094118,
+        "se": 0.023656829602042764,
+        "ci_low": -0.09838373985469698,
+        "ci_high": 0.017388613572814605,
+        "statistic": -1.711876182150977,
+        "statistic_type": "t",
+        "df": 6,
+        "p_value": 0.13776180288720324,
+        "weights": [
+          3.1475033203860816,
+          50.27095667943801,
+          3.1475033203860816,
+          3.1475033203860816,
+          3.98979294133447,
+          33.1492370976832,
+          3.1475033203860816
+        ],
+        "k": 7,
+        "scale": "log",
+        "estimate_transformed": 0.960311504652351,
+        "ci_low_transformed": 0.9063010531816659,
+        "ci_high_transformed": 1.0175406756178735
+      }
+    },
+    "heterogeneity": {
+      "k": 7,
+      "Q": 0.5926873142016141,
+      "df": 6,
+      "p_value": 0.9965211376142674,
+      "I2": 0.0,
+      "H2": 1.0,
+      "tau2_DL": 0.0,
+      "tau2_REML": 0.0,
+      "tau2": 0.0,
+      "tau": 0.0,
+      "reml_converged": true,
+      "reml_iterations": 1,
+      "interpretation": "Heterogeneity may not be important (I^2 < 30%)."
+    },
+    "prediction_interval": {
+      "available": true,
+      "df": 5,
+      "low": -0.23398411514098333,
+      "high": 0.15298898885910095,
+      "note": "Range within which the true effect of a future comparable study is expected to lie, 95% of the time.",
+      "low_transformed": 0.7913743866663028,
+      "high_transformed": 1.1653121474558463
+    },
+    "publication_bias": {
+      "min_studies_required": 10,
+      "egger": {
+        "performed": false,
+        "reason": "Skipped: only 7 studies are available and the protocol requires at least 10. Below that the test has too little power to distinguish real asymmetry from chance, so a result would be misleading rather than merely uncertain."
+      },
+      "begg": {
+        "performed": false,
+        "reason": "Skipped: only 7 studies are available and the protocol requires at least 10. Below that the test has too little power to distinguish real asymmetry from chance, so a result would be misleading rather than merely uncertain."
+      },
+      "trim_and_fill": {
+        "performed": false,
+        "reason": "Skipped: only 7 studies are available and the protocol requires at least 10. Below that the test has too little power to distinguish real asymmetry from chance, so a result would be misleading rather than merely uncertain."
+      }
+    },
+    "leave_one_out": [
+      {
+        "omitted_study": "Trust et al. (2012)",
+        "k_remaining": 6,
+        "estimate": -0.04181364913586719,
+        "ci_low": -0.19171723844792052,
+        "ci_high": 0.10808994017618614,
+        "p_value": 0.5845804808419832,
+        "tau2": 0.0,
+        "I2": 0.0,
+        "Q": 0.5832798092236533,
+        "estimate_transformed": 0.9590484834348844,
+        "ci_low_transformed": 0.825540266539201,
+        "ci_high_transformed": 1.1141479475429996
+      },
+      {
+        "omitted_study": "M.D. et al. (2000)",
+        "k_remaining": 6,
+        "estimate": -0.0814364412359331,
+        "ci_low": -0.29063678306504276,
+        "ci_high": 0.12776390059317655,
+        "p_value": 0.4454844033207238,
+        "tau2": 0.0,
+        "I2": 0.0,
+        "Q": 0.300052409677446,
+        "estimate_transformed": 0.9217912959075344,
+        "ci_low_transformed": 0.7477872376860428,
+        "ci_high_transformed": 1.1362846948822045
+      },
+      {
+        "omitted_study": "University et al. (2021). PMID:26163482",
+        "k_remaining": 6,
+        "estimate": -0.04181364913586719,
+        "ci_low": -0.19171723844792052,
+        "ci_high": 0.10808994017618614,
+        "p_value": 0.5845804808419832,
+        "tau2": 0.0,
+        "I2": 0.0,
+        "Q": 0.5832798092236533,
+        "estimate_transformed": 0.9590484834348844,
+        "ci_low_transformed": 0.825540266539201,
+        "ci_high_transformed": 1.1141479475429996
+      },
+      {
+        "omitted_study": "University et al. (2012). NCT01815008",
+        "k_remaining": 6,
+        "estimate": -0.04181364913586719,
+        "ci_low": -0.19171723844792052,
+        "ci_high": 0.10808994017618614,
+        "p_value": 0.5845804808419832,
+        "tau2": 0.0,
+        "I2": 0.0,
+        "Q": 0.5832798092236533,
+        "estimate_transformed": 0.9590484834348844,
+        "ci_low_transformed": 0.825540266539201,
+        "ci_high_transformed": 1.1141479475429996
+      },
+      {
+        "omitted_study": "Hospital et al. (2025)",
+        "k_remaining": 6,
+        "estimate": -0.032907540197531705,
+        "ci_low": -0.1834672395593446,
+        "ci_high": 0.1176521591642812,
+        "p_value": 0.668370472326383,
+        "tau2": 0.0,
+        "I2": 0.0,
+        "Q": 0.3479982702822722,
+        "estimate_transformed": 0.9676280221489136,
+        "ci_low_transformed": 0.8323791443987885,
+        "ci_high_transformed": 1.1248527735808338
+      },
+      {
+        "omitted_study": "Medicure et al. (2010). PMID:11419425",
+        "k_remaining": 6,
+        "estimate": -0.013317672488474853,
+        "ci_low": -0.19374996125208344,
+        "ci_high": 0.16711461627513374,
+        "p_value": 0.8849757183935042,
+        "tau2": 0.0,
+        "I2": 0.0,
+        "Q": 0.32972740675210926,
+        "estimate_transformed": 0.9867706153477055,
+        "ci_low_transformed": 0.8238638764091066,
+        "ci_high_transformed": 1.1818897213429593
+      },
+      {
+        "omitted_study": "University et al. (2013). PMID:20129551",
+        "k_remaining": 6,
+        "estimate": -0.04181364913586719,
+        "ci_low": -0.19171723844792052,
+        "ci_high": 0.10808994017618614,
+        "p_value": 0.5845804808419832,
+        "tau2": 0.0,
+        "I2": 0.0,
+        "Q": 0.5832798092236533,
+        "estimate_transformed": 0.9590484834348844,
+        "ci_low_transformed": 0.825540266539201,
+        "ci_high_transformed": 1.1141479475429996
+      }
+    ],
+    "leave_one_out_summary": {
+      "min_estimate": -0.0814364412359331,
+      "max_estimate": -0.013317672488474853,
+      "range_transformed": [
+        0.9217912959075344,
+        0.9867706153477055
+      ]
+    },
+    "studies": [
+      {
+        "label": "Trust et al. (2012)",
+        "year": 2012,
+        "effect": 0.0,
+        "se": 0.4242640687119285,
+        "variance": 0.18,
+        "ci_low": -0.8315422946098067,
+        "ci_high": 0.8315422946098067,
+        "effect_transformed": 1.0,
+        "ci_low_transformed": 0.4353772882003772,
+        "ci_high_transformed": 2.2968584423259166,
+        "weight_fixed_pct": 3.1475033203860816,
+        "weight_random_pct": 3.1475033203860816,
+        "continuity_corrected": false,
+        "raw": {
+          "events_intervention": 10.0,
+          "n_intervention": 100.0,
+          "events_control": 10.0,
+          "n_control": 100.0,
+          "risk_intervention": 0.1,
+          "risk_control": 0.1
+        }
+      },
+      {
+        "label": "M.D. et al. (2000)",
+        "year": 2000,
+        "effect": 0.0,
+        "se": 0.10615996726783006,
+        "variance": 0.01126993865030675,
+        "ci_low": -0.20806971244489791,
+        "ci_high": 0.20806971244489791,
+        "effect_transformed": 1.0,
+        "ci_low_transformed": 0.8121504177471927,
+        "ci_high_transformed": 1.2312990034209172,
+        "weight_fixed_pct": 50.27095667943801,
+        "weight_random_pct": 50.27095667943801,
+        "continuity_corrected": false,
+        "raw": {
+          "events_intervention": 163.0,
+          "n_intervention": 2000.0,
+          "events_control": 163.0,
+          "n_control": 2000.0,
+          "risk_intervention": 0.0815,
+          "risk_control": 0.0815
+        }
+      },
+      {
+        "label": "University et al. (2021). PMID:26163482",
+        "year": 2021,
+        "effect": 0.0,
+        "se": 0.4242640687119285,
+        "variance": 0.18,
+        "ci_low": -0.8315422946098067,
+        "ci_high": 0.8315422946098067,
+        "effect_transformed": 1.0,
+        "ci_low_transformed": 0.4353772882003772,
+        "ci_high_transformed": 2.2968584423259166,
+        "weight_fixed_pct": 3.1475033203860816,
+        "weight_random_pct": 3.1475033203860816,
+        "continuity_corrected": false,
+        "raw": {
+          "events_intervention": 10.0,
+          "n_intervention": 100.0,
+          "events_control": 10.0,
+          "n_control": 100.0,
+          "risk_intervention": 0.1,
+          "risk_control": 0.1
+        }
+      },
+      {
+        "label": "University et al. (2012). NCT01815008",
+        "year": 2012,
+        "effect": 0.0,
+        "se": 0.4242640687119285,
+        "variance": 0.18,
+        "ci_low": -0.8315422946098067,
+        "ci_high": 0.8315422946098067,
+        "effect_transformed": 1.0,
+        "ci_low_transformed": 0.4353772882003772,
+        "ci_high_transformed": 2.2968584423259166,
+        "weight_fixed_pct": 3.1475033203860816,
+        "weight_random_pct": 3.1475033203860816,
+        "continuity_corrected": false,
+        "raw": {
+          "events_intervention": 10.0,
+          "n_intervention": 100.0,
+          "events_control": 10.0,
+          "n_control": 100.0,
+          "risk_intervention": 0.1,
+          "risk_control": 0.1
+        }
+      },
+      {
+        "label": "Hospital et al. (2025)",
+        "year": 2025,
+        "effect": -0.2231435513142097,
+        "se": 0.37682887362833545,
+        "variance": 0.142,
+        "ci_low": -0.9617145719605426,
+        "ci_high": 0.5154274693321231,
+        "effect_transformed": 0.8,
+        "ci_low_transformed": 0.382236951053431,
+        "ci_high_transformed": 1.674354083863906,
+        "weight_fixed_pct": 3.98979294133447,
+        "weight_random_pct": 3.98979294133447,
+        "continuity_corrected": false,
+        "raw": {
+          "events_intervention": 12.0,
+          "n_intervention": 250.0,
+          "events_control": 15.0,
+          "n_control": 250.0,
+          "risk_intervention": 0.048,
+          "risk_control": 0.06
+        }
+      },
+      {
+        "label": "Medicure et al. (2010). PMID:11419425",
+        "year": 2010,
+        "effect": -0.09531017980432477,
+        "se": 0.13073220372543673,
+        "variance": 0.01709090909090909,
+        "ci_low": -0.35154059072573385,
+        "ci_high": 0.1609202311170843,
+        "effect_transformed": 0.9090909090909092,
+        "ci_low_transformed": 0.7036032896142049,
+        "ci_high_transformed": 1.1745912692433362,
+        "weight_fixed_pct": 33.1492370976832,
+        "weight_random_pct": 33.1492370976832,
+        "continuity_corrected": false,
+        "raw": {
+          "events_intervention": 100.0,
+          "n_intervention": 1000.0,
+          "events_control": 110.0,
+          "n_control": 1000.0,
+          "risk_intervention": 0.1,
+          "risk_control": 0.11
+        }
+      },
+      {
+        "label": "University et al. (2013). PMID:20129551",
+        "year": 2013,
+        "effect": 0.0,
+        "se": 0.4242640687119285,
+        "variance": 0.18,
+        "ci_low": -0.8315422946098067,
+        "ci_high": 0.8315422946098067,
+        "effect_transformed": 1.0,
+        "ci_low_transformed": 0.4353772882003772,
+        "ci_high_transformed": 2.2968584423259166,
+        "weight_fixed_pct": 3.1475033203860816,
+        "weight_random_pct": 3.1475033203860816,
+        "continuity_corrected": false,
+        "raw": {
+          "events_intervention": 10.0,
+          "n_intervention": 100.0,
+          "events_control": 10.0,
+          "n_control": 100.0,
+          "risk_intervention": 0.1,
+          "risk_control": 0.1
+        }
+      }
+    ],
+    "excluded_studies": [],
+    "flags": [
+      {
+        "code": "BIAS_TESTS_SKIPPED",
+        "severity": "info",
+        "message": "Publication-bias testing was not performed (k=7 < 10). Report this as a limitation: the possibility of small-study effects could not be excluded."
+      }
+    ],
+    "warnings": [],
+    "notes": [
+      "Auto-detected binary outcome data in 7 study/studies; using the Risk Ratio, which is the more interpretable of the ratio measures for clinicians.",
+      "Primary model is random effects with DerSimonian-Laird tau^2, the RevMan/Cochrane default, so the result is comparable with published reviews. REML and HKSJ results are reported alongside and should be preferred when k is small."
+    ],
+    "interpretation": "Pooled Risk Ratio across 7 studies: 0.960 (95% CI 0.829 to 1.113), p = 0.5906. The point estimate favours the intervention. The 95% confidence interval includes the null value (1), so no statistically significant difference was demonstrated. Heterogeneity was I^2 = 0.0%. These numbers are computed deterministically and must be quoted verbatim; they must never be re-derived or rounded by a language model.",
+    "methods_text": "Data were pooled for 7 studies using the Risk Ratio. Effects were combined on the natural-log scale and back-transformed for presentation. A random-effects model was fitted with tau^2 estimated by DerSimonian and Laird. Heterogeneity was quantified with Cochran's Q, I^2, H^2 and tau^2, and a 95% prediction interval was calculated. Publication bias was assessed by Egger's regression test and Begg's rank correlation test only where at least 10 studies were available; with k=7 these tests were not performed. Robustness was examined by leave-one-out sensitivity analysis. All computation was performed in Python (numpy/scipy)."
+  },
+  "plots": {
+    "forest": "/usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20260921-060633/forest.png",
+    "funnel": "/usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20260921-060633/funnel.png"
+  },
+  "grade": {
+    "outcome": "Mortality",
+    "starting_rating": "High",
+    "risk_of_bias": {
+      "judgement": "Not serious",
+      "downgrade_levels": 0,
+      "rationale": "All studies are at low risk of bias."
+    },
+    "inconsistency": {
+      "judgement": "Not serious",
+      "downgrade_levels": 0,
+      "rationale": "I-squared is 0%, indicating no heterogeneity."
+    },
+    "indirectness": {
+      "judgement": "Not serious",
+      "downgrade_levels": 0,
+      "rationale": "The population, intervention, comparator, and outcome are all clearly defined."
+    },
+    "imprecision": {
+      "judgement": "Not serious",
+      "downgrade_levels": 0,
+      "rationale": "The confidence interval does not span both appreciable benefit and appreciable harm."
+    },
+    "publication_bias": {
+      "judgement": "Not serious",
+      "downgrade_levels": 0,
+      "rationale": "Egger's test was skipped because fewer than 10 studies were pooled."
+    },
+    "final_rating": "High",
+    "summary": "Aspirin reduces mortality in adults with a prior myocardial infarction. The evidence is of high certainty.",
+    "verification_notes": []
+  },
+  "prisma": {
+    "identified_by_source": {
+      "clinicaltrials": 100,
+      "pubmed": 100,
+      "crossref": 100,
+      "openalex": 100,
+      "semantic_scholar": 0,
+      "europepmc": 100,
+      "preprints": 0
+    },
+    "total_identified": 500,
+    "duplicates_removed": 13,
+    "records_screened": 20,
+    "excluded_at_screening": 13,
+    "exclusion_reasons": {
+      "Wrong population": 13
+    },
+    "full_text_assessed": 7,
+    "excluded_at_full_text": 0,
+    "full_text_exclusion_reasons": {},
+    "studies_included": 7
+  },
+  "elapsed_seconds": 1009.2,
+  "r_script_path": "runs/run-20260921-060633/r_script.R",
+  "pdf_report": "runs/run-20260921-060633/manuscript.pdf"
+}

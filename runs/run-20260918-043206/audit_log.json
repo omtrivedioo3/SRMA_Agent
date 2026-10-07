@@ -1,0 +1,976 @@
+[
+  {
+    "source": "pubmed",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi",
+    "params": {
+      "db": "pubmed",
+      "term": "(\"myocardial infarction\"[tiab] OR \"heart attack\"[tiab] OR post-MI[tiab] OR STEMI[tiab] OR NSTEMI[tiab] OR \"acute coronary syndrome\"[tiab] OR \"Myocardial Infarction\"[MeSH Terms]) AND (aspirin[tiab] OR \"acetylsalicylic acid\"[tiab] OR ASA[tiab] OR \"Aspirin\"[MeSH Terms])",
+      "retmax": 100,
+      "retmode": "json",
+      "sort": "relevance",
+      "tool": "SRMA-Agent",
+      "email": ""
+    },
+    "timestamp_utc": "2026-09-18T04:33:54.333482+00:00",
+    "status_code": 200,
+    "n_results": 12194,
+    "duration_ms": 1278,
+    "error": null
+  },
+  {
+    "source": "clinicaltrials",
+    "url": "https://clinicaltrials.gov/api/v2/studies",
+    "params": {
+      "query.term": "(\"myocardial infarction\" OR \"heart attack\" OR post-MI OR STEMI OR NSTEMI OR \"acute coronary syndrome\") AND (aspirin OR \"acetylsalicylic acid\" OR ASA)",
+      "pageSize": 100,
+      "format": "json",
+      "countTotal": "true"
+    },
+    "timestamp_utc": "2026-09-18T04:33:54.568156+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1521,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "((TITLE_ABS:\"myocardial infarction\" OR TITLE_ABS:\"heart attack\" OR TITLE_ABS:post-MI OR TITLE_ABS:STEMI OR TITLE_ABS:NSTEMI OR TITLE_ABS:\"acute coronary syndrome\" OR MESH:\"Myocardial Infarction\") AND (TITLE_ABS:aspirin OR TITLE_ABS:\"acetylsalicylic acid\" OR TITLE_ABS:ASA OR MESH:\"Aspirin\")) AND (SRC:PPR)",
+      "format": "json",
+      "resultType": "core",
+      "pageSize": 100,
+      "cursorMark": "*"
+    },
+    "timestamp_utc": "2026-09-18T04:33:55.397759+00:00",
+    "status_code": 200,
+    "n_results": 222,
+    "duration_ms": 2344,
+    "error": null
+  },
+  {
+    "source": "crossref",
+    "url": "https://api.crossref.org/works",
+    "params": {
+      "query.bibliographic": "myocardial infarction heart attack aspirin acetylsalicylic acid",
+      "rows": 100,
+      "cursor": "*",
+      "mailto": ""
+    },
+    "timestamp_utc": "2026-09-18T04:33:55.467768+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 2420,
+    "error": null
+  },
+  {
+    "source": "europepmc",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "(TITLE_ABS:\"myocardial infarction\" OR TITLE_ABS:\"heart attack\" OR TITLE_ABS:post-MI OR TITLE_ABS:STEMI OR TITLE_ABS:NSTEMI OR TITLE_ABS:\"acute coronary syndrome\" OR MESH:\"Myocardial Infarction\") AND (TITLE_ABS:aspirin OR TITLE_ABS:\"acetylsalicylic acid\" OR TITLE_ABS:ASA OR MESH:\"Aspirin\")",
+      "format": "json",
+      "resultType": "core",
+      "pageSize": 100,
+      "cursorMark": "*"
+    },
+    "timestamp_utc": "2026-09-18T04:33:55.505313+00:00",
+    "status_code": 200,
+    "n_results": 68277,
+    "duration_ms": 2455,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "((TITLE_ABS:\"myocardial infarction\" OR TITLE_ABS:\"heart attack\" OR TITLE_ABS:post-MI OR TITLE_ABS:STEMI OR TITLE_ABS:NSTEMI OR TITLE_ABS:\"acute coronary syndrome\" OR MESH:\"Myocardial Infarction\") AND (TITLE_ABS:aspirin OR TITLE_ABS:\"acetylsalicylic acid\" OR TITLE_ABS:ASA OR MESH:\"Aspirin\")) AND (SRC:PPR)",
+      "format": "json",
+      "resultType": "core",
+      "pageSize": 100,
+      "cursorMark": "AoIIQAJTpSg0MzkxODMxNA=="
+    },
+    "timestamp_utc": "2026-09-18T04:33:56.488882+00:00",
+    "status_code": 200,
+    "n_results": 222,
+    "duration_ms": 1084,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "((TITLE_ABS:\"myocardial infarction\" OR TITLE_ABS:\"heart attack\" OR TITLE_ABS:post-MI OR TITLE_ABS:STEMI OR TITLE_ABS:NSTEMI OR TITLE_ABS:\"acute coronary syndrome\" OR MESH:\"Myocardial Infarction\") AND (TITLE_ABS:aspirin OR TITLE_ABS:\"acetylsalicylic acid\" OR TITLE_ABS:ASA OR MESH:\"Aspirin\")) AND (SRC:PPR)",
+      "format": "json",
+      "resultType": "core",
+      "pageSize": 100,
+      "cursorMark": "AoIIPzE2Iig0MjIzOTUyOQ=="
+    },
+    "timestamp_utc": "2026-09-18T04:33:56.894801+00:00",
+    "status_code": 200,
+    "n_results": 222,
+    "duration_ms": 396,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "((TITLE_ABS:\"myocardial infarction\" OR TITLE_ABS:\"heart attack\" OR TITLE_ABS:post-MI OR TITLE_ABS:STEMI OR TITLE_ABS:NSTEMI OR TITLE_ABS:\"acute coronary syndrome\" OR MESH:\"Myocardial Infarction\") AND (TITLE_ABS:aspirin OR TITLE_ABS:\"acetylsalicylic acid\" OR TITLE_ABS:ASA OR MESH:\"Aspirin\")) AND (SRC:PPR)",
+      "format": "json",
+      "resultType": "core",
+      "pageSize": 100,
+      "cursorMark": "AoIIPs4aNSg0MTU4NzI3NA=="
+    },
+    "timestamp_utc": "2026-09-18T04:33:57.324231+00:00",
+    "status_code": 200,
+    "n_results": 222,
+    "duration_ms": 425,
+    "error": null
+  },
+  {
+    "source": "pubmed",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi",
+    "params": {
+      "db": "pubmed",
+      "id": "40888737,40471776,38621683,37878786,36976424,41791655,36047409,32988222,18453785,35051864,41195776,16096727,9617597,15738565,26722003,29664423,35332750,42061600,26778745,35008828,30006115,38296575,27289074,29443445,29985284,12177638,23195914,16485051,33602439,26988949,31078438,41656976,19816626,35429947,29621983,26398390,34784901,31109212,38032364,37545028,22992163,34985465,17562300,41968214,32172203,35289471,41384891,40945808,42200636,39365905,41277137,36347732,4816857,39696804,729381,40036095,25239363,40164463,14759085,26093865,31030413,7438383,25670850,30608575,30178075,33108941,9791002,25739375,22833598,34076601,1244713,18341815,41697655,12679220,35950769,24076272,38153624,29521450,35961692,33952877,36509606,29535227,31300969,28635860,41575609,32860646,26351774,10968413,31917691,38382856,32713874,9049682,36550452,17167763,15272097,36480147,36259751,38285607,36746373,28193678",
+      "retmode": "xml",
+      "tool": "SRMA-Agent",
+      "email": ""
+    },
+    "timestamp_utc": "2026-09-18T04:33:57.360668+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 3026,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2025.02.13.25322259/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:33:58.076253+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 751,
+    "error": null
+  },
+  {
+    "source": "openalex",
+    "url": "https://api.openalex.org/works",
+    "params": {
+      "search": "(\"myocardial infarction\" OR \"heart attack\" OR post-MI OR STEMI OR NSTEMI OR \"acute coronary syndrome\") AND (aspirin OR \"acetylsalicylic acid\" OR ASA)",
+      "mailto": "",
+      "per-page": 100,
+      "cursor": "*"
+    },
+    "timestamp_utc": "2026-09-18T04:33:58.266242+00:00",
+    "status_code": 200,
+    "n_results": 196425,
+    "duration_ms": 5215,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2024.09.03.24312989/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:33:58.328352+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 252,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2023.10.05.23296631/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:33:58.595061+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 266,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2024.12.12.24318909/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:33:58.833715+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 238,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2025.08.11.25333465/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:33:59.071991+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 238,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2024.12.02.626322/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:33:59.368960+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 296,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2025.07.08.25331126/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:33:59.609099+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 240,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2025.11.26.25341008/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:33:59.850062+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 240,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2023.08.31.23294927/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:00.091801+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 241,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2023.04.25.23289123/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:00.332503+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 240,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2025.01.13.25320244/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:00.573656+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 241,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2022.08.03.22278392/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:00.815231+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 241,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2023.08.06.23293732/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:01.056494+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 241,
+    "error": null
+  },
+  {
+    "source": "semantic_scholar",
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search",
+    "params": {
+      "query": "myocardial infarction heart attack aspirin acetylsalicylic acid",
+      "limit": 100,
+      "offset": 0,
+      "fields": "paperId,externalIds,title,abstract,venue,year,authors,publicationTypes,fieldsOfStudy,citationCount,referenceCount,openAccessPdf,isOpenAccess,url,publicationDate,journal"
+    },
+    "timestamp_utc": "2026-09-18T04:34:01.146580+00:00",
+    "status_code": 429,
+    "n_results": null,
+    "duration_ms": 8090,
+    "error": "HTTP 429"
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2023.07.24.23292979/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:01.298212+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 241,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2022.08.22.22278874/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:01.537623+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 239,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2023.10.24.23297498/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:01.775874+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 238,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.07.21.20156349/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:02.015140+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 239,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.07.14.21260549/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:02.255422+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 240,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2024.12.11.24318833/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:02.515894+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 260,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2022.02.17.22271131/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:02.754908+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 238,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2023.02.28.530418/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:03.081931+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 326,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2022.03.18.22270280/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:03.321775+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 239,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2024.05.28.24307859/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:03.564577+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 242,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.05.02.20088302/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:03.803400+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 238,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/19004267/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:04.050785+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 247,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2023.02.01.526550/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:04.367655+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 316,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/656835/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:04.647231+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 279,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2023.01.03.23284157/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:04.888352+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 240,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2023.10.10.23296815/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:05.135291+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 246,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.03.23.21254144/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:05.376569+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 241,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.08.20.20175091/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:05.617378+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 240,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.06.08.21258132/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:05.854937+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 237,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2025.08.29.25334733/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:06.095420+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 240,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.04.19.21255559/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:06.334878+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 239,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2022.06.07.22275906/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:06.573433+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 238,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.12.13.20248147/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:06.812252+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 238,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.01.12.21249577/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:07.052509+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 240,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2025.11.24.25340868/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:07.295951+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 243,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2025.11.21.25340764/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:07.591525+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 295,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2022.08.21.22279047/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:07.833496+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 241,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2023.09.12.23295413/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:08.073409+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 239,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/411165/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:08.309525+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 236,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/411165/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:08.598056+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 288,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2024.06.27.24309406/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:08.841231+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 243,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.11.22.21266512/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:09.089759+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 248,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.05.01.21256428/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:09.331526+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 241,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2022.12.28.22283971/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:09.575154+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 243,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.07.13.21260467/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:09.814860+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 239,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.05.19.21257473/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:10.055244+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 240,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.10.30.21265430/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:10.293547+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 238,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.03.21.21253754/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:10.533662+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 240,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.05.19.20107227/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:10.773506+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 239,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2025.04.10.648128/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:11.281828+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 508,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/biorxiv/10.1101/066027/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:11.563552+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 281,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.08.09.20171330/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:11.804662+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 241,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.05.05.20075507/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:12.044789+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 240,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.04.30.21256119/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:12.284202+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 239,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2022.04.16.22273937/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:12.757460+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 473,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2022.05.31.22275743/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:13.003242+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 245,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.10.13.20211821/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:13.242512+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 239,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.07.29.20164558/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:13.484312+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 241,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.12.27.21268448/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:13.722410+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 238,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2022.09.02.22279546/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:13.966366+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 243,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.08.12.20171405/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:14.205940+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 239,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.11.16.20232512/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:14.449779+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 243,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2023.01.19.23284762/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:14.691277+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 241,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2022.03.05.22271947/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:14.933544+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 242,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.09.24.21264045/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:15.173556+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 239,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.09.03.20187286/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:15.413982+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 240,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.05.21.20109439/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:15.655897+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 241,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.04.08.21255167/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:15.896250+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 240,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.04.24.20077875/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:16.138525+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 242,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.06.16.20132639/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:16.383395+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 244,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.11.24.21266834/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:16.623147+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 239,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.05.25.20111757/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:16.861723+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 238,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.07.26.20159756/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:17.099423+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 237,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.11.10.20228809/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:17.344586+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 245,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2022.08.29.22279359/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:17.582627+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 237,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.10.05.20206870/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:17.824286+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 241,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.05.11.20098525/na/json",
+    "params": {},
+    "timestamp_utc": "2026-09-18T04:34:18.064218+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 239,
+    "error": null
+  }
+]

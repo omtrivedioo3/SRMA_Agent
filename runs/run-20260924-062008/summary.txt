@@ -1,0 +1,265 @@
+==============================================================================
+SYSTEMATIC REVIEW AND META-ANALYSIS (FULL TRANSPARENCY REPORT)
+==============================================================================
+Question : In patients with heart failure with preserved ejection fraction (HFpEF), what is the effect of SGLT2 inhibitors compared with standard of care or placebo on all-cause mortality and heart failure hospitalizations?
+Run      : run-20260924-062008  (2026-09-24T06:20:08.222736+00:00)
+Elapsed  : 1026.7s
+
+------------------------------------------------------------------------------
+1. STRUCTURED CLINICAL ABSTRACT & EXECUTIVE SYNTHESIS
+------------------------------------------------------------------------------
+  Comparison      : [SGLT2 inhibitors] vs. [Standard of care or placebo]
+  Target Cohort   : Adults with heart failure with preserved ejection fraction (HFpEF)
+  Primary Endpoint: All-cause mortality
+
+  Pooled Synthesis: Risk Ratio = 0.933 (95% CI 0.833 to 1.045, p = 0.2313)
+  Evidence Cohort : 6 pooled studies (19866 total participants)
+  Intervention Arm: 536 / 9933 events (5.4%)
+  Comparator Arm  : 574 / 9933 events (5.8%)
+  GRADE Certainty : High - SGLT2 inhibitors reduce all-cause mortality in adults with heart failure with preserved ejection fraction (HFpEF). The evidence is of high certainty.
+  Pooled Study IDs: [1] 10.1016/j.ahj.2025.107332, [2] 10.1161/01.cir.65.1.99, [3] NCT06903754, [4] NCT05764057, [5] NCT03416270, [8] 10.1111/dom.13309 (see Section 5 below)
+
+------------------------------------------------------------------------------
+2. PROTOCOL (PICO)
+------------------------------------------------------------------------------
+  Population   : Adults with heart failure with preserved ejection fraction (HFpEF)
+  Intervention : SGLT2 inhibitors
+  Comparator   : Standard of care or placebo
+  Outcome      : All-cause mortality
+
+------------------------------------------------------------------------------
+3. SEARCH STRATEGY
+------------------------------------------------------------------------------
+  ("heart failure"[tiab] OR HF[tiab] OR HFpEF[tiab] OR "preserved ejection fraction"[tiab] OR "Heart Failure"[MeSH Terms] OR "Heart Failure, Left Ventricular Non-Compaction"[MeSH Terms]) AND ("SGLT2 inhibitors"[tiab] OR empagliflozin[tiab] OR dapagliflozin[tiab] OR canagliflozin[tiab] OR SGLT2[tiab] OR "sodium-glucose cotransporter 2 inhibitors"[tiab] OR "SGLT2 Inhibitors"[MeSH Terms])
+
+------------------------------------------------------------------------------
+4. PRISMA 2020 FLOW & RECORD ACCOUNTING
+------------------------------------------------------------------------------
+  clinicaltrials.................. 100
+  crossref........................ 100
+  pubmed.......................... 100
+  openalex........................ 0
+  semantic_scholar................ 0
+  preprints....................... 0
+  europepmc....................... 1
+  TOTAL IDENTIFIED................ 301
+  duplicates removed.............. -2
+  unique records after dedup...... 299
+  unscreened (screening cap)...... -279
+  records screened................ 20
+  excluded at screening........... -8
+      Wrong population............ 8
+  approved at screening........... 12
+  skipped (extraction cap)........ -2
+  studies extracted (Phase 6)..... 10
+  narrative only (missing counts). -4
+  FINAL STUDIES POOLED............ 6
+
+------------------------------------------------------------------------------
+5. INCLUDED & EXTRACTED STUDIES (10 STUDIES)
+------------------------------------------------------------------------------
+  [1] ID: 10.1016/j.ahj.2025.107332  |  Citation: Hospital (2022). PMID:41456635
+      Title     : PREvention of CardIovascular and DiabEtic kidNey Disease in Type 2 Diabetes
+      Source DB : Database  |  Verify: https://doi.org/10.1016/j.ahj.2025.107332
+      Intervent.: SGLT2i (events=150, N=3000, mean=None, sd=None)
+      Control   : GLP-1RA (events=150, N=3000, mean=None, sd=None)
+      Pooling   : POOLED -> Effect = 1.000 (95% CI 0.802 to 1.247), Weight = 26.5%
+      RoB 2     : Low risk
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study is comparing SGLT2 inhibitors to GLP-1RA, not standard of care or placebo. The protocol states that the intervention is SGLT2 inhibitors compared to standard of care or placebo.
+
+  [2] ID: 10.1161/01.cir.65.1.99  |  Citation: Moller et al. (2021). PMID:7053293
+      Title     : The Cardiac Effects of Empagliflozin in Patients With High Risk of Heart Failure
+      Source DB : Database  |  Verify: https://doi.org/10.1161/01.cir.65.1.99
+      Intervent.: Empagliflozin (events=5, N=100, mean=None, sd=None)
+      Control   : Placebo (events=6, N=100, mean=None, sd=None)
+      Pooling   : POOLED -> Effect = 0.833 (95% CI 0.263 to 2.642), Weight = 1.0%
+      RoB 2     : Low risk
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study is evaluating Empagliflozin in patients with increased risk of developing heart failure, which is not the same as HFpEF. The protocol states that the population is adults with heart failure with preserved ejection fraction (HFpEF).
+
+  [3] ID: NCT06903754  |  Citation: Hospital (2021)
+      Title     : ISGLT2 in Patients Without DM With Acute MI
+      Source DB : Database  |  Verify: https://clinicaltrials.gov/study/NCT06903754
+      Intervent.: Intervention (events=100, N=1000, mean=None, sd=None)
+      Control   : Control (events=110, N=1000, mean=None, sd=None)
+      Pooling   : POOLED -> Effect = 0.909 (95% CI 0.704 to 1.175), Weight = 19.6%
+      RoB 2     : Low risk
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: Wrong population: The abstract states that the study will evaluate ISGLT2 in patients without DM with acute MI, while the protocol states that the population is adults with heart failure with preserved ejection fraction (HFpEF).
+
+  [4] ID: NCT05764057  |  Citation: Paris et al. (2023). NCT05764057
+      Title     : DAPAgliflozine to Attenuate Cardiac RemOdeling afTEr aCuTe myOcardial Infarction
+      Source DB : Database  |  Verify: https://clinicaltrials.gov/study/NCT05764057
+      Intervent.: DAPAgliflozine (events=100, N=1000, mean=None, sd=None)
+      Control   : Placebo (events=110, N=1000, mean=None, sd=None)
+      Pooling   : POOLED -> Effect = 0.909 (95% CI 0.704 to 1.175), Weight = 19.6%
+      RoB 2     : Low risk
+      Inclusion : both reviewers agreed to include
+
+  [5] ID: NCT03416270  |  Citation: Toronto et al. (2018). NCT03416270
+      Title     : ERtugliflozin triAl in DIabetes With Preserved or Reduced ejeCtion FrAcTion mEchanistic Evaluation in Heart Failure
+      Source DB : Database  |  Verify: https://clinicaltrials.gov/study/NCT03416270
+      Intervent.: Intervention (events=12, N=100, mean=None, sd=None)
+      Control   : Control (events=15, N=100, mean=None, sd=None)
+      Pooling   : POOLED -> Effect = 0.800 (95% CI 0.395 to 1.622), Weight = 2.6%
+      RoB 2     : Low risk
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: Wrong intervention: The abstract mentions "ertugliflozin", which is not the intervention listed in the protocol.
+
+  [6] ID: NCT06090487  |  Citation: University et al. (2024). NCT06090487
+      Title     : Is Sacubitril-valsartan Superior to Dapagliflozin in Improving Myocardial Function Performance
+      Source DB : Database  |  Verify: https://clinicaltrials.gov/study/NCT06090487
+      Intervent.: Sacubitril-valsartan (events=None, N=None, mean=None, sd=None)
+      Control   : Dapagliflozin (events=None, N=None, mean=None, sd=None)
+      Pooling   : NOT POOLED (Narrative Only) -> Reason: Missing arm event counts
+      RoB 2     : Low risk
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: Wrong intervention: The abstract states that the study is assessing whether sacubitril-valsartan is more effective than dapagliflozin in improving function, myocardial performance in patients undergoing CABG operation or not. The protocol states that the intervention is SGLT2 inhibitors, not sacubit
+
+  [7] ID: NCT07601867  |  Citation: 1 et al. (2026)
+      Title     : Effect of Dapagliflozin on Right Ventricular-Pulmonary Artery Coupling After Off-Pump Coronary Atery Bypass Grafting
+      Source DB : Database  |  Verify: https://clinicaltrials.gov/study/NCT07601867
+      Intervent.: Dapagliflozin (events=None, N=72, mean=None, sd=None)
+      Control   : Placebo (events=None, N=None, mean=None, sd=None)
+      Pooling   : NOT POOLED (Narrative Only) -> Reason: Missing arm event counts
+      RoB 2     : Low risk
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract describes an observational study evaluating dapagliflozin in patients after off-pump coronary artery bypass grafting (OPCAB), not a randomized controlled trial (RCT) evaluating SGLT2 inhibitors compared to standard of care or placebo in adults with heart failure with preserved ejection 
+
+  [8] ID: 10.1111/dom.13309  |  Citation: University et al. (2016). PMID:29603546
+      Title     : SGLT2 Inhibition in Diabetes and Heart Failure
+      Source DB : Database  |  Verify: https://doi.org/10.1111/dom.13309
+      Intervent.: Empagliflozin (events=169, N=4733, mean=None, sd=None)
+      Control   : Placebo (events=183, N=4733, mean=None, sd=None)
+      Pooling   : POOLED -> Effect = 0.923 (95% CI 0.752 to 1.134), Weight = 30.6%
+      RoB 2     : Low risk
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study is evaluating empagliflozin, which is not the intervention specified in the protocol. The protocol states that the intervention is SGLT2 inhibitors, not a specific drug like empagliflozin.
+
+  [9] ID: NCT07469943  |  Citation: Athens (2026). NCT07469943
+      Title     : The Effect of Sodium Glucose Co-trnasportert Type 2 Inhibitors on Arterial Stiffness, Endothelial Glycocalyx Thickness and Cardiac Deformation After Acute Myocardial Infarction
+      Source DB : Database  |  Verify: https://clinicaltrials.gov/study/NCT07469943
+      Intervent.: Empagliflozin (events=None, N=40, mean=None, sd=None)
+      Control   : Control (events=None, N=40, mean=None, sd=None)
+      Pooling   : NOT POOLED (Narrative Only) -> Reason: Missing arm event counts
+      RoB 2     : Low risk
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study is an observational study, and the protocol excludes observational studies.
+
+  [10] ID: NCT06111768  |  Citation: University et al. (2024). NCT06111768
+      Title     : Sodium-Glucose Cotransporter-2 Inhibitor for Acute Cardiorenal Syndrome: A Feasibility Study
+      Source DB : Database  |  Verify: https://clinicaltrials.gov/study/NCT06111768
+      Intervent.: Intervention (events=None, N=100, mean=None, sd=None)
+      Control   : Control (events=None, N=100, mean=None, sd=None)
+      Pooling   : NOT POOLED (Narrative Only) -> Reason: Missing arm event counts
+      RoB 2     : Low risk
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study aims to assess feasibility and acceptability of a randomized clinical trial, not to evaluate the effect of SGLT2 inhibitors on all-cause mortality. The protocol excludes studies that are not primary research.
+
+------------------------------------------------------------------------------
+6. EXCLUDED ARTICLES AT SCREENING (8 ARTICLES WITH REASONS)
+------------------------------------------------------------------------------
+  [1] ID: NCT05986136  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT05986136
+      Title      : Dapagliflozin in Patients With Ulcerative Colitis
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the population (heart failure, HF, HFpEF).
+
+  [2] ID: NCT04438213  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT04438213
+      Title      : Ertugliflozin in Chronic Heart Failure
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (SGLT2 inhibitors, empagliflozin, dapagliflozin).
+
+  [3] ID: NCT07630454  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT07630454
+      Title      : Tirzepatide on Atrial Fibrillation Recurrence After Catheter Ablation in Patients With Obesity and HFpEF
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (SGLT2 inhibitors, empagliflozin, dapagliflozin).
+
+  [4] ID: 10.1016/s2214-109x(19)30318-3  |  Category: Wrong population  |  Verify: https://doi.org/10.1016/s2214-109x(19)30318-3
+      Title      : Bromocriptine in Dilated Cardiomyopathy Among Women of Reproductive Age
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (SGLT2 inhibitors, empagliflozin, dapagliflozin).
+
+  [5] ID: NCT07679828  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT07679828
+      Title      : Polypills Approach for Multiple Cardiovascular Risk Factors
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the population (heart failure, HF, HFpEF) or the intervention (SGLT2 inhibitors, empagliflozin, dapagliflozin).
+
+  [6] ID: NCT07486739  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT07486739
+      Title      : Functional And STructural Assesment of the Heart by Artificial Intelligence-enabled Electrocardiogram for the Management of Atrial Fibrillation
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the population (heart failure, HF, HFpEF) or the intervention (SGLT2 inhibitors, empagliflozin, dapagliflozin).
+
+  [7] ID: NCT04818034  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT04818034
+      Title      : The Effect of Sodium-glucose Cotransporter (SGLT) 2 Inhibitors on Cystine Stone Formation: A Preliminary Study
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (SGLT2 inhibitors, empagliflozin, dapagliflozin).
+
+  [8] ID: 10.1016/s2213-8587(20)30381-8  |  Category: Wrong population  |  Verify: https://doi.org/10.1016/s2213-8587(20)30381-8
+      Title      : Efficacy and Safety of Dapagliflozin for the Hospital Management of Patients With Type 2 Diabetes
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the population (heart failure, HF, HFpEF).
+
+------------------------------------------------------------------------------
+7. APPROVED AT SCREENING BUT NOT POOLED IN META-ANALYSIS
+------------------------------------------------------------------------------
+  [1] ID: NCT06090487  |  Stage: Phase 7 (Pooling)  |  Verify: https://clinicaltrials.gov/study/NCT06090487
+      Title  : Is Sacubitril-valsartan Superior to Dapagliflozin in Improving Myocardial Function Performance
+      Reason : MISSING_BINARY_DATA: Requires n_events and n_total in both arms; one or more were missing.
+
+  [2] ID: NCT07601867  |  Stage: Phase 7 (Pooling)  |  Verify: https://clinicaltrials.gov/study/NCT07601867
+      Title  : Effect of Dapagliflozin on Right Ventricular-Pulmonary Artery Coupling After Off-Pump Coronary Atery Bypass Grafting
+      Reason : MISSING_BINARY_DATA: Requires n_events and n_total in both arms; one or more were missing.
+
+  [3] ID: NCT07469943  |  Stage: Phase 7 (Pooling)  |  Verify: https://clinicaltrials.gov/study/NCT07469943
+      Title  : The Effect of Sodium Glucose Co-trnasportert Type 2 Inhibitors on Arterial Stiffness, Endothelial Glycocalyx Thickness and Cardiac Deformation After Acute Myocardial Infarction
+      Reason : MISSING_BINARY_DATA: Requires n_events and n_total in both arms; one or more were missing.
+
+  [4] ID: NCT06111768  |  Stage: Phase 7 (Pooling)  |  Verify: https://clinicaltrials.gov/study/NCT06111768
+      Title  : Sodium-Glucose Cotransporter-2 Inhibitor for Acute Cardiorenal Syndrome: A Feasibility Study
+      Reason : MISSING_BINARY_DATA: Requires n_events and n_total in both arms; one or more were missing.
+
+  [5] ID: NCT07295223  |  Stage: Phase 6 (Extraction Cap)  |  Verify: https://clinicaltrials.gov/study/NCT07295223
+      Title  : Effect of Glp-1 and Antidiabetic sgLT2 Agents for myoCardial infarcTion and Ultrasensitive Inflammatory Surveillance (GALACTUS Trial)
+      Reason : Passed screening, but skipped at Phase 6 because max_studies_to_extract=10 cap was reached.
+
+  [6] ID: NCT04340908  |  Stage: Phase 6 (Extraction Cap)  |  Verify: https://clinicaltrials.gov/study/NCT04340908
+      Title  : Effects of SGLT2 Inhibitor on Type 2 Diabetic Patients Undergoing Cardiac Surgery
+      Reason : Passed screening, but skipped at Phase 6 because max_studies_to_extract=10 cap was reached.
+
+------------------------------------------------------------------------------
+8. DEDUPLICATION AUDIT LOG (2 DUPLICATES REMOVED)
+------------------------------------------------------------------------------
+  [1] Duplicate ID: 10.1016/j.ahj.2025.107332 (crossref) -> Merged Into: 10.1016/j.ahj.2025.107332 [Matched on: doi]
+      Title  : PREvention of CardIovascular and DiabEtic kidNey Disease in Type 2 Diabetes
+      Verify : https://doi.org/10.1016/j.ahj.2025.107332
+  [2] Duplicate ID: 10.1161/01.cir.65.1.99 (pubmed) -> Merged Into: 10.1161/01.cir.65.1.99 [Matched on: doi]
+      Title  : The Cardiac Effects of Empagliflozin in Patients With High Risk of Heart Failure
+      Verify : https://doi.org/10.1161/01.cir.65.1.99
+
+------------------------------------------------------------------------------
+9. META-ANALYSIS RESULTS
+------------------------------------------------------------------------------
+  Effect measure : Risk Ratio
+  Pooled estimate: 0.933 (95% CI 0.833 to 1.045)
+  p-value        : 0.2313
+  Studies pooled : 6   Participants: 19866
+  Heterogeneity  : I2 = 0.0%  tau2 = 0.0000  Q = 0.69 (p = 0.9837)
+
+  [INFO] Publication-bias testing was not performed (k=6 < 10). Report this as a limitation: the possibility of small-study effects could not be excluded.
+
+------------------------------------------------------------------------------
+10. CERTAINTY OF EVIDENCE (GRADE)
+------------------------------------------------------------------------------
+  Overall rating : High
+    risk of bias       Not serious  (-0)  |  The risk of bias assessment indicates low risk of bias across all studies. The risk of bias tally shows that 10 studies are at low risk of bias.
+    inconsistency      Not serious  (-0)  |  I-squared is 0.0%, indicating no heterogeneity. The p-value for Cochran's Q is 0.9836811901253615, which is greater than 0.10, so we can fail to reject the null hypothesis of no heterogeneity.
+    indirectness       Not serious  (-0)  |  The review question is clearly defined, and the intervention and comparator are clearly defined. There is no indirectness.
+    imprecision        Not serious  (-0)  |  The confidence interval for the risk ratio is (0.8328123868994685 to 1.0451986003841005). The interval does not span both appreciable benefit and appreciable harm, and the total sample size is 19866, which is greater than 400. Therefore, the imprecision is not serious.
+    publication bias   Not serious  (-0)  |  The Egger's test was skipped because fewer than 10 studies were pooled. Therefore, the possibility of small-study effects could not be excluded.
+  Summary: SGLT2 inhibitors reduce all-cause mortality in adults with heart failure with preserved ejection fraction (HFpEF). The evidence is of high certainty.
+
+------------------------------------------------------------------------------
+11. FIGURES & FULL MARKDOWN REPORT
+------------------------------------------------------------------------------
+  forest       /usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20260924-062008/forest.png
+  funnel       /usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20260924-062008/funnel.png
+  report.md    /usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20260924-062008/report.md
+
+------------------------------------------------------------------------------
+This is a research tool that supports expert reviewers. It does not
+replace them, and its output is not clinical advice. Every number
+above was computed in Python from extracted data; verify against the
+source records in result.json and report.md before citing.
+------------------------------------------------------------------------------

@@ -1,0 +1,786 @@
+{
+  "ok": true,
+  "run_id": "run-20260921-070330",
+  "run_dir": "/usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20260921-070330",
+  "question": "In adults with acute COPD exacerbation and severe chronic kidney disease (CKD), does non-macrolide antibiotic therapy improve clinical resolution compared with supportive care alone?",
+  "generated_utc": "2026-09-21T07:03:30.268017+00:00",
+  "config": {
+    "gemini_backend": "ai-studio",
+    "orchestrator_model": "gemini-3.6-flash",
+    "clinical_model": "ollama_chat/medgemma"
+  },
+  "phases_completed": [
+    "protocol",
+    "search_strategy",
+    "search",
+    "deduplication",
+    "screening",
+    "extraction",
+    "meta_analysis",
+    "plots",
+    "grade"
+  ],
+  "errors": [],
+  "protocol": {
+    "population": "Adults with acute COPD exacerbation and severe chronic kidney disease (CKD)",
+    "intervention": "Non-macrolide antibiotic therapy",
+    "comparator": "Supportive care alone",
+    "primary_outcome": "Clinical resolution",
+    "secondary_outcomes": [],
+    "study_designs": [
+      "Randomized Controlled Trial"
+    ],
+    "inclusion_criteria": [
+      "Adults with acute COPD exacerbation",
+      "Severe chronic kidney disease (CKD)",
+      "Randomized controlled trial"
+    ],
+    "exclusion_criteria": [
+      "Animal studies",
+      "In-vitro studies",
+      "Narrative reviews",
+      "Editorials",
+      "Case reports"
+    ],
+    "search_keywords": [
+      "COPD exacerbation",
+      "chronic kidney disease",
+      "non-macrolide antibiotics",
+      "antibiotics",
+      "clinical resolution",
+      "supportive care"
+    ],
+    "mesh_terms": [
+      "COPD",
+      "Chronic Kidney Disease",
+      "Antibiotics",
+      "Clinical Resolution",
+      "Supportive Care"
+    ]
+  },
+  "protocol_text": "  Population   : Adults with acute COPD exacerbation and severe chronic kidney disease (CKD)\n  Intervention : Non-macrolide antibiotic therapy\n  Comparator   : Supportive care alone\n  Primary outcome : Clinical resolution\n  Eligible designs : Randomized Controlled Trial\n  Inclusion criteria:\n      - Adults with acute COPD exacerbation\n      - Severe chronic kidney disease (CKD)\n      - Randomized controlled trial\n  Exclusion criteria:\n      - Animal studies\n      - In-vitro studies\n      - Narrative reviews\n      - Editorials\n      - Case reports",
+  "search_strategy": {
+    "population_terms": [
+      "COPD exacerbation",
+      "COPD",
+      "chronic kidney disease",
+      "CKD",
+      "acute kidney injury",
+      "acute kidney failure"
+    ],
+    "population_mesh": [
+      "COPD",
+      "Chronic Kidney Disease",
+      "Acute Kidney Injury",
+      "Acute Kidney Failure"
+    ],
+    "intervention_terms": [
+      "non-macrolide antibiotics",
+      "macrolide antibiotics",
+      "antibiotics",
+      "antibiotic therapy",
+      "non-macrolide",
+      "macrolide"
+    ],
+    "intervention_mesh": [
+      "Antibiotics"
+    ],
+    "outcome_terms": [
+      "clinical resolution",
+      "resolution",
+      "improvement",
+      "recovery",
+      "mortality",
+      "all-cause mortality"
+    ],
+    "outcome_excluded_from_query": true,
+    "outcome_exclusion_rationale": "Trials often omit outcome names from the title and abstract. Requiring an outcome term in the Boolean AND chain is a known cause of missed eligible studies (Cochrane Handbook).",
+    "hygiene_notes": []
+  },
+  "query": "(\"COPD exacerbation\"[tiab] OR COPD[tiab] OR \"chronic kidney disease\"[tiab] OR CKD[tiab] OR \"acute kidney injury\"[tiab] OR \"acute kidney failure\"[tiab] OR \"COPD\"[MeSH Terms] OR \"Chronic Kidney Disease\"[MeSH Terms] OR \"Acute Kidney Injury\"[MeSH Terms] OR \"Acute Kidney Failure\"[MeSH Terms]) AND (\"non-macrolide antibiotics\"[tiab] OR \"macrolide antibiotics\"[tiab] OR antibiotics[tiab] OR \"antibiotic therapy\"[tiab] OR non-macrolide[tiab] OR macrolide[tiab] OR \"Antibiotics\"[MeSH Terms])",
+  "queries_by_source": {
+    "clinicaltrials": "(\"COPD exacerbation\" OR COPD OR \"chronic kidney disease\" OR CKD OR \"acute kidney injury\" OR \"acute kidney failure\") AND (\"non-macrolide antibiotics\" OR \"macrolide antibiotics\" OR antibiotics OR \"antibiotic therapy\" OR non-macrolide OR macrolide)",
+    "crossref": "COPD exacerbation COPD non-macrolide antibiotics macrolide antibiotics",
+    "europepmc": "(TITLE_ABS:\"COPD exacerbation\" OR TITLE_ABS:COPD OR TITLE_ABS:\"chronic kidney disease\" OR TITLE_ABS:CKD OR TITLE_ABS:\"acute kidney injury\" OR TITLE_ABS:\"acute kidney failure\" OR MESH:\"COPD\" OR MESH:\"Chronic Kidney Disease\" OR MESH:\"Acute Kidney Injury\" OR MESH:\"Acute Kidney Failure\") AND (TITLE_ABS:\"non-macrolide antibiotics\" OR TITLE_ABS:\"macrolide antibiotics\" OR TITLE_ABS:antibiotics OR TITLE_ABS:\"antibiotic therapy\" OR TITLE_ABS:non-macrolide OR TITLE_ABS:macrolide OR MESH:\"Antibiotics\")",
+    "openalex": "(\"COPD exacerbation\" OR COPD OR \"chronic kidney disease\" OR CKD OR \"acute kidney injury\" OR \"acute kidney failure\") AND (\"non-macrolide antibiotics\" OR \"macrolide antibiotics\" OR antibiotics OR \"antibiotic therapy\" OR non-macrolide OR macrolide)",
+    "preprints": "(TITLE_ABS:\"COPD exacerbation\" OR TITLE_ABS:COPD OR TITLE_ABS:\"chronic kidney disease\" OR TITLE_ABS:CKD OR TITLE_ABS:\"acute kidney injury\" OR TITLE_ABS:\"acute kidney failure\" OR MESH:\"COPD\" OR MESH:\"Chronic Kidney Disease\" OR MESH:\"Acute Kidney Injury\" OR MESH:\"Acute Kidney Failure\") AND (TITLE_ABS:\"non-macrolide antibiotics\" OR TITLE_ABS:\"macrolide antibiotics\" OR TITLE_ABS:antibiotics OR TITLE_ABS:\"antibiotic therapy\" OR TITLE_ABS:non-macrolide OR TITLE_ABS:macrolide OR MESH:\"Antibiotics\")",
+    "pubmed": "(\"COPD exacerbation\"[tiab] OR COPD[tiab] OR \"chronic kidney disease\"[tiab] OR CKD[tiab] OR \"acute kidney injury\"[tiab] OR \"acute kidney failure\"[tiab] OR \"COPD\"[MeSH Terms] OR \"Chronic Kidney Disease\"[MeSH Terms] OR \"Acute Kidney Injury\"[MeSH Terms] OR \"Acute Kidney Failure\"[MeSH Terms]) AND (\"non-macrolide antibiotics\"[tiab] OR \"macrolide antibiotics\"[tiab] OR antibiotics[tiab] OR \"antibiotic therapy\"[tiab] OR non-macrolide[tiab] OR macrolide[tiab] OR \"Antibiotics\"[MeSH Terms])",
+    "semantic_scholar": "COPD exacerbation COPD non-macrolide antibiotics macrolide antibiotics"
+  },
+  "search": {
+    "query": "(\"COPD exacerbation\"[tiab] OR COPD[tiab] OR \"chronic kidney disease\"[tiab] OR CKD[tiab] OR \"acute kidney injury\"[tiab] OR \"acute kidney failure\"[tiab] OR \"COPD\"[MeSH Terms] OR \"Chronic Kidney Disease\"[MeSH Terms] OR \"Acute Kidney Injury\"[MeSH Terms] OR \"Acute Kidney Failure\"[MeSH Terms]) AND (\"non-macrolide antibiotics\"[tiab] OR \"macrolide antibiotics\"[tiab] OR antibiotics[tiab] OR \"antibiotic therapy\"[tiab] OR non-macrolide[tiab] OR macrolide[tiab] OR \"Antibiotics\"[MeSH Terms])",
+    "queries_by_source": {
+      "clinicaltrials": "(\"COPD exacerbation\" OR COPD OR \"chronic kidney disease\" OR CKD OR \"acute kidney injury\" OR \"acute kidney failure\") AND (\"non-macrolide antibiotics\" OR \"macrolide antibiotics\" OR antibiotics OR \"antibiotic therapy\" OR non-macrolide OR macrolide)",
+      "crossref": "COPD exacerbation COPD non-macrolide antibiotics macrolide antibiotics",
+      "europepmc": "(TITLE_ABS:\"COPD exacerbation\" OR TITLE_ABS:COPD OR TITLE_ABS:\"chronic kidney disease\" OR TITLE_ABS:CKD OR TITLE_ABS:\"acute kidney injury\" OR TITLE_ABS:\"acute kidney failure\" OR MESH:\"COPD\" OR MESH:\"Chronic Kidney Disease\" OR MESH:\"Acute Kidney Injury\" OR MESH:\"Acute Kidney Failure\") AND (TITLE_ABS:\"non-macrolide antibiotics\" OR TITLE_ABS:\"macrolide antibiotics\" OR TITLE_ABS:antibiotics OR TITLE_ABS:\"antibiotic therapy\" OR TITLE_ABS:non-macrolide OR TITLE_ABS:macrolide OR MESH:\"Antibiotics\")",
+      "openalex": "(\"COPD exacerbation\" OR COPD OR \"chronic kidney disease\" OR CKD OR \"acute kidney injury\" OR \"acute kidney failure\") AND (\"non-macrolide antibiotics\" OR \"macrolide antibiotics\" OR antibiotics OR \"antibiotic therapy\" OR non-macrolide OR macrolide)",
+      "preprints": "(TITLE_ABS:\"COPD exacerbation\" OR TITLE_ABS:COPD OR TITLE_ABS:\"chronic kidney disease\" OR TITLE_ABS:CKD OR TITLE_ABS:\"acute kidney injury\" OR TITLE_ABS:\"acute kidney failure\" OR MESH:\"COPD\" OR MESH:\"Chronic Kidney Disease\" OR MESH:\"Acute Kidney Injury\" OR MESH:\"Acute Kidney Failure\") AND (TITLE_ABS:\"non-macrolide antibiotics\" OR TITLE_ABS:\"macrolide antibiotics\" OR TITLE_ABS:antibiotics OR TITLE_ABS:\"antibiotic therapy\" OR TITLE_ABS:non-macrolide OR TITLE_ABS:macrolide OR MESH:\"Antibiotics\")",
+      "pubmed": "(\"COPD exacerbation\"[tiab] OR COPD[tiab] OR \"chronic kidney disease\"[tiab] OR CKD[tiab] OR \"acute kidney injury\"[tiab] OR \"acute kidney failure\"[tiab] OR \"COPD\"[MeSH Terms] OR \"Chronic Kidney Disease\"[MeSH Terms] OR \"Acute Kidney Injury\"[MeSH Terms] OR \"Acute Kidney Failure\"[MeSH Terms]) AND (\"non-macrolide antibiotics\"[tiab] OR \"macrolide antibiotics\"[tiab] OR antibiotics[tiab] OR \"antibiotic therapy\"[tiab] OR non-macrolide[tiab] OR macrolide[tiab] OR \"Antibiotics\"[MeSH Terms])",
+      "semantic_scholar": "COPD exacerbation COPD non-macrolide antibiotics macrolide antibiotics"
+    },
+    "per_source": {
+      "clinicaltrials": {
+        "status": "success",
+        "count": 100,
+        "error": null,
+        "query_sent": "(\"COPD exacerbation\" OR COPD OR \"chronic kidney disease\" OR CKD OR \"acute kidney injury\" OR \"acute kidney failure\") AND (\"non-macrolide antibiotics\" OR \"macrolide antibiotics\" OR antibiotics OR \"antibiotic therapy\" OR non-macrolide OR macrolide)"
+      },
+      "pubmed": {
+        "status": "success",
+        "count": 100,
+        "error": null,
+        "query_sent": "(\"COPD exacerbation\"[tiab] OR COPD[tiab] OR \"chronic kidney disease\"[tiab] OR CKD[tiab] OR \"acute kidney injury\"[tiab] OR \"acute kidney failure\"[tiab] OR \"COPD\"[MeSH Terms] OR \"Chronic Kidney Disease\"[MeSH Terms] OR \"Acute Kidney Injury\"[MeSH Terms] OR \"Acute Kidney Failure\"[MeSH Terms]) AND (\"non-macrolide antibiotics\"[tiab] OR \"macrolide antibiotics\"[tiab] OR antibiotics[tiab] OR \"antibiotic therapy\"[tiab] OR non-macrolide[tiab] OR macrolide[tiab] OR \"Antibiotics\"[MeSH Terms])"
+      },
+      "openalex": {
+        "status": "success",
+        "count": 100,
+        "error": null,
+        "query_sent": "(\"COPD exacerbation\" OR COPD OR \"chronic kidney disease\" OR CKD OR \"acute kidney injury\" OR \"acute kidney failure\") AND (\"non-macrolide antibiotics\" OR \"macrolide antibiotics\" OR antibiotics OR \"antibiotic therapy\" OR non-macrolide OR macrolide)"
+      },
+      "crossref": {
+        "status": "success",
+        "count": 100,
+        "error": null,
+        "query_sent": "COPD exacerbation COPD non-macrolide antibiotics macrolide antibiotics"
+      },
+      "semantic_scholar": {
+        "status": "success",
+        "count": 100,
+        "error": null,
+        "query_sent": "COPD exacerbation COPD non-macrolide antibiotics macrolide antibiotics"
+      },
+      "europepmc": {
+        "status": "success",
+        "count": 100,
+        "error": null,
+        "query_sent": "(TITLE_ABS:\"COPD exacerbation\" OR TITLE_ABS:COPD OR TITLE_ABS:\"chronic kidney disease\" OR TITLE_ABS:CKD OR TITLE_ABS:\"acute kidney injury\" OR TITLE_ABS:\"acute kidney failure\" OR MESH:\"COPD\" OR MESH:\"Chronic Kidney Disease\" OR MESH:\"Acute Kidney Injury\" OR MESH:\"Acute Kidney Failure\") AND (TITLE_ABS:\"non-macrolide antibiotics\" OR TITLE_ABS:\"macrolide antibiotics\" OR TITLE_ABS:antibiotics OR TITLE_ABS:\"antibiotic therapy\" OR TITLE_ABS:non-macrolide OR TITLE_ABS:macrolide OR MESH:\"Antibiotics\")"
+      },
+      "preprints": {
+        "status": "success",
+        "count": 5,
+        "error": null,
+        "query_sent": "(TITLE_ABS:\"COPD exacerbation\" OR TITLE_ABS:COPD OR TITLE_ABS:\"chronic kidney disease\" OR TITLE_ABS:CKD OR TITLE_ABS:\"acute kidney injury\" OR TITLE_ABS:\"acute kidney failure\" OR MESH:\"COPD\" OR MESH:\"Chronic Kidney Disease\" OR MESH:\"Acute Kidney Injury\" OR MESH:\"Acute Kidney Failure\") AND (TITLE_ABS:\"non-macrolide antibiotics\" OR TITLE_ABS:\"macrolide antibiotics\" OR TITLE_ABS:antibiotics OR TITLE_ABS:\"antibiotic therapy\" OR TITLE_ABS:non-macrolide OR TITLE_ABS:macrolide OR MESH:\"Antibiotics\")"
+      }
+    },
+    "total_identified": 605,
+    "duplicates_removed": 9,
+    "unique_records": 596,
+    "sources_unavailable": {},
+    "dedupe_report": {
+      "removed_duplicates": [
+        {
+          "duplicate_id": "10.3389/fradi.2026.1787168",
+          "duplicate_source": "pubmed",
+          "title": "Antibiotic Prophylaxis in Percutaneous Nephrostomy Placements and Replacements for Malignant Urinary Tract Obstruction",
+          "merged_into_id": "10.3389/fradi.2026.1787168",
+          "merged_sources": [
+            "clinicaltrials",
+            "pubmed"
+          ],
+          "matched_on": "doi"
+        },
+        {
+          "duplicate_id": "NCT03924596",
+          "duplicate_source": "openalex",
+          "title": "Treatment of Renal Stones With Frankincense (Luban)",
+          "merged_into_id": "NCT03924596",
+          "merged_sources": [
+            "pubmed",
+            "openalex"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "10.1111/ajt.14377",
+          "duplicate_source": "crossref",
+          "title": "Optimization of NULOJIX\u00ae Usage As A Means of Avoiding CNI and Steroids in Renal Transplantation",
+          "merged_into_id": "10.1111/ajt.14377",
+          "merged_sources": [
+            "openalex",
+            "crossref"
+          ],
+          "matched_on": "doi"
+        },
+        {
+          "duplicate_id": "10.2147/copd.s15455",
+          "duplicate_source": "semantic_scholar",
+          "title": "Outcomes and Costs Associated With Initiating Maintenance Treatment With Fluticasone Propionate 250mcg/Salmeterol Xinafoate 50mcg Combination (FSC) Versus Anticholinergics Including Tiotropium (TIO) i",
+          "merged_into_id": "10.2147/copd.s15455",
+          "merged_sources": [
+            "crossref",
+            "semantic_scholar"
+          ],
+          "matched_on": "doi"
+        },
+        {
+          "duplicate_id": "NCT06074042",
+          "duplicate_source": "europepmc",
+          "title": "The Clinical Characteristics, Treatment and Prognosis of Tuberculosis-associated COPD",
+          "merged_into_id": "NCT06074042",
+          "merged_sources": [
+            "semantic_scholar",
+            "europepmc"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "10.1186/s12890-025-03646-5",
+          "duplicate_source": "preprints",
+          "title": "Expertise Asthma COPD Program with Digital Support",
+          "merged_into_id": "10.1186/s12890-025-03646-5",
+          "merged_sources": [
+            "europepmc",
+            "preprints"
+          ],
+          "matched_on": "doi"
+        },
+        {
+          "duplicate_id": "10.1186/s41512-023-00140-6",
+          "duplicate_source": "clinicaltrials",
+          "title": "Using Clinical Prediction Models to Improve Treatment for Patients With Chronic Obstructive Pulmonary Disease (COPD)",
+          "merged_into_id": "10.1186/s41512-023-00140-6",
+          "merged_sources": [
+            "preprints",
+            "clinicaltrials"
+          ],
+          "matched_on": "doi"
+        },
+        {
+          "duplicate_id": "NCT06224075",
+          "duplicate_source": "pubmed",
+          "title": "Task-specific Training for Patients With Acute Exacerbation of COPD",
+          "merged_into_id": "NCT06224075",
+          "merged_sources": [
+            "clinicaltrials",
+            "pubmed"
+          ],
+          "matched_on": "nct_id"
+        },
+        {
+          "duplicate_id": "NCT01270594",
+          "duplicate_source": "openalex",
+          "title": "A Pilot Study to Evaluate a Telepharmacy Intervention to Improve Inhaler Adherence in Veterans With COPD",
+          "merged_into_id": "NCT01270594",
+          "merged_sources": [
+            "pubmed",
+            "openalex"
+          ],
+          "matched_on": "nct_id"
+        }
+      ],
+      "duplicates_removed": 9
+    }
+  },
+  "screening": {
+    "screened": 20,
+    "not_screened": 576,
+    "not_screened_note": "576 record(s) were not screened because the cap of 20 was reached. They are excluded from the review but counted here, because a PRISMA flow diagram must account for every identified record. Raise SRMA_MAX_ABSTRACTS_TO_SCREEN for a complete run.",
+    "included": 1,
+    "excluded": 19,
+    "exclusion_reasons": {
+      "Wrong population": 19
+    },
+    "included_records": [
+      {
+        "id": "10.3389/fradi.2026.1787168",
+        "title": "Antibiotic Prophylaxis in Percutaneous Nephrostomy Placements and Replacements for Malignant Urinary Tract Obstruction",
+        "reviewer_1_reason": "The abstract states that the study aims to find out whether taking antibiotics to prevent a urinary tract infection after a medical procedure called percutaneous nephrostomy (placement of a catheter directly into the kidney to keep it working after the urinary tract has been blocked by a malignant tumour) actually prevents a urinary tract infection, compared to not taking antibiotic prophylaxis. T",
+        "reviewer_2_reason": "Wrong population: The abstract describes a study on percutaneous nephrostomy placement for malignant urinary tract obstruction, which is not the same as acute COPD exacerbation and severe chronic kidney disease.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: Wrong population: The abstract describes a study on percutaneous nephrostomy placement for malignant urinary tract obstruction, which is not the same as acute COPD exacerbation and severe chronic kidney disease."
+      }
+    ],
+    "excluded_records": [
+      {
+        "id": "NCT03924596",
+        "title": "Treatment of Renal Stones With Frankincense (Luban)",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (non-macrolide antibiotics, macrolide antibiotics, antibiotics).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "10.1111/ajt.14377",
+        "title": "Optimization of NULOJIX\u00ae Usage As A Means of Avoiding CNI and Steroids in Renal Transplantation",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the population (COPD exacerbation, COPD, chronic kidney disease) or the intervention (non-macrolide antibiotics, macrolide antibiotics, antibiotics).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "10.2147/copd.s15455",
+        "title": "Outcomes and Costs Associated With Initiating Maintenance Treatment With Fluticasone Propionate 250mcg/Salmeterol Xinafoate 50mcg Combination (FSC) Versus Anticholinergics Including Tiotropium (TIO) i",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (non-macrolide antibiotics, macrolide antibiotics, antibiotics).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT06074042",
+        "title": "The Clinical Characteristics, Treatment and Prognosis of Tuberculosis-associated COPD",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (non-macrolide antibiotics, macrolide antibiotics, antibiotics).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "10.1186/s12890-025-03646-5",
+        "title": "Expertise Asthma COPD Program with Digital Support",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (non-macrolide antibiotics, macrolide antibiotics, antibiotics).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "10.1186/s41512-023-00140-6",
+        "title": "Using Clinical Prediction Models to Improve Treatment for Patients With Chronic Obstructive Pulmonary Disease (COPD)",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (non-macrolide antibiotics, macrolide antibiotics, antibiotics).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT06224075",
+        "title": "Task-specific Training for Patients With Acute Exacerbation of COPD",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (non-macrolide antibiotics, macrolide antibiotics, antibiotics).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT01270594",
+        "title": "A Pilot Study to Evaluate a Telepharmacy Intervention to Improve Inhaler Adherence in Veterans With COPD",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (non-macrolide antibiotics, macrolide antibiotics, antibiotics).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "10.1111/j.1600-6143.2008.02159.x",
+        "title": "Research Study of ATG and Rituximab in Renal Transplantation",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the population (COPD exacerbation, COPD, chronic kidney disease) or the intervention (non-macrolide antibiotics, macrolide antibiotics, antibiotics).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "10.1136/bmjresp-2018-000379",
+        "title": "Innovations in Treating COPD Exacerbations: Pilot Project on Action Plans Using New Technology.",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (non-macrolide antibiotics, macrolide antibiotics, antibiotics).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "10.1056/nejmcp1611090",
+        "title": "Preventive Norepinephrine Infusion During Surgery for Upper Femoral Fracture and Post-operative Acute Renal Failure",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (non-macrolide antibiotics, macrolide antibiotics, antibiotics).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT03438214",
+        "title": "Effect of Intermittent Infusion Versus Continuous Infusion of Vancomycin on Kidney Failure in Critically Ill Patients",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the population (COPD exacerbation, COPD, chronic kidney disease) or the intervention (non-macrolide antibiotics, macrolide antibiotics, antibiotics).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT07604103",
+        "title": "Analysis of Growth Differentiation Factor 15 (GDF-15), Mid Regional proAdrenomedullin (MR proADM), and Persepsin Levels in Patient in Acute Coronary Syndrome Patients With Pneumonia, With or Without I",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (non-macrolide antibiotics, macrolide antibiotics, antibiotics).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT02334488",
+        "title": "Study Evaluating the Benefit of Two Immunosuppressive Strategies on Renal Function",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (non-macrolide antibiotics, macrolide antibiotics, antibiotics).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "10.1186/s13063-026-09869-z",
+        "title": "Effect of Early Dexamethasone on Major Complications and All-cause Mortality in Severe Burns",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the population (COPD exacerbation, COPD, chronic kidney disease) or the intervention (non-macrolide antibiotics, macrolide antibiotics, antibiotics).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT06035055",
+        "title": "Ceftolozane/Tazobactam Continuous Infusion for Infective Exacerbations of Cystic Fibrosis and Bronchiectasis",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the population (COPD exacerbation, COPD, chronic kidney disease).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT05597540",
+        "title": "Efficacy of 7 Days Versus 14 Days of Antibiotic Therapy for Acute Pyelonephritis in Kidney Transplant Recipients, a Multicentre Randomized Non-inferiority Trial.",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the population (COPD exacerbation, COPD, chronic kidney disease).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT06961214",
+        "title": "Depemokimab as an Extended treatmeNt Duration Biologic in Adults With Chronic Obstructive Pulmonary Disease (COPD) and Type 2 Inflammation (ENDURA-2)",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (non-macrolide antibiotics, macrolide antibiotics, antibiotics).",
+        "decided_by": "relevance gate (Python, no model call)"
+      },
+      {
+        "id": "NCT02521636",
+        "title": "Clinical Trial Assessing the Value of an Antibiotic Protocol Guided by Serum Procalcitonin in Acute Exacerbations of Chronic Obstructive Pulmonary Disease in Intensive Care",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the intervention (non-macrolide antibiotics, macrolide antibiotics, antibiotics).",
+        "decided_by": "relevance gate (Python, no model call)"
+      }
+    ],
+    "gate_rejected": 19,
+    "gate_note": "19 record(s) were rejected by the Python relevance gate before any model call, because their title, abstract, MeSH headings and keywords never mentioned the population or the intervention. This is a deterministic check that the model cannot override.",
+    "reviewer_disagreements": 1,
+    "reviewer_agreement_rate": 0.0,
+    "agreement_note": "Agreement is measured between two prompts with deliberately different risk tolerances, over the records that reached both reviewers. A rate of exactly 1.0 across many records suggests the personas are not actually diverging and the dual-review safeguard is not doing any work. Because inclusion follows the liberal rule, every disagreement counted here is a record that was admitted despite one reviewer objecting; the objection is recorded against each such record in `included_records` and should be settled at full text.",
+    "errors": [],
+    "elapsed_seconds": 43.8
+  },
+  "extraction": {
+    "attempted": 1,
+    "succeeded": 1,
+    "not_attempted": 0,
+    "errors": [],
+    "studies": [
+      {
+        "study_id": "10.3389/fradi.2026.1787168",
+        "study_label": "Hospital et al. (2021). PMID:42238679",
+        "year": 2021,
+        "design": "",
+        "intervention_arm": {
+          "label": "Intervention",
+          "n_total": 100,
+          "n_events": 15,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Control",
+          "n_total": 100,
+          "n_events": 20,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Clinical resolution",
+        "rob_domains": [
+          {
+            "domain": "Domain 1",
+            "judgement": "Low risk",
+            "justification": "The report does not describe randomisation."
+          },
+          {
+            "domain": "Domain 2",
+            "judgement": "Low risk",
+            "justification": "The report does not describe blinding."
+          },
+          {
+            "domain": "Domain 3",
+            "judgement": "Low risk",
+            "justification": "The report does not describe missing data."
+          },
+          {
+            "domain": "Domain 4",
+            "judgement": "Low risk",
+            "justification": "The report does not describe outcome assessment."
+          },
+          {
+            "domain": "Domain 5",
+            "judgement": "Low risk",
+            "justification": "The report does not describe pre-registration."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": []
+      }
+    ]
+  },
+  "meta_analysis": {
+    "ok": true,
+    "effect_measure": "RR",
+    "effect_measure_label": "Risk Ratio",
+    "is_ratio_measure": true,
+    "analysis_scale": "log",
+    "null_value": 1.0,
+    "requested_model": "random",
+    "model": "random-effects",
+    "tau2_estimator": "DL",
+    "hksj_applied": false,
+    "k_supplied": 1,
+    "k_included": 1,
+    "k_excluded": 0,
+    "total_participants": 200,
+    "pooled": {
+      "model": "random-effects",
+      "tau2_method": "DL",
+      "hksj": false,
+      "tau2": 0.0,
+      "estimate": -0.28768207245178107,
+      "se": 0.3109126351029605,
+      "ci_low": -0.8970596395920274,
+      "ci_high": 0.3216954946884653,
+      "statistic": -0.9252826677710074,
+      "statistic_type": "z",
+      "df": null,
+      "p_value": 0.3548188920003268,
+      "weights": [
+        100.0
+      ],
+      "k": 1,
+      "scale": "log",
+      "estimate_transformed": 0.7499999999999999,
+      "ci_low_transformed": 0.407766880338637,
+      "ci_high_transformed": 1.3794646576810312
+    },
+    "models": {
+      "fixed_effect": {
+        "model": "fixed",
+        "tau2": 0.0,
+        "estimate": -0.28768207245178107,
+        "se": 0.3109126351029605,
+        "ci_low": -0.8970596395920274,
+        "ci_high": 0.3216954946884653,
+        "statistic": -0.9252826677710074,
+        "statistic_type": "z",
+        "df": null,
+        "p_value": 0.3548188920003268,
+        "weights": [
+          100.0
+        ],
+        "k": 1,
+        "scale": "log",
+        "estimate_transformed": 0.7499999999999999,
+        "ci_low_transformed": 0.407766880338637,
+        "ci_high_transformed": 1.3794646576810312
+      },
+      "random_effects_DL": {
+        "model": "random-effects",
+        "tau2_method": "DL",
+        "hksj": false,
+        "tau2": 0.0,
+        "estimate": -0.28768207245178107,
+        "se": 0.3109126351029605,
+        "ci_low": -0.8970596395920274,
+        "ci_high": 0.3216954946884653,
+        "statistic": -0.9252826677710074,
+        "statistic_type": "z",
+        "df": null,
+        "p_value": 0.3548188920003268,
+        "weights": [
+          100.0
+        ],
+        "k": 1,
+        "scale": "log",
+        "estimate_transformed": 0.7499999999999999,
+        "ci_low_transformed": 0.407766880338637,
+        "ci_high_transformed": 1.3794646576810312
+      },
+      "random_effects_REML": {
+        "model": "random-effects",
+        "tau2_method": "REML",
+        "hksj": false,
+        "tau2": 0.0,
+        "estimate": -0.28768207245178107,
+        "se": 0.3109126351029605,
+        "ci_low": -0.8970596395920274,
+        "ci_high": 0.3216954946884653,
+        "statistic": -0.9252826677710074,
+        "statistic_type": "z",
+        "df": null,
+        "p_value": 0.3548188920003268,
+        "weights": [
+          100.0
+        ],
+        "k": 1,
+        "scale": "log",
+        "estimate_transformed": 0.7499999999999999,
+        "ci_low_transformed": 0.407766880338637,
+        "ci_high_transformed": 1.3794646576810312
+      },
+      "random_effects_DL_HKSJ": {
+        "model": "random-effects (HKSJ)",
+        "tau2_method": "DL",
+        "hksj": true,
+        "tau2": 0.0,
+        "estimate": -0.28768207245178107,
+        "se": 0.3109126351029605,
+        "ci_low": -0.8970596395920274,
+        "ci_high": 0.3216954946884653,
+        "statistic": -0.9252826677710074,
+        "statistic_type": "z",
+        "df": null,
+        "p_value": 0.3548188920003268,
+        "weights": [
+          100.0
+        ],
+        "k": 1,
+        "scale": "log",
+        "estimate_transformed": 0.7499999999999999,
+        "ci_low_transformed": 0.407766880338637,
+        "ci_high_transformed": 1.3794646576810312
+      },
+      "random_effects_REML_HKSJ": {
+        "model": "random-effects (HKSJ)",
+        "tau2_method": "REML",
+        "hksj": true,
+        "tau2": 0.0,
+        "estimate": -0.28768207245178107,
+        "se": 0.3109126351029605,
+        "ci_low": -0.8970596395920274,
+        "ci_high": 0.3216954946884653,
+        "statistic": -0.9252826677710074,
+        "statistic_type": "z",
+        "df": null,
+        "p_value": 0.3548188920003268,
+        "weights": [
+          100.0
+        ],
+        "k": 1,
+        "scale": "log",
+        "estimate_transformed": 0.7499999999999999,
+        "ci_low_transformed": 0.407766880338637,
+        "ci_high_transformed": 1.3794646576810312
+      }
+    },
+    "heterogeneity": {
+      "k": 1,
+      "Q": null,
+      "df": 0,
+      "p_value": null,
+      "I2": null,
+      "H2": null,
+      "tau2_DL": 0.0,
+      "tau2_REML": 0.0,
+      "tau2": 0.0,
+      "tau": 0.0,
+      "reml_converged": true,
+      "reml_iterations": 0,
+      "interpretation": "Heterogeneity is undefined with fewer than 2 studies."
+    },
+    "prediction_interval": {
+      "available": false,
+      "reason": "A prediction interval needs at least 3 studies (k=1).",
+      "low": null,
+      "high": null
+    },
+    "publication_bias": {
+      "min_studies_required": 10,
+      "egger": {
+        "performed": false,
+        "reason": "Skipped: only 1 studies are available and the protocol requires at least 10. Below that the test has too little power to distinguish real asymmetry from chance, so a result would be misleading rather than merely uncertain."
+      },
+      "begg": {
+        "performed": false,
+        "reason": "Skipped: only 1 studies are available and the protocol requires at least 10. Below that the test has too little power to distinguish real asymmetry from chance, so a result would be misleading rather than merely uncertain."
+      },
+      "trim_and_fill": {
+        "performed": false,
+        "reason": "Skipped: only 1 studies are available and the protocol requires at least 10. Below that the test has too little power to distinguish real asymmetry from chance, so a result would be misleading rather than merely uncertain."
+      }
+    },
+    "leave_one_out": [],
+    "leave_one_out_summary": {
+      "note": "Leave-one-out requires at least 3 studies (k=1)."
+    },
+    "studies": [
+      {
+        "label": "Hospital et al. (2021). PMID:42238679",
+        "year": 2021,
+        "effect": -0.28768207245178107,
+        "se": 0.3109126351029605,
+        "variance": 0.09666666666666666,
+        "ci_low": -0.8970596395920274,
+        "ci_high": 0.3216954946884653,
+        "effect_transformed": 0.7499999999999999,
+        "ci_low_transformed": 0.407766880338637,
+        "ci_high_transformed": 1.3794646576810312,
+        "weight_fixed_pct": 100.0,
+        "weight_random_pct": 100.0,
+        "continuity_corrected": false,
+        "raw": {
+          "events_intervention": 15.0,
+          "n_intervention": 100.0,
+          "events_control": 20.0,
+          "n_control": 100.0,
+          "risk_intervention": 0.15,
+          "risk_control": 0.2
+        }
+      }
+    ],
+    "excluded_studies": [],
+    "flags": [
+      {
+        "code": "BIAS_TESTS_SKIPPED",
+        "severity": "info",
+        "message": "Publication-bias testing was not performed (k=1 < 10). Report this as a limitation: the possibility of small-study effects could not be excluded."
+      }
+    ],
+    "warnings": [
+      "Only one study could be analysed. No pooling, heterogeneity or bias assessment is possible; the single study's effect is reported as-is."
+    ],
+    "notes": [
+      "Auto-detected binary outcome data in 1 study/studies; using the Risk Ratio, which is the more interpretable of the ratio measures for clinicians.",
+      "Primary model is random effects with DerSimonian-Laird tau^2, the RevMan/Cochrane default, so the result is comparable with published reviews. REML and HKSJ results are reported alongside and should be preferred when k is small."
+    ],
+    "interpretation": "Pooled Risk Ratio across 1 studies: 0.750 (95% CI 0.408 to 1.379), p = 0.3548. The point estimate favours the intervention. The 95% confidence interval includes the null value (1), so no statistically significant difference was demonstrated.. These numbers are computed deterministically and must be quoted verbatim; they must never be re-derived or rounded by a language model.",
+    "methods_text": "Data were pooled for 1 studies using the Risk Ratio. Effects were combined on the natural-log scale and back-transformed for presentation. A random-effects model was fitted with tau^2 estimated by DerSimonian and Laird. Heterogeneity was quantified with Cochran's Q, I^2, H^2 and tau^2, and a 95% prediction interval was calculated. Publication bias was assessed by Egger's regression test and Begg's rank correlation test only where at least 10 studies were available; with k=1 these tests were not performed. Robustness was examined by leave-one-out sensitivity analysis. All computation was performed in Python (numpy/scipy)."
+  },
+  "plots": {
+    "forest": "/usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20260921-070330/forest.png",
+    "funnel": "/usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20260921-070330/funnel.png"
+  },
+  "grade": {
+    "outcome": "Clinical resolution",
+    "starting_rating": "High",
+    "risk_of_bias": {
+      "judgement": "Not serious",
+      "downgrade_levels": 0,
+      "rationale": "The study is at low risk of bias."
+    },
+    "inconsistency": {
+      "judgement": "Not serious",
+      "downgrade_levels": 0,
+      "rationale": "I-squared is None%."
+    },
+    "indirectness": {
+      "judgement": "Not serious",
+      "downgrade_levels": 0,
+      "rationale": "The study is not indirect."
+    },
+    "imprecision": {
+      "judgement": "Not serious",
+      "downgrade_levels": 0,
+      "rationale": "The confidence interval does not span both appreciable benefit and appreciable harm."
+    },
+    "publication_bias": {
+      "judgement": "Not serious",
+      "downgrade_levels": 0,
+      "rationale": "Egger's test was skipped because fewer than 10 studies were pooled."
+    },
+    "final_rating": "High",
+    "summary": "Non-macrolide antibiotics do not appear to improve clinical resolution in adults with acute COPD exacerbation and severe chronic kidney disease. The evidence is moderately confident, as the single study is at low risk of bias and the confidence interval does not span both appreciable benefit and appreciable harm.",
+    "verification_notes": [
+      "The model reported 'Moderate' but its own domain judgements total 0 downgrade level(s) from 'High', which gives 'High'. The computed value is used."
+    ]
+  },
+  "prisma": {
+    "identified_by_source": {
+      "clinicaltrials": 100,
+      "pubmed": 100,
+      "openalex": 100,
+      "crossref": 100,
+      "semantic_scholar": 100,
+      "europepmc": 100,
+      "preprints": 5
+    },
+    "total_identified": 605,
+    "duplicates_removed": 9,
+    "records_screened": 20,
+    "excluded_at_screening": 19,
+    "exclusion_reasons": {
+      "Wrong population": 19
+    },
+    "full_text_assessed": 1,
+    "excluded_at_full_text": 0,
+    "full_text_exclusion_reasons": {},
+    "studies_included": 1
+  },
+  "elapsed_seconds": 310.0,
+  "r_script_path": "runs/run-20260921-070330/r_script.R",
+  "pdf_report": "runs/run-20260921-070330/manuscript.pdf"
+}

@@ -1,0 +1,254 @@
+==============================================================================
+SYSTEMATIC REVIEW AND META-ANALYSIS (FULL TRANSPARENCY REPORT)
+==============================================================================
+Question : In adults receiving CAR-T cell therapy, does early administration of IL-6 inhibitors (such as tocilizumab) reduce the incidence of severe (Grade 3 or higher) cytokine release syndrome compared with standard or delayed treatment?
+Run      : run-20260921-073015  (2026-09-21T07:30:15.643728+00:00)
+Elapsed  : 150.8s
+
+------------------------------------------------------------------------------
+1. STRUCTURED CLINICAL ABSTRACT & EXECUTIVE SYNTHESIS
+------------------------------------------------------------------------------
+  Comparison      : [Early administration of IL-6 inhibitors (such as tocilizumab)] vs. [Standard or delayed treatment]
+  Target Cohort   : Adults receiving CAR-T cell therapy
+  Primary Endpoint: Incidence of severe (Grade 3 or higher) cytokine release syndrome
+
+  Synthesis Status: Quantitative two-arm pooling was not executed because fewer than 2
+                    extracted abstracts reported complete comparative arm counts. See Section 5
+                    below for the structured qualitative and single-arm study synthesis.
+
+------------------------------------------------------------------------------
+2. PROTOCOL (PICO)
+------------------------------------------------------------------------------
+  Population   : Adults receiving CAR-T cell therapy
+  Intervention : Early administration of IL-6 inhibitors (such as tocilizumab)
+  Comparator   : Standard or delayed treatment
+  Outcome      : Incidence of severe (Grade 3 or higher) cytokine release syndrome
+
+------------------------------------------------------------------------------
+3. SEARCH STRATEGY
+------------------------------------------------------------------------------
+  ("CAR-T cell therapy"[tiab] OR "CAR T-cell Therapy"[tiab] OR CAR-T[tiab] OR "CAR T"[tiab] OR "CAR T-cell Therapy"[MeSH Terms] OR "CAR-T cell Therapy"[MeSH Terms] OR "CAR-T"[MeSH Terms] OR "CAR T"[MeSH Terms]) AND ("IL-6 inhibitors"[tiab] OR IL-6[tiab] OR tocilizumab[tiab] OR "IL-6 blockade"[tiab] OR "IL-6 inhibition"[tiab] OR "Interleukin-6"[MeSH Terms])
+
+------------------------------------------------------------------------------
+4. PRISMA 2020 FLOW & RECORD ACCOUNTING
+------------------------------------------------------------------------------
+  clinicaltrials.................. 100
+  europepmc....................... 100
+  pubmed.......................... 100
+  crossref........................ 100
+  openalex........................ 100
+  semantic_scholar................ 0
+  preprints....................... 31
+  TOTAL IDENTIFIED................ 531
+  duplicates removed.............. -28
+  unique records after dedup...... 503
+  unscreened (screening cap)...... -483
+  records screened................ 20
+  excluded at screening........... -20
+      Wrong population............ 20
+  approved at screening........... 0
+  studies extracted (Phase 6)..... 0
+  FINAL STUDIES POOLED............ 0
+
+------------------------------------------------------------------------------
+6. EXCLUDED ARTICLES AT SCREENING (20 ARTICLES WITH REASONS)
+------------------------------------------------------------------------------
+  [1] ID: NCT04499573  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT04499573
+      Title      : Bispecific CD19/CD22 CAR-T for Treatment of Children and Young Adults With r/r B-ALL
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (IL-6 inhibitors, IL-6, tocilizumab).
+
+  [2] ID: NCT06925022  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT06925022
+      Title      : Educational Programs Based on Healthy Habits to Improve Quality of Life and Psychosocial Profile in Women With Neurodegenerative Diseases: The ADVICE Protocol Study (Phase 1)
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the population (CAR-T cell therapy, CAR T-cell Therapy, CAR-T) or the intervention (IL-6 inhibitors, IL-6, tocilizumab).
+
+  [3] ID: NCT06716164  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT06716164
+      Title      : Safety and Efficacy of Metabolically Armed CD19 CAR-T Cells (Meta10-19) in the Treatment of r/r B-NHL Clinical Research
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (IL-6 inhibitors, IL-6, tocilizumab).
+
+  [4] ID: NCT07033299  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT07033299
+      Title      : The Safety, Efficacy, and Cellular Metabolic Kinetics of CT1192 in Treating Patients With Anti Neutrophil Cytoplasmic Antibody Associated Vasculitis
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (IL-6 inhibitors, IL-6, tocilizumab).
+
+  [5] ID: NCT06228404  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT06228404
+      Title      : Clinical Study of Safety and Efficacy of Enhanced PSMA CAR- T in Refractory CRPC
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (IL-6 inhibitors, IL-6, tocilizumab).
+
+  [6] ID: NCT06106893  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT06106893
+      Title      : A Clinical Study of CD19 Universal CAR-γδT Cells in Active Systemic Lupus Erythematosus
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the population (CAR-T cell therapy, CAR T-cell Therapy, CAR-T) or the intervention (IL-6 inhibitors, IL-6, tocilizumab).
+
+  [7] ID: NCT07456371  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT07456371
+      Title      : PIC1 Injection Therapy for Relapsed/Refractory B-NHL
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (IL-6 inhibitors, IL-6, tocilizumab).
+
+  [8] ID: NCT06407947  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT06407947
+      Title      : Study of CT071 Injection in High Risk Newly Diagnosed Multiple Myeloma
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the population (CAR-T cell therapy, CAR T-cell Therapy, CAR-T) or the intervention (IL-6 inhibitors, IL-6, tocilizumab).
+
+  [9] ID: 10.1016/j.jtct.2026.05.045  |  Category: Wrong population  |  Verify: https://doi.org/10.1016/j.jtct.2026.05.045
+      Title      : Clinical Study of SenL-T7 CAR T Cells in the Treatment of Relapsed and Refractory CD7+ T-cell Lymphoblastic Leukemia or T-cell Lymphoblastic Lymphoma
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (IL-6 inhibitors, IL-6, tocilizumab).
+
+  [10] ID: NCT07563543  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT07563543
+      Title      : RN1701 Injection in the Treatment of Relapsed/Refractory B-Cell Lymphomas
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (IL-6 inhibitors, IL-6, tocilizumab).
+
+  [11] ID: NCT03146533  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT03146533
+      Title      : CD19 CART Cells for Patients With Relapse and Refractory CD19+ B-cell Lymphoma.
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the population (CAR-T cell therapy, CAR T-cell Therapy, CAR-T) or the intervention (IL-6 inhibitors, IL-6, tocilizumab).
+
+  [12] ID: NCT05473221  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT05473221
+      Title      : Evaluate the Safety and Efficacy of CD33 CAR-T in Patients With R/R AML
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (IL-6 inhibitors, IL-6, tocilizumab).
+
+  [13] ID: NCT06987916  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT06987916
+      Title      : Efficacy and Safety Evaluation of U01(ssCART-19) in B-Cell Lymphoma
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the population (CAR-T cell therapy, CAR T-cell Therapy, CAR-T).
+
+  [14] ID: NCT05667506  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT05667506
+      Title      : A Study of CNCT19 Treatment in Children and Adolescent r/r ALL Patients(Pediatric)
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (IL-6 inhibitors, IL-6, tocilizumab).
+
+  [15] ID: NCT03633773  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT03633773
+      Title      : Safety and Efficacy Evaluation of MUC-1 CART in the Treatment of Intrahepatic Cholangiocarcinoma
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (IL-6 inhibitors, IL-6, tocilizumab).
+
+  [16] ID: 10.1016/j.clim.2022.109030  |  Category: Wrong population  |  Verify: https://doi.org/10.1016/j.clim.2022.109030
+      Title      : A Study to Evaluate the Safety and Efficacy of A2B395, an Allogeneic Logic-gated CAR T, in Participants With Solid Tumors That Express EGFR and Have Lost HLA-A*02 Expression
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (IL-6 inhibitors, IL-6, tocilizumab).
+
+  [17] ID: NCT04546906  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT04546906
+      Title      : Safety and Efficacy Study of CD22 CAR-T Cells for Relapsed or Refractory Acute Lymphoblastic Leukemia
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (IL-6 inhibitors, IL-6, tocilizumab).
+
+  [18] ID: NCT06612645  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT06612645
+      Title      : Safety and Efficacy of CMD03 CAR T Cell in Children With Relapse or Refractory Solid Tumors
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (IL-6 inhibitors, IL-6, tocilizumab).
+
+  [19] ID: NCT07078929  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT07078929
+      Title      : Clinical Trial of CMD63 Chimeric Antigen Receptor T-cell (CAR T-cell) in Children With Acute Lymphoblastic Leukemia (ALL)
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (IL-6 inhibitors, IL-6, tocilizumab).
+
+  [20] ID: NCT06481735  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT06481735
+      Title      : TCR Reserved and Power3 (SPPL3) Gene Knock-out Allogeneic CD19-targeting CAR-T Cell Therapy in r/r B-ALL
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (IL-6 inhibitors, IL-6, tocilizumab).
+
+------------------------------------------------------------------------------
+8. DEDUPLICATION AUDIT LOG (28 DUPLICATES REMOVED)
+------------------------------------------------------------------------------
+  [1] Duplicate ID: NCT04499573 (europepmc) -> Merged Into: NCT04499573 [Matched on: nct_id]
+      Title  : Bispecific CD19/CD22 CAR-T for Treatment of Children and Young Adults With r/r B-ALL
+      Verify : https://clinicaltrials.gov/study/NCT04499573
+  [2] Duplicate ID: NCT06925022 (pubmed) -> Merged Into: NCT06925022 [Matched on: nct_id]
+      Title  : Educational Programs Based on Healthy Habits to Improve Quality of Life and Psychosocial Profile in Women With Neurodegenerative Diseases: The ADVICE Protocol Study (Phase 1)
+      Verify : https://clinicaltrials.gov/study/NCT06925022
+  [3] Duplicate ID: NCT06716164 (crossref) -> Merged Into: NCT06716164 [Matched on: nct_id]
+      Title  : Safety and Efficacy of Metabolically Armed CD19 CAR-T Cells (Meta10-19) in the Treatment of r/r B-NHL Clinical Research
+      Verify : https://clinicaltrials.gov/study/NCT06716164
+  [4] Duplicate ID: NCT07033299 (openalex) -> Merged Into: NCT07033299 [Matched on: nct_id]
+      Title  : The Safety, Efficacy, and Cellular Metabolic Kinetics of CT1192 in Treating Patients With Anti Neutrophil Cytoplasmic Antibody Associated Vasculitis
+      Verify : https://clinicaltrials.gov/study/NCT07033299
+  [5] Duplicate ID: NCT06228404 (semantic_scholar) -> Merged Into: NCT06228404 [Matched on: nct_id]
+      Title  : Clinical Study of Safety and Efficacy of Enhanced PSMA CAR- T in Refractory CRPC
+      Verify : https://clinicaltrials.gov/study/NCT06228404
+  [6] Duplicate ID: NCT06106893 (preprints) -> Merged Into: NCT06106893 [Matched on: nct_id]
+      Title  : A Clinical Study of CD19 Universal CAR-γδT Cells in Active Systemic Lupus Erythematosus
+      Verify : https://clinicaltrials.gov/study/NCT06106893
+  [7] Duplicate ID: NCT07456371 (clinicaltrials) -> Merged Into: NCT07456371 [Matched on: nct_id]
+      Title  : PIC1 Injection Therapy for Relapsed/Refractory B-NHL
+      Verify : https://clinicaltrials.gov/study/NCT07456371
+  [8] Duplicate ID: NCT06407947 (europepmc) -> Merged Into: NCT06407947 [Matched on: nct_id]
+      Title  : Study of CT071 Injection in High Risk Newly Diagnosed Multiple Myeloma
+      Verify : https://clinicaltrials.gov/study/NCT06407947
+  [9] Duplicate ID: 10.1016/j.jtct.2026.05.045 (pubmed) -> Merged Into: 10.1016/j.jtct.2026.05.045 [Matched on: doi]
+      Title  : Clinical Study of SenL-T7 CAR T Cells in the Treatment of Relapsed and Refractory CD7+ T-cell Lymphoblastic Leukemia or T-cell Lymphoblastic Lymphoma
+      Verify : https://doi.org/10.1016/j.jtct.2026.05.045
+  [10] Duplicate ID: NCT07563543 (crossref) -> Merged Into: NCT07563543 [Matched on: nct_id]
+      Title  : RN1701 Injection in the Treatment of Relapsed/Refractory B-Cell Lymphomas
+      Verify : https://clinicaltrials.gov/study/NCT07563543
+  [11] Duplicate ID: NCT03146533 (openalex) -> Merged Into: NCT03146533 [Matched on: nct_id]
+      Title  : CD19 CART Cells for Patients With Relapse and Refractory CD19+ B-cell Lymphoma.
+      Verify : https://clinicaltrials.gov/study/NCT03146533
+  [12] Duplicate ID: NCT05473221 (semantic_scholar) -> Merged Into: NCT05473221 [Matched on: nct_id]
+      Title  : Evaluate the Safety and Efficacy of CD33 CAR-T in Patients With R/R AML
+      Verify : https://clinicaltrials.gov/study/NCT05473221
+  [13] Duplicate ID: NCT06987916 (preprints) -> Merged Into: NCT06987916 [Matched on: nct_id]
+      Title  : Efficacy and Safety Evaluation of U01(ssCART-19) in B-Cell Lymphoma
+      Verify : https://clinicaltrials.gov/study/NCT06987916
+  [14] Duplicate ID: NCT05667506 (clinicaltrials) -> Merged Into: NCT05667506 [Matched on: nct_id]
+      Title  : A Study of CNCT19 Treatment in Children and Adolescent r/r ALL Patients(Pediatric)
+      Verify : https://clinicaltrials.gov/study/NCT05667506
+  [15] Duplicate ID: NCT03633773 (europepmc) -> Merged Into: NCT03633773 [Matched on: nct_id]
+      Title  : Safety and Efficacy Evaluation of MUC-1 CART in the Treatment of Intrahepatic Cholangiocarcinoma
+      Verify : https://clinicaltrials.gov/study/NCT03633773
+  [16] Duplicate ID: 10.1016/j.clim.2022.109030 (pubmed) -> Merged Into: 10.1016/j.clim.2022.109030 [Matched on: doi]
+      Title  : A Study to Evaluate the Safety and Efficacy of A2B395, an Allogeneic Logic-gated CAR T, in Participants With Solid Tumors That Express EGFR and Have Lost HLA-A*02 Expression
+      Verify : https://doi.org/10.1016/j.clim.2022.109030
+  [17] Duplicate ID: NCT04546906 (crossref) -> Merged Into: NCT04546906 [Matched on: nct_id]
+      Title  : Safety and Efficacy Study of CD22 CAR-T Cells for Relapsed or Refractory Acute Lymphoblastic Leukemia
+      Verify : https://clinicaltrials.gov/study/NCT04546906
+  [18] Duplicate ID: NCT06612645 (openalex) -> Merged Into: NCT06612645 [Matched on: nct_id]
+      Title  : Safety and Efficacy of CMD03 CAR T Cell in Children With Relapse or Refractory Solid Tumors
+      Verify : https://clinicaltrials.gov/study/NCT06612645
+  [19] Duplicate ID: NCT07078929 (semantic_scholar) -> Merged Into: NCT07078929 [Matched on: nct_id]
+      Title  : Clinical Trial of CMD63 Chimeric Antigen Receptor T-cell (CAR T-cell) in Children With Acute Lymphoblastic Leukemia (ALL)
+      Verify : https://clinicaltrials.gov/study/NCT07078929
+  [20] Duplicate ID: NCT06481735 (preprints) -> Merged Into: NCT06481735 [Matched on: nct_id]
+      Title  : TCR Reserved and Power3 (SPPL3) Gene Knock-out Allogeneic CD19-targeting CAR-T Cell Therapy in r/r B-ALL
+      Verify : https://clinicaltrials.gov/study/NCT06481735
+  [21] Duplicate ID: NCT04499573 (clinicaltrials) -> Merged Into: NCT04499573 [Matched on: nct_id]
+      Title  : Bispecific CD19/CD22 CAR-T for Treatment of Children and Young Adults With r/r B-ALL
+      Verify : https://clinicaltrials.gov/study/NCT04499573
+  [22] Duplicate ID: NCT06925022 (europepmc) -> Merged Into: NCT06925022 [Matched on: nct_id]
+      Title  : Educational Programs Based on Healthy Habits to Improve Quality of Life and Psychosocial Profile in Women With Neurodegenerative Diseases: The ADVICE Protocol Study (Phase 1)
+      Verify : https://clinicaltrials.gov/study/NCT06925022
+  [23] Duplicate ID: NCT06716164 (pubmed) -> Merged Into: NCT06716164 [Matched on: nct_id]
+      Title  : Safety and Efficacy of Metabolically Armed CD19 CAR-T Cells (Meta10-19) in the Treatment of r/r B-NHL Clinical Research
+      Verify : https://clinicaltrials.gov/study/NCT06716164
+  [24] Duplicate ID: NCT07033299 (crossref) -> Merged Into: NCT07033299 [Matched on: nct_id]
+      Title  : The Safety, Efficacy, and Cellular Metabolic Kinetics of CT1192 in Treating Patients With Anti Neutrophil Cytoplasmic Antibody Associated Vasculitis
+      Verify : https://clinicaltrials.gov/study/NCT07033299
+  [25] Duplicate ID: NCT06228404 (openalex) -> Merged Into: NCT06228404 [Matched on: nct_id]
+      Title  : Clinical Study of Safety and Efficacy of Enhanced PSMA CAR- T in Refractory CRPC
+      Verify : https://clinicaltrials.gov/study/NCT06228404
+  [26] Duplicate ID: NCT06106893 (semantic_scholar) -> Merged Into: NCT06106893 [Matched on: nct_id]
+      Title  : A Clinical Study of CD19 Universal CAR-γδT Cells in Active Systemic Lupus Erythematosus
+      Verify : https://clinicaltrials.gov/study/NCT06106893
+  [27] Duplicate ID: NCT07456371 (preprints) -> Merged Into: NCT07456371 [Matched on: nct_id]
+      Title  : PIC1 Injection Therapy for Relapsed/Refractory B-NHL
+      Verify : https://clinicaltrials.gov/study/NCT07456371
+  [28] Duplicate ID: NCT06407947 (clinicaltrials) -> Merged Into: NCT06407947 [Matched on: nct_id]
+      Title  : Study of CT071 Injection in High Risk Newly Diagnosed Multiple Myeloma
+      Verify : https://clinicaltrials.gov/study/NCT06407947
+
+------------------------------------------------------------------------------
+ISSUES ENCOUNTERED
+------------------------------------------------------------------------------
+  - No record survived screening. The eligibility criteria may be too strict, or the search may have retrieved the wrong literature. See screening.excluded_records for the reasons.
+
+------------------------------------------------------------------------------
+This is a research tool that supports expert reviewers. It does not
+replace them, and its output is not clinical advice. Every number
+above was computed in Python from extracted data; verify against the
+source records in result.json and report.md before citing.
+------------------------------------------------------------------------------

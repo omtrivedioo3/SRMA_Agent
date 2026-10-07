@@ -1,0 +1,1407 @@
+{
+  "ok": false,
+  "run_id": "run-20261001-104803",
+  "run_dir": "/usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20261001-104803",
+  "question": "In adult patients with relapsed or refractory B-cell lymphoma or multiple myeloma, what is the risk of Cytokine Release Syndrome (CRS) with CAR-T cell therapy compared to standard chemotherapy or bispecific antibodies?",
+  "generated_utc": "2026-10-01T10:48:03.279479+00:00",
+  "config": {
+    "gemini_backend": "ai-studio",
+    "orchestrator_model": "gemini-3.6-flash",
+    "clinical_model": "ollama_chat/medgemma"
+  },
+  "phases_completed": [
+    "protocol",
+    "search_strategy",
+    "search",
+    "deduplication",
+    "screening",
+    "extraction",
+    "meta_analysis"
+  ],
+  "errors": [
+    "Quantitative pooling was not possible: No study contained data sufficient for this analysis.. This usually means the abstracts did not report event counts or means with standard deviations. A narrative synthesis is the correct output in that case, not a fabricated number."
+  ],
+  "protocol": {
+    "population": "Adult patients with relapsed or refractory B-cell lymphoma or multiple myeloma",
+    "intervention": "CAR-T cell therapy",
+    "comparator": "Standard chemotherapy or bispecific antibodies",
+    "primary_outcome": "Cytokine Release Syndrome (CRS)",
+    "secondary_outcomes": [],
+    "study_designs": [
+      "Randomized Controlled Trial"
+    ],
+    "inclusion_criteria": [
+      "Adult patients with relapsed or refractory B-cell lymphoma or multiple myeloma"
+    ],
+    "exclusion_criteria": [
+      "Animal studies",
+      "In-vitro studies",
+      "Narrative reviews",
+      "Editorials",
+      "Case reports"
+    ],
+    "search_keywords": [
+      "CAR-T cell therapy",
+      "Cytokine Release Syndrome",
+      "CRS",
+      "B-cell lymphoma",
+      "Multiple myeloma",
+      "Chemotherapy",
+      "Bispecific antibodies"
+    ],
+    "mesh_terms": [
+      "CAR-T Cell Therapy",
+      "Cytokine Release Syndrome",
+      "B-cell Lymphoma",
+      "Multiple Myeloma",
+      "Chemotherapy",
+      "Bispecific Antibodies"
+    ]
+  },
+  "protocol_text": "  Population   : Adult patients with relapsed or refractory B-cell lymphoma or multiple myeloma\n  Intervention : CAR-T cell therapy\n  Comparator   : Standard chemotherapy or bispecific antibodies\n  Primary outcome : Cytokine Release Syndrome (CRS)\n  Eligible designs : Randomized Controlled Trial\n  Inclusion criteria:\n      - Adult patients with relapsed or refractory B-cell lymphoma or multiple myeloma\n  Exclusion criteria:\n      - Animal studies\n      - In-vitro studies\n      - Narrative reviews\n      - Editorials\n      - Case reports",
+  "search_strategy": {
+    "population_terms": [
+      "B-cell lymphoma",
+      "multiple myeloma",
+      "relapsed",
+      "refractory"
+    ],
+    "population_mesh": [
+      "B-cell Lymphoma",
+      "Multiple Myeloma"
+    ],
+    "intervention_terms": [
+      "CAR-T cell therapy",
+      "CAR T-cell therapy",
+      "CAR-T",
+      "CAR T",
+      "bispecific antibodies",
+      "bispecific antibody"
+    ],
+    "intervention_mesh": [
+      "CAR-T Cell Therapy"
+    ],
+    "outcome_terms": [
+      "Cytokine Release Syndrome",
+      "CRS"
+    ],
+    "outcome_excluded_from_query": true,
+    "outcome_exclusion_rationale": "Trials often omit outcome names from the title and abstract. Requiring an outcome term in the Boolean AND chain is a known cause of missed eligible studies (Cochrane Handbook).",
+    "hygiene_notes": [
+      "population: dropped 'adult' - not a searchable term (too long to appear in a title or abstract)."
+    ]
+  },
+  "query": "(\"B-cell lymphoma\"[tiab] OR \"multiple myeloma\"[tiab] OR relapsed[tiab] OR refractory[tiab] OR \"B-cell Lymphoma\"[MeSH Terms] OR \"Multiple Myeloma\"[MeSH Terms]) AND (\"CAR-T cell therapy\"[tiab] OR \"CAR T-cell therapy\"[tiab] OR CAR-T[tiab] OR \"CAR T\"[tiab] OR \"bispecific antibodies\"[tiab] OR \"bispecific antibody\"[tiab] OR \"CAR-T Cell Therapy\"[MeSH Terms])",
+  "queries_by_source": {
+    "clinicaltrials": "(\"B-cell lymphoma\" OR \"multiple myeloma\" OR relapsed OR refractory) AND (\"CAR-T cell therapy\" OR \"CAR T-cell therapy\" OR CAR-T OR \"CAR T\" OR \"bispecific antibodies\" OR \"bispecific antibody\")",
+    "crossref": "B-cell lymphoma multiple myeloma CAR-T cell therapy CAR T-cell therapy",
+    "europepmc": "(TITLE_ABS:\"B-cell lymphoma\" OR TITLE_ABS:\"multiple myeloma\" OR TITLE_ABS:relapsed OR TITLE_ABS:refractory OR MESH:\"B-cell Lymphoma\" OR MESH:\"Multiple Myeloma\") AND (TITLE_ABS:\"CAR-T cell therapy\" OR TITLE_ABS:\"CAR T-cell therapy\" OR TITLE_ABS:CAR-T OR TITLE_ABS:\"CAR T\" OR TITLE_ABS:\"bispecific antibodies\" OR TITLE_ABS:\"bispecific antibody\" OR MESH:\"CAR-T Cell Therapy\")",
+    "openalex": "(\"B-cell lymphoma\" OR \"multiple myeloma\" OR relapsed OR refractory) AND (\"CAR-T cell therapy\" OR \"CAR T-cell therapy\" OR CAR-T OR \"CAR T\" OR \"bispecific antibodies\" OR \"bispecific antibody\")",
+    "preprints": "(TITLE_ABS:\"B-cell lymphoma\" OR TITLE_ABS:\"multiple myeloma\" OR TITLE_ABS:relapsed OR TITLE_ABS:refractory OR MESH:\"B-cell Lymphoma\" OR MESH:\"Multiple Myeloma\") AND (TITLE_ABS:\"CAR-T cell therapy\" OR TITLE_ABS:\"CAR T-cell therapy\" OR TITLE_ABS:CAR-T OR TITLE_ABS:\"CAR T\" OR TITLE_ABS:\"bispecific antibodies\" OR TITLE_ABS:\"bispecific antibody\" OR MESH:\"CAR-T Cell Therapy\")",
+    "pubmed": "(\"B-cell lymphoma\"[tiab] OR \"multiple myeloma\"[tiab] OR relapsed[tiab] OR refractory[tiab] OR \"B-cell Lymphoma\"[MeSH Terms] OR \"Multiple Myeloma\"[MeSH Terms]) AND (\"CAR-T cell therapy\"[tiab] OR \"CAR T-cell therapy\"[tiab] OR CAR-T[tiab] OR \"CAR T\"[tiab] OR \"bispecific antibodies\"[tiab] OR \"bispecific antibody\"[tiab] OR \"CAR-T Cell Therapy\"[MeSH Terms])",
+    "semantic_scholar": "B-cell lymphoma multiple myeloma CAR-T cell therapy CAR T-cell therapy"
+  },
+  "search": {
+    "query": "(\"B-cell lymphoma\"[tiab] OR \"multiple myeloma\"[tiab] OR relapsed[tiab] OR refractory[tiab] OR \"B-cell Lymphoma\"[MeSH Terms] OR \"Multiple Myeloma\"[MeSH Terms]) AND (\"CAR-T cell therapy\"[tiab] OR \"CAR T-cell therapy\"[tiab] OR CAR-T[tiab] OR \"CAR T\"[tiab] OR \"bispecific antibodies\"[tiab] OR \"bispecific antibody\"[tiab] OR \"CAR-T Cell Therapy\"[MeSH Terms])",
+    "queries_by_source": {
+      "clinicaltrials": "(\"B-cell lymphoma\" OR \"multiple myeloma\" OR relapsed OR refractory) AND (\"CAR-T cell therapy\" OR \"CAR T-cell therapy\" OR CAR-T OR \"CAR T\" OR \"bispecific antibodies\" OR \"bispecific antibody\")",
+      "crossref": "B-cell lymphoma multiple myeloma CAR-T cell therapy CAR T-cell therapy",
+      "europepmc": "(TITLE_ABS:\"B-cell lymphoma\" OR TITLE_ABS:\"multiple myeloma\" OR TITLE_ABS:relapsed OR TITLE_ABS:refractory OR MESH:\"B-cell Lymphoma\" OR MESH:\"Multiple Myeloma\") AND (TITLE_ABS:\"CAR-T cell therapy\" OR TITLE_ABS:\"CAR T-cell therapy\" OR TITLE_ABS:CAR-T OR TITLE_ABS:\"CAR T\" OR TITLE_ABS:\"bispecific antibodies\" OR TITLE_ABS:\"bispecific antibody\" OR MESH:\"CAR-T Cell Therapy\")",
+      "openalex": "(\"B-cell lymphoma\" OR \"multiple myeloma\" OR relapsed OR refractory) AND (\"CAR-T cell therapy\" OR \"CAR T-cell therapy\" OR CAR-T OR \"CAR T\" OR \"bispecific antibodies\" OR \"bispecific antibody\")",
+      "preprints": "(TITLE_ABS:\"B-cell lymphoma\" OR TITLE_ABS:\"multiple myeloma\" OR TITLE_ABS:relapsed OR TITLE_ABS:refractory OR MESH:\"B-cell Lymphoma\" OR MESH:\"Multiple Myeloma\") AND (TITLE_ABS:\"CAR-T cell therapy\" OR TITLE_ABS:\"CAR T-cell therapy\" OR TITLE_ABS:CAR-T OR TITLE_ABS:\"CAR T\" OR TITLE_ABS:\"bispecific antibodies\" OR TITLE_ABS:\"bispecific antibody\" OR MESH:\"CAR-T Cell Therapy\")",
+      "pubmed": "(\"B-cell lymphoma\"[tiab] OR \"multiple myeloma\"[tiab] OR relapsed[tiab] OR refractory[tiab] OR \"B-cell Lymphoma\"[MeSH Terms] OR \"Multiple Myeloma\"[MeSH Terms]) AND (\"CAR-T cell therapy\"[tiab] OR \"CAR T-cell therapy\"[tiab] OR CAR-T[tiab] OR \"CAR T\"[tiab] OR \"bispecific antibodies\"[tiab] OR \"bispecific antibody\"[tiab] OR \"CAR-T Cell Therapy\"[MeSH Terms])",
+      "semantic_scholar": "B-cell lymphoma multiple myeloma CAR-T cell therapy CAR T-cell therapy"
+    },
+    "per_source": {
+      "clinicaltrials": {
+        "status": "success",
+        "count": 100,
+        "error": null,
+        "query_sent": "(\"B-cell lymphoma\" OR \"multiple myeloma\" OR relapsed OR refractory) AND (\"CAR-T cell therapy\" OR \"CAR T-cell therapy\" OR CAR-T OR \"CAR T\" OR \"bispecific antibodies\" OR \"bispecific antibody\")"
+      },
+      "europepmc": {
+        "status": "success",
+        "count": 100,
+        "error": null,
+        "query_sent": "(TITLE_ABS:\"B-cell lymphoma\" OR TITLE_ABS:\"multiple myeloma\" OR TITLE_ABS:relapsed OR TITLE_ABS:refractory OR MESH:\"B-cell Lymphoma\" OR MESH:\"Multiple Myeloma\") AND (TITLE_ABS:\"CAR-T cell therapy\" OR TITLE_ABS:\"CAR T-cell therapy\" OR TITLE_ABS:CAR-T OR TITLE_ABS:\"CAR T\" OR TITLE_ABS:\"bispecific antibodies\" OR TITLE_ABS:\"bispecific antibody\" OR MESH:\"CAR-T Cell Therapy\")"
+      },
+      "crossref": {
+        "status": "success",
+        "count": 100,
+        "error": null,
+        "query_sent": "B-cell lymphoma multiple myeloma CAR-T cell therapy CAR T-cell therapy"
+      },
+      "pubmed": {
+        "status": "success",
+        "count": 100,
+        "error": null,
+        "query_sent": "(\"B-cell lymphoma\"[tiab] OR \"multiple myeloma\"[tiab] OR relapsed[tiab] OR refractory[tiab] OR \"B-cell Lymphoma\"[MeSH Terms] OR \"Multiple Myeloma\"[MeSH Terms]) AND (\"CAR-T cell therapy\"[tiab] OR \"CAR T-cell therapy\"[tiab] OR CAR-T[tiab] OR \"CAR T\"[tiab] OR \"bispecific antibodies\"[tiab] OR \"bispecific antibody\"[tiab] OR \"CAR-T Cell Therapy\"[MeSH Terms])"
+      },
+      "preprints": {
+        "status": "success",
+        "count": 32,
+        "error": null,
+        "query_sent": "(TITLE_ABS:\"B-cell lymphoma\" OR TITLE_ABS:\"multiple myeloma\" OR TITLE_ABS:relapsed OR TITLE_ABS:refractory OR MESH:\"B-cell Lymphoma\" OR MESH:\"Multiple Myeloma\") AND (TITLE_ABS:\"CAR-T cell therapy\" OR TITLE_ABS:\"CAR T-cell therapy\" OR TITLE_ABS:CAR-T OR TITLE_ABS:\"CAR T\" OR TITLE_ABS:\"bispecific antibodies\" OR TITLE_ABS:\"bispecific antibody\" OR MESH:\"CAR-T Cell Therapy\")"
+      },
+      "openalex": {
+        "status": "success",
+        "count": 100,
+        "error": null,
+        "query_sent": "(\"B-cell lymphoma\" OR \"multiple myeloma\" OR relapsed OR refractory) AND (\"CAR-T cell therapy\" OR \"CAR T-cell therapy\" OR CAR-T OR \"CAR T\" OR \"bispecific antibodies\" OR \"bispecific antibody\")"
+      },
+      "semantic_scholar": {
+        "status": "success",
+        "count": 0,
+        "error": null,
+        "query_sent": "B-cell lymphoma multiple myeloma CAR-T cell therapy CAR T-cell therapy"
+      }
+    },
+    "total_identified": 532,
+    "duplicates_removed": 13,
+    "unique_records": 519,
+    "dedupe_report": {
+      "input_count": 532,
+      "unique_count": 519,
+      "duplicates_removed": 13,
+      "matched_by": {
+        "doi": 4,
+        "pmid": 2,
+        "pmcid": 1,
+        "nct_id": 0,
+        "title": 6
+      },
+      "removed_duplicates": [
+        {
+          "duplicate_id": "10.1056/nejmoa2203478",
+          "duplicate_source": "openalex",
+          "title": "Teclistamab in Relapsed or Refractory Multiple Myeloma",
+          "merged_into_id": "10.1056/nejmoa2203478",
+          "merged_sources": [
+            "pubmed",
+            "openalex"
+          ],
+          "matched_on": "doi",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35661166/"
+        },
+        {
+          "duplicate_id": "10.1007/s12185-020-02827-8",
+          "duplicate_source": "pubmed",
+          "title": "Chimeric antigen receptor T-cell therapy for multiple myeloma.",
+          "merged_into_id": "10.1016/j.clml.2020.08.027",
+          "merged_sources": [
+            "pubmed"
+          ],
+          "matched_on": "title",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31981097/"
+        },
+        {
+          "duplicate_id": "10.1186/s13045-021-01170-7",
+          "duplicate_source": "openalex",
+          "title": "A bispecific CAR-T cell therapy targeting BCMA and CD38 in relapsed or refractory multiple myeloma",
+          "merged_into_id": "10.1038/mt.2016.63",
+          "merged_sources": [
+            "pubmed",
+            "openalex"
+          ],
+          "matched_on": "pmid",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34627333/"
+        },
+        {
+          "duplicate_id": "10.1182/blood-2011-02-337360",
+          "duplicate_source": "pubmed",
+          "title": "Systematically optimized BCMA/CS1 bispecific CAR-T cells robustly control heterogeneous multiple myeloma.",
+          "merged_into_id": "10.1101/2020.03.12.989491",
+          "merged_sources": [
+            "preprints",
+            "pubmed"
+          ],
+          "matched_on": "title",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32385241/"
+        },
+        {
+          "duplicate_id": "10.1016/j.ccell.2022.02.016",
+          "duplicate_source": "pubmed",
+          "title": "Th17.1 cell driven sarcoidosis-like inflammation after anti-BCMA CAR T cells in multiple myeloma.",
+          "merged_into_id": "10.1101/2022.12.08.22283148",
+          "merged_sources": [
+            "preprints",
+            "pubmed"
+          ],
+          "matched_on": "title",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36720972/"
+        },
+        {
+          "duplicate_id": "10.1182/blood.2021012634",
+          "duplicate_source": "openalex",
+          "title": "Pembrolizumab for B-cell lymphomas relapsing after or refractory to CD19-directed CAR T-cell therapy",
+          "merged_into_id": "10.1182/blood.2021012634",
+          "merged_sources": [
+            "clinicaltrials",
+            "openalex"
+          ],
+          "matched_on": "doi",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34496014/"
+        },
+        {
+          "duplicate_id": "10.1038/icb.2016.128",
+          "duplicate_source": "openalex",
+          "title": "CAR T\u2010cell therapy of solid tumors",
+          "merged_into_id": "10.1146/annurev-med-062315-120245",
+          "merged_sources": [
+            "openalex"
+          ],
+          "matched_on": "title",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28003642/"
+        },
+        {
+          "duplicate_id": "10.1056/nejmoa2024850",
+          "duplicate_source": "pubmed",
+          "title": "Idecabtagene Vicleucel in Relapsed and Refractory Multiple Myeloma.",
+          "merged_into_id": "10.1056/nejmoa2024850",
+          "merged_sources": [
+            "openalex",
+            "pubmed"
+          ],
+          "matched_on": "doi",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33626253/"
+        },
+        {
+          "duplicate_id": "10.1016/s2352-3026(21)00057-0",
+          "duplicate_source": "openalex",
+          "title": "CAR T-cell therapy for multiple myeloma: state of the art and prospects",
+          "merged_into_id": "10.1016/s2352-3026(21)00057-0",
+          "merged_sources": [
+            "pubmed",
+            "openalex"
+          ],
+          "matched_on": "doi",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34048683/"
+        },
+        {
+          "duplicate_id": "10.1067/mmt.2001.112555",
+          "duplicate_source": "crossref",
+          "title": "A randomized controlled trial of chiropractic spinal manipulative therapy for migraines (1)",
+          "merged_into_id": "10.1067/mmt.2000.104087",
+          "merged_sources": [
+            "crossref"
+          ],
+          "matched_on": "title",
+          "url": "https://doi.org/10.1067/mmt.2001.112555"
+        },
+        {
+          "duplicate_id": "10.1067/mmt.2001.112557",
+          "duplicate_source": "crossref",
+          "title": "A randomized controlled trial of chiropractic spinal manipulative therapy for migraines (2)",
+          "merged_into_id": "10.1067/mmt.2000.104087",
+          "merged_sources": [
+            "crossref"
+          ],
+          "matched_on": "title",
+          "url": "https://doi.org/10.1067/mmt.2001.112557"
+        },
+        {
+          "duplicate_id": "10.1186/s13045-020-01001-1",
+          "duplicate_source": "openalex",
+          "title": "Safety and clinical efficacy of BCMA CAR-T-cell therapy in multiple myeloma",
+          "merged_into_id": "10.1182/blood-2018-99-119514",
+          "merged_sources": [
+            "pubmed",
+            "openalex"
+          ],
+          "matched_on": "pmid",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33272302/"
+        },
+        {
+          "duplicate_id": "10.1182/bloodadvances.2025019036",
+          "duplicate_source": "pubmed",
+          "title": "BCMA/CD19 dual-targeting CAR T-cell therapy in older patients with newly diagnosed multiple myeloma: a phase 1 study.",
+          "merged_into_id": "10.1182/bloodadvances.2021004603",
+          "merged_sources": [
+            "pubmed"
+          ],
+          "matched_on": "pmcid",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41925575/"
+        }
+      ],
+      "records_with_doi": 436,
+      "records_with_pmid": 305,
+      "records_without_identifier": 0
+    },
+    "sources_unavailable": {}
+  },
+  "screening": {
+    "screened": 20,
+    "not_screened": 499,
+    "not_screened_note": "499 record(s) were not screened because the cap of 20 was reached. They are excluded from the review but counted here, because a PRISMA flow diagram must account for every identified record. Raise SRMA_MAX_ABSTRACTS_TO_SCREEN for a complete run.",
+    "included": 19,
+    "excluded": 1,
+    "exclusion_reasons": {
+      "Wrong population": 1
+    },
+    "included_records": [
+      {
+        "id": "10.1056/nejmoa2401530",
+        "citation": "Ozdemirli et al. (2024). PMID:38865661",
+        "year": 2024,
+        "source": "pubmed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38865661/",
+        "title": "Indolent CD4+ CAR T-Cell Lymphoma after Cilta-cel CAR T-Cell Therapy.",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states \"Adult patients with relapsed or refractory B-cell lymphoma or multiple myeloma\", which matches the population criteria.",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "Wrong population. The protocol excludes studies on patients with relapsed or refractory B-cell lymphoma or multiple myeloma.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: Wrong population. The protocol excludes studies on patients with relapsed or refractory B-cell lymphoma or multiple myeloma."
+      },
+      {
+        "id": "10.1080/21645515.2026.2711554",
+        "citation": "Zhang et al. (2026). PMID:42623170",
+        "year": 2026,
+        "source": "europepmc",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42623170/",
+        "title": "Global trends in CAR-T cell therapy for multiple myeloma: A bibliometric analysis, 2013-2025.",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract mentions CAR-T cell therapy for multiple myeloma, which is within the target population.",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "The abstract states that the study is a bibliometric analysis, not a randomized controlled trial. The protocol excludes narrative reviews, editorials, case reports, and animal studies. This study is a bibliometric analysis, which is excluded by the protocol.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study is a bibliometric analysis, not a randomized controlled trial. The protocol excludes narrative reviews, editorials, case reports, and animal studies. This study is a bibliometric analysis, which is excluded by the protocol."
+      },
+      {
+        "id": "10.1056/nejmoa1707447",
+        "citation": "Neelapu et al. (2017). PMID:29226797",
+        "year": 2017,
+        "source": "openalex",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/29226797/",
+        "title": "Axicabtagene Ciloleucel CAR T-Cell Therapy in Refractory Large B-Cell Lymphoma",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states that the study population consists of adult patients with relapsed or refractory B-cell lymphoma or multiple myeloma, which aligns with the defined population criteria.",
+        "reviewer_2_decision": "Include",
+        "reviewer_2_reason": "The abstract states that the study population consists of adult patients with relapsed or refractory B-cell lymphoma or multiple myeloma, which is consistent with the protocol.",
+        "decided_by": "both reviewers agreed to include"
+      },
+      {
+        "id": "10.1101/2025.08.23.25334251",
+        "citation": "Wiemers et al. (2025). DOI:10.1101/2025.08.23.25334251",
+        "year": 2025,
+        "source": "preprints",
+        "url": "https://doi.org/10.1101/2025.08.23.25334251",
+        "title": "Body composition predicts poor outcomes and reveals immunometabolic dysfunction via single-cell profiling in anti-BCMA CAR T-treated myeloma",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states that the study included \"108 RRMM patients treated with anti-B-cell maturation antigen (BCMA) CAR T-cell therapy\". The population is adults with relapsed or refractory B-cell lymphoma or multiple myeloma, which matches the protocol.",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "The abstract states that the study included 108 RRMM patients treated with anti-B-cell maturation antigen (BCMA) CAR T-cell therapy. The protocol excludes studies using CAR-T cell therapy.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study included 108 RRMM patients treated with anti-B-cell maturation antigen (BCMA) CAR T-cell therapy. The protocol excludes studies using CAR-T cell therapy."
+      },
+      {
+        "id": "10.1182/blood.2025030559",
+        "citation": "Pan et al. (2026). PMID:41118600",
+        "year": 2026,
+        "source": "pubmed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41118600/",
+        "title": "The fully human anti-GPRC5D CAR T-cell therapy RD118 induces durable remissions in relapsed/refractory multiple myeloma.",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states that the study population consists of adult patients with relapsed or refractory B-cell lymphoma or multiple myeloma. This matches the specified population.",
+        "reviewer_2_decision": "Include",
+        "reviewer_2_reason": "The abstract states that the study population is adult patients with relapsed or refractory B-cell lymphoma or multiple myeloma, which is consistent with the protocol.",
+        "decided_by": "both reviewers agreed to include"
+      },
+      {
+        "id": "10.3390/cells15181660",
+        "citation": "Canichella et al. (2026). PMID:42782760",
+        "year": 2026,
+        "source": "europepmc",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42782760/",
+        "title": "Beyond CAR-T: Preventing and Treating Relapse in B-Cell Haematological Malignancies.",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states that the review focuses on preventing and treating relapse in B-cell lymphomas and multiple myeloma, which are included in the population.",
+        "reviewer_2_decision": "Include",
+        "reviewer_2_reason": "The abstract states that CAR-T cell therapy has revolutionized the treatment landscape of relapsed/refractory (R/R) B-cell acute lymphoblastic leukemia (B-ALL), non-Hodgkin lymphoma (NHL), and multiple myeloma (MM); however, a substantial proportion of patients eventually experience disease relapse despite an initial response. This review provides a brief overview of CAR-T cell therapy, including ",
+        "decided_by": "both reviewers agreed to include"
+      },
+      {
+        "id": "10.1101/2025.01.31.25321490",
+        "citation": "Wiemers et al. (2025). DOI:10.1101/2025.01.31.25321490",
+        "year": 2025,
+        "source": "preprints",
+        "url": "https://doi.org/10.1101/2025.01.31.25321490",
+        "title": "Prognostic implications of splenomegaly in BCMA-directed CAR T-Cell therapy for relapsed myeloma",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states that the study evaluates the prognostic significance of spleen size in predicting clinical outcomes for RRMM patients undergoing CAR T-cell therapy. The population is adults with relapsed or refractory B-cell lymphoma or multiple myeloma, which aligns with the review protocol.",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "Wrong population",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: Wrong population"
+      },
+      {
+        "id": "10.1080/17474086.2026.2681764",
+        "citation": "Awadallah et al. (2026). PMID:42201805",
+        "year": 2026,
+        "source": "pubmed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42201805/",
+        "title": "From episodic assessment to comprehensive assessment: integrating real-world monitoring in relapsed/refractory multiple myeloma.",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states \"Adult patients with relapsed or refractory B-cell lymphoma or multiple myeloma\", which matches the population criteria.",
+        "reviewer_2_decision": "Include",
+        "reviewer_2_reason": "The abstract states that the review examines real-world monitoring strategies for relapsed/refractory multiple myeloma (RRMM), which is consistent with the protocol's population criteria.",
+        "decided_by": "both reviewers agreed to include"
+      },
+      {
+        "id": "10.21203/rs.3.rs-10823950/v1",
+        "citation": "Almadani et al. (2026). DOI:10.21203/rs.3.rs-10823950/v1",
+        "year": 2026,
+        "source": "europepmc",
+        "url": "https://doi.org/10.21203/rs.3.rs-10823950/v1",
+        "title": "Talquetamab in Relapsed/Refractory Multiple Myeloma: A First Gulf Experience and Case Series Following BCMA CAR-T Therapy and Relapsed Refractory Extramedullary Disease",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states that the study population is \"Adult patients with relapsed or refractory B-cell lymphoma or multiple myeloma\".",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "The abstract states that the study is a \"First Gulf Experience and Case Series Following BCMA CAR-T Therapy and Relapsed Refractory Extramedullary Disease\", which is not an eligible design according to the protocol. The protocol states that the eligible designs are \"Randomized Controlled Trial\".",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study is a \"First Gulf Experience and Case Series Following BCMA CAR-T Therapy and Relapsed Refractory Extramedullary Disease\", which is not an eligible design according to the protocol. The protocol states that the eligible designs are \"Randomized Controlled Trial\"."
+      },
+      {
+        "id": "10.1056/nejmoa1817226",
+        "citation": "Raje et al. (2019). PMID:31042825",
+        "year": 2019,
+        "source": "openalex",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31042825/",
+        "title": "Anti-BCMA CAR T-Cell Therapy bb2121 in Relapsed or Refractory Multiple Myeloma",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states \"Adult patients with relapsed or refractory B-cell lymphoma or multiple myeloma\", which matches the population criteria.",
+        "reviewer_2_decision": "Include",
+        "reviewer_2_reason": "The abstract states that the study involves adult patients with relapsed or refractory B-cell lymphoma or multiple myeloma, which is consistent with the protocol's inclusion criteria.",
+        "decided_by": "both reviewers agreed to include"
+      },
+      {
+        "id": "10.1101/2025.10.28.25338924",
+        "citation": "Jurgens et al. (2025). DOI:10.1101/2025.10.28.25338924",
+        "year": 2025,
+        "source": "preprints",
+        "url": "https://doi.org/10.1101/2025.10.28.25338924",
+        "title": "Robust CD4 + CAR T cell Expansion Is Associated with Non-ICANS Neurotoxicities Following Ciltacabtagene Autoleucel",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states \"ciltacabtagene autoleucel, a commercial chimeric antigen receptor (CAR) T cell therapy approved for relapsed/refractory multiple myeloma\". The population is adults with relapsed or refractory B-cell lymphoma or multiple myeloma, which matches the population criteria.",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "The abstract states that the study is associated with ciltacabtagene autoleucel, a commercial chimeric antigen receptor (CAR) T cell therapy approved for relapsed/refractory multiple myeloma. The protocol excludes studies using CAR-T cell therapy.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study is associated with ciltacabtagene autoleucel, a commercial chimeric antigen receptor (CAR) T cell therapy approved for relapsed/refractory multiple myeloma. The protocol excludes studies using CAR-T cell therapy."
+      },
+      {
+        "id": "10.1016/j.biomaterials.2026.124187",
+        "citation": "Yu et al. (2026). PMID:41936184",
+        "year": 2026,
+        "source": "pubmed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41936184/",
+        "title": "Sustained IL-15 release enhances CAR-T therapy in multiple myeloma via FOXO1 signaling axis activation.",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract mentions adult patients with relapsed or refractory B-cell lymphoma or multiple myeloma, which aligns with the population criteria.",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "The abstract states that the study developed a hypoxia-responsive N-803 nanogel (BiA-N-803 NG) for controlled release of an IL-15 superagonist to enhance CAR-T cell therapy in multiple myeloma. The intervention is not CAR-T cell therapy, but a nanogel.",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study developed a hypoxia-responsive N-803 nanogel (BiA-N-803 NG) for controlled release of an IL-15 superagonist to enhance CAR-T cell therapy in multiple myeloma. The intervention is not CAR-T cell therapy, but a nanogel."
+      },
+      {
+        "id": "10.3324/haematol.2026.301282",
+        "citation": "Zhang et al. (2026). PMID:42779309",
+        "year": 2026,
+        "source": "europepmc",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42779309/",
+        "title": "B-cell maturation antigen-targeted CAR T cell as a salvage therapy for progressive multiple myeloma after anti-G proteincoupled receptor, class C group 5 member D CAR T-cell therapy.",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states that the study enrolled 20 subjects with RRMM after a prior anti-GPRC5D CAR T-cell therapy received BCMA-targeted CAR T-cell therapy as a salvage treatment. The population is adults with relapsed or refractory B-cell lymphoma or multiple myeloma.",
+        "reviewer_2_decision": "Exclude",
+        "reviewer_2_reason": "The abstract states that the study enrolled 20 subjects with RRMM after a prior anti-GPRC5D CAR T-cell therapy received BCMA-targeted CAR T-cell therapy as a salvage treatment. The protocol states that the population is adult patients with relapsed or refractory B-cell lymphoma or multiple myeloma. The abstract does not state that the population is adult patients with relapsed or refractory B-cell",
+        "decided_by": "Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study enrolled 20 subjects with RRMM after a prior anti-GPRC5D CAR T-cell therapy received BCMA-targeted CAR T-cell therapy as a salvage treatment. The protocol states that the population is adult patients with relapsed or refractory B-cell lymphoma or multiple myeloma. "
+      },
+      {
+        "id": "10.1056/nejmoa1804980",
+        "citation": "Schuster et al. (2018). PMID:30501490",
+        "year": 2018,
+        "source": "openalex",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/30501490/",
+        "title": "Tisagenlecleucel in Adult Relapsed or Refractory Diffuse Large B-Cell Lymphoma",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states that the study involves adult patients with relapsed or refractory B-cell lymphoma or multiple myeloma, which aligns with the specified population.",
+        "reviewer_2_decision": "Include",
+        "reviewer_2_reason": "The abstract states that the study involves adult patients with relapsed or refractory B-cell lymphoma or multiple myeloma, which aligns with the protocol's population criteria.",
+        "decided_by": "both reviewers agreed to include"
+      },
+      {
+        "id": "10.1101/2025.04.01.646378",
+        "citation": "Jordana-Urriza et al. (2025). DOI:10.1101/2025.04.01.646378",
+        "year": 2025,
+        "source": "preprints",
+        "url": "https://doi.org/10.1101/2025.04.01.646378",
+        "title": "Single-Cell Multiomics Reveals Regulatory Mechanisms of CAR T Cell Persistence and Dysfunction in Multiple Myeloma",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract mentions CAR-T cell therapy, which is the intervention. The abstract also mentions multiple myeloma, which is the population. The abstract does not mention chemotherapy or bispecific antibodies, which are the comparators. The abstract mentions cytokine release syndrome, which is the outcome. The abstract mentions randomized controlled trial, which is the study design.",
+        "reviewer_2_decision": "Include",
+        "reviewer_2_reason": "The abstract states that the study is focused on CAR-T cell therapy in multiple myeloma, which is consistent with the protocol's inclusion criteria for patients with relapsed or refractory B-cell lymphoma or multiple myeloma.",
+        "decided_by": "both reviewers agreed to include"
+      },
+      {
+        "id": "10.1038/sj.onc.1207350",
+        "citation": "Duan et al. (2021). PMID:33767695",
+        "year": 2021,
+        "source": "pubmed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/33767695/",
+        "title": "The BCMA-Targeted Fourth-Generation CAR-T Cells Secreting IL-7 and CCL19 for Therapy of Refractory/Recurrent Multiple Myeloma.",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states \"The two patients achieved a CR and VGPR with Grade 1 cytokine release syndrome only 1 month after one dose of CAR-T cell infusion, and the responses lasted more than 12-month.\"",
+        "reviewer_2_decision": "Include",
+        "reviewer_2_reason": "The abstract states that the study is a first-in-human clinical trial for therapy of R/R MM by use of BCMA-7 \u00d7 19 CAR-T cells (ClinicalTrials.gov Identifier: NCT03778346). The protocol states that the eligible designs are Randomized Controlled Trial.",
+        "decided_by": "both reviewers agreed to include"
+      },
+      {
+        "id": "10.1007/s00277-026-07278-5",
+        "citation": "Niklas et al. (2026). PMID:42747560",
+        "year": 2026,
+        "source": "europepmc",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42747560/",
+        "title": "Early deep response to cilta-cel as 2nd CAR T-Cell therapy after CELMoD-based bridging for advanced multiple myeloma.",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states that the population is adult patients with relapsed or refractory B-cell lymphoma or multiple myeloma, which matches the population criteria.",
+        "reviewer_2_decision": "Include",
+        "reviewer_2_reason": "The abstract states that the patient received 'a second BCMA-directed CAR T-cell infusion using ciltacabtagene autoleucel'. The protocol excludes studies using CAR-T cell therapy.",
+        "decided_by": "both reviewers agreed to include"
+      },
+      {
+        "id": "10.1056/nejmoa1914347",
+        "citation": "Wang et al. (2020). PMID:32242358",
+        "year": 2020,
+        "source": "openalex",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/32242358/",
+        "title": "KTE-X19 CAR T-Cell Therapy in Relapsed or Refractory Mantle-Cell Lymphoma",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract states that the study population is adult patients with relapsed or refractory B-cell lymphoma or multiple myeloma. This matches the population criteria.",
+        "reviewer_2_decision": "Include",
+        "reviewer_2_reason": "The abstract states that the study population is adult patients with relapsed or refractory B-cell lymphoma or multiple myeloma, which is consistent with the protocol.",
+        "decided_by": "both reviewers agreed to include"
+      },
+      {
+        "id": "10.1101/2025.05.06.651695",
+        "citation": "Durig et al. (2025). DOI:10.1101/2025.05.06.651695",
+        "year": 2025,
+        "source": "preprints",
+        "url": "https://doi.org/10.1101/2025.05.06.651695",
+        "title": "In vivo tracking of CAR-T cells in tumors via nanobubble-based contrast enhanced ultrasound",
+        "reviewer_1_decision": "Include",
+        "reviewer_1_reason": "The abstract mentions CAR-T cell therapy, which is the intervention of interest. It also mentions B-cell lymphoma and multiple myeloma, which are part of the population of interest. The abstract does not mention chemotherapy or bispecific antibodies, so the comparator is not specified. The abstract does not mention cytokine release syndrome, so the primary outcome is not specified. The abstract me",
+        "reviewer_2_decision": "Include",
+        "reviewer_2_reason": "The abstract states that CAR-T cell therapy has led to remarkable advances in the outcomes of patients with acute lymphoblastic leukemia (ALL), B cell lymphomas, and multiple myeloma. The study is about tracking CAR-T cells in vivo using ultrasound imaging and nanobubble (NB) labeled cells. This is a relevant intervention and outcome.",
+        "decided_by": "both reviewers agreed to include"
+      }
+    ],
+    "excluded_records": [
+      {
+        "id": "10.1038/s41408-021-00459-7",
+        "citation": "Sterner et al. (2021). PMID:33824268",
+        "year": 2021,
+        "source": "openalex",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/33824268/",
+        "title": "CAR-T cell therapy: current limitations and potential strategies",
+        "category": "Wrong population",
+        "reason": "Title, abstract, MeSH headings and keywords contain no mention of the population (B-cell lymphoma, multiple myeloma, relapsed).",
+        "reviewer_1_decision": "Skipped (Gate)",
+        "reviewer_1_reason": "Title, abstract, MeSH headings and keywords contain no mention of the population (B-cell lymphoma, multiple myeloma, relapsed).",
+        "reviewer_2_decision": "Skipped (Gate)",
+        "reviewer_2_reason": "Title, abstract, MeSH headings and keywords contain no mention of the population (B-cell lymphoma, multiple myeloma, relapsed).",
+        "decided_by": "relevance gate (Python, no model call)"
+      }
+    ],
+    "gate_rejected": 1,
+    "gate_note": "1 record(s) were rejected by the Python relevance gate before any model call, because their title, abstract, MeSH headings and keywords never mentioned the population or the intervention. This is a deterministic check that the model cannot override.",
+    "reviewer_disagreements": 8,
+    "reviewer_agreement_rate": 0.579,
+    "agreement_note": "Agreement is measured between two prompts with deliberately different risk tolerances, over the records that reached both reviewers. A rate of exactly 1.0 across many records suggests the personas are not actually diverging and the dual-review safeguard is not doing any work. Because inclusion follows the liberal rule, every disagreement counted here is a record that was admitted despite one reviewer objecting; the objection is recorded against each such record in `included_records` and should be settled at full text.",
+    "errors": [],
+    "elapsed_seconds": 510.6
+  },
+  "extraction": {
+    "attempted": 10,
+    "succeeded": 10,
+    "not_attempted": 9,
+    "skipped_due_to_cap": [
+      {
+        "id": "10.1101/2025.10.28.25338924",
+        "citation": "Jurgens et al. (2025). DOI:10.1101/2025.10.28.25338924",
+        "year": 2025,
+        "source": "preprints",
+        "url": "https://doi.org/10.1101/2025.10.28.25338924",
+        "title": "Robust CD4 + CAR T cell Expansion Is Associated with Non-ICANS Neurotoxicities Following Ciltacabtagene Autoleucel",
+        "reason": "Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=10 cap was reached."
+      },
+      {
+        "id": "10.1016/j.biomaterials.2026.124187",
+        "citation": "Yu et al. (2026). PMID:41936184",
+        "year": 2026,
+        "source": "pubmed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41936184/",
+        "title": "Sustained IL-15 release enhances CAR-T therapy in multiple myeloma via FOXO1 signaling axis activation.",
+        "reason": "Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=10 cap was reached."
+      },
+      {
+        "id": "10.3324/haematol.2026.301282",
+        "citation": "Zhang et al. (2026). PMID:42779309",
+        "year": 2026,
+        "source": "europepmc",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42779309/",
+        "title": "B-cell maturation antigen-targeted CAR T cell as a salvage therapy for progressive multiple myeloma after anti-G proteincoupled receptor, class C group 5 member D CAR T-cell therapy.",
+        "reason": "Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=10 cap was reached."
+      },
+      {
+        "id": "10.1056/nejmoa1804980",
+        "citation": "Schuster et al. (2018). PMID:30501490",
+        "year": 2018,
+        "source": "openalex",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/30501490/",
+        "title": "Tisagenlecleucel in Adult Relapsed or Refractory Diffuse Large B-Cell Lymphoma",
+        "reason": "Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=10 cap was reached."
+      },
+      {
+        "id": "10.1101/2025.04.01.646378",
+        "citation": "Jordana-Urriza et al. (2025). DOI:10.1101/2025.04.01.646378",
+        "year": 2025,
+        "source": "preprints",
+        "url": "https://doi.org/10.1101/2025.04.01.646378",
+        "title": "Single-Cell Multiomics Reveals Regulatory Mechanisms of CAR T Cell Persistence and Dysfunction in Multiple Myeloma",
+        "reason": "Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=10 cap was reached."
+      },
+      {
+        "id": "10.1038/sj.onc.1207350",
+        "citation": "Duan et al. (2021). PMID:33767695",
+        "year": 2021,
+        "source": "pubmed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/33767695/",
+        "title": "The BCMA-Targeted Fourth-Generation CAR-T Cells Secreting IL-7 and CCL19 for Therapy of Refractory/Recurrent Multiple Myeloma.",
+        "reason": "Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=10 cap was reached."
+      },
+      {
+        "id": "10.1007/s00277-026-07278-5",
+        "citation": "Niklas et al. (2026). PMID:42747560",
+        "year": 2026,
+        "source": "europepmc",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42747560/",
+        "title": "Early deep response to cilta-cel as 2nd CAR T-Cell therapy after CELMoD-based bridging for advanced multiple myeloma.",
+        "reason": "Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=10 cap was reached."
+      },
+      {
+        "id": "10.1056/nejmoa1914347",
+        "citation": "Wang et al. (2020). PMID:32242358",
+        "year": 2020,
+        "source": "openalex",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/32242358/",
+        "title": "KTE-X19 CAR T-Cell Therapy in Relapsed or Refractory Mantle-Cell Lymphoma",
+        "reason": "Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=10 cap was reached."
+      },
+      {
+        "id": "10.1101/2025.05.06.651695",
+        "citation": "Durig et al. (2025). DOI:10.1101/2025.05.06.651695",
+        "year": 2025,
+        "source": "preprints",
+        "url": "https://doi.org/10.1101/2025.05.06.651695",
+        "title": "In vivo tracking of CAR-T cells in tumors via nanobubble-based contrast enhanced ultrasound",
+        "reason": "Passed dual-reviewer title/abstract screening, but skipped at Phase 6 because max_studies_to_extract=10 cap was reached."
+      }
+    ],
+    "errors": [],
+    "studies": [
+      {
+        "study_id": "10.1056/nejmoa2401530",
+        "study_label": "Ozdemirli et al. (2024). PMID:38865661",
+        "title": "Indolent CD4+ CAR T-Cell Lymphoma after Cilta-cel CAR T-Cell Therapy.",
+        "source_db": "pubmed",
+        "verification_url": "https://pubmed.ncbi.nlm.nih.gov/38865661/",
+        "year": 2024,
+        "design": "",
+        "population_description": "",
+        "intervention_description": "",
+        "comparator_description": "",
+        "key_findings_summary": "",
+        "evidence_quote": "",
+        "intervention_arm": {
+          "label": "Intervention",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Control",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Cytokine Release Syndrome (CRS)",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The text does not describe randomization."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The text does not describe deviations from intended interventions."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The text does not describe missing outcome data."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The text does not describe bias in measurement of the outcome."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The text does not describe bias in selection of the reported result."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": [
+          "assessed_from_abstract_only"
+        ]
+      },
+      {
+        "study_id": "10.1080/21645515.2026.2711554",
+        "study_label": "Zhang et al. (2026). PMID:42623170",
+        "title": "Global trends in CAR-T cell therapy for multiple myeloma: A bibliometric analysis, 2013-2025.",
+        "source_db": "europepmc",
+        "verification_url": "https://pubmed.ncbi.nlm.nih.gov/42623170/",
+        "year": 2026,
+        "design": "",
+        "population_description": "",
+        "intervention_description": "",
+        "comparator_description": "",
+        "key_findings_summary": "",
+        "evidence_quote": "",
+        "intervention_arm": {
+          "label": "CAR-T cell therapy",
+          "n_total": 874,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Standard regimens",
+          "n_total": 787,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Cytokine Release Syndrome (CRS)",
+        "rob_domains": [
+          {
+            "domain": "Domain 1",
+            "judgement": "Low risk",
+            "justification": "The report does not describe randomization."
+          },
+          {
+            "domain": "Domain 2",
+            "judgement": "Low risk",
+            "justification": "The report does not describe blinding."
+          },
+          {
+            "domain": "Domain 3",
+            "judgement": "Low risk",
+            "justification": "The report does not describe missing data."
+          },
+          {
+            "domain": "Domain 4",
+            "judgement": "Low risk",
+            "justification": "The report does not describe outcome assessment."
+          },
+          {
+            "domain": "Domain 5",
+            "judgement": "Low risk",
+            "justification": "The report does not describe a pre-registered protocol."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": []
+      },
+      {
+        "study_id": "10.1056/nejmoa1707447",
+        "study_label": "Neelapu et al. (2017). PMID:29226797",
+        "title": "Axicabtagene Ciloleucel CAR T-Cell Therapy in Refractory Large B-Cell Lymphoma",
+        "source_db": "openalex",
+        "verification_url": "https://pubmed.ncbi.nlm.nih.gov/29226797/",
+        "year": 2017,
+        "design": "",
+        "population_description": "",
+        "intervention_description": "",
+        "comparator_description": "",
+        "key_findings_summary": "",
+        "evidence_quote": "",
+        "intervention_arm": {
+          "label": "Intervention",
+          "n_total": 101,
+          "n_events": 43,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Control",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Cytokine Release Syndrome (CRS)",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The report does not describe randomization."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The report does not describe blinding."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The report does not describe missing data."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The report does not describe measurement bias."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The report does not describe selective reporting."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": []
+      },
+      {
+        "study_id": "10.1101/2025.08.23.25334251",
+        "study_label": "Wiemers et al. (2025). DOI:10.1101/2025.08.23.25334251",
+        "title": "Body composition predicts poor outcomes and reveals immunometabolic dysfunction via single-cell profiling in anti-BCMA CAR T-treated myeloma",
+        "source_db": "preprints",
+        "verification_url": "https://doi.org/10.1101/2025.08.23.25334251",
+        "year": 2025,
+        "design": "",
+        "population_description": "",
+        "intervention_description": "",
+        "comparator_description": "",
+        "key_findings_summary": "",
+        "evidence_quote": "",
+        "intervention_arm": {
+          "label": "Intervention",
+          "n_total": 108,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Control",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Overall Survival",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The report does not describe randomization."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The report does not describe deviations from intended interventions."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The report does not describe missing outcome data."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The report does not describe bias in measurement of the outcome."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The report does not describe bias in selection of the reported result."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": [
+          "sd_reported_as_se_or_ci"
+        ]
+      },
+      {
+        "study_id": "10.1182/blood.2025030559",
+        "study_label": "Pan et al. (2026). PMID:41118600",
+        "title": "The fully human anti-GPRC5D CAR T-cell therapy RD118 induces durable remissions in relapsed/refractory multiple myeloma.",
+        "source_db": "pubmed",
+        "verification_url": "https://pubmed.ncbi.nlm.nih.gov/41118600/",
+        "year": 2026,
+        "design": "",
+        "population_description": "",
+        "intervention_description": "",
+        "comparator_description": "",
+        "key_findings_summary": "",
+        "evidence_quote": "",
+        "intervention_arm": {
+          "label": "RD118",
+          "n_total": 18,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "None",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Cytokine Release Syndrome (CRS)",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The report states that the trial was registered at www.clinicaltrials.gov as #NCT05759793 and #NCT05219721."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The report states that the trial was registered at www.clinicaltrials.gov as #NCT05759793 and #NCT05219721."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The report states that the trial was registered at www.clinicaltrials.gov as #NCT05759793 and #NCT05219721."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The report states that the trial was registered at www.clinicaltrials.gov as #NCT05759793 and #NCT05219721."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The report states that the trial was registered at www.clinicaltrials.gov as #NCT05759793 and #NCT05219721."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": [
+          "assessed_from_abstract_only"
+        ]
+      },
+      {
+        "study_id": "10.3390/cells15181660",
+        "study_label": "Canichella et al. (2026). PMID:42782760",
+        "title": "Beyond CAR-T: Preventing and Treating Relapse in B-Cell Haematological Malignancies.",
+        "source_db": "europepmc",
+        "verification_url": "https://pubmed.ncbi.nlm.nih.gov/42782760/",
+        "year": 2026,
+        "design": "",
+        "population_description": "",
+        "intervention_description": "",
+        "comparator_description": "",
+        "key_findings_summary": "",
+        "evidence_quote": "",
+        "intervention_arm": {
+          "label": "Intervention",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Control",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Cytokine Release Syndrome (CRS)",
+        "rob_domains": [
+          {
+            "domain": "Domain 1",
+            "judgement": "Low risk",
+            "justification": "The report does not describe randomization."
+          },
+          {
+            "domain": "Domain 2",
+            "judgement": "Low risk",
+            "justification": "The report does not describe blinding."
+          },
+          {
+            "domain": "Domain 3",
+            "judgement": "Low risk",
+            "justification": "The report does not describe missing data."
+          },
+          {
+            "domain": "Domain 4",
+            "judgement": "Low risk",
+            "justification": "The report does not describe outcome assessment."
+          },
+          {
+            "domain": "Domain 5",
+            "judgement": "Low risk",
+            "justification": "The report does not describe pre-registration."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": []
+      },
+      {
+        "study_id": "10.1101/2025.01.31.25321490",
+        "study_label": "Wiemers et al. (2025). DOI:10.1101/2025.01.31.25321490",
+        "title": "Prognostic implications of splenomegaly in BCMA-directed CAR T-Cell therapy for relapsed myeloma",
+        "source_db": "preprints",
+        "verification_url": "https://doi.org/10.1101/2025.01.31.25321490",
+        "year": 2025,
+        "design": "",
+        "population_description": "",
+        "intervention_description": "",
+        "comparator_description": "",
+        "key_findings_summary": "",
+        "evidence_quote": "",
+        "intervention_arm": {
+          "label": "CAR T-cell therapy",
+          "n_total": 73,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "None",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Cytokine Release Syndrome (CRS)",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The study is retrospective and does not describe a randomization process."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The study is retrospective and does not describe deviations from the intended interventions."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The study reports that approximately 95% of patients had outcome data."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The study reports that spleen size was measured via computed tomography (CT)."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The study is retrospective and does not describe selective reporting or outcome switching."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": [
+          "n_events",
+          "n_total",
+          "mean",
+          "sd_reported_as_se_or_ci"
+        ]
+      },
+      {
+        "study_id": "10.1080/17474086.2026.2681764",
+        "study_label": "Awadallah et al. (2026). PMID:42201805",
+        "title": "From episodic assessment to comprehensive assessment: integrating real-world monitoring in relapsed/refractory multiple myeloma.",
+        "source_db": "pubmed",
+        "verification_url": "https://pubmed.ncbi.nlm.nih.gov/42201805/",
+        "year": 2026,
+        "design": "",
+        "population_description": "",
+        "intervention_description": "",
+        "comparator_description": "",
+        "key_findings_summary": "",
+        "evidence_quote": "",
+        "intervention_arm": {
+          "label": "Intervention",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Control",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Cytokine Release Syndrome (CRS)",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a 'review' and does not describe a randomized controlled trial."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a 'review' and does not describe a randomized controlled trial."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a 'review' and does not describe a randomized controlled trial."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a 'review' and does not describe a randomized controlled trial."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The text states that the study is a 'review' and does not describe a randomized controlled trial."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": [
+          "assessed_from_abstract_only"
+        ]
+      },
+      {
+        "study_id": "10.21203/rs.3.rs-10823950/v1",
+        "study_label": "Almadani et al. (2026). DOI:10.21203/rs.3.rs-10823950/v1",
+        "title": "Talquetamab in Relapsed/Refractory Multiple Myeloma: A First Gulf Experience and Case Series Following BCMA CAR-T Therapy and Relapsed Refractory Extramedullary Disease",
+        "source_db": "europepmc",
+        "verification_url": "https://doi.org/10.21203/rs.3.rs-10823950/v1",
+        "year": 2026,
+        "design": "",
+        "population_description": "",
+        "intervention_description": "",
+        "comparator_description": "",
+        "key_findings_summary": "",
+        "evidence_quote": "",
+        "intervention_arm": {
+          "label": "Talquetamab",
+          "n_total": 2,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "Not specified",
+          "n_total": 0,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Cytokine Release Syndrome (CRS)",
+        "rob_domains": [
+          {
+            "domain": "Domain 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The report does not describe randomisation."
+          },
+          {
+            "domain": "Domain 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The report does not describe blinding."
+          },
+          {
+            "domain": "Domain 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The report does not describe missing data."
+          },
+          {
+            "domain": "Domain 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The report does not describe measurement bias."
+          },
+          {
+            "domain": "Domain 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The report does not describe selective reporting."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": [
+          "sd_reported_as_se_or_ci",
+          "ungrounded_event_counts_removed_by_python_verifier"
+        ]
+      },
+      {
+        "study_id": "10.1056/nejmoa1817226",
+        "study_label": "Raje et al. (2019). PMID:31042825",
+        "title": "Anti-BCMA CAR T-Cell Therapy bb2121 in Relapsed or Refractory Multiple Myeloma",
+        "source_db": "openalex",
+        "verification_url": "https://pubmed.ncbi.nlm.nih.gov/31042825/",
+        "year": 2019,
+        "design": "",
+        "population_description": "",
+        "intervention_description": "",
+        "comparator_description": "",
+        "key_findings_summary": "",
+        "evidence_quote": "",
+        "intervention_arm": {
+          "label": "bb2121",
+          "n_total": 33,
+          "n_events": 25,
+          "mean": null,
+          "sd": null
+        },
+        "control_arm": {
+          "label": "None",
+          "n_total": null,
+          "n_events": null,
+          "mean": null,
+          "sd": null
+        },
+        "outcome_name": "Cytokine Release Syndrome (CRS)",
+        "rob_domains": [
+          {
+            "domain": "DOMAIN 1 - Bias arising from the randomization process",
+            "judgement": "Low risk",
+            "justification": "The report does not describe randomisation."
+          },
+          {
+            "domain": "DOMAIN 2 - Bias due to deviations from intended interventions",
+            "judgement": "Low risk",
+            "justification": "The report does not describe blinding."
+          },
+          {
+            "domain": "DOMAIN 3 - Bias due to missing outcome data",
+            "judgement": "Low risk",
+            "justification": "The report does not describe missing data."
+          },
+          {
+            "domain": "DOMAIN 4 - Bias in measurement of the outcome",
+            "judgement": "Low risk",
+            "justification": "The report does not describe measurement bias."
+          },
+          {
+            "domain": "DOMAIN 5 - Bias in selection of the reported result",
+            "judgement": "Low risk",
+            "justification": "The report does not describe pre-registration or outcome switching."
+          }
+        ],
+        "rob_overall": "Low risk",
+        "missing_data_flags": [
+          "sd_reported_as_se_or_ci"
+        ]
+      }
+    ]
+  },
+  "meta_analysis": {
+    "ok": false,
+    "error": "No study contained data sufficient for this analysis.",
+    "effect_measure": "RR",
+    "k_supplied": 10,
+    "k_included": 0,
+    "excluded_studies": [
+      {
+        "index": 0,
+        "label": "Ozdemirli et al. (2024). PMID:38865661",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      },
+      {
+        "index": 1,
+        "label": "Zhang et al. (2026). PMID:42623170",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      },
+      {
+        "index": 2,
+        "label": "Neelapu et al. (2017). PMID:29226797",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      },
+      {
+        "index": 3,
+        "label": "Wiemers et al. (2025). DOI:10.1101/2025.08.23.25334251",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      },
+      {
+        "index": 4,
+        "label": "Pan et al. (2026). PMID:41118600",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      },
+      {
+        "index": 5,
+        "label": "Canichella et al. (2026). PMID:42782760",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      },
+      {
+        "index": 6,
+        "label": "Wiemers et al. (2025). DOI:10.1101/2025.01.31.25321490",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      },
+      {
+        "index": 7,
+        "label": "Awadallah et al. (2026). PMID:42201805",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      },
+      {
+        "index": 8,
+        "label": "Almadani et al. (2026). DOI:10.21203/rs.3.rs-10823950/v1",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      },
+      {
+        "index": 9,
+        "label": "Raje et al. (2019). PMID:31042825",
+        "reason_code": "MISSING_BINARY_DATA",
+        "reason": "Requires n_events and n_total in both arms; one or more were missing."
+      }
+    ],
+    "warnings": [
+      "10 of 10 supplied study/studies could not be analysed; see `excluded_studies` for the reason for each. No study was dropped silently."
+    ],
+    "notes": [
+      "Auto-detection found neither complete binary (events/total) nor complete continuous (mean/SD/n) data in any study.",
+      "Primary model is random effects with DerSimonian-Laird tau^2, the RevMan/Cochrane default, so the result is comparable with published reviews. REML and HKSJ results are reported alongside and should be preferred when k is small."
+    ]
+  },
+  "prisma": {
+    "identified_by_source": {
+      "clinicaltrials": 100,
+      "europepmc": 100,
+      "crossref": 100,
+      "pubmed": 100,
+      "preprints": 32,
+      "openalex": 100,
+      "semantic_scholar": 0
+    },
+    "total_identified": 532,
+    "duplicates_removed": 13,
+    "records_screened": 20,
+    "excluded_at_screening": 1,
+    "exclusion_reasons": {
+      "Wrong population": 1
+    },
+    "full_text_assessed": 10,
+    "excluded_at_full_text": 10,
+    "full_text_exclusion_reasons": {
+      "MISSING_BINARY_DATA": 10
+    },
+    "studies_included": 0
+  },
+  "elapsed_seconds": 1150.2,
+  "r_script_path": "runs/run-20261001-104803/r_script.R",
+  "pdf_report": "runs/run-20261001-104803/manuscript.pdf"
+}

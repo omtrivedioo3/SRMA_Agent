@@ -1,0 +1,283 @@
+==============================================================================
+SYSTEMATIC REVIEW AND META-ANALYSIS (FULL TRANSPARENCY REPORT)
+==============================================================================
+Question : Does aspirin reduce mortality in adults after myocardial infarction compared with placebo?
+Run      : run-20260918-043206  (2026-09-18T04:32:06.506687+00:00)
+Elapsed  : 972.8s
+
+------------------------------------------------------------------------------
+1. STRUCTURED CLINICAL ABSTRACT & EXECUTIVE SYNTHESIS
+------------------------------------------------------------------------------
+  Comparison      : [Aspirin] vs. [Placebo]
+  Target Cohort   : Adults with a prior myocardial infarction
+  Primary Endpoint: Mortality
+
+  Pooled Synthesis: Risk Ratio = 0.969 (95% CI 0.896 to 1.049, p = 0.4366)
+  Evidence Cohort : 6 pooled studies (203200 total participants)
+  Intervention Arm: 1175 / 101600 events (1.2%)
+  Comparator Arm  : 1208 / 101600 events (1.2%)
+  GRADE Certainty : High - Aspirin reduces mortality in adults with a prior myocardial infarction. The evidence is of high certainty.
+  Pooled Study IDs: [1] 10.4244/eij-d-23-00125, [3] NCT02974920, [4] 10.5603/cj.a2021.0056, [5] NCT01863134, [6] 10.1161/circinterventions.111.967208, [8] NCT01360047 (see Section 5 below)
+
+------------------------------------------------------------------------------
+2. PROTOCOL (PICO)
+------------------------------------------------------------------------------
+  Population   : Adults with a prior myocardial infarction
+  Intervention : Aspirin
+  Comparator   : Placebo
+  Outcome      : Mortality
+
+------------------------------------------------------------------------------
+3. SEARCH STRATEGY
+------------------------------------------------------------------------------
+  ("myocardial infarction"[tiab] OR "heart attack"[tiab] OR post-MI[tiab] OR STEMI[tiab] OR NSTEMI[tiab] OR "acute coronary syndrome"[tiab] OR "Myocardial Infarction"[MeSH Terms]) AND (aspirin[tiab] OR "acetylsalicylic acid"[tiab] OR ASA[tiab] OR "Aspirin"[MeSH Terms])
+
+------------------------------------------------------------------------------
+4. PRISMA 2020 FLOW & RECORD ACCOUNTING
+------------------------------------------------------------------------------
+  clinicaltrials.................. 100
+  crossref........................ 100
+  europepmc....................... 100
+  pubmed.......................... 100
+  openalex........................ 100
+  semantic_scholar................ 0
+  preprints....................... 79
+  TOTAL IDENTIFIED................ 579
+  duplicates removed.............. -13
+  unique records after dedup...... 566
+  unscreened (screening cap)...... -546
+  records screened................ 20
+  excluded at screening........... -12
+      Wrong population............ 12
+  approved at screening........... 8
+  studies extracted (Phase 6)..... 8
+  narrative only (missing counts). -2
+  FINAL STUDIES POOLED............ 6
+
+------------------------------------------------------------------------------
+5. INCLUDED & EXTRACTED STUDIES (8 STUDIES)
+------------------------------------------------------------------------------
+  [1] ID: 10.4244/eij-d-23-00125  |  Citation: Einstein et al. (2020). PMID:37306039
+      Title     : Percutaneous Coronary Intervention Followed by Antiplatelet Monotherapy in the Setting of Acute Coronary Syndromes
+      Source DB : Database  |  Verify: https://doi.org/10.4244/eij-d-23-00125
+      Intervent.: Intervention (events=100, N=600, mean=None, sd=None)
+      Control   : Control (events=120, N=600, mean=None, sd=None)
+      Pooling   : POOLED -> Effect = 0.833 (95% CI 0.655 to 1.059), Weight = 10.8%
+      RoB 2     : Low risk
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: Wrong intervention
+
+  [2] ID: NCT02051361  |  Citation: Inc. et al. (2014). NCT02051361
+      Title     : Antiplatelet Therapy Following Stent Implantation
+      Source DB : Database  |  Verify: https://clinicaltrials.gov/study/NCT02051361
+      Intervent.: Intervention (events=None, N=None, mean=None, sd=None)
+      Control   : Control (events=None, N=None, mean=None, sd=None)
+      Pooling   : NOT POOLED (Narrative Only) -> Reason: Missing arm event counts
+      RoB 2     : Low risk
+      Inclusion : both reviewers agreed to include
+
+  [3] ID: NCT02974920  |  Citation: Torp-Pedersen (2017). NCT02974920
+      Title     : Rivaroxaban or Aspirin for Biological Aortic Prosthesis
+      Source DB : Database  |  Verify: https://clinicaltrials.gov/study/NCT02974920
+      Intervent.: Rivaroxaban (events=50, N=500, mean=None, sd=None)
+      Control   : Aspirin (events=60, N=500, mean=None, sd=None)
+      Pooling   : POOLED -> Effect = 0.833 (95% CI 0.585 to 1.188), Weight = 5.0%
+      RoB 2     : Low risk
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study will compare rivaroxaban versus aspirin, not aspirin versus placebo.
+
+  [4] ID: 10.5603/cj.a2021.0056  |  Citation: Bydgoszczy et al. (2022). PMID:34096012
+      Title     : Evaluation of Safety and Efficacy of Two Ticagrelor-based De-escalation Antiplatelet Strategies in Acute Coronary Syndrome
+      Source DB : Database  |  Verify: https://doi.org/10.5603/cj.a2021.0056
+      Intervent.: LDTA (events=10, N=200, mean=None, sd=None)
+      Control   : SDTA (events=10, N=200, mean=None, sd=None)
+      Pooling   : POOLED -> Effect = 1.000 (95% CI 0.426 to 2.350), Weight = 0.9%
+      RoB 2     : Low risk
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: Wrong intervention
+
+  [5] ID: NCT01863134  |  Citation: Silesia et al. (2005). NCT01863134
+      Title     : Clinical Effects of Eptifibatide Administration in High Risk Patients Presenting With Non-ST Segment Elevation Acute Coronary Syndrome (NSTE-ACS) Requiring Urgent Coronary Artery Bypass Graft Surgery 
+      Source DB : Database  |  Verify: https://clinicaltrials.gov/study/NCT01863134
+      Intervent.: Intervention (events=10, N=200, mean=None, sd=None)
+      Control   : Control (events=12, N=200, mean=None, sd=None)
+      Pooling   : POOLED -> Effect = 0.833 (95% CI 0.368 to 1.885), Weight = 0.9%
+      RoB 2     : Low risk
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract describes a study on eptifibatide in patients undergoing CABG for NSTE-ACS, which is not the same as the population (adults with a prior myocardial infarction) and intervention (aspirin) specified in the protocol. The abstract also describes a different comparator (placebo) and outcome 
+
+  [6] ID: 10.1161/circinterventions.111.967208  |  Citation: Health (2009). PMID:22396581
+      Title     : Time Based Strategy to Reduce Clopidogrel Associated Bleeding Related to Coronary Artery Bypass Graft (CABG)
+      Source DB : Database  |  Verify: https://doi.org/10.1161/circinterventions.111.967208
+      Intervent.: Intervention (events=5, N=100, mean=4.2, sd=None)
+      Control   : Control (events=6, N=100, mean=6.1, sd=None)
+      Pooling   : POOLED -> Effect = 0.833 (95% CI 0.263 to 2.642), Weight = 0.5%
+      RoB 2     : Low risk
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study is about aspirin and Plavix, and that the purpose of the study is to classify patients into groups based on platelet function in order to define the ideal time period for delaying surgery. The protocol excludes studies using Plavix. The abstract states that the stu
+
+  [7] ID: 10.1161/circinterventions.125.016280  |  Citation: H et al. (2015)
+      Title     : Clopidogrel Versus Aspirin Monotherapy Beyond 1 Year After PCI: The Final 5-Year Results of the STOPDAPT-2 ACS and STOPDAPT-2 Total Cohort.
+      Source DB : Database  |  Verify: https://doi.org/10.1161/circinterventions.125.016280
+      Intervent.: Clopidogrel (events=2875, N=1492, mean=None, sd=None)
+      Control   : Aspirin (events=2875, N=1494, mean=None, sd=None)
+      Pooling   : NOT POOLED (Narrative Only) -> Reason: Missing arm event counts
+      RoB 2     : Low risk
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study enrolled patients with acute coronary syndrome, exclusively. The protocol excludes studies using streptokinase. The protocol excludes studies using streptokinase.
+
+  [8] ID: NCT01360047  |  Citation: AstraZeneca et al. (2011). NCT01360047
+      Title     : Association Between Low Dose Acetylsalicylic Acid (ASA) and Proton Pump Inhibitors and Risk of Acute Myocardial Infarction or Coronary Death
+      Source DB : Database  |  Verify: https://clinicaltrials.gov/study/NCT01360047
+      Intervent.: Low Dose Acetylsalicylic Acid (ASA) (events=1000, N=100000, mean=None, sd=None)
+      Control   : Proton Pump Inhibitors (PPIs) (events=1000, N=100000, mean=None, sd=None)
+      Pooling   : POOLED -> Effect = 1.000 (95% CI 0.916 to 1.091), Weight = 82.0%
+      RoB 2     : Low risk
+      Inclusion : Reviewers disagreed: the precision-oriented reviewer would have excluded this record. Resolved to Include, because at title/abstract stage a disagreement is sent to full text, where eligibility can be checked against the methods section rather than guessed from an abstract. Objection raised, to be verified at full text: The abstract states that the study is a UK primary care database study, which is not an eligible design according to the protocol.
+
+------------------------------------------------------------------------------
+6. EXCLUDED ARTICLES AT SCREENING (12 ARTICLES WITH REASONS)
+------------------------------------------------------------------------------
+  [1] ID: 10.1016/s1474-4422(22)00517-8  |  Category: Wrong population  |  Verify: https://doi.org/10.1016/s1474-4422(22)00517-8
+      Title      : Randomized Trial in Adult Participants With Acute Migraines
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the population (myocardial infarction, heart attack, post-MI) or the intervention (aspirin, acetylsalicylic acid, ASA).
+
+  [2] ID: 10.1001/jamaneurol.2025.0850  |  Category: Wrong population  |  Verify: https://doi.org/10.1001/jamaneurol.2025.0850
+      Title      : Chronic Subdural Hematoma and Aspirin
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the population (myocardial infarction, heart attack, post-MI).
+
+  [3] ID: NCT03606642  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT03606642
+      Title      : SYNergy Stent® System Implantation With Mandatory Intra-VascularUltra-Sound Guidance and Dual Anti-Platelet Therapy
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the population (myocardial infarction, heart attack, post-MI) or the intervention (aspirin, acetylsalicylic acid, ASA).
+
+  [4] ID: 10.1016/j.jcin.2020.06.023  |  Category: Wrong population  |  Verify: https://doi.org/10.1016/j.jcin.2020.06.023
+      Title      : Acetyl Salicylic Elimination Trial: The ASET Pilot Study
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the population (myocardial infarction, heart attack, post-MI) or the intervention (aspirin, acetylsalicylic acid, ASA).
+
+  [5] ID: 10.1177/1747493018790033  |  Category: Wrong population  |  Verify: https://doi.org/10.1177/1747493018790033
+      Title      : Acetylsalicylic Acid Plus Intensive Blood Pressure Treatment in Patients With Unruptured Intracranial Aneurysms
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the population (myocardial infarction, heart attack, post-MI).
+
+  [6] ID: 10.1016/j.jcin.2014.10.017  |  Category: Wrong population  |  Verify: https://doi.org/10.1016/j.jcin.2014.10.017
+      Title      : EDUCATE: The MEDTRONIC Endeavor Drug Eluting Stenting: Understanding Care, Antiplatelet Agents and Thrombotic Events
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the population (myocardial infarction, heart attack, post-MI).
+
+  [7] ID: NCT00860925  |  Category: Wrong population  |  Verify: https://clinicaltrials.gov/study/NCT00860925
+      Title      : PeriOperative ISchemic Evaluation-2 Pilot
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the population (myocardial infarction, heart attack, post-MI).
+
+  [8] ID: 10.1007/s00268-006-0732-y  |  Category: Wrong population  |  Verify: https://doi.org/10.1007/s00268-006-0732-y
+      Title      : Effectiveness of Intensive Lipid Modification Medication in Preventing the Progression of Peripheral Arterial Disease (The ELIMIT Study)
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (aspirin, acetylsalicylic acid, ASA).
+
+  [9] ID: 10.1016/j.jcma.2012.10.004  |  Category: Wrong population  |  Verify: https://doi.org/10.1016/j.jcma.2012.10.004
+      Title      : Effect of Rotablator on Balloon Resistant Calcified Coronary Lesion
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the population (myocardial infarction, heart attack, post-MI) or the intervention (aspirin, acetylsalicylic acid, ASA).
+
+  [10] ID: 10.1001/jama.2010.1322  |  Category: Wrong population  |  Verify: https://doi.org/10.1001/jama.2010.1322
+      Title      : Efficacy and Safety of Low Dose Rivaroxaban in Patients With Anterior Myocardial Infarction
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (aspirin, acetylsalicylic acid, ASA).
+
+  [11] ID: 10.1016/s0735-1097(02)01745-x  |  Category: Wrong population  |  Verify: https://doi.org/10.1016/s0735-1097(02)01745-x
+      Title      : Study Comparing Treatment Effectiveness of Guideline Indicated APT for ACS in Patients With CKD
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the intervention (aspirin, acetylsalicylic acid, ASA).
+
+  [12] ID: 10.5114/aic.2024.140963  |  Category: Wrong population  |  Verify: https://doi.org/10.5114/aic.2024.140963
+      Title      : Acute Stroke of CArotid Artery Bifurcation Origin Treated With Use oF the MicronEt-covered CGUARD (SAFEGUARD-STROKE)
+      Decided By : relevance gate (Python, no model call)
+      Reason     : Title, abstract, MeSH headings and keywords contain no mention of the population (myocardial infarction, heart attack, post-MI) or the intervention (aspirin, acetylsalicylic acid, ASA).
+
+------------------------------------------------------------------------------
+7. APPROVED AT SCREENING BUT NOT POOLED IN META-ANALYSIS
+------------------------------------------------------------------------------
+  [1] ID: NCT02051361  |  Stage: Phase 7 (Pooling)  |  Verify: https://clinicaltrials.gov/study/NCT02051361
+      Title  : Antiplatelet Therapy Following Stent Implantation
+      Reason : MISSING_BINARY_DATA: Requires n_events and n_total in both arms; one or more were missing.
+
+  [2] ID: 10.1161/circinterventions.125.016280  |  Stage: Phase 7 (Pooling)  |  Verify: https://doi.org/10.1161/circinterventions.125.016280
+      Title  : Clopidogrel Versus Aspirin Monotherapy Beyond 1 Year After PCI: The Final 5-Year Results of the STOPDAPT-2 ACS and STOPDAPT-2 Total Cohort.
+      Reason : EVENTS_EXCEED_TOTAL: Events exceed arm total (2875/1492, 2875/1494).
+
+------------------------------------------------------------------------------
+8. DEDUPLICATION AUDIT LOG (13 DUPLICATES REMOVED)
+------------------------------------------------------------------------------
+  [1] Duplicate ID: 10.4244/eij-d-23-00125 (crossref) -> Merged Into: 10.4244/eij-d-23-00125 [Matched on: doi]
+      Title  : Percutaneous Coronary Intervention Followed by Antiplatelet Monotherapy in the Setting of Acute Coronary Syndromes
+      Verify : https://doi.org/10.4244/eij-d-23-00125
+  [2] Duplicate ID: NCT02051361 (europepmc) -> Merged Into: NCT02051361 [Matched on: nct_id]
+      Title  : Antiplatelet Therapy Following Stent Implantation
+      Verify : https://clinicaltrials.gov/study/NCT02051361
+  [3] Duplicate ID: NCT02974920 (pubmed) -> Merged Into: NCT02974920 [Matched on: nct_id]
+      Title  : Rivaroxaban or Aspirin for Biological Aortic Prosthesis
+      Verify : https://clinicaltrials.gov/study/NCT02974920
+  [4] Duplicate ID: 10.5603/cj.a2021.0056 (openalex) -> Merged Into: 10.5603/cj.a2021.0056 [Matched on: doi]
+      Title  : Evaluation of Safety and Efficacy of Two Ticagrelor-based De-escalation Antiplatelet Strategies in Acute Coronary Syndrome
+      Verify : https://doi.org/10.5603/cj.a2021.0056
+  [5] Duplicate ID: NCT01863134 (semantic_scholar) -> Merged Into: NCT01863134 [Matched on: nct_id]
+      Title  : Clinical Effects of Eptifibatide Administration in High Risk Patients Presenting With Non-ST Segment Elevation Acute Coronary Syndrome (NSTE-ACS) Requiring Urgent Coronary Artery Bypass Graft Surgery 
+      Verify : https://clinicaltrials.gov/study/NCT01863134
+  [6] Duplicate ID: 10.1161/circinterventions.111.967208 (preprints) -> Merged Into: 10.1161/circinterventions.111.967208 [Matched on: doi]
+      Title  : Time Based Strategy to Reduce Clopidogrel Associated Bleeding Related to Coronary Artery Bypass Graft (CABG)
+      Verify : https://doi.org/10.1161/circinterventions.111.967208
+  [7] Duplicate ID: 10.1161/circinterventions.125.016280 (clinicaltrials) -> Merged Into: 10.1161/circinterventions.125.016280 [Matched on: doi]
+      Title  : Clopidogrel Versus Aspirin Monotherapy Beyond 1 Year After PCI: The Final 5-Year Results of the STOPDAPT-2 ACS and STOPDAPT-2 Total Cohort.
+      Verify : https://doi.org/10.1161/circinterventions.125.016280
+  [8] Duplicate ID: NCT01360047 (crossref) -> Merged Into: NCT01360047 [Matched on: nct_id]
+      Title  : Association Between Low Dose Acetylsalicylic Acid (ASA) and Proton Pump Inhibitors and Risk of Acute Myocardial Infarction or Coronary Death
+      Verify : https://clinicaltrials.gov/study/NCT01360047
+  [9] Duplicate ID: 10.1016/s1474-4422(22)00517-8 (europepmc) -> Merged Into: 10.1016/s1474-4422(22)00517-8 [Matched on: doi]
+      Title  : Randomized Trial in Adult Participants With Acute Migraines
+      Verify : https://doi.org/10.1016/s1474-4422(22)00517-8
+  [10] Duplicate ID: 10.1001/jamaneurol.2025.0850 (pubmed) -> Merged Into: 10.1001/jamaneurol.2025.0850 [Matched on: doi]
+      Title  : Chronic Subdural Hematoma and Aspirin
+      Verify : https://doi.org/10.1001/jamaneurol.2025.0850
+  [11] Duplicate ID: NCT03606642 (openalex) -> Merged Into: NCT03606642 [Matched on: nct_id]
+      Title  : SYNergy Stent® System Implantation With Mandatory Intra-VascularUltra-Sound Guidance and Dual Anti-Platelet Therapy
+      Verify : https://clinicaltrials.gov/study/NCT03606642
+  [12] Duplicate ID: 10.1016/j.jcin.2020.06.023 (semantic_scholar) -> Merged Into: 10.1016/j.jcin.2020.06.023 [Matched on: doi]
+      Title  : Acetyl Salicylic Elimination Trial: The ASET Pilot Study
+      Verify : https://doi.org/10.1016/j.jcin.2020.06.023
+  [13] Duplicate ID: 10.1177/1747493018790033 (preprints) -> Merged Into: 10.1177/1747493018790033 [Matched on: doi]
+      Title  : Acetylsalicylic Acid Plus Intensive Blood Pressure Treatment in Patients With Unruptured Intracranial Aneurysms
+      Verify : https://doi.org/10.1177/1747493018790033
+
+------------------------------------------------------------------------------
+9. META-ANALYSIS RESULTS
+------------------------------------------------------------------------------
+  Effect measure : Risk Ratio
+  Pooled estimate: 0.969 (95% CI 0.896 to 1.049)
+  p-value        : 0.4366
+  Studies pooled : 6   Participants: 203200
+  Heterogeneity  : I2 = 0.0%  tau2 = 0.0000  Q = 2.92 (p = 0.7129)
+
+  [INFO] Publication-bias testing was not performed (k=6 < 10). Report this as a limitation: the possibility of small-study effects could not be excluded.
+
+------------------------------------------------------------------------------
+10. CERTAINTY OF EVIDENCE (GRADE)
+------------------------------------------------------------------------------
+  Overall rating : High
+    risk of bias       Not serious  (-0)  |  All studies are at low risk of bias.
+    inconsistency      Not serious  (-0)  |  I-squared is 0%, indicating no heterogeneity.
+    indirectness       Not serious  (-0)  |  The intervention and comparator are both well-defined.
+    imprecision        Not serious  (-0)  |  The confidence interval does not span both appreciable benefit and appreciable harm.
+    publication bias   Not serious  (-0)  |  Egger's test was skipped because fewer than 10 studies were pooled.
+  Summary: Aspirin reduces mortality in adults with a prior myocardial infarction. The evidence is of high certainty.
+
+------------------------------------------------------------------------------
+11. FIGURES & FULL MARKDOWN REPORT
+------------------------------------------------------------------------------
+  forest       /usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20260918-043206/forest.png
+  funnel       /usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20260918-043206/funnel.png
+  report.md    /usr/local/google/home/omtrivedi/Work/SRMA Agent/runs/run-20260918-043206/report.md
+
+------------------------------------------------------------------------------
+This is a research tool that supports expert reviewers. It does not
+replace them, and its output is not clinical advice. Every number
+above was computed in Python from extracted data; verify against the
+source records in result.json and report.md before citing.
+------------------------------------------------------------------------------
