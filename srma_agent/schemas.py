@@ -16,7 +16,43 @@ from dataclasses import dataclass, field, asdict
 from enum import Enum
 from typing import Any
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
+
+
+class LlmOutput(BaseModel):
+    """Base for models the LLM fills in without constrained decoding.
+
+    Ollama enforces the schema at the sampler, so `null` never appears in a
+    non-nullable slot. The Vertex chatCompletions endpoint has no such
+    guard: MedGemma routinely writes `"verification_url": null` or
+    `"design": null` when it has nothing to say. Pydantic's default answer
+    is to reject the entire object - which on run-20261007-103635 threw
+    away otherwise perfect extractions of RE-LY and ROCKET AF over a field
+    the pipeline overwrites deterministically two lines later.
+
+    The rule here: if the model says `null` for a field that has a default
+    and is not declared Optional, substitute the default. Fields that are
+    genuinely required (no default) still fail loudly.
+    """
+
+    @model_validator(mode="before")
+    @classmethod
+    def _null_to_default(cls, data: Any) -> Any:
+        if not isinstance(data, dict):
+            return data
+        cleaned = dict(data)
+        for name, info in cls.model_fields.items():
+            if name in cleaned and cleaned[name] is None and not info.is_required():
+                # Only substitute when None is not itself a legal value,
+                # i.e. the annotation is not Optional / `X | None`.
+                ann = info.annotation
+                allows_none = (
+                    ann is type(None)
+                    or (hasattr(ann, "__args__") and type(None) in getattr(ann, "__args__", ()))
+                )
+                if not allows_none:
+                    cleaned[name] = info.get_default(call_default_factory=True)
+        return cleaned
 
 
 # ==========================================================================
@@ -166,7 +202,7 @@ class PrismaFlow:
 # ==========================================================================
 
 
-class PicoProtocol(BaseModel):
+class PicoProtocol(LlmOutput):
     """Phase 1 output: the review protocol."""
 
     population: str = Field(description="Who is being studied")
@@ -187,7 +223,7 @@ class PicoProtocol(BaseModel):
         description="Controlled-vocabulary MeSH descriptors")
 
 
-class SearchStrategy(BaseModel):
+class SearchStrategy(LlmOutput):
     """Phase 2 output: search vocabulary, grouped into Boolean blocks.
 
     The model supplies only the terms. Python assembles the actual query
@@ -237,7 +273,7 @@ class ScreeningDecision(str, Enum):
     EXCLUDE = "Exclude"
 
 
-class ReviewerVote(BaseModel):
+class ReviewerVote(LlmOutput):
     """One reviewer's independent judgement on one record.
 
     `exclusion_category` is carried on the individual vote, not only on the
@@ -254,7 +290,7 @@ class ReviewerVote(BaseModel):
                     "Empty string when the decision is Include.")
 
 
-class DualScreenResult(BaseModel):
+class DualScreenResult(LlmOutput):
     """Phase 3 output: two-reviewer screening with consensus.
 
     The consensus is computed in Python (see screening.py), not by the
@@ -279,13 +315,13 @@ class RobLevel(str, Enum):
     HIGH = "High risk"
 
 
-class RobDomain(BaseModel):
+class RobDomain(LlmOutput):
     domain: str
     judgement: RobLevel
     justification: str = Field(description="Must quote the source methods text")
 
 
-class ArmData(BaseModel):
+class ArmData(LlmOutput):
     """Numeric outcome data for one trial arm.
 
     Every field is optional. The specification is explicit: missing data is
@@ -299,7 +335,31 @@ class ArmData(BaseModel):
     sd: float | None = None
 
 
-class StudyExtraction(BaseModel):
+class ReportedEffect(LlmOutput):
+    """A summary effect estimate as published, with its confidence interval.
+
+    Most trial abstracts do not give arm-level event counts; they give a
+    hazard ratio, risk ratio or odds ratio with a 95% CI. That is enough to
+    pool with the generic inverse-variance method (Cochrane Handbook 6.3),
+    which is how published meta-analyses of time-to-event trials are done.
+    Arm counts remain the preferred input whenever they are present.
+    """
+
+    measure: str = Field(
+        description="One of 'HR', 'RR', 'OR', 'MD', 'SMD' exactly as the text names it")
+    estimate: float = Field(description="Point estimate as printed")
+    ci_lower: float | None = Field(default=None, description="Lower CI bound as printed")
+    ci_upper: float | None = Field(default=None, description="Upper CI bound as printed")
+    ci_level: float = Field(default=95.0, description="CI level in percent, usually 95")
+    comparison: str = Field(
+        default="",
+        description="Which arms the estimate compares, e.g. 'dabigatran 150 mg vs warfarin'")
+    quote: str = Field(
+        default="",
+        description="Verbatim sentence from the text containing the estimate")
+
+
+class StudyExtraction(LlmOutput):
     """Phase 4+5 output: extracted data plus risk-of-bias assessment."""
 
     study_id: str = Field(description="PMID, DOI or NCT number")
@@ -328,6 +388,9 @@ class StudyExtraction(BaseModel):
         description="Direct verbatim quote from the text where the outcome numbers or trial status are stated")
     intervention_arm: ArmData
     control_arm: ArmData
+    reported_effect: ReportedEffect | None = Field(
+        default=None,
+        description="Published HR/RR/OR/MD with CI for the target outcome, if the text states one")
     outcome_name: str = ""
     rob_domains: list[RobDomain] = Field(default_factory=list)
     rob_overall: RobLevel | None = None
@@ -344,7 +407,7 @@ class GradeRating(str, Enum):
     VERY_LOW = "Very low"
 
 
-class GradeDomain(BaseModel):
+class GradeDomain(LlmOutput):
     """One of the five GRADE downgrading considerations."""
 
     judgement: str = Field(
@@ -355,7 +418,7 @@ class GradeDomain(BaseModel):
     rationale: str = Field(description="Reason, citing the supplied statistics")
 
 
-class GradeAssessment(BaseModel):
+class GradeAssessment(LlmOutput):
     """Phase 8 output: certainty of evidence.
 
     Each domain is a separate field rather than a free-text paragraph so the

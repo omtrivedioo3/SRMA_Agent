@@ -282,11 +282,18 @@ def forest_plot(
             label += " †"
         ax_lbl.text(0.0, yi, label, fontsize=8.8, va="center")
         raw = s.get("raw") or {}
+        detail = None
         if raw.get("events_intervention") is not None:
             detail = (f"{raw['events_intervention']:.0f}/"
                       f"{raw['n_intervention']:.0f} vs "
                       f"{raw['events_control']:.0f}/"
                       f"{raw['n_control']:.0f}")
+        elif raw.get("source") == "reported_estimate":
+            detail = (f"{raw.get('reported_measure', '')} "
+                      f"{raw.get('reported_estimate', float('nan')):.2f} "
+                      f"({raw.get('reported_ci_low', float('nan')):.2f}–"
+                      f"{raw.get('reported_ci_high', float('nan')):.2f}) as published")
+        if detail:
             ax_lbl.text(0.99, yi, detail, fontsize=7.6, va="center",
                         ha="right", color="#718096")
         ax_num.text(0.02, yi, _fmt_ci(e, l, h), fontsize=8.6, va="center")

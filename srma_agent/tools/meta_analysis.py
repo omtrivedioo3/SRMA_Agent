@@ -389,8 +389,67 @@ def _extract_arms(study: dict) -> tuple[dict, dict, str]:
     return flat_i, flat_c, label
 
 
-def _classify(arm_i: dict, arm_c: dict) -> str:
-    """Return "binary", "continuous" or "unusable" for one study."""
+_REPORTED_RATIO = ("HR", "RR", "OR")
+_REPORTED_DIFF = ("MD", "SMD")
+
+
+def _reported_effect(study: dict) -> dict | None:
+    """Return a normalised published estimate `{measure, est, lo, hi, level}`.
+
+    Accepts the `StudyExtraction.reported_effect` shape. Returns None when
+    the estimate is absent or unusable (no CI, non-positive ratio, CI that
+    does not bracket the estimate).
+    """
+    rep = _get(study, "reported_effect")
+    if not isinstance(rep, dict):
+        return None
+    measure = str(rep.get("measure") or "").strip().upper()
+    measure = {"HAZARD RATIO": "HR", "RISK RATIO": "RR", "RELATIVE RISK": "RR",
+               "ODDS RATIO": "OR", "MEAN DIFFERENCE": "MD"}.get(measure, measure)
+    est = _f(rep.get("estimate"))
+    lo = _f(rep.get("ci_lower"))
+    hi = _f(rep.get("ci_upper"))
+    level = _f(rep.get("ci_level")) or 95.0
+    if measure not in _REPORTED_RATIO + _REPORTED_DIFF:
+        return None
+    if est is None or lo is None or hi is None:
+        return None
+    if lo > hi:
+        lo, hi = hi, lo
+    if not (lo <= est <= hi):
+        return None
+    if measure in _REPORTED_RATIO and (est <= 0 or lo <= 0 or hi <= 0):
+        return None
+    if not (50.0 <= level < 100.0):
+        level = 95.0
+    return {"measure": measure, "est": est, "lo": lo, "hi": hi, "level": level,
+            "comparison": rep.get("comparison") or "",
+            "quote": rep.get("quote") or ""}
+
+
+def _reported_to_yv(rep: dict) -> tuple[float, float]:
+    """Generic inverse variance: y and v from an estimate and its CI.
+
+    Ratio measures are analysed on the log scale. The CI half-width divided
+    by the normal quantile for the CI level gives the standard error
+    (Cochrane Handbook 6.3.2).
+    """
+    z = float(stats.norm.ppf(0.5 + rep["level"] / 200.0))
+    if rep["measure"] in _REPORTED_RATIO:
+        y = math.log(rep["est"])
+        se = (math.log(rep["hi"]) - math.log(rep["lo"])) / (2.0 * z)
+    else:
+        y = rep["est"]
+        se = (rep["hi"] - rep["lo"]) / (2.0 * z)
+    return y, se * se
+
+
+def _classify(arm_i: dict, arm_c: dict, study: dict | None = None) -> str:
+    """Return "binary", "continuous", "reported" or "unusable" for one study.
+
+    "reported" means no complete arm-level data but a usable published
+    effect estimate with CI is present.
+    """
     def has_binary(a: dict) -> bool:
         return _f(_get(a, "n_events", "events")) is not None and \
             _f(_get(a, "n_total", "n", "total")) is not None
@@ -406,6 +465,8 @@ def _classify(arm_i: dict, arm_c: dict) -> str:
         return "binary"
     if has_continuous(arm_i) and has_continuous(arm_c):
         return "continuous"
+    if study is not None and _reported_effect(study) is not None:
+        return "reported"
     return "unusable"
 
 
@@ -438,7 +499,9 @@ def compute_effect_sizes(
 
         arm_i, arm_c, label = _extract_arms(raw)
         year = _f(_get(raw, "year"))
-        kind = _classify(arm_i, arm_c)
+        kind = _classify(arm_i, arm_c, raw)
+        effect_source = "arm_data"
+        reported_measure: str | None = None
 
         def reject(code: str, why: str) -> None:
             excluded.append({
@@ -449,74 +512,125 @@ def compute_effect_sizes(
             })
 
         if measure in BINARY_MEASURES:
-            if kind != "binary":
+            if kind == "reported" and measure in RATIO_MEASURES:
+                # No arm counts, but the paper states a ratio with a CI.
+                # Pool it by generic inverse variance. A hazard ratio is
+                # treated as the study's relative effect alongside risk
+                # ratios - the standard approximation for rare outcomes,
+                # and flagged in the output so the reader can judge.
+                rep = _reported_effect(raw)
+                if rep["measure"] not in _REPORTED_RATIO:
+                    reject("MISSING_BINARY_DATA",
+                           "No arm counts and the published estimate is not a "
+                           "ratio measure.")
+                    continue
+                y, v = _reported_to_yv(rep)
+                effect_source = "reported_estimate"
+                reported_measure = rep["measure"]
+                eff = {"y": y, "v": v, "corrected": False, "detail": {
+                    "source": "reported_estimate",
+                    "reported_measure": rep["measure"],
+                    "reported_estimate": rep["est"],
+                    "reported_ci_low": rep["lo"],
+                    "reported_ci_high": rep["hi"],
+                    "reported_ci_level": rep["level"],
+                    "comparison": rep["comparison"],
+                    "n_intervention": _f(_get(arm_i, "n_total", "n", "total")),
+                    "n_control": _f(_get(arm_c, "n_total", "n", "total")),
+                }}
+                raw_detail = eff["detail"]
+            elif kind != "binary":
                 reject(
                     "MISSING_BINARY_DATA",
-                    "Requires n_events and n_total in both arms; one or more "
-                    "were missing.",
+                    "Requires n_events and n_total in both arms (or a published "
+                    "HR/RR/OR with 95% CI); none were available.",
                 )
                 continue
-            e1 = _f(_get(arm_i, "n_events", "events"))
-            n1 = _f(_get(arm_i, "n_total", "n", "total"))
-            e2 = _f(_get(arm_c, "n_events", "events"))
-            n2 = _f(_get(arm_c, "n_total", "n", "total"))
+            else:
+                e1 = _f(_get(arm_i, "n_events", "events"))
+                n1 = _f(_get(arm_i, "n_total", "n", "total"))
+                e2 = _f(_get(arm_c, "n_events", "events"))
+                n2 = _f(_get(arm_c, "n_total", "n", "total"))
 
-            if n1 is None or n2 is None or n1 <= 0 or n2 <= 0:
-                reject("ZERO_DENOMINATOR",
-                       "Arm total (n_total) is zero or missing.")
-                continue
-            if e1 < 0 or e2 < 0:
-                reject("NEGATIVE_EVENTS", "Negative event count.")
-                continue
-            if e1 > n1 or e2 > n2:
-                reject("EVENTS_EXCEED_TOTAL",
-                       f"Events exceed arm total ({e1:g}/{n1:g}, {e2:g}/{n2:g}).")
-                continue
-            if measure in RATIO_MEASURES and e1 == 0 and e2 == 0:
-                reject(
-                    "DOUBLE_ZERO",
-                    "No events in either arm: uninformative for a ratio "
-                    "measure, so excluded per Cochrane Handbook 10.4.4.1. "
-                    "It would be retained in a risk-difference analysis.",
-                )
-                continue
+                if n1 is None or n2 is None or n1 <= 0 or n2 <= 0:
+                    reject("ZERO_DENOMINATOR",
+                           "Arm total (n_total) is zero or missing.")
+                    continue
+                if e1 < 0 or e2 < 0:
+                    reject("NEGATIVE_EVENTS", "Negative event count.")
+                    continue
+                if e1 > n1 or e2 > n2:
+                    reject("EVENTS_EXCEED_TOTAL",
+                           f"Events exceed arm total ({e1:g}/{n1:g}, {e2:g}/{n2:g}).")
+                    continue
+                if measure in RATIO_MEASURES and e1 == 0 and e2 == 0:
+                    reject(
+                        "DOUBLE_ZERO",
+                        "No events in either arm: uninformative for a ratio "
+                        "measure, so excluded per Cochrane Handbook 10.4.4.1. "
+                        "It would be retained in a risk-difference analysis.",
+                    )
+                    continue
 
-            try:
-                eff = binary_effect(e1, n1, e2, n2, measure, correction)
-            except (ValueError, ZeroDivisionError) as exc:
-                reject("UNCOMPUTABLE", f"Effect size could not be computed: {exc}")
-                continue
-            raw_detail = eff["detail"]
+                try:
+                    eff = binary_effect(e1, n1, e2, n2, measure, correction)
+                except (ValueError, ZeroDivisionError) as exc:
+                    reject("UNCOMPUTABLE", f"Effect size could not be computed: {exc}")
+                    continue
+                raw_detail = eff["detail"]
 
         elif measure in CONTINUOUS_MEASURES:
-            if kind != "continuous":
+            if kind == "reported" and measure == "MD":
+                rep = _reported_effect(raw)
+                if rep["measure"] != "MD":
+                    reject("MISSING_CONTINUOUS_DATA",
+                           "No arm means/SDs and the published estimate is not "
+                           "a mean difference.")
+                    continue
+                y, v = _reported_to_yv(rep)
+                effect_source = "reported_estimate"
+                reported_measure = "MD"
+                eff = {"y": y, "v": v, "corrected": False, "detail": {
+                    "source": "reported_estimate",
+                    "reported_measure": "MD",
+                    "reported_estimate": rep["est"],
+                    "reported_ci_low": rep["lo"],
+                    "reported_ci_high": rep["hi"],
+                    "reported_ci_level": rep["level"],
+                    "comparison": rep["comparison"],
+                    "n_intervention": _f(_get(arm_i, "n_total", "n", "total")),
+                    "n_control": _f(_get(arm_c, "n_total", "n", "total")),
+                }}
+                raw_detail = eff["detail"]
+            elif kind != "continuous":
                 reject(
                     "MISSING_CONTINUOUS_DATA",
                     "Requires mean, sd and n_total in both arms; one or more "
                     "were missing.",
                 )
                 continue
-            m1 = _f(_get(arm_i, "mean"))
-            sd1 = _f(_get(arm_i, "sd"))
-            n1 = _f(_get(arm_i, "n_total", "n", "total"))
-            m2 = _f(_get(arm_c, "mean"))
-            sd2 = _f(_get(arm_c, "sd"))
-            n2 = _f(_get(arm_c, "n_total", "n", "total"))
+            else:
+                m1 = _f(_get(arm_i, "mean"))
+                sd1 = _f(_get(arm_i, "sd"))
+                n1 = _f(_get(arm_i, "n_total", "n", "total"))
+                m2 = _f(_get(arm_c, "mean"))
+                sd2 = _f(_get(arm_c, "sd"))
+                n2 = _f(_get(arm_c, "n_total", "n", "total"))
 
-            if n1 is None or n2 is None or n1 < 2 or n2 < 2:
-                reject("INSUFFICIENT_N",
-                       "Continuous outcomes need n >= 2 in both arms.")
-                continue
-            if sd1 is None or sd2 is None or sd1 <= 0 or sd2 <= 0:
-                reject("MISSING_OR_INVALID_SD",
-                       "Standard deviation missing or non-positive. SDs are "
-                       "never imputed; the study is excluded and reported.")
-                continue
-            try:
-                eff = continuous_effect(m1, sd1, n1, m2, sd2, n2, measure)
-            except (ValueError, ZeroDivisionError) as exc:
-                reject("UNCOMPUTABLE", f"Effect size could not be computed: {exc}")
-                continue
+                if n1 is None or n2 is None or n1 < 2 or n2 < 2:
+                    reject("INSUFFICIENT_N",
+                           "Continuous outcomes need n >= 2 in both arms.")
+                    continue
+                if sd1 is None or sd2 is None or sd1 <= 0 or sd2 <= 0:
+                    reject("MISSING_OR_INVALID_SD",
+                           "Standard deviation missing or non-positive. SDs are "
+                           "never imputed; the study is excluded and reported.")
+                    continue
+                try:
+                    eff = continuous_effect(m1, sd1, n1, m2, sd2, n2, measure)
+                except (ValueError, ZeroDivisionError) as exc:
+                    reject("UNCOMPUTABLE", f"Effect size could not be computed: {exc}")
+                    continue
             raw_detail = eff["detail"]
         else:
             raise ValueError(f"Unsupported effect measure: {measure!r}")
@@ -535,6 +649,8 @@ def compute_effect_sizes(
             "v": float(v),
             "se": math.sqrt(v),
             "continuity_corrected": bool(eff["corrected"]),
+            "effect_source": effect_source,
+            "reported_measure": reported_measure,
             "raw": raw_detail,
         })
 
@@ -1086,36 +1202,65 @@ def leave_one_out(
 def _auto_measure(studies: Sequence[dict]) -> tuple[str, list[str]]:
     """Choose an effect measure from the fields that are actually present."""
     notes: list[str] = []
-    n_binary = n_continuous = 0
+    n_binary = n_continuous = n_reported_ratio = n_reported_md = 0
     for raw in studies:
         if not isinstance(raw, dict):
             continue
         arm_i, arm_c, _ = _extract_arms(raw)
-        kind = _classify(arm_i, arm_c)
+        kind = _classify(arm_i, arm_c, raw)
         if kind == "binary":
             n_binary += 1
         elif kind == "continuous":
             n_continuous += 1
+        elif kind == "reported":
+            rep = _reported_effect(raw)
+            if rep and rep["measure"] in _REPORTED_RATIO:
+                n_reported_ratio += 1
+            elif rep and rep["measure"] == "MD":
+                n_reported_md += 1
 
-    if n_binary == 0 and n_continuous == 0:
+    n_ratio_side = n_binary + n_reported_ratio
+    n_cont_side = n_continuous + n_reported_md
+
+    if n_ratio_side == 0 and n_cont_side == 0:
         notes.append(
             "Auto-detection found neither complete binary (events/total) nor "
-            "complete continuous (mean/SD/n) data in any study."
+            "complete continuous (mean/SD/n) data, nor a published effect "
+            "estimate with CI, in any study."
         )
         return "RR", notes
 
-    if n_binary >= n_continuous:
-        notes.append(
-            f"Auto-detected binary outcome data in {n_binary} study/studies; "
-            "using the Risk Ratio, which is the more interpretable of the "
-            "ratio measures for clinicians."
-        )
-        if n_continuous:
+    if n_ratio_side >= n_cont_side:
+        if n_binary:
             notes.append(
-                f"{n_continuous} study/studies carried continuous data only "
+                f"Auto-detected binary outcome data in {n_binary} study/studies; "
+                "using the Risk Ratio, which is the more interpretable of the "
+                "ratio measures for clinicians."
+            )
+        if n_reported_ratio:
+            notes.append(
+                f"{n_reported_ratio} study/studies report a published hazard, "
+                "risk or odds ratio with CI but no arm counts; these enter the "
+                "pooled Risk Ratio by generic inverse variance."
+            )
+        if n_cont_side:
+            notes.append(
+                f"{n_cont_side} study/studies carried continuous data only "
                 "and will be reported as excluded."
             )
         return "RR", notes
+
+    if n_reported_md and not n_continuous:
+        notes.append(
+            f"Auto-detected published mean differences in {n_reported_md} "
+            "study/studies; using MD via generic inverse variance."
+        )
+        if n_ratio_side:
+            notes.append(
+                f"{n_ratio_side} study/studies carried binary/ratio data only "
+                "and will be reported as excluded."
+            )
+        return "MD", notes
 
     notes.append(
         f"Auto-detected continuous outcome data in {n_continuous} "
@@ -1124,10 +1269,10 @@ def _auto_measure(studies: Sequence[dict]) -> tuple[str, list[str]]:
         "every study measured the outcome on the same scale. If they did, "
         "pass effect_measure='MD' for a more interpretable result."
     )
-    if n_binary:
+    if n_ratio_side:
         notes.append(
-            f"{n_binary} study/studies carried binary data only and will be "
-            "reported as excluded."
+            f"{n_ratio_side} study/studies carried binary/ratio data only and "
+            "will be reported as excluded."
         )
     return "SMD", notes
 
@@ -1260,6 +1405,19 @@ def run_meta_analysis(
             f"{len(excluded)} of {len(studies)} supplied study/studies could "
             "not be analysed; see `excluded_studies` for the reason for each. "
             "No study was dropped silently."
+        )
+
+    n_from_reported = sum(1 for e in included if e.get("effect_source") == "reported_estimate")
+    if n_from_reported:
+        kinds = sorted({e.get("reported_measure") for e in included
+                        if e.get("effect_source") == "reported_estimate" and e.get("reported_measure")})
+        warnings.append(
+            f"{n_from_reported} of {k} pooled study/studies contributed a "
+            f"published summary estimate ({', '.join(kinds)} with CI) rather "
+            "than arm-level counts, entered by generic inverse variance "
+            "(Cochrane Handbook 6.3). Hazard ratios are treated as "
+            "approximately equal to risk ratios, which is reasonable for "
+            "uncommon outcomes but should be stated in the report."
         )
 
     if k == 0:
@@ -1443,6 +1601,8 @@ def run_meta_analysis(
             "weight_fixed_pct": float(w_fe[i] / w_fe.sum() * 100.0),
             "weight_random_pct": float(w_re[i] / w_re.sum() * 100.0),
             "continuity_corrected": e["continuity_corrected"],
+            "effect_source": e.get("effect_source", "arm_data"),
+            "reported_measure": e.get("reported_measure"),
             "raw": e["raw"],
         }
         study_rows.append(row)

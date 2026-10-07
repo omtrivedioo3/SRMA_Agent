@@ -206,6 +206,29 @@ def _verify_extracted_numbers(extraction: StudyExtraction, record: StudyRecord) 
     has_binary = (int_arm.n_events is not None or ctrl_arm.n_events is not None)
     has_cont = (int_arm.mean is not None or ctrl_arm.mean is not None)
 
+    # Rule 0: a published summary estimate (HR/RR/OR + CI) is only kept if
+    # the point estimate and both CI bounds appear literally in the text.
+    # Abstracts print these as e.g. "0.79; 95% CI, 0.66 to 0.95", so an
+    # honest extraction always passes; an invented one never does.
+    rep = extraction.reported_effect
+    if rep is not None:
+        haystack0 = f"{record.title or ''} {record.abstract or ''}"
+        decimals_in_text = set(re.findall(r"\d+(?:\.\d+)?", haystack0))
+
+        def _seen(x: float | None) -> bool:
+            if x is None:
+                return False
+            cands = {f"{x:g}", f"{x:.2f}", f"{x:.1f}", f"{x:.3f}"}
+            cands |= {c.lstrip("0") for c in cands if c.startswith("0.")}
+            return any(c in decimals_in_text or c in haystack0 for c in cands)
+
+        if not (_seen(rep.estimate) and _seen(rep.ci_lower) and _seen(rep.ci_upper)):
+            extraction.reported_effect = None
+            if "ungrounded_reported_effect_removed_by_python_verifier" not in extraction.missing_data_flags:
+                extraction.missing_data_flags.append(
+                    "ungrounded_reported_effect_removed_by_python_verifier"
+                )
+
     if not has_binary and not has_cont:
         return
 
@@ -230,7 +253,12 @@ def _verify_extracted_numbers(extraction: StudyExtraction, record: StudyRecord) 
     # text. Symmetric placeholder counts (e.g. 5/10 vs 5/10) not present in
     # the text are rejected.
     haystack = f"{record.title or ''} {record.abstract or ''}"
+    # "18,113 patients" must be recognised as 18113, not as 18 and 113.
+    haystack_nc = haystack
+    for _ in range(3):
+        haystack_nc = re.sub(r"(\d),(\d{3})\b", r"\1\2", haystack_nc)
     numbers_in_text = {int(m) for m in re.findall(r"\b\d+\b", haystack)}
+    numbers_in_text |= {int(m) for m in re.findall(r"\b\d+\b", haystack_nc)}
     has_percentage = "%" in haystack or "percent" in haystack.lower()
 
     if has_binary:
@@ -239,12 +267,12 @@ def _verify_extracted_numbers(extraction: StudyExtraction, record: StudyRecord) 
         n_i = int_arm.n_total
         n_c = ctrl_arm.n_total
 
-        # Check if neither event count appears in the text and no percentages
-        # are reported, OR if the model emitted identical symmetric numbers
-        # (ev_i == ev_c and n_i == n_c) where the event count is absent from text.
+        # Rule 2a: both event counts must appear literally in the text.
+        # Counts derived from a percentage, or invented, do not; the study
+        # then falls back to its published effect estimate if it has one.
         events_in_text = (
-            (ev_i is not None and ev_i in numbers_in_text)
-            or (ev_c is not None and ev_c in numbers_in_text)
+            ev_i is not None and ev_c is not None
+            and ev_i in numbers_in_text and ev_c in numbers_in_text
         )
         symmetric_hallucination = (
             ev_i is not None
@@ -253,12 +281,29 @@ def _verify_extracted_numbers(extraction: StudyExtraction, record: StudyRecord) 
             and n_i == n_c
             and ev_i not in numbers_in_text
         )
-        if (not events_in_text and not has_percentage) or symmetric_hallucination:
+        if not events_in_text or symmetric_hallucination:
             int_arm.n_events = None
             ctrl_arm.n_events = None
             if "ungrounded_event_counts_removed_by_python_verifier" not in extraction.missing_data_flags:
                 extraction.missing_data_flags.append(
                     "ungrounded_event_counts_removed_by_python_verifier"
+                )
+
+        # Rule 2b: identical n_total in both arms, where that number is in
+        # the text but twice that number is not, is the overall enrolment
+        # copied into each arm (e.g. ROCKET AF "14,264 patients" -> 14264 /
+        # 14264). Real arm sizes are almost never exactly equal in a large
+        # trial, and when a small trial does randomise 50/50 the total
+        # (2n) is stated too.
+        if (
+            n_i is not None and n_c is not None and n_i == n_c and n_i >= 20
+            and n_i in numbers_in_text and (2 * n_i) not in numbers_in_text
+        ):
+            int_arm.n_total = None
+            ctrl_arm.n_total = None
+            if "overall_enrolment_copied_into_both_arms_removed_by_python_verifier" not in extraction.missing_data_flags:
+                extraction.missing_data_flags.append(
+                    "overall_enrolment_copied_into_both_arms_removed_by_python_verifier"
                 )
 
 
@@ -322,6 +367,8 @@ def _extraction_to_meta_input(extraction: StudyExtraction) -> dict[str, Any]:
         "year": extraction.year,
         "intervention_arm": extraction.intervention_arm.model_dump(),
         "control_arm": extraction.control_arm.model_dump(),
+        "reported_effect": (extraction.reported_effect.model_dump()
+                            if extraction.reported_effect else None),
     }
 
 

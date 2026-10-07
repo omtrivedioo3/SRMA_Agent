@@ -434,6 +434,29 @@ Rules that matter:
   - If a value is genuinely absent, set it to null and name the field in
     missing_data_flags. This is the expected outcome for many papers and is
     not a failure.
+  - n_total is the number in THAT ARM. If the text gives only the overall
+    enrolment (e.g. "18,113 patients were randomised") and not the per-arm
+    split, set n_total to null in both arms - do not copy the overall total
+    into each arm.
+
+Third, the published summary estimate (reported_effect):
+  - Most abstracts report the result as a hazard ratio, relative risk or
+    odds ratio with a 95% confidence interval rather than raw counts. When
+    the text states such an estimate FOR THE TARGET OUTCOME, fill in
+    reported_effect with measure ("HR", "RR" or "OR" exactly as named),
+    estimate, ci_lower, ci_upper, the comparison it refers to, and the
+    verbatim sentence in quote. Copy the numbers as printed; do not convert.
+  - If the trial has more than one intervention arm (e.g. two doses), choose
+    the arm that best matches the intervention named in the protocol. If the
+    protocol does not name a dose, choose the HIGHER / standard-dose arm
+    (e.g. dabigatran 150 mg, high-dose edoxaban), which is the convention in
+    published meta-analyses. Say which arm you chose in
+    reported_effect.comparison. Never average arms.
+  - If the estimate is for a different outcome than the target, or no
+    estimate is given, leave reported_effect null and add
+    "no_summary_estimate_for_target_outcome" to missing_data_flags.
+  - Filling reported_effect does NOT excuse you from also extracting arm
+    counts when they are present; both are wanted.
 
 PART B - RISK OF BIAS (RoB 2)
 
