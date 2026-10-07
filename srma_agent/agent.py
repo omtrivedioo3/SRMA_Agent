@@ -112,8 +112,8 @@ def search_literature(boolean_query: str) -> dict:
 
 def run_systematic_review(
     clinical_question: str,
-    max_abstracts_to_screen: int = 20,
-    max_studies_to_extract: int = 10,
+    max_abstracts_to_screen: int = 0,
+    max_studies_to_extract: int = 0,
 ) -> dict:
     """Run a complete systematic review and meta-analysis on a question.
 
@@ -123,10 +123,9 @@ def run_systematic_review(
     pooling, and a GRADE certainty rating. It produces PRISMA flow counts,
     a forest plot and a funnel plot.
 
-    This is SLOW. Screening and extraction each require a separate model
-    call per record. Expect several minutes at the default caps and
-    considerably longer if they are raised. Tell the user it is running and
-    roughly how long it will take before you call it.
+    Screening and extraction run against MedGemma on a Vertex AI endpoint,
+    in parallel, so a full review of a few hundred records typically takes
+    a few minutes. Tell the user it is running before you call it.
 
     Only call this for a question that compares an intervention against
     something, in a defined population, with a measurable outcome. If any
@@ -136,11 +135,12 @@ def run_systematic_review(
         clinical_question: The question in plain English, for example
             "Does aspirin reduce mortality in adults after myocardial
             infarction compared with placebo?"
-        max_abstracts_to_screen: How many records to screen. Higher is more
-            thorough and much slower. 20 is a reasonable demonstration; a
-            publishable review needs several hundred.
-        max_studies_to_extract: How many included studies to extract data
-            from. Extraction is the slowest step per record.
+        max_abstracts_to_screen: Cap on records screened. 0 (default) means
+            every deduplicated record is screened, which is what a real
+            review requires. Only set a positive number if the user asks for
+            a quick preview.
+        max_studies_to_extract: Cap on included studies extracted. 0
+            (default) means all of them.
 
     Returns:
         A dictionary with the protocol, the search strategy used, PRISMA

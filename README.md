@@ -53,8 +53,12 @@ flowchart LR
 
 ### 1. Prerequisites
 * **Python 3.10+**
-* **Google AI Studio API Key (`GOOGLE_API_KEY`)** — Get a free key at [https://aistudio.google.com/apikey](https://aistudio.google.com/apikey)
-* **Ollama** *(Recommended for local MedGemma dual-reviewer screening)* — Install from [https://ollama.com](https://ollama.com)
+* **Google AI Studio API Key (`GOOGLE_API_KEY`)** — Get a free key at [https://aistudio.google.com/apikey](https://aistudio.google.com/apikey) (used by the Gemini orchestrator / Reviewer 2)
+* **Google Cloud SDK (`gcloud`)** with access to the project hosting the MedGemma Vertex endpoint — used for Reviewer 1, extraction and RoB 2.0:
+  ```bash
+  gcloud auth application-default login
+  ```
+* **Ollama** *(Optional — local MedGemma fallback if the Vertex endpoint is unreachable)* — [https://ollama.com](https://ollama.com)
 * **Node.js 18+** *(Optional — `ui/dist` is already pre-built and ready to serve out of the box!)*
 
 ---
@@ -89,37 +93,58 @@ Edit `.env`:
 # REQUIRED: Gemini API key from https://aistudio.google.com/apikey
 GOOGLE_API_KEY=your_gemini_api_key_here
 
-# OPTIONAL: Hugging Face token (only needed if downloading MedGemma GGUF weights)
-HF_TOKEN=your_hf_token_here
+# Clinical model: MedGemma on Vertex AI (default) with local Ollama fallback
+SRMA_CLINICAL_MODEL=vertex_medgemma
+SRMA_LOCAL_CLINICAL_MODEL=ollama_chat/medgemma
+SRMA_VERTEX_FALLBACK_TO_LOCAL=1
 
-# OPTIONAL: Raises PubMed rate limit from 3 to 10 req/sec
-NCBI_API_KEY=
+# Vertex dedicated endpoint coordinates (override for a different deployment)
+SRMA_VERTEX_PROJECT_ID=332110629135
+SRMA_VERTEX_PROJECT_NUMBER=781612439219
+SRMA_VERTEX_LOCATION=asia-southeast1
+SRMA_VERTEX_MEDGEMMA_ENDPOINT_ID=mg-endpoint-b81452c7-c8ea-4102-8139-5b3a53d09106
 
-# OPTIONAL: Polite contact email for OpenAlex & Crossref
-SRMA_CONTACT_EMAIL=your_email@example.com
+# Parallel records in flight for screening / extraction
+SRMA_CLINICAL_MAX_WORKERS=8
 
-# Default screening & per-database caps (optimized for fast local CPU execution)
-SRMA_MAX_ABSTRACTS_TO_SCREEN=20
-SRMA_MAX_RECORDS_PER_SOURCE=25
+# Processing caps — 0 = unbounded (screen every record, extract every study)
+SRMA_MAX_RECORDS_PER_SOURCE=200
+SRMA_MAX_ABSTRACTS_TO_SCREEN=0
+SRMA_MAX_STUDIES_TO_EXTRACT=0
+
+# OPTIONAL
+NCBI_API_KEY=                      # raises PubMed rate limit 3 -> 10 req/sec
+SRMA_CONTACT_EMAIL=you@example.com # polite pool for OpenAlex / Crossref
+HF_TOKEN=                          # only for scripts/download_medgemma.py
 ```
+
+> **Model backends at a glance**
+>
+> | Role | Model | Backend | Auth |
+> |---|---|---|---|
+> | Orchestrator + Reviewer 2 (precision) | Gemini Flash | Google AI Studio | `GOOGLE_API_KEY` |
+> | Reviewer 1 (recall), extraction, RoB 2.0 | **MedGemma 4B** | **Vertex AI dedicated endpoint** | `gcloud auth application-default login` |
+> | Automatic fallback for the above | MedGemma 4B (Q4_K_M) | Local Ollama | none |
+>
+> Set `SRMA_CLINICAL_MODEL=ollama_chat/medgemma` and `SRMA_CLINICAL_MAX_WORKERS=2` to run fully offline on CPU.
 
 ---
 
-### 4. Set Up Local MedGemma (`medgemma-4b`) via Ollama *(Optional but Recommended)*
+### 4. Optional: Local MedGemma (`medgemma`) via Ollama as Fallback
 
-If you want full dual-model screening (MedGemma + Gemini), download the quantized MedGemma GGUF model and register it in Ollama:
+The pipeline runs against the Vertex endpoint by default. If you also want the local fallback (or want to run offline), download the quantized MedGemma GGUF and register it in Ollama:
 
 ```bash
 # 1. Download MedGemma-4B-IT Q4_K_M GGUF into ./models/
 python scripts/download_medgemma.py
 
-# 2. Create the medgemma-4b model in Ollama
-ollama create medgemma-4b -f models/Modelfile
+# 2. Create the medgemma model in Ollama
+ollama create medgemma -f models/Modelfile
 
-# 3. Verify Ollama has medgemma-4b ready
+# 3. Verify Ollama has medgemma ready
 ollama list
 ```
-> **Note:** If Ollama is not running, the pipeline gracefully falls back to Gemini so you can still run full reviews immediately.
+> **Note:** If the Vertex call fails for any reason (auth, quota, network) and `SRMA_VERTEX_FALLBACK_TO_LOCAL=1`, the exact same request is retried on local Ollama and the fallback is logged to stderr — a review never dies mid-screening.
 
 ---
 

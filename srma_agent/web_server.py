@@ -52,8 +52,10 @@ class ReviewRequest(BaseModel):
     effect_measure: str = "auto"
     max_per_source: int = config.MAX_RECORDS_PER_SOURCE
     max_records_per_source: int | None = None
+    # 0 means unbounded (see config). The UI sends only `question`, so these
+    # defaults are what every portal run actually uses.
     max_abstracts_to_screen: int = config.MAX_ABSTRACTS_TO_SCREEN
-    max_studies_to_extract: int = getattr(config, "MAX_STUDIES_TO_EXTRACT", 10)
+    max_studies_to_extract: int = config.MAX_STUDIES_TO_EXTRACT
     model: str = "random"
 
 
@@ -731,13 +733,25 @@ def _normalize_run_payload(run_id: str, data: dict[str, Any], run_dir: Path) -> 
 def get_system_status() -> dict[str, Any]:
     """Return current model configuration and 9-database connector status."""
     src_info = search_mod.available_sources()
+    clinical = config.CLINICAL_MODEL
+    is_vertex = clinical.startswith("vertex")
     return {
-        "gemini_backend": getattr(config, "GEMINI_BACKEND", "vertex"),
-        "gemini_model": getattr(config, "ORCHESTRATOR_MODEL", "gemini-2.5-pro"),
-        "medgemma_model": getattr(config, "CLINICAL_MODEL", "gemma3:27b"),
-        "ollama_api_base": getattr(config, "OLLAMA_API_BASE", "http://localhost:11434"),
-        "max_records_per_source": getattr(config, "MAX_RECORDS_PER_SOURCE", 100),
-        "max_abstracts_to_screen": getattr(config, "MAX_ABSTRACTS_TO_SCREEN", 20),
+        "gemini_backend": config.GEMINI_BACKEND,
+        "gemini_model": config.ORCHESTRATOR_MODEL,
+        "medgemma_model": clinical,
+        "medgemma_backend": "vertex-ai" if is_vertex else "ollama-local",
+        "medgemma_endpoint": config.VERTEX_MEDGEMMA_ENDPOINT_ID if is_vertex else None,
+        "medgemma_location": config.VERTEX_LOCATION if is_vertex else None,
+        "medgemma_fallback": (
+            config.LOCAL_CLINICAL_MODEL
+            if (is_vertex and config.VERTEX_FALLBACK_TO_LOCAL) else None
+        ),
+        "ollama_api_base": config.OLLAMA_API_BASE,
+        "clinical_workers": config.CLINICAL_MAX_WORKERS,
+        "max_records_per_source": config.MAX_RECORDS_PER_SOURCE,
+        # 0 -> unbounded; surface it as null so the UI never shows "0".
+        "max_abstracts_to_screen": config.MAX_ABSTRACTS_TO_SCREEN or None,
+        "max_studies_to_extract": config.MAX_STUDIES_TO_EXTRACT or None,
         "sources_available": src_info.get("available", []),
         "sources_unavailable": src_info.get("unavailable", []),
     }

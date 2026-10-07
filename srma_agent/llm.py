@@ -34,6 +34,10 @@ from __future__ import annotations
 
 import json
 import re
+import subprocess
+import sys
+import threading
+import time
 from typing import Any, TypeVar
 
 import requests
@@ -50,6 +54,12 @@ _TRAILING_COMMA_RE = re.compile(r",\s*([}\]])")
 # model on CPU answers a screening prompt in roughly 10-40s, so the timeout
 # has to be generous or correct answers get thrown away as failures.
 _OLLAMA_TIMEOUT = 300
+
+# The Vertex chatCompletions format requires an explicit max_tokens. The
+# structured JSON replies for screening / extraction / RoB are a few hundred
+# tokens; 2048 leaves headroom for the longest extraction without letting a
+# runaway generation burn minutes of GPU time.
+_VERTEX_DEFAULT_MAX_TOKENS = 2048
 
 
 class LlmCallError(RuntimeError):
@@ -114,6 +124,10 @@ def _is_ollama(model: str) -> bool:
     return model.startswith("ollama")
 
 
+def _is_vertex(model: str) -> bool:
+    return model.startswith("vertex")
+
+
 def _ollama_model_name(model: str) -> str:
     """Strip the LiteLLM-style provider prefix Ollama does not use."""
     return model.split("/", 1)[1] if "/" in model else model
@@ -173,6 +187,200 @@ def _call_ollama(
     return (response.json().get("message") or {}).get("content", "")
 
 
+# --------------------------------------------------------------------------
+# Vertex AI dedicated endpoint (MedGemma)
+# --------------------------------------------------------------------------
+# The endpoint accepts the OpenAI-style "chatCompletions" request format
+# wrapped in a Vertex `instances` envelope:
+#
+#   {"instances": [{"@requestFormat": "chatCompletions",
+#                   "messages": [{"role": "...", "content": [{"type":"text","text":"..."}]}],
+#                   "max_tokens": N}]}
+#
+# Authentication is a bearer token from Application Default Credentials.
+# `gcloud auth application-default login` or a service account on Cloud Run
+# both satisfy google-auth; if that library is missing we shell out to
+# `gcloud auth print-access-token`, which is what the curl example does.
+
+_VERTEX_TOKEN_LOCK = threading.Lock()
+_VERTEX_TOKEN: dict[str, Any] = {"value": None, "expires": 0.0}
+
+
+def _vertex_access_token() -> str:
+    """Return a cached OAuth2 bearer token, refreshing a few minutes early."""
+    now = time.time()
+    with _VERTEX_TOKEN_LOCK:
+        if _VERTEX_TOKEN["value"] and now < _VERTEX_TOKEN["expires"] - 300:
+            return _VERTEX_TOKEN["value"]
+
+        token: str | None = None
+        expires_at: float = now + 3300  # gcloud tokens live ~1h
+
+        try:
+            import google.auth
+            import google.auth.transport.requests
+
+            creds, _ = google.auth.default(
+                scopes=["https://www.googleapis.com/auth/cloud-platform"])
+            creds.refresh(google.auth.transport.requests.Request())
+            token = creds.token
+            if getattr(creds, "expiry", None):
+                expires_at = creds.expiry.timestamp()
+        except Exception:  # noqa: BLE001 - fall through to gcloud
+            token = None
+
+        if not token:
+            try:
+                proc = subprocess.run(
+                    ["gcloud", "auth", "print-access-token"],
+                    capture_output=True, text=True, timeout=30, check=True,
+                )
+                token = proc.stdout.strip()
+            except Exception as exc:  # noqa: BLE001
+                raise LlmCallError(
+                    "Could not obtain a Google Cloud access token for the "
+                    "Vertex MedGemma endpoint. Run `gcloud auth "
+                    "application-default login` (or `gcloud auth login`) "
+                    f"and retry. Underlying error: {exc}"
+                ) from exc
+
+        _VERTEX_TOKEN["value"] = token
+        _VERTEX_TOKEN["expires"] = expires_at
+        return token
+
+
+def _to_chat_completions_messages(messages: list[dict[str, str]]) -> list[dict[str, Any]]:
+    """Convert plain {role, content:str} into the endpoint's content-parts form."""
+    out: list[dict[str, Any]] = []
+    for m in messages:
+        content = m.get("content", "")
+        if isinstance(content, str):
+            content = [{"type": "text", "text": content}]
+        out.append({"role": m.get("role", "user"), "content": content})
+    return out
+
+
+def _call_vertex_medgemma(
+    model: str,
+    messages: list[dict[str, str]],
+    *,
+    temperature: float,
+    max_tokens: int | None = None,
+    schema: dict[str, Any] | None = None,
+) -> str:
+    """POST a chatCompletions instance to the Vertex dedicated endpoint.
+
+    The vLLM-backed endpoint has no sampler-level schema constraint like
+    Ollama's `format`, so `schema` is intentionally ignored here: the JSON
+    schema is already spelled out in the system prompt by `call_json`, and
+    the extract/repair/retry loop handles the rest.
+    """
+    instance: dict[str, Any] = {
+        "@requestFormat": "chatCompletions",
+        "messages": _to_chat_completions_messages(messages),
+        "max_tokens": int(max_tokens or _VERTEX_DEFAULT_MAX_TOKENS),
+        "temperature": float(temperature),
+    }
+    payload = {"instances": [instance]}
+    url = config.VERTEX_MEDGEMMA_PREDICT_URL
+
+    last_exc: Exception | None = None
+    for attempt in range(2):
+        headers = {
+            "Authorization": f"Bearer {_vertex_access_token()}",
+            "Content-Type": "application/json",
+        }
+        try:
+            response = requests.post(url, json=payload, headers=headers,
+                                     timeout=config.VERTEX_TIMEOUT)
+        except requests.RequestException as exc:
+            last_exc = exc
+            raise LlmCallError(
+                f"Could not reach the Vertex MedGemma endpoint at {url}: {exc}"
+            ) from exc
+
+        if response.status_code == 401 and attempt == 0:
+            # Token may have been revoked/expired early; force refresh once.
+            with _VERTEX_TOKEN_LOCK:
+                _VERTEX_TOKEN["value"] = None
+            continue
+        if response.status_code >= 400:
+            raise LlmCallError(
+                f"Vertex MedGemma endpoint returned HTTP "
+                f"{response.status_code}: {response.text[:400]}"
+            )
+        break
+    else:  # pragma: no cover - only if both attempts hit 401
+        raise LlmCallError(f"Vertex MedGemma auth failed twice: {last_exc}")
+
+    body = response.json()
+    return _strip_thinking(_extract_vertex_text(body))
+
+
+# The vLLM-served MedGemma emits an internal reasoning block before the real
+# answer, delimited by Gemma's reserved thinking tokens:
+#   "<unused94>thought\n...reasoning...<unused95>final answer"
+# Observed live: health_check() returned "<unused94>thought\nThe user wants
+# me to act as...". The structured-JSON path survives because it searches
+# for the first "{", but free-text callers would leak the reasoning into
+# reports, and a thought block that itself contains a "{" would mislead the
+# JSON extractor. Strip it at the transport boundary.
+_THINK_BLOCK_RE = re.compile(r"<unused94>.*?(?:<unused95>|$)", re.DOTALL)
+_THINK_PREFIX_RE = re.compile(r"^\s*(?:<unused9[45]>)?\s*thought\s*\n", re.IGNORECASE)
+
+
+def _strip_thinking(text: str) -> str:
+    if not text or "<unused9" not in text and not text.lstrip().lower().startswith("thought"):
+        return text
+    cleaned = _THINK_BLOCK_RE.sub("", text)
+    cleaned = _THINK_PREFIX_RE.sub("", cleaned)
+    cleaned = cleaned.replace("<unused95>", "").replace("<unused94>", "")
+    # If stripping removed everything (model put the answer inside the
+    # thought block), fall back to the original minus the marker tokens so
+    # the JSON extractor still has something to search.
+    if not cleaned.strip():
+        cleaned = text.replace("<unused94>", "").replace("<unused95>", "")
+        cleaned = _THINK_PREFIX_RE.sub("", cleaned)
+    return cleaned.strip()
+
+
+def _extract_vertex_text(body: dict[str, Any]) -> str:
+    """Pull the assistant text out of the several shapes Vertex may return.
+
+    Dedicated endpoints return `{"predictions": <openai-chat-completion>}`
+    for a single instance, or `{"predictions": [<completion>, ...]}`. Some
+    deployments return the completion at the top level. All are handled.
+    """
+    pred = body.get("predictions", body)
+    if isinstance(pred, list):
+        pred = pred[0] if pred else {}
+    if isinstance(pred, str):
+        return pred
+
+    choices = pred.get("choices") if isinstance(pred, dict) else None
+    if choices:
+        msg = choices[0].get("message") or {}
+        content = msg.get("content", "")
+        if isinstance(content, list):
+            content = "".join(
+                part.get("text", "") for part in content
+                if isinstance(part, dict) and part.get("type", "text") == "text"
+            )
+        if content:
+            return content
+        # Some servers put plain completions under "text".
+        if choices[0].get("text"):
+            return choices[0]["text"]
+
+    # Last resort: common alternative keys.
+    for key in ("content", "text", "output", "generated_text"):
+        if isinstance(pred, dict) and isinstance(pred.get(key), str):
+            return pred[key]
+
+    raise LlmCallError(
+        f"Unrecognised Vertex response shape: {json.dumps(body)[:400]}")
+
+
 def _call_litellm(
     model: str,
     messages: list[dict[str, str]],
@@ -200,12 +408,32 @@ def _complete(
     max_tokens: int | None = None,
     schema: dict[str, Any] | None = None,
 ) -> str:
-    """Route to the right transport for the model string."""
+    """Route to the right transport for the model string.
+
+    For the Vertex MedGemma path, a transport-level failure (network, auth,
+    5xx, unparseable response) is retried once against the local Ollama
+    MedGemma when `config.VERTEX_FALLBACK_TO_LOCAL` is on. The fallback is
+    logged to stderr so a run that silently degraded is still auditable.
+    """
+    if _is_vertex(model):
+        try:
+            return _call_vertex_medgemma(model, messages, temperature=temperature,
+                                         max_tokens=max_tokens, schema=schema)
+        except LlmCallError as exc:
+            if not config.VERTEX_FALLBACK_TO_LOCAL:
+                raise
+            print(f"[llm] Vertex MedGemma failed ({str(exc)[:160]}); "
+                  f"falling back to {config.LOCAL_CLINICAL_MODEL}",
+                  file=sys.stderr)
+            return _call_ollama(config.LOCAL_CLINICAL_MODEL, messages,
+                                temperature=temperature, max_tokens=max_tokens,
+                                schema=schema)
     if _is_ollama(model):
         return _call_ollama(model, messages, temperature=temperature,
                             max_tokens=max_tokens, schema=schema)
     return _call_litellm(model, messages, temperature=temperature,
                          max_tokens=max_tokens)
+
 
 
 def call_json(

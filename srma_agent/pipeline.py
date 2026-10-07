@@ -37,6 +37,7 @@ from __future__ import annotations
 import json
 import re
 import time
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import asdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -416,7 +417,7 @@ def run_review(
     *,
     max_records_per_source: int | None = None,
     max_abstracts_to_screen: int | None = None,
-    max_studies_to_extract: int = 12,
+    max_studies_to_extract: int | None = None,
     effect_measure: str = "auto",
     model: str = "random",
     make_plots: bool = True,
@@ -428,9 +429,10 @@ def run_review(
     Args:
         question: The clinical question, in plain English.
         max_records_per_source: Per-database retrieval cap.
-        max_abstracts_to_screen: Screening cap. Screening is the slow phase.
-        max_studies_to_extract: Extraction cap. Extraction is slower still,
-            roughly 30-60s per study on a local model.
+        max_abstracts_to_screen: Screening cap. None -> config default;
+            0 -> unbounded (screen every deduplicated record).
+        max_studies_to_extract: Extraction cap. None -> config default;
+            0 -> unbounded (extract every included study).
         effect_measure: "auto", "RR", "OR", "RD", "MD" or "SMD".
         model: Pooling model. See meta_analysis.run_meta_analysis.
         make_plots: Render forest and funnel plots.
@@ -451,6 +453,11 @@ def run_review(
     out_dir = Path(config.RUNS_DIR) / run_id
     out_dir.mkdir(parents=True, exist_ok=True)
 
+    # None -> config default. 0 (or negative) -> unbounded, handled where
+    # the slice happens so the "cap reached" bookkeeping stays correct.
+    if max_studies_to_extract is None:
+        max_studies_to_extract = config.MAX_STUDIES_TO_EXTRACT
+
     def emit(phase: str, message: str) -> None:
         if on_phase:
             on_phase(phase, message)
@@ -469,6 +476,19 @@ def run_review(
             "gemini_backend": config.GEMINI_BACKEND,
             "orchestrator_model": config.ORCHESTRATOR_MODEL,
             "clinical_model": config.CLINICAL_MODEL,
+            "clinical_endpoint": (
+                config.VERTEX_MEDGEMMA_ENDPOINT_ID
+                if config.CLINICAL_MODEL.startswith("vertex") else config.OLLAMA_API_BASE
+            ),
+            "clinical_fallback": (
+                config.LOCAL_CLINICAL_MODEL if config.VERTEX_FALLBACK_TO_LOCAL else None
+            ),
+            "clinical_workers": config.CLINICAL_MAX_WORKERS,
+            "max_abstracts_to_screen": (
+                max_abstracts_to_screen if max_abstracts_to_screen is not None
+                else config.MAX_ABSTRACTS_TO_SCREEN
+            ) or "unbounded",
+            "max_studies_to_extract": max_studies_to_extract or "unbounded",
         },
         "phases_completed": [],
         "errors": [],
@@ -569,10 +589,16 @@ def run_review(
     # --- Phase 5: screening -----------------------------------------------
     cap = (max_abstracts_to_screen if max_abstracts_to_screen is not None
            else config.MAX_ABSTRACTS_TO_SCREEN)
-    emit("screening", f"Screening up to {cap} records with two reviewers")
+    if cap and cap > 0:
+        emit("screening", f"Screening up to {cap} of {len(records)} records "
+                          f"with two reviewers ({config.CLINICAL_MAX_WORKERS} parallel)")
+    else:
+        emit("screening", f"Screening all {len(records)} records with two "
+                          f"reviewers ({config.CLINICAL_MAX_WORKERS} parallel)")
     try:
         screened = screening.screen_batch(
             records, result["protocol_text"], max_records=cap,
+            max_workers=config.CLINICAL_MAX_WORKERS,
             # The same vocabulary the search was built from. Reusing it keeps
             # the gate consistent with the query: a record the search should
             # never have returned is exactly what the gate should remove.
@@ -671,19 +697,44 @@ def run_review(
     ]
 
     emit("extraction", f"Extracting data and assessing RoB 2 for "
-                       f"{len(to_extract)} studies")
+                       f"{len(to_extract)} studies "
+                       f"({config.CLINICAL_MAX_WORKERS} parallel)")
     extractions: list[StudyExtraction] = []
     extraction_errors: list[dict[str, str]] = []
-    for i, record in enumerate(to_extract, 1):
+
+    # Each extraction is an independent model call, so they run concurrently.
+    # Results are collected into a positional slot list and then flattened
+    # in the original order: downstream code (meta-analysis excluded_studies
+    # `index`, Table 1 numbering, PDF) assumes extraction order == to_extract
+    # order, and a completion-order list would silently scramble that.
+    def _extract_one(idx_record: tuple[int, StudyRecord]):
+        idx, record = idx_record
         try:
-            extractions.append(extract_study(record, protocol))
-            emit("extraction", f"[{i}/{len(to_extract)}] {record.best_id}")
+            return idx, extract_study(record, protocol), None
         except Exception as exc:  # noqa: BLE001
-            extraction_errors.append(
-                {"record": record.best_id,
-                 "title": (record.title or "")[:200],
-                 "url": record.verification_url,
-                 "error": f"{type(exc).__name__}: {exc}"})
+            return idx, None, f"{type(exc).__name__}: {exc}"
+
+    slots: list[StudyExtraction | None] = [None] * len(to_extract)
+    slot_errors: list[dict[str, str] | None] = [None] * len(to_extract)
+    done = 0
+    with ThreadPoolExecutor(max_workers=max(1, config.CLINICAL_MAX_WORKERS)) as pool:
+        for idx, extraction, error in pool.map(_extract_one, enumerate(to_extract)):
+            done += 1
+            record = to_extract[idx]
+            if error is None:
+                slots[idx] = extraction
+                emit("extraction", f"[{done}/{len(to_extract)}] {record.best_id}")
+            else:
+                slot_errors[idx] = {
+                    "record": record.best_id,
+                    "title": (record.title or "")[:200],
+                    "url": record.verification_url,
+                    "error": error,
+                }
+                emit("extraction", f"[{done}/{len(to_extract)}] FAILED {record.best_id}")
+
+    extractions = [e for e in slots if e is not None]
+    extraction_errors = [e for e in slot_errors if e is not None]
 
     prisma.full_text_assessed = len(to_extract)
     result["extraction"] = {

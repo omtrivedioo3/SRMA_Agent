@@ -54,7 +54,46 @@ _load_dotenv()
 # LiteLLM model strings.
 #   ollama_chat/<name>  - uses Ollama's /api/chat endpoint (better formatting
 #                         than the older ollama/ prefix, which uses /api/generate)
-CLINICAL_MODEL = os.getenv("SRMA_CLINICAL_MODEL", "ollama_chat/medgemma")
+#   vertex_medgemma     - the MedGemma model deployed on a Vertex AI
+#                         dedicated prediction endpoint (see below). This is
+#                         the production path; Ollama is the local fallback.
+CLINICAL_MODEL = os.getenv("SRMA_CLINICAL_MODEL", "vertex_medgemma")
+
+# Local MedGemma via Ollama. Kept as the automatic fallback: if the Vertex
+# endpoint is unreachable or returns an error, llm.py transparently retries
+# the same call against this model so a review never dies mid-screening.
+LOCAL_CLINICAL_MODEL = os.getenv("SRMA_LOCAL_CLINICAL_MODEL", "ollama_chat/medgemma")
+
+# --------------------------------------------------------------------------
+# MedGemma on Vertex AI (dedicated endpoint, chatCompletions request format)
+# --------------------------------------------------------------------------
+# The endpoint is a *dedicated* Vertex endpoint, which has its own DNS name
+# of the form <endpoint-id>.<region>-<project-number>.prediction.vertexai.goog
+# rather than the shared <region>-aiplatform.googleapis.com host. The full
+# URL is therefore assembled from these parts. Everything is overridable so
+# the same code works against a different deployment without edits.
+VERTEX_PROJECT_ID = os.getenv("SRMA_VERTEX_PROJECT_ID", "332110629135").strip()
+VERTEX_PROJECT_NUMBER = os.getenv("SRMA_VERTEX_PROJECT_NUMBER", "781612439219").strip()
+VERTEX_LOCATION = os.getenv("SRMA_VERTEX_LOCATION", "asia-southeast1").strip()
+VERTEX_MEDGEMMA_ENDPOINT_ID = os.getenv(
+    "SRMA_VERTEX_MEDGEMMA_ENDPOINT_ID",
+    "mg-endpoint-b81452c7-c8ea-4102-8139-5b3a53d09106",
+).strip()
+
+# Explicit override wins; otherwise build the dedicated-endpoint URL.
+VERTEX_MEDGEMMA_PREDICT_URL = os.getenv("SRMA_VERTEX_MEDGEMMA_URL", "").strip() or (
+    f"https://{VERTEX_MEDGEMMA_ENDPOINT_ID}.{VERTEX_LOCATION}-{VERTEX_PROJECT_NUMBER}"
+    f".prediction.vertexai.goog/v1/projects/{VERTEX_PROJECT_ID}"
+    f"/locations/{VERTEX_LOCATION}/endpoints/{VERTEX_MEDGEMMA_ENDPOINT_ID}:predict"
+)
+
+# Dedicated endpoints running vLLM can take a while on a long extraction
+# prompt; be generous rather than discard a correct answer as a timeout.
+VERTEX_TIMEOUT = int(os.getenv("SRMA_VERTEX_TIMEOUT", "180"))
+
+# When the Vertex call fails (auth, quota, 5xx, network) fall back to the
+# local Ollama model instead of aborting. Set to 0 to make failures fatal.
+VERTEX_FALLBACK_TO_LOCAL = os.getenv("SRMA_VERTEX_FALLBACK_TO_LOCAL", "1").strip() in ("1", "true", "TRUE")
 
 # Bare Gemini model ids are resolved by ADK against whichever backend
 # GOOGLE_GENAI_USE_VERTEXAI selects. Flash is chosen over Pro because the
@@ -87,6 +126,7 @@ for _var in ("NO_PROXY", "no_proxy"):
         if _host not in _existing:
             _existing.append(_host)
     os.environ[_var] = ",".join(_existing)
+
 
 
 # --------------------------------------------------------------------------
@@ -169,13 +209,23 @@ USER_AGENT = f"SRMA-Agent/1.0 (mailto:{CONTACT_EMAIL})"
 # --------------------------------------------------------------------------
 # Search behaviour
 # --------------------------------------------------------------------------
-# Per-source cap on records retrieved. Systematic reviews want recall, but
-# unbounded fetches make development painful.
+# Per-source cap on records retrieved. Systematic reviews want recall.
 MAX_RECORDS_PER_SOURCE = int(os.getenv("SRMA_MAX_RECORDS_PER_SOURCE", "200"))
 
-# Screening every abstract through a 4B model on CPU takes ~10s each.
-# This cap keeps development iterations tolerable; raise it for a real run.
-MAX_ABSTRACTS_TO_SCREEN = int(os.getenv("SRMA_MAX_ABSTRACTS_TO_SCREEN", "40"))
+# Processing caps. These existed only because a 4B model on a laptop CPU
+# takes ~10-40s per abstract. With MedGemma served from a Vertex endpoint
+# the bottleneck is gone, so the defaults are now UNBOUNDED (0 = no cap):
+# every deduplicated record is screened and every included study is
+# extracted, which is what PRISMA actually requires. Set a positive number
+# in .env to reintroduce a ceiling for a quick smoke test.
+MAX_ABSTRACTS_TO_SCREEN = int(os.getenv("SRMA_MAX_ABSTRACTS_TO_SCREEN", "0"))
+MAX_STUDIES_TO_EXTRACT = int(os.getenv("SRMA_MAX_STUDIES_TO_EXTRACT", "0"))
+
+# Concurrent records in flight during screening / extraction. A hosted
+# endpoint scales horizontally; a local CPU model does not, so the number is
+# chosen from the clinical backend unless overridden.
+_DEFAULT_WORKERS = "8" if CLINICAL_MODEL.startswith("vertex") else "2"
+CLINICAL_MAX_WORKERS = int(os.getenv("SRMA_CLINICAL_MAX_WORKERS", _DEFAULT_WORKERS))
 
 HTTP_TIMEOUT = int(os.getenv("SRMA_HTTP_TIMEOUT", "30"))
 HTTP_MAX_RETRIES = int(os.getenv("SRMA_HTTP_MAX_RETRIES", "3"))
@@ -187,6 +237,10 @@ def _api_key_status() -> str:
     return f"set ({len(GOOGLE_API_KEY)} chars)"
 
 
+def _cap(value: int) -> str:
+    return "unbounded" if not value or value <= 0 else str(value)
+
+
 def summary() -> str:
     """Human-readable config dump, printed at pipeline start for reproducibility."""
     return "\n".join([
@@ -194,11 +248,16 @@ def summary() -> str:
         f"  gemini backend     : {GEMINI_BACKEND}",
         f"  orchestrator model : {ORCHESTRATOR_MODEL}",
         f"  clinical model     : {CLINICAL_MODEL}",
+        f"  vertex endpoint    : {VERTEX_MEDGEMMA_ENDPOINT_ID} ({VERTEX_LOCATION})",
+        f"  local fallback     : {LOCAL_CLINICAL_MODEL} ({'enabled' if VERTEX_FALLBACK_TO_LOCAL else 'disabled'})",
         f"  ollama base        : {OLLAMA_API_BASE}",
+        f"  clinical workers   : {CLINICAL_MAX_WORKERS}",
         f"  google api key     : {_api_key_status()}",
         f"  ncbi api key       : {'set' if NCBI_API_KEY else 'not set (3 req/sec limit)'}",
         f"  contact email      : {CONTACT_EMAIL}",
         f"  max per source     : {MAX_RECORDS_PER_SOURCE}",
-        f"  max to screen      : {MAX_ABSTRACTS_TO_SCREEN}",
+        f"  max to screen      : {_cap(MAX_ABSTRACTS_TO_SCREEN)}",
+        f"  max to extract     : {_cap(MAX_STUDIES_TO_EXTRACT)}",
         f"  runs dir           : {RUNS_DIR}",
     ])
+
