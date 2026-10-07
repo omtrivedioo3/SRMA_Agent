@@ -55,11 +55,16 @@ _TRAILING_COMMA_RE = re.compile(r",\s*([}\]])")
 # has to be generous or correct answers get thrown away as failures.
 _OLLAMA_TIMEOUT = 300
 
-# The Vertex chatCompletions format requires an explicit max_tokens. The
-# structured JSON replies for screening / extraction / RoB are a few hundred
-# tokens; 2048 leaves headroom for the longest extraction without letting a
-# runaway generation burn minutes of GPU time.
-_VERTEX_DEFAULT_MAX_TOKENS = 2048
+# The Vertex chatCompletions format requires an explicit max_tokens, and it
+# is a hard cut-off: generation stops mid-string when it is reached. The
+# hosted MedGemma spends 400-1200 tokens on a "<unused94>thought" preamble
+# before the answer, and the StudyExtraction JSON (RoB 2 rationales,
+# evidence quotes) is another 800-1500. At 2048 roughly half of all
+# extractions were truncated inside the JSON (run-20261007-093214: 129/241
+# failed with "Unterminated string"). 8192 is a ceiling, not a target - the
+# model still stops at the closing brace - so it costs nothing on short
+# replies and only matters on the long ones that used to be cut.
+_VERTEX_DEFAULT_MAX_TOKENS = 8192
 
 
 class LlmCallError(RuntimeError):

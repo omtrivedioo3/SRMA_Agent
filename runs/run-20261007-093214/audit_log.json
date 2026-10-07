@@ -1,0 +1,507 @@
+[
+  {
+    "source": "pubmed",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi",
+    "params": {
+      "db": "pubmed",
+      "term": "(\"atrial fibrillation\"[tiab] OR AF[tiab] OR \"non-valvular atrial fibrillation\"[tiab] OR \"Atrial Fibrillation\"[MeSH Terms]) AND (\"direct oral anticoagulant\"[tiab] OR DOAC[tiab] OR apixaban[tiab] OR rivaroxaban[tiab] OR dabigatran[tiab] OR edoxaban[tiab] OR \"Anticoagulants\"[MeSH Terms] OR \"Direct Oral Anticoagulants\"[MeSH Terms])",
+      "retmax": 200,
+      "retmode": "json",
+      "sort": "relevance",
+      "tool": "SRMA-Agent",
+      "email": ""
+    },
+    "timestamp_utc": "2026-10-07T09:32:29.183791+00:00",
+    "status_code": 200,
+    "n_results": 20729,
+    "duration_ms": 620,
+    "error": null
+  },
+  {
+    "source": "clinicaltrials",
+    "url": "https://clinicaltrials.gov/api/v2/studies",
+    "params": {
+      "query.term": "(\"atrial fibrillation\" OR AF OR \"non-valvular atrial fibrillation\") AND (\"direct oral anticoagulant\" OR DOAC OR apixaban OR rivaroxaban OR dabigatran OR edoxaban OR Anticoagulants OR \"Direct Oral Anticoagulants\")",
+      "pageSize": 100,
+      "format": "json",
+      "countTotal": "true"
+    },
+    "timestamp_utc": "2026-10-07T09:32:30.073239+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1523,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "((TITLE_ABS:\"atrial fibrillation\" OR TITLE_ABS:AF OR TITLE_ABS:\"non-valvular atrial fibrillation\" OR MESH:\"Atrial Fibrillation\") AND (TITLE_ABS:\"direct oral anticoagulant\" OR TITLE_ABS:DOAC OR TITLE_ABS:apixaban OR TITLE_ABS:rivaroxaban OR TITLE_ABS:dabigatran OR TITLE_ABS:edoxaban OR MESH:\"Anticoagulants\" OR MESH:\"Direct Oral Anticoagulants\")) AND (SRC:PPR)",
+      "format": "json",
+      "resultType": "core",
+      "pageSize": 100,
+      "cursorMark": "*"
+    },
+    "timestamp_utc": "2026-10-07T09:32:30.483827+00:00",
+    "status_code": 200,
+    "n_results": 111,
+    "duration_ms": 1926,
+    "error": null
+  },
+  {
+    "source": "europepmc",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "(TITLE_ABS:\"atrial fibrillation\" OR TITLE_ABS:AF OR TITLE_ABS:\"non-valvular atrial fibrillation\" OR MESH:\"Atrial Fibrillation\") AND (TITLE_ABS:\"direct oral anticoagulant\" OR TITLE_ABS:DOAC OR TITLE_ABS:apixaban OR TITLE_ABS:rivaroxaban OR TITLE_ABS:dabigatran OR TITLE_ABS:edoxaban OR MESH:\"Anticoagulants\" OR MESH:\"Direct Oral Anticoagulants\")",
+      "format": "json",
+      "resultType": "core",
+      "pageSize": 100,
+      "cursorMark": "*"
+    },
+    "timestamp_utc": "2026-10-07T09:32:30.631475+00:00",
+    "status_code": 200,
+    "n_results": 10517,
+    "duration_ms": 2077,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "((TITLE_ABS:\"atrial fibrillation\" OR TITLE_ABS:AF OR TITLE_ABS:\"non-valvular atrial fibrillation\" OR MESH:\"Atrial Fibrillation\") AND (TITLE_ABS:\"direct oral anticoagulant\" OR TITLE_ABS:DOAC OR TITLE_ABS:apixaban OR TITLE_ABS:rivaroxaban OR TITLE_ABS:dabigatran OR TITLE_ABS:edoxaban OR MESH:\"Anticoagulants\" OR MESH:\"Direct Oral Anticoagulants\")) AND (SRC:PPR)",
+      "format": "json",
+      "resultType": "core",
+      "pageSize": 100,
+      "cursorMark": "AoIIQA5gtig0MjAwNjUwMw=="
+    },
+    "timestamp_utc": "2026-10-07T09:32:30.835915+00:00",
+    "status_code": 200,
+    "n_results": 111,
+    "duration_ms": 346,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "((TITLE_ABS:\"atrial fibrillation\" OR TITLE_ABS:AF OR TITLE_ABS:\"non-valvular atrial fibrillation\" OR MESH:\"Atrial Fibrillation\") AND (TITLE_ABS:\"direct oral anticoagulant\" OR TITLE_ABS:DOAC OR TITLE_ABS:apixaban OR TITLE_ABS:rivaroxaban OR TITLE_ABS:dabigatran OR TITLE_ABS:edoxaban OR MESH:\"Anticoagulants\" OR MESH:\"Direct Oral Anticoagulants\")) AND (SRC:PPR)",
+      "format": "json",
+      "resultType": "core",
+      "pageSize": 100,
+      "cursorMark": "AoIIP3gitig0NTE1Nzc3MA=="
+    },
+    "timestamp_utc": "2026-10-07T09:32:31.101553+00:00",
+    "status_code": 200,
+    "n_results": 111,
+    "duration_ms": 263,
+    "error": null
+  },
+  {
+    "source": "crossref",
+    "url": "https://api.crossref.org/works",
+    "params": {
+      "query.bibliographic": "atrial fibrillation AF direct oral anticoagulant DOAC",
+      "rows": 100,
+      "cursor": "*",
+      "mailto": ""
+    },
+    "timestamp_utc": "2026-10-07T09:32:31.191680+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 2639,
+    "error": null
+  },
+  {
+    "source": "clinicaltrials",
+    "url": "https://clinicaltrials.gov/api/v2/studies",
+    "params": {
+      "query.term": "(\"atrial fibrillation\" OR AF OR \"non-valvular atrial fibrillation\") AND (\"direct oral anticoagulant\" OR DOAC OR apixaban OR rivaroxaban OR dabigatran OR edoxaban OR Anticoagulants OR \"Direct Oral Anticoagulants\")",
+      "pageSize": 100,
+      "format": "json",
+      "countTotal": "true",
+      "pageToken": "ZVNj7o2Elu8o3lpwS9785unumpOQJJxrY_Gh3PYW"
+    },
+    "timestamp_utc": "2026-10-07T09:32:31.575494+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1487,
+    "error": null
+  },
+  {
+    "source": "europepmc",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "(TITLE_ABS:\"atrial fibrillation\" OR TITLE_ABS:AF OR TITLE_ABS:\"non-valvular atrial fibrillation\" OR MESH:\"Atrial Fibrillation\") AND (TITLE_ABS:\"direct oral anticoagulant\" OR TITLE_ABS:DOAC OR TITLE_ABS:apixaban OR TITLE_ABS:rivaroxaban OR TITLE_ABS:dabigatran OR TITLE_ABS:edoxaban OR MESH:\"Anticoagulants\" OR MESH:\"Direct Oral Anticoagulants\")",
+      "format": "json",
+      "resultType": "core",
+      "pageSize": 100,
+      "cursorMark": "AoIIQX2NDCg1NTg2OTI1NA=="
+    },
+    "timestamp_utc": "2026-10-07T09:32:31.749104+00:00",
+    "status_code": 200,
+    "n_results": 10517,
+    "duration_ms": 1096,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2025.05.18.25327653/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-07T09:32:32.067461+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 965,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2024.11.14.24317360/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-07T09:32:32.303996+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1201,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2025.09.21.25336272/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-07T09:32:32.365077+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1261,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2023.10.25.23297577/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-07T09:32:32.427837+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1323,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2023.03.17.23287428/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-07T09:32:32.499614+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1392,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2023.12.05.23299538/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-07T09:32:32.516355+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1409,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2024.06.14.24308960/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-07T09:32:32.556639+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1449,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2024.05.27.24307985/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-07T09:32:32.594164+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1486,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2023.12.08.23299746/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-07T09:32:32.701064+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1593,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2024.03.18.24304452/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-07T09:32:32.731508+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 663,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2023.12.18.23300179/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-07T09:32:32.767644+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 1659,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.04.30.21256119/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-07T09:32:32.811975+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 295,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2024.07.03.24309193/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-07T09:32:32.823737+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 458,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.12.03.20243535/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-07T09:32:32.850142+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 293,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2024.05.06.24306969/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-07T09:32:32.949812+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 450,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2023.02.25.23286281/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-07T09:32:32.968104+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 663,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.07.03.21254541/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-07T09:32:32.998320+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 266,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2023.02.09.23285732/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-07T09:32:33.092909+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 664,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2022.05.24.22275434/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-07T09:32:33.105283+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 293,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.09.03.21263023/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-07T09:32:33.111299+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 517,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2023.10.09.23296740/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-07T09:32:33.165857+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 341,
+    "error": null
+  },
+  {
+    "source": "crossref",
+    "url": "https://api.crossref.org/works",
+    "params": {
+      "query.bibliographic": "atrial fibrillation AF direct oral anticoagulant DOAC",
+      "rows": 100,
+      "cursor": "MTAyNzU1NjQxMzAwMCwxMC4xMDY3JTJGbW9lLjIwMDAuMTA1OTA1",
+      "mailto": ""
+    },
+    "timestamp_utc": "2026-10-07T09:32:33.287377+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 2087,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.06.13.20130211/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-07T09:32:33.312339+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 344,
+    "error": null
+  },
+  {
+    "source": "openalex",
+    "url": "https://api.openalex.org/works",
+    "params": {
+      "search": "(\"atrial fibrillation\" OR AF OR \"non-valvular atrial fibrillation\") AND (\"direct oral anticoagulant\" OR DOAC OR apixaban OR rivaroxaban OR dabigatran OR edoxaban OR Anticoagulants OR \"Direct Oral Anticoagulants\")",
+      "mailto": "",
+      "per-page": 200,
+      "cursor": "*"
+    },
+    "timestamp_utc": "2026-10-07T09:32:33.456285+00:00",
+    "status_code": 200,
+    "n_results": 131403,
+    "duration_ms": 4901,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.07.27.20163071/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-07T09:32:33.462242+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 612,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2023.07.05.23292278/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-07T09:32:33.463624+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 513,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.07.27.21261136/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-07T09:32:33.481510+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 713,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.12.27.21268264/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-07T09:32:33.508391+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 397,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2023.04.17.23288712/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-07T09:32:33.574888+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 873,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.07.13.21260467/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-07T09:32:33.761012+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 762,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2020.08.09.20171330/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-07T09:32:33.823500+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 730,
+    "error": null
+  },
+  {
+    "source": "preprints",
+    "url": "https://api.biorxiv.org/details/medrxiv/10.1101/2021.12.31.21268587/na/json",
+    "params": {},
+    "timestamp_utc": "2026-10-07T09:32:34.079450+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 974,
+    "error": null
+  },
+  {
+    "source": "pubmed",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi",
+    "params": {
+      "db": "pubmed",
+      "id": "33895845,32680646,36315950,31599871,29183961,29295790,28302289,36244055,37621213,33497851,29212129,28122753,29569146,26560872,31933483,32108755,27637305,29025267,30152249,33543854,28191610,30606017,27586367,29957228,25196680,34029374,29957227,24135964,32443941,28727359,37429747,24993123,32598744,25305723,25559350,31839147,31886279,28043907,28689334,23953901,26968670,30383133,22007032,23953900,20040270,37845026,22465061,29064182,34286492,28480507,26274798,25088126,33045293,28373761,26464027,27341955,37738772,40468697,32875384,26466666,31633585,33054412,25163315,30852963,40311503,26245513,28754389,28862063,21254865,28737102,27207998,29033229,24401533,33385355,24842559,30896311,23579170,26424386,32364687,28786696,25440108,23992517,26655548,41117308,28004413,25827857,25104528,32862412,23499350,36371664,35816976,34498156,29952167,40903333,25016666,33822401,31410758,40676530,30321554,21144965,29276922,33432589,29339167,34486094,30918237,23286429,23595515,30167998,29672182,29016758,37390799,22740145,31606462,32676673,33549898,32756938,22542860,26471327,29975925,28867369,39593086,39950313,24183214,27637548,33161284,29605015,31208303,26780749,36527598,29121724,24861798,23896498,39432641,35000196,35066599,34469922,30362847,26616542,34302286,29861320,23797696,26658769,21668558,32634487,24711238,27520093,26988835,34921561,26089678,28752255,35993487,27207360,27870603,25311731,41741171,30081727,32011180,26509341,30383768,31529984,23612219,26826504,29226697,36399317,23242740,25732432,29934230,25727748,23910562,23391669,34014506,28844510,35184624,37132484,38266751,30401611,35648414,34173805,31655947,35909259,31942972,28635338,31367841,30443944,25970416,29552925,27837309,22858920,31013383,37635402,37939578,36402007,37755492,30216091,35331095,31103697,24715603,27938741,33663881,25850527",
+      "retmode": "xml",
+      "tool": "SRMA-Agent",
+      "email": ""
+    },
+    "timestamp_utc": "2026-10-07T09:32:34.217478+00:00",
+    "status_code": 200,
+    "n_results": null,
+    "duration_ms": 5033,
+    "error": null
+  },
+  {
+    "source": "semantic_scholar",
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search",
+    "params": {
+      "query": "atrial fibrillation AF direct oral anticoagulant DOAC",
+      "limit": 100,
+      "offset": 0,
+      "fields": "paperId,externalIds,title,abstract,venue,year,authors,publicationTypes,fieldsOfStudy,citationCount,referenceCount,openAccessPdf,isOpenAccess,url,publicationDate,journal"
+    },
+    "timestamp_utc": "2026-10-07T09:32:36.309174+00:00",
+    "status_code": 429,
+    "n_results": null,
+    "duration_ms": 7744,
+    "error": "HTTP 429"
+  }
+]

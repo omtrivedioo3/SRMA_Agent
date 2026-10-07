@@ -117,40 +117,106 @@ def federated_search(
     # exact string sent to every database is recorded in one place. A
     # systematic review must be reproducible, which means publishing the
     # per-database query, not just the concept list.
+    #
+    # Two tiers are run per source when a StructuredQuery is supplied:
+    #   precision - population AND intervention AND comparator AND an
+    #               RCT/study-design filter. Small, high-yield result set
+    #               that reliably surfaces the landmark trials a reviewer
+    #               would expect to see.
+    #   recall    - the broad PICO query. Guarantees coverage.
+    # Precision records are placed ahead of recall records for each source
+    # so that per-source caps and downstream screening/extraction order
+    # never push the pivotal trials out of the pipeline.
     if isinstance(query, query_mod.StructuredQuery):
-        queries = query.render_all(chosen)
+        queries = query.render_all(chosen, tier="recall")
+        precision_queries = query.render_all(chosen, tier="precision")
+        # Skip the precision tier where it renders identically to recall
+        # (no comparator and no design filter for that dialect) so we do
+        # not fetch the same page twice.
+        precision_queries = {
+            name: q for name, q in precision_queries.items()
+            if q and q != queries.get(name)
+        }
         canonical = query.render("pubmed")
     else:
         queries = {name: query_mod.adapt_raw_query(query, name)
                    for name in chosen}
+        precision_queries = {}
         canonical = query
 
     per_source: dict[str, dict[str, Any]] = {}
-    records_by_source: dict[str, list[StudyRecord]] = {}
+    tier_records: dict[tuple[str, str], list[StudyRecord]] = {}
+    tier_results: dict[tuple[str, str], dict[str, Any]] = {}
+
+    jobs: list[tuple[str, str, str]] = []
+    for name in chosen:
+        if precision_queries.get(name):
+            jobs.append((name, "precision", precision_queries[name]))
+        if queries.get(name):
+            jobs.append((name, "recall", queries[name]))
 
     # I/O-bound, so threads are the right tool. Rate limiting lives in
     # http.py and is shared across threads.
-    with ThreadPoolExecutor(max_workers=min(8, len(chosen) or 1)) as pool:
+    with ThreadPoolExecutor(max_workers=min(8, len(jobs) or 1)) as pool:
         futures = {
-            pool.submit(safe_call, name, _SOURCES[name], queries[name], cap):
-                name
-            for name in chosen
-            if queries.get(name)
+            pool.submit(safe_call, name, _SOURCES[name], q, cap): (name, tier)
+            for name, tier, q in jobs
         }
         for future in as_completed(futures):
-            name = futures[future]
+            name, tier = futures[future]
             try:
                 result = future.result()
             except Exception as exc:  # noqa: BLE001 - defensive
                 result = {"source": name, "status": "error", "count": 0,
                           "records": [], "error": f"{type(exc).__name__}: {exc}"}
-            per_source[name] = {
-                "status": result["status"],
-                "count": result["count"],
-                "error": result.get("error"),
-                "query_sent": queries[name],
+            tier_results[(name, tier)] = result
+            tier_records[(name, tier)] = list(result["records"])
+
+    records_by_source: dict[str, list[StudyRecord]] = {}
+    for name in chosen:
+        if not queries.get(name):
+            continue
+        recall_res = tier_results.get((name, "recall"), {})
+        prec_res = tier_results.get((name, "precision"))
+        prec_recs = tier_records.get((name, "precision"), [])
+        recall_recs = tier_records.get((name, "recall"), [])
+        # Within a source, drop recall hits that the precision tier already
+        # returned (same identifier) so the pooled list is not padded.
+        def _ids(r: StudyRecord) -> set[str]:
+            return {
+                f"{k}:{v}" for k, v in (
+                    ("doi", (r.doi or "").lower()),
+                    ("pmid", r.pmid),
+                    ("pmcid", r.pmcid),
+                    ("nct", r.nct_id),
+                    ("oa", r.openalex_id),
+                ) if v
             }
-            records_by_source[name] = list(result["records"])
+        seen_ids: set[str] = set()
+        for r in prec_recs:
+            seen_ids |= _ids(r)
+        merged = list(prec_recs)
+        for r in recall_recs:
+            rid = _ids(r)
+            if rid and rid & seen_ids:
+                continue
+            merged.append(r)
+        records_by_source[name] = merged
+
+        status = recall_res.get("status", "error")
+        errors = [e for e in (
+            recall_res.get("error"),
+            (prec_res or {}).get("error"),
+        ) if e]
+        per_source[name] = {
+            "status": status,
+            "count": len(merged),
+            "count_recall": recall_res.get("count", 0),
+            "count_precision": (prec_res or {}).get("count", 0) if prec_res else None,
+            "error": "; ".join(errors) if errors else None,
+            "query_sent": queries[name],
+            "query_sent_precision": precision_queries.get(name) or None,
+        }
 
     # Interleave records round-robin across sources in bibliographic priority
     # order so that a screening cap (e.g. max_abstracts_to_screen=20) samples
@@ -177,6 +243,7 @@ def federated_search(
         if not queries.get(name):
             per_source[name] = {
                 "status": "skipped", "count": 0, "query_sent": "",
+                "query_sent_precision": None,
                 "error": "no query could be rendered for this source",
             }
 
@@ -237,6 +304,7 @@ def federated_search(
         "status": "success",
         "query": canonical,
         "queries_by_source": queries,
+        "queries_by_source_precision": precision_queries,
         "sources_searched": chosen,
         "per_source": per_source,
         "total_identified": len(pooled),

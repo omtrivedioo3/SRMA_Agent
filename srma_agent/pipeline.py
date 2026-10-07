@@ -140,6 +140,10 @@ def build_query(protocol: PicoProtocol) -> tuple[query_mod.StructuredQuery,
             "intervention", strategy.intervention_terms,
             strategy.intervention_mesh),
         outcome=query_mod.Concept("outcome", strategy.outcome_terms, []),
+        # Only populated by the model for a named active comparator (e.g.
+        # warfarin). Empty for placebo / usual care, so it is never ANDed in.
+        comparator=query_mod.Concept(
+            "comparator", strategy.comparator_terms, strategy.comparator_mesh),
         # Used only if a concept ends up empty. Raw PICO text is a poor
         # search, but it is honest about being one, unlike a half-built
         # Boolean expression that silently matches everything.
@@ -564,6 +568,7 @@ def run_review(
     result["search"] = {
         "query": query,
         "queries_by_source": found.get("queries_by_source", {}),
+        "queries_by_source_precision": found.get("queries_by_source_precision", {}),
         "per_source": found["per_source"],
         "total_identified": found["total_identified"],
         "duplicates_removed": found["duplicates_removed"],

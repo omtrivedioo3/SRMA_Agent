@@ -164,6 +164,15 @@ RULES
    requiring one is a known cause of missed studies.
 5. Spelling variants matter: include both "randomised" and "randomized"
    style variants where relevant.
+6. COMPARATOR terms: fill comparator_terms / comparator_mesh ONLY when the
+   comparator is a specific named active treatment - a drug ("warfarin",
+   "vitamin K antagonist"), a procedure, a device. Leave both EMPTY when the
+   comparator is placebo, usual care, standard care, no treatment or sham.
+   Python runs two searches: a precision tier that ANDs population,
+   intervention, the named comparator (if any) and a randomised-trial design
+   filter, so the landmark trials rank first; and a recall tier of
+   population AND intervention alone. A placebo or usual-care "comparator"
+   in the AND chain would only lose trials, which is why it is excluded.
 
 Grey literature (trial registries and preprints) is searched deliberately,
 because reviews restricted to published journal articles systematically

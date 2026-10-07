@@ -219,6 +219,17 @@ class SearchStrategy(BaseModel):
         description="Synonyms for the primary outcome. May be left empty: "
                     "constraining on outcome terms loses trials that do not "
                     "name the outcome in the abstract")
+    comparator_terms: list[str] = Field(
+        default_factory=list,
+        description="Free-text synonyms for the COMPARATOR, but ONLY when it "
+                    "is a specific named active treatment (a drug such as "
+                    "'warfarin', a procedure, a device). Leave EMPTY when the "
+                    "comparator is placebo, usual care, standard care, no "
+                    "treatment or sham: those are not searched as terms.")
+    comparator_mesh: list[str] = Field(
+        default_factory=list,
+        description="MeSH descriptors for a named active comparator only, "
+                    "e.g. 'Warfarin'. Empty for placebo / usual care.")
 
 
 class ScreeningDecision(str, Enum):

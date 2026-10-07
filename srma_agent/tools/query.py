@@ -238,29 +238,104 @@ _DIALECT_BY_SOURCE = {
 DEFAULT_RENDERER = _render_keywords
 
 
+# --------------------------------------------------------------------------
+# Study-design filters, one per grammar
+# --------------------------------------------------------------------------
+# WHY A SECOND, FILTERED SEARCH EXISTS
+#
+# A broad population AND intervention query on a heavily published topic
+# matches tens of thousands of records. Every connector returns only its top
+# N by its own ranking, and that ranking does not know we want trials. On
+# run-20261007-093214 (DOACs vs warfarin, 966 unique records retrieved) not
+# one of the four landmark RCTs - RE-LY, ROCKET AF, ARISTOTLE, ENGAGE AF -
+# was in the result set. Cost-effectiveness analyses and 2026 cohort papers
+# crowded them out. No amount of screening accuracy can recover a study the
+# search never returned.
+#
+# The fix is the standard information-specialist one: run a precision tier
+# that ANDs a validated randomised-trial filter (and the named comparator
+# when there is one) so the primary trials rank first, and a recall tier
+# without it so nothing is lost. Both go through the same deduplication.
+#
+# The PubMed filter is deliberately the *strict* publication-type filter,
+# not the Cochrane Highly Sensitive Search Strategy. Measured live on the
+# DOAC-vs-warfarin question (2026-10-07):
+#
+#   Cochrane sensitivity filter  3,869 hits  -> only ARISTOTLE in the top 200
+#   randomized controlled trial[pt]  392 hits  -> RE-LY #4, ROCKET #2,
+#                                                 ARISTOTLE #1, ENGAGE #3
+#
+# The sensitivity filter belongs in a recall strategy; here it defeats the
+# purpose of the tier because PubMed's relevance ranking still has thousands
+# of candidates to shuffle. Precision must be precise. Nothing is lost - the
+# recall tier below has no design filter at all and goes through the same
+# deduplication.
+
+_RCT_FILTER_PUBMED = (
+    '(randomized controlled trial[pt] OR controlled clinical trial[pt]) '
+    'NOT (animals[mh] NOT humans[mh])'
+)
+_RCT_FILTER_EUROPEPMC = (
+    '(PUB_TYPE:"Randomized Controlled Trial" OR PUB_TYPE:"Clinical Trial")'
+)
+_RCT_FILTER_PLAIN = '(randomized OR randomised) AND trial'
+_RCT_FILTER_KEYWORDS = "randomized trial"
+
+_RCT_FILTER_BY_SOURCE = {
+    "pubmed": _RCT_FILTER_PUBMED,
+    "europepmc": _RCT_FILTER_EUROPEPMC,
+    "preprints": _RCT_FILTER_EUROPEPMC,
+    # ClinicalTrials.gov only indexes trials; a design filter is redundant
+    # and Essie does not support publication-type fields anyway.
+    "clinicaltrials": "",
+    "openalex": _RCT_FILTER_PLAIN,
+    "crossref": _RCT_FILTER_KEYWORDS,
+    "semantic_scholar": _RCT_FILTER_KEYWORDS,
+}
+
+
 @dataclass
 class StructuredQuery:
     """A search expressed as concepts, renderable into any supported dialect.
 
-    The outcome concept is held but deliberately not rendered into the AND
-    chain. Trials frequently do not name their outcomes in the title or
+    Two tiers are rendered from the same vocabulary:
+
+      recall     population AND intervention
+      precision  population AND intervention [AND comparator] AND rct-filter
+
+    The outcome concept is held but deliberately not rendered into either
+    AND chain. Trials frequently do not name their outcomes in the title or
     abstract, so requiring an outcome term is a well-documented way to lose
     eligible studies; Cochrane advises searching population and intervention
     only. It is retained because the reproducibility appendix must show the
     full vocabulary that was considered, not just what was used.
+
+    The comparator is only ANDed in the precision tier, and only when the
+    strategy supplied one - i.e. it is a named active treatment. A placebo
+    or usual-care comparator is left empty by the prompt and so is never
+    searched as a term.
     """
 
     population: Concept
     intervention: Concept
     outcome: Concept | None = None
+    comparator: Concept | None = None
     fallback_text: str = ""
 
     def searchable_concepts(self) -> list[Concept]:
         return [c for c in (self.population, self.intervention)
                 if c and not c.is_empty()]
 
-    def render(self, source: str) -> str:
-        """Render for one named source, falling back to plain keywords."""
+    def has_comparator(self) -> bool:
+        return bool(self.comparator and not self.comparator.is_empty())
+
+    def render(self, source: str, tier: str = "recall") -> str:
+        """Render for one named source, falling back to plain keywords.
+
+        Args:
+            source: Connector name registered in search.py.
+            tier: "recall" (default) or "precision".
+        """
         concepts = self.searchable_concepts()
 
         # A single concept means the AND chain has collapsed and the search
@@ -269,12 +344,25 @@ class StructuredQuery:
         if len(concepts) < 2:
             return self.fallback_text
 
+        if tier == "precision" and self.has_comparator():
+            concepts = concepts + [self.comparator]
+
         renderer = _DIALECT_BY_SOURCE.get(source, DEFAULT_RENDERER)
         rendered = renderer(concepts)
-        return rendered or self.fallback_text
+        if not rendered:
+            return self.fallback_text
 
-    def render_all(self, sources: list[str]) -> dict[str, str]:
-        return {source: self.render(source) for source in sources}
+        if tier == "precision":
+            design = _RCT_FILTER_BY_SOURCE.get(source, _RCT_FILTER_KEYWORDS)
+            if design:
+                if renderer is _render_keywords:
+                    rendered = f"{rendered} {design}"
+                else:
+                    rendered = f"{rendered} AND {design}"
+        return rendered
+
+    def render_all(self, sources: list[str], tier: str = "recall") -> dict[str, str]:
+        return {source: self.render(source, tier) for source in sources}
 
     def is_usable(self) -> bool:
         return len(self.searchable_concepts()) >= 2
@@ -286,6 +374,11 @@ class StructuredQuery:
             "population_mesh": self.population.clean_mesh(),
             "intervention_terms": self.intervention.clean_terms(),
             "intervention_mesh": self.intervention.clean_mesh(),
+            "comparator_terms": (self.comparator.clean_terms()
+                                 if self.comparator else []),
+            "comparator_mesh": (self.comparator.clean_mesh()
+                                if self.comparator else []),
+            "comparator_in_precision_tier": self.has_comparator(),
             "outcome_terms": (self.outcome.clean_terms()
                               if self.outcome else []),
             "outcome_excluded_from_query": True,
@@ -294,6 +387,13 @@ class StructuredQuery:
                 "Requiring an outcome term in the Boolean AND chain is a "
                 "known cause of missed eligible studies (Cochrane Handbook)."
             ),
+            "tiers": {
+                "precision": "population AND intervention"
+                             + (" AND comparator" if self.has_comparator() else "")
+                             + " AND randomised-trial design filter "
+                               "(Cochrane HSSS on PubMed)",
+                "recall": "population AND intervention",
+            },
         }
 
 
