@@ -1,0 +1,23 @@
+# ---- Secrets: never commit ----
+.env
+*.token
+
+# ---- Python ----
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# ---- Model weights (huge, do not commit) ----
+models/
+*.gguf
+*.safetensors
+*.bin
+
+# ---- Node / Frontend ----
+node_modules/
+ui/node_modules/
+
+# ---- Local Zip Archives ----
+*.zip
+
