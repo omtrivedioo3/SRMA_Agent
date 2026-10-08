@@ -114,8 +114,8 @@ ORCHESTRATOR_MODEL = os.getenv("SRMA_ORCHESTRATOR_MODEL", "gemini-3.6-flash")
 # Front-door triage: before any review starts, a cheap Gemini call decides
 # whether the message is a greeting (answer conversationally), an off-topic
 # request (decline politely) or a genuine clinical question (run the
-# pipeline). Called through LiteLLM, hence the "gemini/" provider prefix.
-TRIAGE_MODEL = os.getenv("SRMA_TRIAGE_MODEL", "gemini/gemini-3.7-flash")
+# pipeline). Called directly over the Gemini REST API (not LiteLLM).
+TRIAGE_MODEL = os.getenv("SRMA_TRIAGE_MODEL", "gemini-3.7-flash")
 
 # Ollama binds IPv4 127.0.0.1 by default. Do not use "localhost" here: on
 # some hosts it resolves only to IPv6 ::1, which Ollama is not listening on,
