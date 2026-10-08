@@ -174,6 +174,8 @@ export default function App() {
   const [composerText, setComposerText] = useState('')
   const [submitting, setSubmitting] = useState(false)
   const [activeJobs, setActiveJobs] = useState([])
+  // Inline replies for greetings / off-topic messages (no review started)
+  const [chatReplies, setChatReplies] = useState([])
 
   // Filter / Modal State
   const [auditSubTab, setAuditSubTab] = useState('excluded')
@@ -365,8 +367,13 @@ export default function App() {
         body: JSON.stringify({ question: q }),
       })
       if (res.ok) {
-        const job = await res.json()
-        setActiveJobs((prev) => [job, ...prev])
+        const data = await res.json()
+        if (data.kind && data.kind !== 'review') {
+          // Greeting / off-topic: the server replied inline, no review started.
+          setChatReplies((prev) => [...prev, { question: q, kind: data.kind, reply: data.reply }])
+        } else {
+          setActiveJobs((prev) => [data, ...prev])
+        }
         setComposerText('')
         setViewMode('chat')
       }
@@ -395,6 +402,7 @@ export default function App() {
               setIsNewChatMode(true)
               setViewMode('chat')
               setComposerText('')
+              setChatReplies([])
             }}
           >
             ＋ New Clinical Query
@@ -484,6 +492,35 @@ export default function App() {
           <div className="chat-viewport">
             <div className="chat-messages-scroll">
               <div className="chat-container">
+                {/* Inline replies (greeting / off-topic) - no review was started */}
+                {chatReplies.map((m, idx) => (
+                  <div key={`reply-${idx}`}>
+                    <div className="msg-row-user">
+                      <div className="msg-bubble-user">
+                        <div className="msg-user-text">{m.question}</div>
+                      </div>
+                    </div>
+                    <div className="msg-card-agent">
+                      <div className="msg-agent-header">
+                        <div className="msg-agent-identity">
+                          <div className="agent-avatar">AI</div>
+                          <div>
+                            <strong style={{ fontSize: '13.5px', color: '#0f2537' }}>
+                              SRMA Research Agent
+                            </strong>
+                          </div>
+                        </div>
+                        {m.kind === 'off_topic' && (
+                          <span className="badge badge-warn">OUT OF SCOPE</span>
+                        )}
+                      </div>
+                      <div className="msg-agent-body">
+                        <div style={{ fontSize: '13.5px', whiteSpace: 'pre-wrap' }}>{m.reply}</div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+
                 {/* Live Running Job Progress */}
                 {activeJobs.map((job) => (
                   <div key={job.job_id} className="msg-card-agent">
