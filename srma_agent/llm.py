@@ -33,6 +33,7 @@ testable, resumable and free of agent overhead.
 from __future__ import annotations
 
 import json
+import os
 import re
 import socket
 import subprocess
@@ -267,6 +268,64 @@ def _to_chat_completions_messages(messages: list[dict[str, str]]) -> list[dict[s
     return out
 
 
+# Dedicated Vertex endpoints get a hostname of the form
+#   <endpoint-id>.<region>-<NUMBER>.prediction.vertexai.goog
+# and that NUMBER changes every time the model is (re)deployed - observed
+# 2026-10-08: 781612439219 -> 893481880555 after an undeploy/redeploy of the
+# same endpoint id. Hard-coding it in .env therefore breaks on every
+# redeploy. Instead we ask the Vertex control plane for the endpoint's
+# current `dedicatedEndpointDns` and cache it; a connection failure clears
+# the cache so the next call re-resolves without a restart.
+_PREDICT_URL: dict[str, str | None] = {"value": None}
+_PREDICT_URL_LOCK = threading.Lock()
+
+
+def _lookup_dedicated_dns() -> str | None:
+    """GET the endpoint resource and return its dedicatedEndpointDns, or None."""
+    url = (f"https://{config.VERTEX_LOCATION}-aiplatform.googleapis.com/v1/"
+           f"projects/{config.VERTEX_PROJECT_ID}/locations/{config.VERTEX_LOCATION}"
+           f"/endpoints/{config.VERTEX_MEDGEMMA_ENDPOINT_ID}")
+    try:
+        resp = requests.get(url, headers={"Authorization": f"Bearer {_vertex_access_token()}"},
+                            timeout=15)
+        if resp.status_code != 200:
+            print(f"[llm] endpoint lookup HTTP {resp.status_code}: {resp.text[:160]}",
+                  file=sys.stderr)
+            return None
+        return (resp.json().get("dedicatedEndpointDns") or "").strip() or None
+    except Exception as exc:  # noqa: BLE001
+        print(f"[llm] endpoint lookup failed: {type(exc).__name__}: {str(exc)[:160]}",
+              file=sys.stderr)
+        return None
+
+
+def _resolve_predict_url(force: bool = False) -> str:
+    """Return the :predict URL for the MedGemma endpoint.
+
+    Priority: explicit SRMA_VERTEX_MEDGEMMA_URL override > live lookup of
+    the endpoint's dedicated DNS > the static URL assembled in config.
+    """
+    if os.getenv("SRMA_VERTEX_MEDGEMMA_URL", "").strip():
+        return config.VERTEX_MEDGEMMA_PREDICT_URL
+    with _PREDICT_URL_LOCK:
+        if _PREDICT_URL["value"] and not force:
+            return _PREDICT_URL["value"]
+        dns = _lookup_dedicated_dns()
+        if dns:
+            url = (f"https://{dns}/v1/projects/{config.VERTEX_PROJECT_ID}"
+                   f"/locations/{config.VERTEX_LOCATION}"
+                   f"/endpoints/{config.VERTEX_MEDGEMMA_ENDPOINT_ID}:predict")
+        else:
+            url = config.VERTEX_MEDGEMMA_PREDICT_URL
+        _PREDICT_URL["value"] = url
+        return url
+
+
+def _invalidate_predict_url() -> None:
+    with _PREDICT_URL_LOCK:
+        _PREDICT_URL["value"] = None
+
+
 def _call_vertex_medgemma(
     model: str,
     messages: list[dict[str, str]],
@@ -289,7 +348,7 @@ def _call_vertex_medgemma(
         "temperature": float(temperature),
     }
     payload = {"instances": [instance]}
-    url = config.VERTEX_MEDGEMMA_PREDICT_URL
+    url = _resolve_predict_url()
 
     last_exc: Exception | None = None
     for attempt in range(2):
@@ -300,8 +359,19 @@ def _call_vertex_medgemma(
         try:
             response = requests.post(url, json=payload, headers=headers,
                                      timeout=config.VERTEX_TIMEOUT)
+        except requests.ConnectionError as exc:
+            # Hostname gone / changed (e.g. model redeployed under a new
+            # dedicated DNS). Re-resolve once, then give up.
+            if attempt == 0:
+                _invalidate_predict_url()
+                new_url = _resolve_predict_url()
+                if new_url != url:
+                    url = new_url
+                    continue
+            raise LlmCallError(
+                f"Could not reach the Vertex MedGemma endpoint at {url}: {exc}"
+            ) from exc
         except requests.RequestException as exc:
-            last_exc = exc
             raise LlmCallError(
                 f"Could not reach the Vertex MedGemma endpoint at {url}: {exc}"
             ) from exc
@@ -339,7 +409,9 @@ def clinical_model_reachable(timeout: float = 8.0) -> tuple[bool, str]:
     if not _is_vertex(model):
         return True, "non-vertex clinical model; no probe"
 
-    url = config.VERTEX_MEDGEMMA_PREDICT_URL
+    # Force a fresh lookup: this runs once per review, which is exactly when
+    # a redeploy under a new dedicated DNS must be noticed.
+    url = _resolve_predict_url(force=True)
     host = urlparse(url).hostname or ""
     try:
         socket.getaddrinfo(host, 443)
