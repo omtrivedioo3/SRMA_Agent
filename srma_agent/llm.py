@@ -34,10 +34,12 @@ from __future__ import annotations
 
 import json
 import re
+import socket
 import subprocess
 import sys
 import threading
 import time
+from urllib.parse import urlparse
 from typing import Any, TypeVar
 
 import requests
@@ -321,6 +323,44 @@ def _call_vertex_medgemma(
     body = response.json()
     return _strip_thinking(_extract_vertex_text(body))
 
+
+def clinical_model_reachable(timeout: float = 8.0) -> tuple[bool, str]:
+    """Cheap liveness probe for the clinical model, used before a run starts.
+
+    For the Vertex dedicated endpoint: while the model is undeployed the
+    endpoint hostname does not resolve at all, so a DNS lookup answers in
+    milliseconds. If DNS succeeds we send a 1-token request to confirm the
+    deployment is actually serving (a freshly deploying replica resolves
+    but returns 5xx for several minutes).
+
+    Returns (ok, detail). Never raises.
+    """
+    model = config.CLINICAL_MODEL
+    if not _is_vertex(model):
+        return True, "non-vertex clinical model; no probe"
+
+    url = config.VERTEX_MEDGEMMA_PREDICT_URL
+    host = urlparse(url).hostname or ""
+    try:
+        socket.getaddrinfo(host, 443)
+    except socket.gaierror as exc:
+        return False, f"endpoint hostname does not resolve ({host}): {exc}"
+
+    payload = {"instances": [{
+        "@requestFormat": "chatCompletions",
+        "messages": [{"role": "user", "content": [{"type": "text", "text": "OK"}]}],
+        "max_tokens": 1,
+        "temperature": 0.0,
+    }]}
+    try:
+        headers = {"Authorization": f"Bearer {_vertex_access_token()}",
+                   "Content-Type": "application/json"}
+        resp = requests.post(url, json=payload, headers=headers, timeout=timeout)
+    except Exception as exc:  # noqa: BLE001
+        return False, f"probe failed: {type(exc).__name__}: {str(exc)[:160]}"
+    if resp.status_code >= 400:
+        return False, f"endpoint returned HTTP {resp.status_code}: {resp.text[:160]}"
+    return True, "ok"
 
 # The vLLM-served MedGemma emits an internal reasoning block before the real
 # answer, delimited by Gemma's reserved thinking tokens:

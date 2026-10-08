@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 import threading
 from datetime import datetime, timezone
 from pathlib import Path
@@ -25,7 +26,7 @@ from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
-from . import config, pipeline, triage
+from . import config, llm, pipeline, triage
 from .tools import pdf_report, search as search_mod
 
 app = FastAPI(
@@ -789,6 +790,20 @@ def start_new_review(req: ReviewRequest) -> dict[str, Any]:
     verdict = triage.triage_question(q)
     if verdict.kind != "review":
         return {"kind": verdict.kind, "reply": verdict.reply, "question": q}
+
+    # Only a real review needs MedGemma. Probe it (~1 s) before creating a
+    # run directory, so an undeployed endpoint yields one clear message
+    # instead of an empty "completed" review in the history.
+    ok, detail = llm.clinical_model_reachable()
+    if not ok:
+        print(f"[reviews] clinical model offline, refusing to start: {detail}",
+              file=sys.stderr)
+        return {
+            "kind": "offline",
+            "reply": "The clinical analysis service is temporarily offline. "
+                     "Please try again later.",
+            "question": q,
+        }
 
     run_id = datetime.now(timezone.utc).strftime("run-%Y%m%d-%H%M%S")
     max_per_src = req.max_records_per_source or req.max_per_source or 25
