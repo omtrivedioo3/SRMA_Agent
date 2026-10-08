@@ -513,6 +513,9 @@ export default function App() {
                         {m.kind === 'off_topic' && (
                           <span className="badge badge-warn">OUT OF SCOPE</span>
                         )}
+                        {(m.kind === 'offline' || m.kind === 'unavailable') && (
+                          <span className="badge badge-warn">SERVICE OFFLINE</span>
+                        )}
                       </div>
                       <div className="msg-agent-body">
                         <div style={{ fontSize: '13.5px', whiteSpace: 'pre-wrap' }}>{m.reply}</div>
