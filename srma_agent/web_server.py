@@ -25,7 +25,7 @@ from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
-from . import config, pipeline
+from . import config, pipeline, triage
 from .tools import pdf_report, search as search_mod
 
 app = FastAPI(
@@ -779,10 +779,16 @@ def get_active_reviews() -> list[dict[str, Any]]:
 
 @app.post("/api/reviews")
 def start_new_review(req: ReviewRequest) -> dict[str, Any]:
-    """Launch a new 8-phase systematic review in a background worker thread."""
+    """Launch a new 8-phase systematic review in a background worker thread.
+
+    Every message first passes through `triage.triage_question`. Greetings
+    and off-topic requests are answered inline (no job, no run directory);
+    only a genuine clinical question starts the pipeline.
+    """
     q = (req.question or "").strip()
-    if len(q) < 10:
-        raise HTTPException(status_code=400, detail="Please provide a complete clinical research question.")
+    verdict = triage.triage_question(q)
+    if verdict.kind != "review":
+        return {"kind": verdict.kind, "reply": verdict.reply, "question": q}
 
     run_id = datetime.now(timezone.utc).strftime("run-%Y%m%d-%H%M%S")
     max_per_src = req.max_records_per_source or req.max_per_source or 25

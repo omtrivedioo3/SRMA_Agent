@@ -91,9 +91,11 @@ VERTEX_MEDGEMMA_PREDICT_URL = os.getenv("SRMA_VERTEX_MEDGEMMA_URL", "").strip() 
 # prompt; be generous rather than discard a correct answer as a timeout.
 VERTEX_TIMEOUT = int(os.getenv("SRMA_VERTEX_TIMEOUT", "180"))
 
-# When the Vertex call fails (auth, quota, 5xx, network) fall back to the
-# local Ollama model instead of aborting. Set to 0 to make failures fatal.
-VERTEX_FALLBACK_TO_LOCAL = os.getenv("SRMA_VERTEX_FALLBACK_TO_LOCAL", "1").strip() in ("1", "true", "TRUE")
+# When the Vertex call fails (auth, quota, 5xx, network) the failure is
+# fatal by default: the local Ollama MedGemma is NOT used unless this is
+# explicitly set to 1. A silent fall-back to a smaller model would produce a
+# review that looks fine but was not made by the model the client signed off.
+VERTEX_FALLBACK_TO_LOCAL = os.getenv("SRMA_VERTEX_FALLBACK_TO_LOCAL", "0").strip() in ("1", "true", "TRUE")
 
 # Bare Gemini model ids are resolved by ADK against whichever backend
 # GOOGLE_GENAI_USE_VERTEXAI selects. Flash is chosen over Pro because the
@@ -108,6 +110,12 @@ VERTEX_FALLBACK_TO_LOCAL = os.getenv("SRMA_VERTEX_FALLBACK_TO_LOCAL", "1").strip
 # List what your key can currently see with:
 #     ./.venv/bin/python scripts/run_review.py --list-models
 ORCHESTRATOR_MODEL = os.getenv("SRMA_ORCHESTRATOR_MODEL", "gemini-3.6-flash")
+
+# Front-door triage: before any review starts, a cheap Gemini call decides
+# whether the message is a greeting (answer conversationally), an off-topic
+# request (decline politely) or a genuine clinical question (run the
+# pipeline). Called through LiteLLM, hence the "gemini/" provider prefix.
+TRIAGE_MODEL = os.getenv("SRMA_TRIAGE_MODEL", "gemini/gemini-3.7-flash")
 
 # Ollama binds IPv4 127.0.0.1 by default. Do not use "localhost" here: on
 # some hosts it resolves only to IPv6 ::1, which Ollama is not listening on,
