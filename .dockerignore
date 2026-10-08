@@ -1,0 +1,25 @@
+# Keep the build context small and secret-free.
+.git
+.venv
+__pycache__
+**/__pycache__
+*.pyc
+.env
+.env.*
+!.env.example
+*.token
+ui/node_modules
+ui/src
+ui/package*.json
+ui/vite.config.js
+ui/index.html
+runs
+models
+*.gguf
+*.safetensors
+*.bin
+*.zip
+*.pdf
+Project Requirement
+TESTING.txt
+README.md
